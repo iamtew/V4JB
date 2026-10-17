@@ -1,0 +1,32 @@
+# Projucer rewrites these on `just resave`. Do not edit them by hand.
+Builds/
+JuceLibraryCode/
+
+# just build-dist
+dist/
+
+# WiX
+installer/bin/
+installer/obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.sdf
+*.opensdf
+*.VC.db
+*.VC.opendb
+*.ipch
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# just check
+tests/*.exe
+tests/*.obj
+
+# Affinity Studio lock files
+assets/*.af~lock~
