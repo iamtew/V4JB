@@ -37,5 +37,11 @@ inline juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout
     macro (ParamID::acid,    "Acid",    0.f);
     macro (ParamID::air,     "Air",     0.7f);
 
+    // Ghost choir. Ghost 0 = silent, so old sessions and the default fog sound unchanged.
+    macro (ParamID::ghost,  "Ghost",  0.f);
+    macro (ParamID::vowel,  "Vowel",  0.5f);
+    macro (ParamID::breath, "Breath", 0.3f);
+    macro (ParamID::haunt,  "Haunt",  0.4f);
+
     return layout;
 }

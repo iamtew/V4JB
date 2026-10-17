@@ -5,7 +5,7 @@
 
 #include <JuceHeader.h>
 
-// Synth shell around the Swirl texture voice: MIDI in, four macros, Volume.
+// Synth shell around the Swirl texture voice: MIDI in, eight macros, Volume.
 class V4JBAudioProcessor : public juce::AudioProcessor
 {
 public:
@@ -47,6 +47,10 @@ private:
     std::atomic<float>* crackle = apvts.getRawParameterValue (ParamID::crackle);
     std::atomic<float>* acid    = apvts.getRawParameterValue (ParamID::acid);
     std::atomic<float>* air     = apvts.getRawParameterValue (ParamID::air);
+    std::atomic<float>* ghost   = apvts.getRawParameterValue (ParamID::ghost);
+    std::atomic<float>* vowel   = apvts.getRawParameterValue (ParamID::vowel);
+    std::atomic<float>* breath  = apvts.getRawParameterValue (ParamID::breath);
+    std::atomic<float>* haunt   = apvts.getRawParameterValue (ParamID::haunt);
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (V4JBAudioProcessor)
 };

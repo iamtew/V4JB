@@ -65,6 +65,10 @@ private:
     Knob crackle { proc.apvts, ParamID::crackle, "Crackle" };
     Knob acid    { proc.apvts, ParamID::acid,    "Acid" };
     Knob air     { proc.apvts, ParamID::air,     "Air" };
+    Knob ghost   { proc.apvts, ParamID::ghost,   "Ghost" };
+    Knob vowel   { proc.apvts, ParamID::vowel,   "Vowel" };
+    Knob breath  { proc.apvts, ParamID::breath,  "Breath" };
+    Knob haunt   { proc.apvts, ParamID::haunt,   "Haunt" };
     AboutBox aboutBox;
     juce::Image logo;
 

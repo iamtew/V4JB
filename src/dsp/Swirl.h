@@ -2,6 +2,7 @@
 
 // Swirl: V4JB's texture voice. Fog at low settings, whirlwinds, pops and acid
 // blurts at high settings. One mono voice; the stereo comes from the whirl pan.
+// Ghosts: a small choir of formant voices that whisper or sing vowels inside the fog.
 //
 // Header-only and JUCE-free so tests/swirl_check.cpp can run it with plain cl.
 // Real-time safe: all state is fixed-size members, render() never allocates.
@@ -12,13 +13,17 @@
 
 namespace v4jb
 {
-// The four macro knobs, each 0..1. Defaults are the "fog" sound.
+// The macro knobs, each 0..1. Defaults are the "fog" sound, ghosts silent.
 struct Macros
 {
     float motion  = 0.3f;  // sweep speed/depth, ups and downs, whirl speed
     float crackle = 0.f;   // density and level of cracks and pops
     float acid    = 0.f;   // blurt rate, ladder resonance, drive
     float air     = 0.7f;  // noise vs saw balance, brightness
+    float ghost   = 0.f;   // ghost level and how many voices (1 centre, then L and R)
+    float vowel   = 0.5f;  // u-o-a-e-i, dark to bright
+    float breath  = 0.3f;  // sung (saw) to whispered (noise)
+    float haunt   = 0.4f;  // vowel wander, swelling in and out, choir detune
 };
 
 class Swirl
@@ -40,6 +45,8 @@ public:
         sweepDrift = pitchDrift = whirlDrift = {};
         sweep = pops = {};
         ladder = {};
+        for (auto& g : ghosts)
+            g = {};
         whirlPhase = sawPhase = blurt = gate = 0.f;
         hz = noteHz;
         gateOn = false;
@@ -88,6 +95,10 @@ public:
             cur.crackle += smooth * (target.crackle - cur.crackle);
             cur.acid    += smooth * (target.acid    - cur.acid);
             cur.air     += smooth * (target.air     - cur.air);
+            cur.ghost   += smooth * (target.ghost   - cur.ghost);
+            cur.vowel   += smooth * (target.vowel   - cur.vowel);
+            cur.breath  += smooth * (target.breath  - cur.breath);
+            cur.haunt   += smooth * (target.haunt   - cur.haunt);
             const float motion = cur.motion, crackle = cur.crackle, acid = cur.acid, air = cur.air;
 
             // Ups and downs: three random walks. Motion makes them jump more often and glide faster.
@@ -140,7 +151,59 @@ public:
                        + ((1.f - air) * 0.5f + acid * blurt) * acidOut
                        + crackle * (2.f * pop + 0.5f * click);
 
-            // Gate: fast-ish attack, slow fog-like release.
+            // Ghosts: each voice is a saw/noise excitation through three formant
+            // bandpasses (F1-F3) that shape it into a vowel. Ghost fades the voices in
+            // one by one (centre first, then left and right).
+            float ghostL = 0.f, ghostR = 0.f;
+            const float ghost = cur.ghost, vowel = cur.vowel, breath = cur.breath, haunt = cur.haunt;
+            const float hauntJump = (0.1f + 2.f * haunt) * invSr;
+            const float hauntGlide = onePole (0.05f + 1.5f * haunt);
+            for (int v = 0; v < kNumGhosts; ++v)
+            {
+                const float presence = std::clamp (ghost * kNumGhosts - (float) v, 0.f, 1.f);
+                if (presence <= 0.f)
+                    continue;  // silent ghosts cost nothing and leave the rng alone
+                Ghost& g = ghosts[v];
+                const float spread = kGhostSpread[v];
+
+                // Haunt: the vowel wanders, and the ghost swells in and out of the fog
+                // (at full Haunt it can vanish completely for a moment).
+                const float wander = g.vowelDrift.step (rng, hauntJump, hauntGlide);
+                const float swell  = g.swellDrift.step (rng, hauntJump, hauntGlide);
+                const float amp = presence * (1.f - 0.5f * haunt * (1.f - swell));
+
+                // Sung part: a saw at the note, detuned up to +-30 cents for a choir smear.
+                const float dtG = std::min (hz * std::exp2 (spread * haunt * 0.025f), maxHz) * invSr;
+                g.sawPhase += dtG;
+                g.sawPhase -= std::floor (g.sawPhase);
+                const float sung = 2.f * g.sawPhase - 1.f - polyBlep (g.sawPhase, dtG);
+                // Bandpassed noise is quieter than a bandpassed saw; 4x evens the Breath knob out.
+                const float excite = (1.f - breath) * sung + breath * 4.f * rng.bi();
+
+                // Vowel position 0..4 between table rows. Side ghosts get slightly
+                // bigger/smaller "throats" so the three voices are not clones.
+                const float vpos = std::clamp ((vowel + 0.35f * haunt * wander) * 4.f, 0.f, 4.f);
+                const int row = std::min ((int) vpos, 3);
+                const float frac = vpos - (float) row;
+                const float throat = std::exp2 (spread * 0.08f * haunt);
+                float voice = 0.f;
+                for (int f = 0; f < 3; ++f)
+                {
+                    // Log-frequency blend between neighbouring vowels.
+                    const float a = kVowels[row][f], b = kVowels[row + 1][f];
+                    // ponytail: 9 tan() calls per sample here; update coefficients every
+                    // 16-32 samples if this ever shows up in a profiler.
+                    g.formant[f].setCutoff (clampHz (a * std::pow (b / a, frac) * throat), kFormantQ, invSr);
+                    voice += kFormantGain[f] * g.formant[f].band (excite) * g.formant[f].k;
+                }
+
+                // Fixed pan slot (L / C / R), wider as more ghosts arrive.
+                const float gPan = 0.5f + 0.5f * spread * (0.3f + 0.7f * ghost);
+                ghostL += amp * voice * std::cos (gPan * kHalfPi);
+                ghostR += amp * voice * std::sin (gPan * kHalfPi);
+            }
+
+            // Gate: fast-ish attack, slow fog-like release. Shared by fog and ghosts.
             const float gTarget = gateOn ? 1.f : 0.f;
             gate += (gateOn ? gateAttack : gateRelease) * (gTarget - gate);
             mono *= gate;
@@ -148,8 +211,8 @@ public:
             // Equal-power pan; width grows with Motion. tanh is the final safety
             // limiter and adds a little grit when everything is cranked.
             const float pan = 0.5f + 0.5f * swing * (0.2f + 0.8f * motion);
-            const float l = std::tanh (mono * std::cos (pan * kHalfPi));
-            const float r = std::tanh (mono * std::sin (pan * kHalfPi));
+            const float l = std::tanh (mono * std::cos (pan * kHalfPi) + gate * ghostL);
+            const float r = std::tanh (mono * std::sin (pan * kHalfPi) + gate * ghostR);
             if (R != nullptr)
             {
                 L[i] = l;
@@ -267,7 +330,30 @@ private:
         numHeld = w;
     }
 
+    // One choir voice: its own formant bank, saw, vowel wander and swell.
+    struct Ghost
+    {
+        Svf formant[3];
+        Drift vowelDrift, swellDrift;
+        float sawPhase = 0.f;
+    };
+
     static constexpr int kMaxHeld = 16;
+    static constexpr int kNumGhosts = 3;
+
+    // Ghost order: centre first, then left, then right. Also signs the detune and throat size.
+    static constexpr float kGhostSpread[kNumGhosts] = { 0.f, -1.f, 1.f };
+
+    // Vowel formants F1-F3 in Hz (adult averages, Peterson & Barney style), dark to bright.
+    static constexpr float kVowels[5][3] = {
+        { 300.f,  870.f, 2240.f },  // u
+        { 450.f,  800.f, 2830.f },  // o
+        { 730.f, 1090.f, 2440.f },  // a
+        { 530.f, 1840.f, 2480.f },  // e
+        { 270.f, 2290.f, 3010.f },  // i
+    };
+    static constexpr float kFormantGain[3] = { 1.f, 0.5f, 0.25f };
+    static constexpr float kFormantQ = 8.f;
 
     float sr = 48000.f, invSr = 1.f / 48000.f, maxHz = 21600.f;
     Macros target, cur;
@@ -277,6 +363,7 @@ private:
     Drift sweepDrift, pitchDrift, whirlDrift;
     Svf sweep, pops;
     Ladder ladder;
+    Ghost ghosts[kNumGhosts];
 
     float whirlPhase = 0.f, sawPhase = 0.f;
     float noteHz = 110.f, hz = 110.f;

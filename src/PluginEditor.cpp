@@ -15,6 +15,7 @@ constexpr int kLabelH = 12;
 constexpr int kKnobW = 72;
 constexpr int kMacroW = 130;
 constexpr int kMacroH = 150;
+constexpr int kHintH = 28;
 
 // "Fog at night" palette, same hex as bootstrap.md and docs/style.css.
 const juce::Colour kNight { 0xff14121f };
@@ -227,7 +228,7 @@ V4JBAudioProcessorEditor::V4JBAudioProcessorEditor (V4JBAudioProcessor& p)
 
     logo = juce::ImageCache::getFromMemory (BinaryData::logo_png, BinaryData::logo_pngSize);
 
-    for (auto* k : { &volume, &motion, &crackle, &acid, &air })
+    for (auto* k : { &volume, &motion, &crackle, &acid, &air, &ghost, &vowel, &breath, &haunt })
         addAndMakeVisible (k);
     addChildComponent (aboutBox);
 
@@ -264,7 +265,7 @@ void V4JBAudioProcessorEditor::paint (juce::Graphics& g)
     g.fillRoundedRectangle (well.toFloat(), 4.f);
     g.setColour (kFog.withAlpha (0.4f));
     g.setFont (boldFont (11.f));
-    g.drawText ("Hold a MIDI note to play", well.removeFromBottom (28), juce::Justification::centred, false);
+    g.drawText ("Hold a MIDI note to play", well.removeFromBottom (kHintH), juce::Justification::centred, false);
 
     g.setColour (kNight.brighter (0.08f));
     g.drawRoundedRectangle (getLocalBounds().toFloat().reduced (1.5f), 2.f, 2.f);
@@ -276,10 +277,18 @@ void V4JBAudioProcessorEditor::resized()
     auto title = r.removeFromTop (kTitleH);
     volume.setBounds (title.removeFromRight (kKnobW).withHeight (kTitleH + 40));
 
-    // Four big macro knobs, one row, centred in the well.
-    auto row = textureArea().withSizeKeepingCentre (4 * kMacroW, kMacroH);
-    for (auto* k : { &motion, &crackle, &acid, &air })
-        k->setBounds (row.removeFromLeft (kMacroW).reduced (kPad, 0));
+    // Two rows of four macro knobs centred in the well, above the hint text:
+    // the fog on top, the ghost choir below.
+    auto well = textureArea();
+    well.removeFromBottom (kHintH);
+    auto rows = well.withSizeKeepingCentre (4 * kMacroW, 2 * kMacroH);
+    for (auto knobs : { std::initializer_list<Knob*> { &motion, &crackle, &acid, &air },
+                        std::initializer_list<Knob*> { &ghost, &vowel, &breath, &haunt } })
+    {
+        auto row = rows.removeFromTop (kMacroH);
+        for (auto* k : knobs)
+            k->setBounds (row.removeFromLeft (kMacroW).reduced (kPad, 0));
+    }
 
     aboutBox.setBounds (getLocalBounds());
 }

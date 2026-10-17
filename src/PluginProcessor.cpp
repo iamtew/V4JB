@@ -19,7 +19,8 @@ void V4JBAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::M
 {
     juce::ScopedNoDenormals noDenormals;
     const int n = buffer.getNumSamples();
-    swirl.setMacros ({ motion->load(), crackle->load(), acid->load(), air->load() });
+    swirl.setMacros ({ motion->load(), crackle->load(), acid->load(), air->load(),
+                       ghost->load(), vowel->load(), breath->load(), haunt->load() });
 
     auto* L = buffer.getWritePointer (0);
     auto* R = buffer.getNumChannels() > 1 ? buffer.getWritePointer (1) : nullptr;

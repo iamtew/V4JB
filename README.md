@@ -6,11 +6,11 @@
 
 VST3 and standalone. Stupid Systems LLC. [MIT](LICENSE). Site: [docs/](docs/index.html). Manual: [docs/MANUAL.md](docs/MANUAL.md).
 
-Early days: one texture voice, Swirl, played from MIDI with four macros (Motion, Crackle, Acid, Air). From soft fog to whirlwinds, pops and acid blurts. Design in [docs/DSP_NOTES.md](docs/DSP_NOTES.md).
+Early days: one texture voice, Swirl, played from MIDI with four macros (Motion, Crackle, Acid, Air). From soft fog to whirlwinds, pops and acid blurts. A ghost choir sits inside the fog with four macros of its own (Ghost, Vowel, Breath, Haunt): formant voices that whisper or sing vowels, drift and swell. Design in [docs/DSP_NOTES.md](docs/DSP_NOTES.md).
 
 ## Build
 
-`just build-debug` (Projucer resave + MSBuild). `just check` runs the version compare test. JUCE is expected at `%USERPROFILE%\JUCE` (override with `JUCE_PATH`).
+`just build-debug` (Projucer resave + MSBuild). `just check` runs the version compare test and the Swirl render check. JUCE is expected at `%USERPROFILE%\JUCE` (override with `JUCE_PATH`).
 
 ## Release
 

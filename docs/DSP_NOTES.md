@@ -10,7 +10,8 @@ One mono voice, played by holding a MIDI note (last note wins, short 303-style s
 - **Acid**: PolyBLEP saw at the note pitch into a 4-pole ladder with tanh feedback. Random **blurts** zap the cutoff up and bend the pitch down as they decay (80–300 ms each).
 - **Cracks and pops**: Dust. Rare random impulses; each one is a click (crack) and retunes a high-Q resonator (pop).
 - **Whirl**: equal-power pan circling at a drifting rate, width grows with Motion.
-- **Gate**: one-pole attack (~30 ms) and release (~0.32 s time constant, silent inside the 3 s tail).
+- **Ghosts**: three choir voices (centre, left, right), each with its own PolyBLEP saw at the note (detuned up to +-30 cents) mixed with noise, into three parallel TPT bandpasses at the vowel's formants F1-F3 (Q 8, gains 1 / 0.5 / 0.25). The vowel table (u-o-a-e-i, adult averages) is blended in log-frequency. Side voices get a slightly bigger or smaller "throat" (formants shifted up to +-0.08 octave). Each voice has its own random walks for vowel wander and amplitude swell. Ghosts that are faded out by the Ghost knob are skipped entirely.
+- **Gate**: one-pole attack (~30 ms) and release (~0.32 s time constant, silent inside the 3 s tail). Shared by fog and ghosts.
 - **Limiter**: tanh on the output. Transparent at fog levels, grit when cranked.
 
 Macros, all 0–1:
@@ -21,8 +22,12 @@ Macros, all 0–1:
 | Crackle | pop density (up to ~60/s) and level |
 | Acid | blurt rate (up to ~3/s), ladder resonance and drive |
 | Air | noise vs saw balance, brightness |
+| Ghost | ghost level; voices fade in one by one (centre, then L and R), pan spread widens |
+| Vowel | u-o-a-e-i, dark to bright |
+| Breath | ghost excitation: sung saw at 0, whispered noise at 1 |
+| Haunt | vowel wander depth and speed, swell depth (to silence at 1), choir detune, throat spread |
 
-Defaults (Motion 0.3, Air 0.7, rest 0) are the fog.
+Defaults (Motion 0.3, Air 0.7, Ghost 0, rest of the fog knobs 0) are the fog. Vowel 0.5, Breath 0.3 and Haunt 0.4 are waiting for Ghost to come up.
 
 ## Ideas still on the table
 
