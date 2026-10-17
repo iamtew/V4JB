@@ -6,7 +6,7 @@
 
 VST3 and standalone. Stupid Systems LLC. [MIT](LICENSE). Site: [docs/](docs/index.html). Manual: [docs/MANUAL.md](docs/MANUAL.md).
 
-Early scaffold: the plugin builds, loads and is silent. The texture engine is being designed in [docs/DSP_NOTES.md](docs/DSP_NOTES.md).
+Early days: one texture voice, Swirl, played from MIDI with four macros (Motion, Crackle, Acid, Air). From soft fog to whirlwinds, pops and acid blurts. Design in [docs/DSP_NOTES.md](docs/DSP_NOTES.md).
 
 ## Build
 

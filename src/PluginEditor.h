@@ -61,6 +61,10 @@ private:
 
     PanelLnF panelLnF;
     Knob volume { proc.apvts, ParamID::level, "Volume" };
+    Knob motion  { proc.apvts, ParamID::motion,  "Motion" };
+    Knob crackle { proc.apvts, ParamID::crackle, "Crackle" };
+    Knob acid    { proc.apvts, ParamID::acid,    "Acid" };
+    Knob air     { proc.apvts, ParamID::air,     "Air" };
     AboutBox aboutBox;
     juce::Image logo;
 

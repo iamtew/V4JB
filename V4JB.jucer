@@ -16,6 +16,9 @@
       <FILE id="editH01" name="PluginEditor.h" compile="0" resource="0" file="src/PluginEditor.h"/>
       <FILE id="editC01" name="PluginEditor.cpp" compile="1" resource="0"
             file="src/PluginEditor.cpp"/>
+      <GROUP id="dspGrp01" name="dsp">
+        <FILE id="swlH001" name="Swirl.h" compile="0" resource="0" file="src/dsp/Swirl.h"/>
+      </GROUP>
       <GROUP id="prmGrp01" name="parameters">
         <FILE id="pidH001" name="ParameterIDs.h" compile="0" resource="0" file="src/parameters/ParameterIDs.h"/>
         <FILE id="plyH001" name="ParameterLayout.h" compile="0" resource="0"

@@ -13,6 +13,8 @@ constexpr int kTitleH = 40;
 constexpr int kTitleHitW = 150;
 constexpr int kLabelH = 12;
 constexpr int kKnobW = 72;
+constexpr int kMacroW = 130;
+constexpr int kMacroH = 150;
 
 // "Fog at night" palette, same hex as bootstrap.md and docs/style.css.
 const juce::Colour kNight { 0xff14121f };
@@ -225,7 +227,8 @@ V4JBAudioProcessorEditor::V4JBAudioProcessorEditor (V4JBAudioProcessor& p)
 
     logo = juce::ImageCache::getFromMemory (BinaryData::logo_png, BinaryData::logo_pngSize);
 
-    addAndMakeVisible (volume);
+    for (auto* k : { &volume, &motion, &crackle, &acid, &air })
+        addAndMakeVisible (k);
     addChildComponent (aboutBox);
 
     setSize (kEditorW, kEditorH);
@@ -255,13 +258,13 @@ void V4JBAudioProcessorEditor::paint (juce::Graphics& g)
     g.setFont (boldFont (10.f));
     g.drawText ("v" JucePlugin_VersionString, nameCol, juce::Justification::centredLeft, false);
 
-    // Placeholder well for the texture UI.
-    auto well = textureArea().toFloat();
+    // Texture well: the Swirl macros sit in here (see resized()).
+    auto well = textureArea();
     g.setColour (kDusk);
-    g.fillRoundedRectangle (well, 4.f);
+    g.fillRoundedRectangle (well.toFloat(), 4.f);
     g.setColour (kFog.withAlpha (0.4f));
-    g.setFont (boldFont (12.f));
-    g.drawText ("Texture engine goes here", well.toNearestInt(), juce::Justification::centred, false);
+    g.setFont (boldFont (11.f));
+    g.drawText ("Hold a MIDI note to play", well.removeFromBottom (28), juce::Justification::centred, false);
 
     g.setColour (kNight.brighter (0.08f));
     g.drawRoundedRectangle (getLocalBounds().toFloat().reduced (1.5f), 2.f, 2.f);
@@ -272,6 +275,12 @@ void V4JBAudioProcessorEditor::resized()
     auto r = getLocalBounds().reduced (kPad);
     auto title = r.removeFromTop (kTitleH);
     volume.setBounds (title.removeFromRight (kKnobW).withHeight (kTitleH + 40));
+
+    // Four big macro knobs, one row, centred in the well.
+    auto row = textureArea().withSizeKeepingCentre (4 * kMacroW, kMacroH);
+    for (auto* k : { &motion, &crackle, &acid, &air })
+        k->setBounds (row.removeFromLeft (kMacroW).reduced (kPad, 0));
+
     aboutBox.setBounds (getLocalBounds());
 }
 

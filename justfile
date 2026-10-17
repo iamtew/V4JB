@@ -54,4 +54,4 @@ vs:
 
 # Header-only checks, no JUCE needed. Exit code != 0 on the first failed assert.
 check:
-    cmd /c "call `"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Auxiliary\Build\vcvars64.bat`" >nul && cl /nologo /EHsc /std:c++17 /I src tests\version_check.cpp /Fo:tests\version_check.obj /Fe:tests\version_check.exe && tests\version_check.exe"
+    cmd /c "call `"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Auxiliary\Build\vcvars64.bat`" >nul && cl /nologo /EHsc /std:c++17 /I src tests\version_check.cpp /Fo:tests\version_check.obj /Fe:tests\version_check.exe && tests\version_check.exe && cl /nologo /EHsc /O2 /W4 /std:c++17 /I src tests\swirl_check.cpp /Fo:tests\swirl_check.obj /Fe:tests\swirl_check.exe && tests\swirl_check.exe"
