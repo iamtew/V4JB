@@ -32,8 +32,5 @@ tests/*.obj
 tools/*.exe
 tools/*.obj
 
-# Third-party reference notes, kept local only
-Loom_II_Technical_Specification_for_Replication.txt
-
 # Affinity Studio lock files
 assets/*.af~lock~
