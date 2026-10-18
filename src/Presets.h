@@ -40,7 +40,8 @@ inline PresetEntry entryFrom (const juce::XmlElement& xml, const juce::String& f
     return e;
 }
 
-// Factory presets in file-name order (files are numbered, Init first).
+// Factory presets in file-name order (files are numbered, Init first; natural
+// order so 100_x comes after 99_x).
 inline juce::Array<PresetEntry> factory()
 {
     struct Item { juce::String file; PresetEntry entry; };
@@ -60,7 +61,7 @@ inline juce::Array<PresetEntry> factory()
             items.push_back ({ file, e });
         }
     }
-    std::sort (items.begin(), items.end(), [] (const Item& a, const Item& b) { return a.file < b.file; });
+    std::sort (items.begin(), items.end(), [] (const Item& a, const Item& b) { return a.file.compareNatural (b.file) < 0; });
     juce::Array<PresetEntry> out;
     for (auto& it : items)
         out.add (it.entry);
