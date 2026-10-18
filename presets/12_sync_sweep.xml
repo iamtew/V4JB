@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMS presetName="Sync Sweep" category="Leads">
+  <PARAM id="nz_mix" value="0"/>
+  <PARAM id="s2_type" value="3"/>
+  <PARAM id="s2_main" value="0.3"/>
+  <PARAM id="s2_p1" value="0.7"/>
+  <PARAM id="s2_ls" value="1"/>
+  <PARAM id="s2_la" value="0.4"/>
+  <PARAM id="s3_type" value="7"/>
+  <PARAM id="s3_main" value="0.8"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="l1_rate" value="0.3"/>
+  <PARAM id="e1_a" value="0.01"/>
+  <PARAM id="e1_s" value="0.9"/>
+  <PARAM id="e1_r" value="0.5"/>
+  <PARAM id="rv_mix" value="0.2"/>
+</PARAMS>

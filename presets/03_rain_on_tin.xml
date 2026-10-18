@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMS presetName="Rain on Tin" category="Moving Pads">
+  <PARAM id="sp_tilt" value="0.9"/>
+  <PARAM id="s2_type" value="21"/>
+  <PARAM id="s2_main" value="0.55"/>
+  <PARAM id="s2_p1" value="0.45"/>
+  <PARAM id="s2_p2" value="0.15"/>
+  <PARAM id="s2_p3" value="0.6"/>
+  <PARAM id="s2_p4" value="0.5"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s3_type" value="8"/>
+  <PARAM id="s3_main" value="0.25"/>
+  <PARAM id="s4_type" value="22"/>
+  <PARAM id="s4_main" value="0.4"/>
+  <PARAM id="dl_on" value="1"/>
+  <PARAM id="dl_div" value="4"/>
+</PARAMS>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMS presetName="Breath Lead" category="Leads">
+  <PARAM id="poly" value="1"/>
+  <PARAM id="glide" value="0.08"/>
+  <PARAM id="nz_mix" value="0.5"/>
+  <PARAM id="nz_decay" value="0.6"/>
+  <PARAM id="s2_main" value="0.6"/>
+  <PARAM id="s2_es" value="2"/>
+  <PARAM id="s2_ea" value="0.2"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s3_type" value="0"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="e1_a" value="0.02"/>
+  <PARAM id="e1_s" value="0.9"/>
+  <PARAM id="e1_r" value="0.4"/>
+  <PARAM id="dr_on" value="1"/>
+  <PARAM id="dr_amt" value="0.2"/>
+  <PARAM id="dl_on" value="1"/>
+  <PARAM id="dl_div" value="4"/>
+  <PARAM id="rv_mix" value="0.2"/>
+</PARAMS>

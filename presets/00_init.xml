@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Factory preset format: plugin state XML. List only what differs from the
+     defaults in src/parameters/ParameterLayout.h; values are in real units
+     (choice = item index, toggle = 0/1). Optional <MORPH c0..c3="11 macros" nodes="x y len;..."/>. -->
+<PARAMS presetName="Init" category="Init"/>

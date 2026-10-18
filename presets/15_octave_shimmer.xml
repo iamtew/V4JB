@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMS presetName="Octave Shimmer" category="Pads">
+  <PARAM id="sp_algo" value="7"/>
+  <PARAM id="sp_depth" value="1"/>
+  <PARAM id="sp_tilt" value="0.9"/>
+  <PARAM id="s2_type" value="18"/>
+  <PARAM id="s2_main" value="0.5"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s4_p4" value="0.8"/>
+  <PARAM id="rv_size" value="0.95"/>
+  <PARAM id="rv_mix" value="0.5"/>
+</PARAMS>

@@ -8,6 +8,25 @@
               jucerFormatVersion="1">
   <MAINGROUP id="v4jbMain" name="V4JB">
     <FILE id="logoPng1" name="logo.png" compile="0" resource="1" file="assets/logo.png"/>
+    <GROUP id="prsGrp01" name="presets">
+      <FILE id="prs00001" name="00_init.xml" compile="0" resource="1" file="presets/00_init.xml"/>
+      <FILE id="prs00002" name="01_fog_bank.xml" compile="0" resource="1" file="presets/01_fog_bank.xml"/>
+      <FILE id="prs00003" name="02_glass_choir.xml" compile="0" resource="1" file="presets/02_glass_choir.xml"/>
+      <FILE id="prs00004" name="03_rain_on_tin.xml" compile="0" resource="1" file="presets/03_rain_on_tin.xml"/>
+      <FILE id="prs00005" name="04_rolling_organ.xml" compile="0" resource="1" file="presets/04_rolling_organ.xml"/>
+      <FILE id="prs00006" name="05_bell_tower.xml" compile="0" resource="1" file="presets/05_bell_tower.xml"/>
+      <FILE id="prs00007" name="06_sub_drone.xml" compile="0" resource="1" file="presets/06_sub_drone.xml"/>
+      <FILE id="prs00008" name="07_phrase_engine.xml" compile="0" resource="1" file="presets/07_phrase_engine.xml"/>
+      <FILE id="prs00009" name="08_alien_shore.xml" compile="0" resource="1" file="presets/08_alien_shore.xml"/>
+      <FILE id="prs00010" name="09_breath_lead.xml" compile="0" resource="1" file="presets/09_breath_lead.xml"/>
+      <FILE id="prs00011" name="10_primes_swell.xml" compile="0" resource="1" file="presets/10_primes_swell.xml"/>
+      <FILE id="prs00012" name="11_hollow_keys.xml" compile="0" resource="1" file="presets/11_hollow_keys.xml"/>
+      <FILE id="prs00013" name="12_sync_sweep.xml" compile="0" resource="1" file="presets/12_sync_sweep.xml"/>
+      <FILE id="prs00014" name="13_membrane.xml" compile="0" resource="1" file="presets/13_membrane.xml"/>
+      <FILE id="prs00015" name="14_night_wind.xml" compile="0" resource="1" file="presets/14_night_wind.xml"/>
+      <FILE id="prs00016" name="15_octave_shimmer.xml" compile="0" resource="1" file="presets/15_octave_shimmer.xml"/>
+      <FILE id="prs00017" name="16_morph_garden.xml" compile="0" resource="1" file="presets/16_morph_garden.xml"/>
+    </GROUP>
     <GROUP id="srcGrp1" name="src">
       <FILE id="procH01" name="PluginProcessor.h" compile="0" resource="0"
             file="src/PluginProcessor.h"/>
@@ -16,8 +35,17 @@
       <FILE id="editH01" name="PluginEditor.h" compile="0" resource="0" file="src/PluginEditor.h"/>
       <FILE id="editC01" name="PluginEditor.cpp" compile="1" resource="0"
             file="src/PluginEditor.cpp"/>
+      <FILE id="prsH001" name="Presets.h" compile="0" resource="0" file="src/Presets.h"/>
+      <FILE id="wanH001" name="WaveAnalyzer.h" compile="0" resource="0" file="src/WaveAnalyzer.h"/>
       <GROUP id="dspGrp01" name="dsp">
-        <FILE id="swlH001" name="Swirl.h" compile="0" resource="0" file="src/dsp/Swirl.h"/>
+        <FILE id="comH001" name="Common.h" compile="0" resource="0" file="src/dsp/Common.h"/>
+        <FILE id="engH001" name="Engine.h" compile="0" resource="0" file="src/dsp/Engine.h"/>
+        <FILE id="modH001" name="Mod.h" compile="0" resource="0" file="src/dsp/Mod.h"/>
+        <FILE id="mdlH001" name="Modules.h" compile="0" resource="0" file="src/dsp/Modules.h"/>
+        <FILE id="mrpH001" name="Morph.h" compile="0" resource="0" file="src/dsp/Morph.h"/>
+        <FILE id="prtH001" name="Partials.h" compile="0" resource="0" file="src/dsp/Partials.h"/>
+        <FILE id="spcH001" name="Spectral.h" compile="0" resource="0" file="src/dsp/Spectral.h"/>
+        <FILE id="wavH001" name="Wave.h" compile="0" resource="0" file="src/dsp/Wave.h"/>
       </GROUP>
       <GROUP id="prmGrp01" name="parameters">
         <FILE id="pidH001" name="ParameterIDs.h" compile="0" resource="0" file="src/parameters/ParameterIDs.h"/>
@@ -27,6 +55,11 @@
       <GROUP id="uiGrp01" name="ui">
         <FILE id="verH001" name="VersionCompare.h" compile="0" resource="0"
               file="src/ui/VersionCompare.h"/>
+        <FILE id="thmH001" name="Theme.h" compile="0" resource="0" file="src/ui/Theme.h"/>
+        <FILE id="edpH001" name="EditPage.h" compile="0" resource="0" file="src/ui/EditPage.h"/>
+        <FILE id="mdpH001" name="ModPage.h" compile="0" resource="0" file="src/ui/ModPage.h"/>
+        <FILE id="mrpH002" name="MorphPage.h" compile="0" resource="0" file="src/ui/MorphPage.h"/>
+        <FILE id="wvpH001" name="WavePage.h" compile="0" resource="0" file="src/ui/WavePage.h"/>
       </GROUP>
     </GROUP>
   </MAINGROUP>
