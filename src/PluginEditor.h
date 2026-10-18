@@ -4,7 +4,8 @@
 
 #include <atomic>
 
-class V4JBAudioProcessorEditor : public juce::AudioProcessorEditor
+class V4JBAudioProcessorEditor : public juce::AudioProcessorEditor,
+                                 private juce::MidiKeyboardState::Listener
 {
 public:
     explicit V4JBAudioProcessorEditor (V4JBAudioProcessor&);
@@ -15,6 +16,8 @@ public:
     void mouseUp (const juce::MouseEvent&) override;
 
 private:
+    void handleNoteOn (juce::MidiKeyboardState*, int midiChannel, int midiNoteNumber, float velocity) override;
+    void handleNoteOff (juce::MidiKeyboardState*, int midiChannel, int midiNoteNumber, float velocity) override;
     juce::Rectangle<int> titleHitBounds() const;
     juce::Rectangle<int> textureArea() const;
 
@@ -71,6 +74,10 @@ private:
     Knob haunt   { proc.apvts, ParamID::haunt,   "Haunt" };
     AboutBox aboutBox;
     juce::Image logo;
+
+    // Standalone only. Declared after the state so the component dies first.
+    juce::MidiKeyboardState keyboardState;
+    std::unique_ptr<juce::MidiKeyboardComponent> keyboard;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (V4JBAudioProcessorEditor)
 };

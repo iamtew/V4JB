@@ -9,6 +9,9 @@ namespace
 constexpr int kEditorW = 720;
 constexpr int kEditorH = 460;
 constexpr int kPad = 8;
+constexpr int kKeyboardH = 72;
+constexpr int kKeyLow = 36;   // C2
+constexpr int kKeyHigh = 72;  // C5
 constexpr int kTitleH = 40;
 constexpr int kTitleHitW = 150;
 constexpr int kLabelH = 12;
@@ -28,6 +31,15 @@ const juce::Colour kWhite { 0xffffffff };
 juce::Font boldFont (float h)
 {
     return juce::Font (juce::FontOptions (h).withStyle ("Bold"));
+}
+
+int whiteKeysInRange (int low, int high)
+{
+    int n = 0;
+    for (int note = low; note <= high; ++note)
+        if (! juce::MidiMessage::isMidiNoteBlack (note))
+            ++n;
+    return juce::jmax (1, n);
 }
 } // namespace
 
@@ -232,12 +244,48 @@ V4JBAudioProcessorEditor::V4JBAudioProcessorEditor (V4JBAudioProcessor& p)
         addAndMakeVisible (k);
     addChildComponent (aboutBox);
 
-    setSize (kEditorW, kEditorH);
+    // VST3 stays keyboard-free. The host already has keys; this strip is for Standalone.
+    if (proc.wrapperType == juce::AudioProcessor::wrapperType_Standalone)
+    {
+        keyboard = std::make_unique<juce::MidiKeyboardComponent> (
+            keyboardState, juce::MidiKeyboardComponent::horizontalKeyboard);
+        keyboard->setAvailableRange (kKeyLow, kKeyHigh);
+        keyboard->setScrollButtonsVisible (false);
+        // Mouse only. The component's QWERTY map stays off while it never takes focus.
+        keyboard->setWantsKeyboardFocus (false);
+        keyboard->setMouseClickGrabsKeyboardFocus (false);
+        keyboard->setColour (juce::MidiKeyboardComponent::whiteNoteColourId, kFog);
+        keyboard->setColour (juce::MidiKeyboardComponent::blackNoteColourId, kNight);
+        keyboard->setColour (juce::MidiKeyboardComponent::keySeparatorLineColourId, kDusk);
+        keyboard->setColour (juce::MidiKeyboardComponent::mouseOverKeyOverlayColourId, kTeal.withAlpha (0.35f));
+        keyboard->setColour (juce::MidiKeyboardComponent::keyDownOverlayColourId, kTeal.withAlpha (0.65f));
+        keyboard->setColour (juce::MidiKeyboardComponent::textLabelColourId, kNight);
+        keyboard->setColour (juce::MidiKeyboardComponent::shadowColourId, juce::Colours::transparentBlack);
+        keyboardState.addListener (this);
+        addAndMakeVisible (*keyboard);
+    }
+
+    setSize (kEditorW, kEditorH + (keyboard != nullptr ? kKeyboardH : 0));
 }
 
 V4JBAudioProcessorEditor::~V4JBAudioProcessorEditor()
 {
+    if (keyboard != nullptr)
+    {
+        keyboardState.allNotesOff (1);  // note-offs reach Swirl before the keys are destroyed
+        keyboardState.removeListener (this);
+    }
     setLookAndFeel (nullptr);
+}
+
+void V4JBAudioProcessorEditor::handleNoteOn (juce::MidiKeyboardState*, int, int note, float)
+{
+    proc.pushKey (note, true);
+}
+
+void V4JBAudioProcessorEditor::handleNoteOff (juce::MidiKeyboardState*, int, int note, float)
+{
+    proc.pushKey (note, false);
 }
 
 void V4JBAudioProcessorEditor::paint (juce::Graphics& g)
@@ -265,7 +313,9 @@ void V4JBAudioProcessorEditor::paint (juce::Graphics& g)
     g.fillRoundedRectangle (well.toFloat(), 4.f);
     g.setColour (kFog.withAlpha (0.4f));
     g.setFont (boldFont (11.f));
-    g.drawText ("Hold a MIDI note to play", well.removeFromBottom (kHintH), juce::Justification::centred, false);
+    g.drawText (keyboard != nullptr ? "Click a key, or hold a MIDI note"
+                                   : "Hold a MIDI note to play",
+                well.removeFromBottom (kHintH), juce::Justification::centred, false);
 
     g.setColour (kNight.brighter (0.08f));
     g.drawRoundedRectangle (getLocalBounds().toFloat().reduced (1.5f), 2.f, 2.f);
@@ -290,6 +340,13 @@ void V4JBAudioProcessorEditor::resized()
             k->setBounds (row.removeFromLeft (kMacroW).reduced (kPad, 0));
     }
 
+    if (keyboard != nullptr)
+    {
+        auto keys = getLocalBounds().reduced (kPad).removeFromBottom (kKeyboardH);
+        keyboard->setBounds (keys);
+        keyboard->setKeyWidth ((float) keys.getWidth() / (float) whiteKeysInRange (kKeyLow, kKeyHigh));
+    }
+
     aboutBox.setBounds (getLocalBounds());
 }
 
@@ -302,6 +359,8 @@ juce::Rectangle<int> V4JBAudioProcessorEditor::textureArea() const
 {
     auto r = getLocalBounds().reduced (kPad);
     r.removeFromTop (kTitleH + 44);
+    if (keyboard != nullptr)
+        r.removeFromBottom (kKeyboardH);
     return r;
 }
 
