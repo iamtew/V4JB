@@ -140,3 +140,30 @@ strong { color: var(--teal); }
   border-radius: 2px;
   font-size: 0.9em;
 }
+.md img {
+  display: block;
+  width: 100%;
+  margin: 0.8rem 0;
+  border-radius: 4px;
+  border: 1px solid #000;
+}
+.md table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92em;
+  margin: 0.6rem 0;
+}
+.md th, .md td {
+  border: 1px solid #000;
+  padding: 0.3rem 0.5rem;
+  text-align: left;
+  vertical-align: top;
+}
+.md th { color: var(--teal); }
+
+.shots {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+}

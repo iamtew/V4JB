@@ -37,7 +37,16 @@
     document.title = allow[doc] + " | V4JB";
     fetch(doc)
       .then((r) => r.ok ? r.text() : Promise.reject())
-      .then((t) => { document.getElementById("md").innerHTML = marked.parse(t); })
+      .then((t) => {
+        const md = document.getElementById("md");
+        md.innerHTML = marked.parse(t);
+        md.querySelectorAll("h1, h2, h3").forEach((h) => {
+          if (!h.id)
+            h.id = h.textContent.trim().toLowerCase().replace(/[^\w]+/g, "-").replace(/^-|-$/g, "");
+        });
+        if (location.hash)
+          document.getElementById(location.hash.slice(1))?.scrollIntoView();
+      })
       .catch(() => { document.getElementById("md").textContent = "Could not load that note."; });
   </script>
 </body>
