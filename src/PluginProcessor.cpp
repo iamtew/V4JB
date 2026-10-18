@@ -461,18 +461,18 @@ bool V4JBAudioProcessor::loadMorphFile (const juce::File& f)
 
 // ---------------------------------------------------------------- waves
 
-void V4JBAudioProcessor::loadWave (int w, const juce::File& file)
+void V4JBAudioProcessor::loadWave (int w, const juce::String& source)
 {
     const int gen = ++waveGen[w];
     juce::WeakReference<V4JBAudioProcessor> weak (this);
-    analysisPool.addJob ([weak, w, gen, file]
+    analysisPool.addJob ([weak, w, gen, source]
     {
-        auto data = WaveAnalyzer::analyse (file);
-        juce::MessageManager::callAsync ([weak, w, gen, file, data]
+        auto data = WaveAnalyzer::analyse (source);
+        juce::MessageManager::callAsync ([weak, w, gen, source, data]
         {
             if (auto* self = weak.get())
                 if (self->waveGen[w] == gen && data != nullptr)  // a newer load wins
-                    self->publishWave (w, data, file);
+                    self->publishWave (w, data, source);
         });
     });
 }
@@ -483,13 +483,13 @@ void V4JBAudioProcessor::clearWave (int w)
     publishWave (w, nullptr, {});
 }
 
-void V4JBAudioProcessor::publishWave (int w, std::shared_ptr<WaveData> data, juce::File file)
+void V4JBAudioProcessor::publishWave (int w, std::shared_ptr<WaveData> data, const juce::String& source)
 {
     waveLive[w].store (data.get());
     if (waveOwned[w] != nullptr)
         retired.push_back ({ waveOwned[w], blockCounter.load (std::memory_order_acquire), juce::Time::getMillisecondCounter() });
     waveOwned[w] = std::move (data);
-    waveFile[w] = file;
+    waveSource[w] = source;
     ++waveVersion;
 }
 
@@ -524,8 +524,8 @@ std::unique_ptr<juce::XmlElement> V4JBAudioProcessor::createStateXml()
     auto state = apvts.copyState();
     state.removeChild (state.getChildWithName ("MORPH"), nullptr);
     state.appendChild (morphTree (true, true), nullptr);
-    state.setProperty ("waveA", waveFile[0].getFullPathName(), nullptr);
-    state.setProperty ("waveB", waveFile[1].getFullPathName(), nullptr);
+    state.setProperty ("waveA", waveSource[0], nullptr);
+    state.setProperty ("waveB", waveSource[1], nullptr);
     state.setProperty ("presetName", currentPresetName, nullptr);
     state.setProperty ("uiScale", uiScale, nullptr);
     return state.createXml();
@@ -539,7 +539,10 @@ void V4JBAudioProcessor::applyStateXml (const juce::XmlElement& xml, bool fromPr
         // Factory presets may be partial: start from defaults, then apply what is listed.
         resetParamsToDefaults();
         for (auto* e : xml.getChildWithTagNameIterator ("PARAM"))
+        {
+            jassert (apvts.getParameter (e->getStringAttribute ("id")) != nullptr);  // typo in a preset id
             setParam (e->getStringAttribute ("id"), (float) e->getDoubleAttribute ("value"));
+        }
     }
     else
     {
@@ -552,10 +555,10 @@ void V4JBAudioProcessor::applyStateXml (const juce::XmlElement& xml, bool fromPr
     {
         const auto key = w == 0 ? "waveA" : "waveB";
         if (! xml.hasAttribute (key))
-            continue;  // factory presets keep whatever waves are loaded
-        const juce::File f (xml.getStringAttribute (key));
-        if (xml.getStringAttribute (key).isNotEmpty() && f.existsAsFile())
-            loadWave (w, f);
+            continue;  // presets without waveA/waveB keep whatever waves are loaded
+        const auto src = xml.getStringAttribute (key);
+        if (src.startsWith (WaveAnalyzer::kFactoryPrefix) || (src.isNotEmpty() && juce::File::isAbsolutePath (src) && juce::File (src).existsAsFile()))
+            loadWave (w, src);
         else
             clearWave (w);
     }

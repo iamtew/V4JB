@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Mono lead: Even Shift spacing, Harmonic Add on partial 3 swelling with aftertouch, velocity opening the Lowpass. -->
+<PARAMS presetName="Harmonic Lead" category="Leads">
+  <PARAM id="sp_algo" value="12"/>
+  <PARAM id="sp_depth" value="0.35"/>
+  <PARAM id="nz_mix" value="0.05"/>
+  <PARAM id="s2_type" value="26"/>
+  <PARAM id="s2_main" value="0.15"/>
+  <PARAM id="s2_p1" value="0.6"/>
+  <PARAM id="s2_p2" value="0.4"/>
+  <PARAM id="s2_p3" value="0.3"/>
+  <PARAM id="s2_p4" value="0.2"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s2_ms" value="3"/>
+  <PARAM id="s2_ma" value="0.4"/>
+  <PARAM id="s3_type" value="7"/>
+  <PARAM id="s3_main" value="0.6"/>
+  <PARAM id="s3_ms" value="1"/>
+  <PARAM id="s3_ma" value="0.25"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="e1_a" value="0.02"/>
+  <PARAM id="e1_d" value="0.3"/>
+  <PARAM id="e1_s" value="0.8"/>
+  <PARAM id="e1_r" value="0.4"/>
+  <PARAM id="e1_vel" value="0.6"/>
+  <PARAM id="poly" value="1"/>
+  <PARAM id="glide" value="0.06"/>
+  <PARAM id="dl_on" value="1"/>
+  <PARAM id="dl_div" value="1"/>
+  <PARAM id="dl_fb" value="0.35"/>
+  <PARAM id="dl_mix" value="0.2"/>
+  <PARAM id="rv_mix" value="0.25"/>
+</PARAMS>

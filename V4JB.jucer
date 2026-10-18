@@ -26,6 +26,29 @@
       <FILE id="prs00015" name="14_night_wind.xml" compile="0" resource="1" file="presets/14_night_wind.xml"/>
       <FILE id="prs00016" name="15_octave_shimmer.xml" compile="0" resource="1" file="presets/15_octave_shimmer.xml"/>
       <FILE id="prs00017" name="16_morph_garden.xml" compile="0" resource="1" file="presets/16_morph_garden.xml"/>
+      <FILE id="prs00018" name="17_vowel_choir.xml" compile="0" resource="1" file="presets/17_vowel_choir.xml"/>
+      <FILE id="prs00019" name="18_twin_spectra.xml" compile="0" resource="1" file="presets/18_twin_spectra.xml"/>
+      <FILE id="prs00020" name="19_bell_wave.xml" compile="0" resource="1" file="presets/19_bell_wave.xml"/>
+      <FILE id="prs00021" name="20_rain_glass.xml" compile="0" resource="1" file="presets/20_rain_glass.xml"/>
+      <FILE id="prs00022" name="21_frozen_hymn.xml" compile="0" resource="1" file="presets/21_frozen_hymn.xml"/>
+      <FILE id="prs00023" name="22_golden_hours.xml" compile="0" resource="1" file="presets/22_golden_hours.xml"/>
+      <FILE id="prs00024" name="23_stair_organ.xml" compile="0" resource="1" file="presets/23_stair_organ.xml"/>
+      <FILE id="prs00025" name="24_comb_drift.xml" compile="0" resource="1" file="presets/24_comb_drift.xml"/>
+      <FILE id="prs00026" name="25_hyper_air.xml" compile="0" resource="1" file="presets/25_hyper_air.xml"/>
+      <FILE id="prs00027" name="26_tremor_pad.xml" compile="0" resource="1" file="presets/26_tremor_pad.xml"/>
+      <FILE id="prs00028" name="27_second_sun.xml" compile="0" resource="1" file="presets/27_second_sun.xml"/>
+      <FILE id="prs00029" name="28_fold_bass.xml" compile="0" resource="1" file="presets/28_fold_bass.xml"/>
+      <FILE id="prs00030" name="29_harmonic_lead.xml" compile="0" resource="1" file="presets/29_harmonic_lead.xml"/>
+      <FILE id="prs00031" name="30_bar_mallets.xml" compile="0" resource="1" file="presets/30_bar_mallets.xml"/>
+      <FILE id="prs00032" name="31_odd_machine.xml" compile="0" resource="1" file="presets/31_odd_machine.xml"/>
+      <FILE id="prs00033" name="32_offset_swarm.xml" compile="0" resource="1" file="presets/32_offset_swarm.xml"/>
+      <FILE id="prs00034" name="33_economy_strings.xml" compile="0" resource="1" file="presets/33_economy_strings.xml"/>
+      <GROUP id="wavGrp01" name="waves">
+        <FILE id="wav00001" name="bells.wav" compile="0" resource="1" file="presets/waves/bells.wav"/>
+        <FILE id="wav00002" name="chords.wav" compile="0" resource="1" file="presets/waves/chords.wav"/>
+        <FILE id="wav00003" name="rain.wav" compile="0" resource="1" file="presets/waves/rain.wav"/>
+        <FILE id="wav00004" name="vowels.wav" compile="0" resource="1" file="presets/waves/vowels.wav"/>
+      </GROUP>
     </GROUP>
     <GROUP id="srcGrp1" name="src">
       <FILE id="procH01" name="PluginProcessor.h" compile="0" resource="0"

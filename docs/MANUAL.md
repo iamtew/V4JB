@@ -66,4 +66,28 @@ The XY pad blends four snapshots of the macros, one per corner (A bottom-left, B
 
 ## Wave page
 
-Load an audio file into **A** and/or **B**. V4JB measures how loud each frequency is through the file. A **Wave** module (on the Edit page) then makes the partials follow it, which works like a vocoder. **Double Wave** follows both, mixed by **Balance** (the Character macro moves it too). **Start / End** set the region (End before Start plays it backwards), **Speed** sets how fast it plays (0.25x to 4x). The files are remembered by path in your session.
+Click **Load...** on **A** or **B** and pick a built-in wave (vowels, bells, rain, chords) or **File...** for your own audio. V4JB measures how loud each frequency is through the file. A **Wave** module (on the Edit page) then makes the partials follow it, which works like a vocoder. **Double Wave** follows both, mixed by **Balance** (the Character macro moves it too). **Start / End** set the region (End before Start plays it backwards), **Speed** sets how fast it plays (0.25x to 4x). Your own files are remembered by path in your session, built-in waves by name. Presets in the Waves category load the built-in waves they need.
+
+## Factory presets
+
+34 presets, from Init to Economy Strings. Between them they use every module, every spacing algorithm, all four morph modes and every modulation source, so a good way to learn a feature is to find the preset that shows it off and look at its Edit, Mod and Morph pages.
+
+| Preset | Shows off |
+|---|---|
+| Vowel Choir | Wave on the vowels wave, Root spacing |
+| Twin Spectra | Double Wave, free-running morph path crossfading A and B |
+| Bell Wave | Wave on Source B, mod wheel on the Wave amount |
+| Rain Glass | Wave on rain, key-tracked Notch |
+| Frozen Hymn | Double Wave Freeze, X-Axis Env morph, Env 3 on a filter |
+| Golden Hours | Golden spacing, Adder on a synced LFO |
+| Stair Organ | Fifths spacing, Discrete Adder on the mod wheel |
+| Comb Drift | Every Nth on a sample-and-hold LFO, Drive |
+| Hyper Air | Compress spacing, Hype, Noise module, spectral noise cuts |
+| Tremor Pad | Stretch spacing, Modulator, Phaser |
+| Second Sun | Pairs spacing, Second Tone, free-time delay |
+| Fold Bass | Fold spacing, Clip, mono glide, subs, Drive |
+| Harmonic Lead | Even Shift spacing, Harmonic Add on aftertouch, velocity on a filter |
+| Bar Mallets | Bar spacing, Decay on Key+Vel, Env 2 on a key-tracked filter |
+| Odd Machine | Odd Shift spacing, Sync, X-Axis Env morph with Snap, Env 4 |
+| Offset Swarm | Offset spacing, Detuned, Random Drops, User macro, Pitch |
+| Economy Strings | Economy, Width and Spread, an unlinked macro with an offset |

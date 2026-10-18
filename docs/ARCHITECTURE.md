@@ -8,7 +8,7 @@ JUCE plugin built from `V4JB.jucer` with Projucer and MSBuild (`just build-debug
 - `src/PluginEditor.*` – the shell: top bar (About, presets, Randomize, Economy, Voices, Octave, Pitch, Glide, Volume) and four tabs. Standalone adds a piano strip (C2–C6).
 - `src/ui/` – header-only pages: `Theme.h` (palette, look and feel, Knob/HSlider/Combo/Toggle, spectrum bars), `EditPage.h` (12-slot chain), `ModPage.h` (envelopes, LFOs), `MorphPage.h` (XY pad, path editor, macros), `WavePage.h`. `VersionCompare.h` compares tags for the update checker.
 - `src/dsp/` – the engine, header-only, no JUCE, tested by `just check`: `Common.h`, `Partials.h` (sine bank), `Spectral.h` (slot 1), `Modules.h` (module pool), `Mod.h` (envelopes, LFOs), `Morph.h`, `Wave.h`, `Engine.h` (voices, macro mapping, spectrum taps). See `docs/DSP_NOTES.md`.
-- `src/WaveAnalyzer.h` – audio file to `WaveData` (FFT, worker thread).
+- `src/WaveAnalyzer.h` – audio to `WaveData` (FFT, worker thread). A wave source is an absolute path or `factory:<name>.wav`, which reads a bundled `presets/waves/*.wav` from BinaryData. `tools/make_waves.cpp` (`just waves`) synthesises those files.
 - `src/Presets.h` – factory presets (BinaryData from `presets/*.xml`) and user presets (`Documents/V4JB/Presets`).
 - `src/parameters/` – `ParameterIDs.h` (ids are saved in DAW projects and presets, do not rename) and `ParameterLayout.h` (about 225 parameters, generated in loops).
 
@@ -24,7 +24,7 @@ JUCE plugin built from `V4JB.jucer` with Projucer and MSBuild (`just build-debug
 
 ## State
 
-The APVTS tree (`<PARAMS>`) plus a `<MORPH c0..c3 nodes>` child, `waveA`/`waveB` file paths and `presetName`. User presets are the same XML with `presetName` and `category`. Factory presets list only what differs from the defaults. Morph points and paths can also be saved on their own (`.v4jbmorph`).
+The APVTS tree (`<PARAMS>`) plus a `<MORPH c0..c3 nodes>` child, `waveA`/`waveB` sources (file path or `factory:` name) and `presetName`. Factory presets may set `waveA`/`waveB`; presets without them keep the loaded waves. User presets are the same XML with `presetName` and `category`. Factory presets list only what differs from the defaults. Morph points and paths can also be saved on their own (`.v4jbmorph`).
 
 ## Update check
 

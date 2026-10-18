@@ -28,6 +28,10 @@ Desktop.ini
 tests/*.exe
 tests/*.obj
 
+# just waves
+tools/*.exe
+tools/*.obj
+
 # Third-party reference notes, kept local only
 Loom_II_Technical_Specification_for_Replication.txt
 

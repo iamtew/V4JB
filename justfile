@@ -52,6 +52,11 @@ rebuild: clean build-debug
 vs:
     start {{SOLUTION}}
 
+# Regenerate the built-in Wave sources in presets/waves/ (self-synthesised, committed).
+waves:
+    New-Item -ItemType Directory -Force -Path presets\waves | Out-Null
+    cmd /c "call `"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Auxiliary\Build\vcvars64.bat`" >nul && cl /nologo /EHsc /O2 /W4 /std:c++17 /D_CRT_SECURE_NO_WARNINGS tools\make_waves.cpp /Fo:tools\make_waves.obj /Fe:tools\make_waves.exe && tools\make_waves.exe"
+
 # Header-only checks, no JUCE needed. Exit code != 0 on the first failed assert.
 check:
     cmd /c "call `"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Auxiliary\Build\vcvars64.bat`" >nul && cl /nologo /EHsc /std:c++17 /I src tests\version_check.cpp /Fo:tests\version_check.obj /Fe:tests\version_check.exe && tests\version_check.exe && cl /nologo /EHsc /O2 /W4 /std:c++17 /I src tests\engine_check.cpp /Fo:tests\engine_check.obj /Fe:tests\engine_check.exe && tests\engine_check.exe"

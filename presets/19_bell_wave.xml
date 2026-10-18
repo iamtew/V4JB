@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Wave module reading Source B (bells). The mod wheel pushes the Wave amount; Decay lets highs die first. -->
+<PARAMS presetName="Bell Wave" category="Bells" waveB="factory:bells.wav">
+  <PARAM id="sp_algo" value="15"/>
+  <PARAM id="sp_depth" value="0.5"/>
+  <PARAM id="nz_mix" value="0"/>
+  <PARAM id="s2_type" value="23"/>
+  <PARAM id="s2_main" value="0.5"/>
+  <PARAM id="s2_p3" value="1"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s2_ms" value="2"/>
+  <PARAM id="s2_ma" value="0.5"/>
+  <PARAM id="s3_type" value="12"/>
+  <PARAM id="s3_main" value="0.4"/>
+  <PARAM id="s3_p1" value="0.6"/>
+  <PARAM id="s3_p2" value="0.2"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="e1_a" value="0.005"/>
+  <PARAM id="e1_d" value="3"/>
+  <PARAM id="e1_s" value="0"/>
+  <PARAM id="e1_r" value="3"/>
+  <PARAM id="rv_mix" value="0.4"/>
+</PARAMS>

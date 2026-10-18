@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Every Nth thins the spectrum; LFO 3 (sample and hold) picks a new N. Tail smooths the jumps, light Drive warms it. -->
+<PARAMS presetName="Comb Drift" category="Moving Pads">
+  <PARAM id="sp_algo" value="10"/>
+  <PARAM id="sp_depth" value="0.4"/>
+  <PARAM id="nz_mix" value="0.05"/>
+  <PARAM id="s2_type" value="6"/>
+  <PARAM id="s2_main" value="0.15"/>
+  <PARAM id="s2_p1" value="0.85"/>
+  <PARAM id="s2_p2" value="0"/>
+  <PARAM id="s2_ls" value="3"/>
+  <PARAM id="s2_la" value="0.4"/>
+  <PARAM id="s3_type" value="22"/>
+  <PARAM id="s3_main" value="0.5"/>
+  <PARAM id="s4_type" value="7"/>
+  <PARAM id="s4_main" value="0.75"/>
+  <PARAM id="l3_shape" value="4"/>
+  <PARAM id="l3_rate" value="0.6"/>
+  <PARAM id="dr_on" value="1"/>
+  <PARAM id="dr_amt" value="0.25"/>
+  <PARAM id="dr_mix" value="0.3"/>
+  <PARAM id="rv_mix" value="0.4"/>
+</PARAMS>

@@ -7,10 +7,43 @@
 // Turns an audio file into a v4jb::WaveData: a 2048-point FFT every 1024
 // samples, magnitudes gathered into 256 log-spaced bands (20 Hz..20 kHz), then
 // peak-normalised. Runs on a worker thread, never the audio thread.
-// Returns nullptr if the file cannot be read.
+// Returns nullptr if the source cannot be read.
 namespace WaveAnalyzer
 {
-inline std::shared_ptr<v4jb::WaveData> analyse (const juce::File& file)
+// Sources: an absolute path, or kFactoryPrefix + a bundled file name (presets/waves/*.wav, BinaryData).
+inline const juce::String kFactoryPrefix { "factory:" };
+
+// Original file names of the bundled .wav resources, e.g. "vowels.wav".
+inline juce::StringArray factoryWaves()
+{
+    juce::StringArray names;
+    for (int i = 0; i < BinaryData::namedResourceListSize; ++i)
+    {
+        const juce::String file = BinaryData::getNamedResourceOriginalFilename (BinaryData::namedResourceList[i]);
+        if (file.endsWithIgnoreCase (".wav"))
+            names.add (file);
+    }
+    names.sort (true);
+    return names;
+}
+
+inline std::unique_ptr<juce::AudioFormatReader> openReader (juce::AudioFormatManager& formats, const juce::String& source)
+{
+    if (! source.startsWith (kFactoryPrefix))
+        return std::unique_ptr<juce::AudioFormatReader> (formats.createReaderFor (juce::File (source)));
+    const auto name = source.fromFirstOccurrenceOf (kFactoryPrefix, false, false);
+    for (int i = 0; i < BinaryData::namedResourceListSize; ++i)
+        if (name == BinaryData::getNamedResourceOriginalFilename (BinaryData::namedResourceList[i]))
+        {
+            int size = 0;
+            const char* data = BinaryData::getNamedResource (BinaryData::namedResourceList[i], size);
+            return std::unique_ptr<juce::AudioFormatReader> (
+                formats.createReaderFor (std::make_unique<juce::MemoryInputStream> (data, (size_t) size, false)));
+        }
+    return nullptr;
+}
+
+inline std::shared_ptr<v4jb::WaveData> analyse (const juce::String& source)
 {
     using v4jb::WaveData;
     constexpr int kOrder = 11, kSize = 1 << kOrder, kHop = 1024, kMaxFrames = 2048;
@@ -18,7 +51,7 @@ inline std::shared_ptr<v4jb::WaveData> analyse (const juce::File& file)
 
     juce::AudioFormatManager formats;
     formats.registerBasicFormats();
-    std::unique_ptr<juce::AudioFormatReader> reader (formats.createReaderFor (file));
+    auto reader = openReader (formats, source);
     if (reader == nullptr || reader->lengthInSamples <= 0 || reader->sampleRate <= 0.0)
         return nullptr;
 

@@ -58,10 +58,13 @@ public:
     bool loadMorphFile (const juce::File& f);
 
     // Waves: analysis runs on a worker; getWave() returns the current data (may be null).
-    void loadWave (int w, const juce::File& file);
+    // A source is an absolute path or "factory:<name>.wav" (bundled, see WaveAnalyzer::kFactoryPrefix).
+    void loadWave (int w, const juce::String& source);
     void clearWave (int w);
     std::shared_ptr<v4jb::WaveData> getWave (int w) const { return waveOwned[w]; }
-    juce::File getWaveFile (int w) const { return waveFile[w]; }
+    juce::String getWaveName (int w) const { return waveSource[w].fromLastOccurrenceOf (":", false, false)
+                                                                 .fromLastOccurrenceOf ("\\", false, false)
+                                                                 .fromLastOccurrenceOf ("/", false, false); }
     std::atomic<int> waveVersion { 0 };  // bumps when a wave changes, the UI polls it
 
     // Presets and randomizer.
@@ -86,7 +89,7 @@ private:
     void applyMorphTree (const juce::ValueTree& t, bool resetMissing);
     void setParam (const juce::String& id, float realValue);
     void resetParamsToDefaults();
-    void publishWave (int w, std::shared_ptr<v4jb::WaveData> data, juce::File file);
+    void publishWave (int w, std::shared_ptr<v4jb::WaveData> data, const juce::String& source);
 
     // On-screen keys must not lock or allocate in processBlock. Feeding
     // MidiKeyboardState into the MIDI buffer would do both, so clicks land here.
@@ -116,7 +119,7 @@ private:
     // two more blocks, so it can never be read after free.
     std::shared_ptr<v4jb::WaveData> waveOwned[2];
     std::atomic<v4jb::WaveData*> waveLive[2] { nullptr, nullptr };
-    juce::File waveFile[2];
+    juce::String waveSource[2];
     int waveGen[2] { 0, 0 };
     struct Retired { std::shared_ptr<v4jb::WaveData> data; juce::int64 block; juce::uint32 time; };
     std::vector<Retired> retired;

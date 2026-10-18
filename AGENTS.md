@@ -17,7 +17,9 @@ src/
  parameters/ParameterIDs.h ParameterLayout.h
  ui/Theme.h EditPage.h ModPage.h MorphPage.h WavePage.h VersionCompare.h
 presets/*.xml             factory presets (BinaryData)
+presets/waves/*.wav       built-in Wave sources (BinaryData, made by `just waves`)
 tests/version_check.cpp engine_check.cpp
+tools/make_waves.cpp      synthesises presets/waves/
 docs/
 installer/
 justfile

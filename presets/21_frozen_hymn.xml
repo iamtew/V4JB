@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Double Wave frozen on one moment of chords + vowels. X-Axis Env morph rises with every note; Env 3 slowly opens the Lowpass. -->
+<PARAMS presetName="Frozen Hymn" category="Swells" waveA="factory:chords.wav" waveB="factory:vowels.wav">
+  <PARAM id="nz_mix" value="0.08"/>
+  <PARAM id="s2_type" value="24"/>
+  <PARAM id="s2_main" value="0.85"/>
+  <PARAM id="s2_p4" value="1"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s3_type" value="7"/>
+  <PARAM id="s3_main" value="0.4"/>
+  <PARAM id="s3_es" value="3"/>
+  <PARAM id="s3_ea" value="0.5"/>
+  <PARAM id="s4_type" value="22"/>
+  <PARAM id="s4_main" value="0.4"/>
+  <PARAM id="wa_start" value="0.25"/>
+  <PARAM id="wb_start" value="0.5"/>
+  <PARAM id="e1_a" value="3"/>
+  <PARAM id="e1_r" value="5"/>
+  <PARAM id="e3_a" value="6"/>
+  <PARAM id="e3_d" value="4"/>
+  <PARAM id="e3_s" value="0.7"/>
+  <PARAM id="e3_r" value="5"/>
+  <PARAM id="mmode" value="3"/>
+  <PARAM id="mtime" value="8"/>
+  <PARAM id="rv_size" value="0.9"/>
+  <PARAM id="rv_mix" value="0.5"/>
+  <MORPH c0="0.4 0.4 0.3 0.5 0.6 0.5 0.3 0.4 0.5 0.5 0.5"
+         c1="0.6 0.4 0.3 0.5 0.6 0.5 0.4 0.4 0.5 0.5 0.5"
+         c2="0.4 0.7 0.7 0.5 0.6 0.5 0.6 0.5 0.6 0.6 0.5"
+         c3="0.7 0.7 0.75 0.5 0.6 0.5 0.7 0.5 0.6 0.7 0.5"
+         nodes="0 0.05 2;0.6 0.7 2;1 0.95 2"/>
+</PARAMS>

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Theme.h"
+#include "../WaveAnalyzer.h"
 
 // Wave page: load the two audio files the Wave and Double Wave modules follow,
 // set the playback region and speed, and see the analysed spectra.
@@ -24,7 +25,29 @@ struct WavePanel : public juce::Component
         endParam = p.apvts.getRawParameterValue (ParamID::wave (w, "end"));
     }
 
+    // Built-in waves first, then a file browser.
     void choose()
+    {
+        const auto builtIn = WaveAnalyzer::factoryWaves();
+        juce::PopupMenu menu;
+        menu.addSectionHeader ("Built-in");
+        for (int i = 0; i < builtIn.size(); ++i)
+            menu.addItem (i + 1, builtIn[i].upToLastOccurrenceOf (".", false, false));
+        menu.addSeparator();
+        menu.addItem (-1, "File...");
+        juce::Component::SafePointer<WavePanel> safe (this);
+        menu.showMenuAsync (juce::PopupMenu::Options().withTargetComponent (&loadBtn), [safe, builtIn] (int id)
+        {
+            if (safe == nullptr || id == 0)
+                return;
+            if (id == -1)
+                safe->browse();
+            else
+                safe->proc.loadWave (safe->index, WaveAnalyzer::kFactoryPrefix + builtIn[id - 1]);
+        });
+    }
+
+    void browse()
     {
         chooser = std::make_unique<juce::FileChooser> ("Load audio for Wave " + juce::String (index == 0 ? "A" : "B"),
                                                        juce::File(), "*.wav;*.aif;*.aiff;*.flac;*.ogg;*.mp3");
@@ -33,7 +56,7 @@ struct WavePanel : public juce::Component
                               [safe] (const juce::FileChooser& fc)
                               {
                                   if (safe != nullptr && fc.getResult().existsAsFile())
-                                      safe->proc.loadWave (safe->index, fc.getResult());
+                                      safe->proc.loadWave (safe->index, fc.getResult().getFullPathName());
                               });
     }
 
@@ -75,7 +98,7 @@ struct WavePanel : public juce::Component
             g.drawVerticalLine ((int) x0, (float) view.getY(), (float) view.getBottom());
             g.drawVerticalLine ((int) x1, (float) view.getY(), (float) view.getBottom());
             g.setColour (kFog);
-            g.drawText (proc.getWaveFile (index).getFileName() + "  (" + juce::String (data->seconds, 1) + " s)",
+            g.drawText (proc.getWaveName (index) + "  (" + juce::String (data->seconds, 1) + " s)",
                         nameArea, juce::Justification::centredLeft, true);
         }
         else
