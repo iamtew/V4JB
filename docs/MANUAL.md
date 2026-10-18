@@ -70,24 +70,25 @@ Click **Load...** on **A** or **B** and pick a built-in wave (vowels, bells, rai
 
 ## Factory presets
 
-34 presets, from Init to Economy Strings. Between them they use every module, every spacing algorithm, all four morph modes and every modulation source, so a good way to learn a feature is to find the preset that shows it off and look at its Edit, Mod and Morph pages.
+194 presets in 16 categories, at least 10 in each. Between them they use every module, every spacing algorithm, all four morph modes and every modulation source. From number 16 on, each file in `presets/` starts with a one-line comment saying what the preset shows off; opening its Edit, Mod and Morph pages is a good way to learn a feature.
 
-| Preset | Shows off |
+| Category | What you get |
 |---|---|
-| Vowel Choir | Wave on the vowels wave, Root spacing |
-| Twin Spectra | Double Wave, free-running morph path crossfading A and B |
-| Bell Wave | Wave on Source B, mod wheel on the Wave amount |
-| Rain Glass | Wave on rain, key-tracked Notch |
-| Frozen Hymn | Double Wave Freeze, X-Axis Env morph, Env 3 on a filter |
-| Golden Hours | Golden spacing, Adder on a synced LFO |
-| Stair Organ | Fifths spacing, Discrete Adder on the mod wheel |
-| Comb Drift | Every Nth on a sample-and-hold LFO, Drive |
-| Hyper Air | Compress spacing, Hype, Noise module, spectral noise cuts |
-| Tremor Pad | Stretch spacing, Modulator, Phaser |
-| Second Sun | Pairs spacing, Second Tone, free-time delay |
-| Fold Bass | Fold spacing, Clip, mono glide, subs, Drive |
-| Harmonic Lead | Even Shift spacing, Harmonic Add on aftertouch, velocity on a filter |
-| Bar Mallets | Bar spacing, Decay on Key+Vel, Env 2 on a key-tracked filter |
-| Odd Machine | Odd Shift spacing, Sync, X-Axis Env morph with Snap, Env 4 |
-| Offset Swarm | Offset spacing, Detuned, Random Drops, User macro, Pitch |
-| Economy Strings | Economy, Width and Spread, an unlinked macro with an offset |
+| Atmospheres | Slow, noisy, reverberant spaces: blurred, dripping, drifting |
+| Textures | Grainier beds: Noise module, Every Nth and sample-and-hold flutter, crackle |
+| Pads | Soft sustained chords with gentle movement |
+| Moving Pads | Pads that pulse or walk in time: Modulator, Phrase, synced LFOs, Path Sync morph |
+| Swells | Long attacks that open up as they grow (Env 3 routes, X-Axis Env morph) |
+| Drones | Held, evolving tones with subs, very slow LFOs and free morph paths |
+| Organs | Instant, full-sustain registers: 5-Sines, Odd/Even, Discrete Adder, Octaver |
+| Keys | Electric pianos, clavs, vibes: fast attack, decay, velocity on the tone |
+| Bells | Struck and bowed metal: Bell, Bar, Primes spacing with Decay |
+| Plucks | Short pitched plucks: guitars, harps, synth plucks |
+| Percussive | Drums, blocks, shakers and clicks |
+| Basses | Subs, plucks and growls, many mono with glide |
+| Leads | Mono and duo leads with mod wheel, aftertouch and velocity routes |
+| Polys | Chord sounds: brass, stabs, stacks; several in Economy for big chords |
+| SFX | Sweeps, alarms, static, glitches |
+| Waves | Built on the built-in waves: forwards, backwards, sliced, frozen, crossfaded |
+
+Good places to start: Fog Bank, Morph Garden (the morph pad), Vowel Choir and Rain Choir (the Wave page), Odd Machine (X-Axis Env with Snap), Fold Bass and Dream Rhodes.

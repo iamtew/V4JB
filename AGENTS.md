@@ -20,6 +20,7 @@ presets/*.xml             factory presets (BinaryData)
 presets/waves/*.wav       built-in Wave sources (BinaryData, made by `just waves`)
 tests/version_check.cpp engine_check.cpp
 tools/make_waves.cpp      synthesises presets/waves/
+tools/check_presets.ps1   validates presets/*.xml (run by `just check`)
 docs/
 installer/
 justfile
