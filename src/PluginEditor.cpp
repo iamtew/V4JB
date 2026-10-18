@@ -4,34 +4,18 @@
 #include <thread>
 #include <vector>
 
+using namespace ui;
+
 namespace
 {
-constexpr int kEditorW = 720;
-constexpr int kEditorH = 460;
+constexpr int kEditorW = 1220;
+constexpr int kEditorH = 800;
 constexpr int kPad = 8;
+constexpr int kTopH = 64;
 constexpr int kKeyboardH = 72;
 constexpr int kKeyLow = 36;   // C2
-constexpr int kKeyHigh = 72;  // C5
-constexpr int kTitleH = 40;
-constexpr int kTitleHitW = 150;
-constexpr int kLabelH = 12;
-constexpr int kKnobW = 72;
-constexpr int kMacroW = 130;
-constexpr int kMacroH = 150;
-constexpr int kHintH = 28;
-
-// "Fog at night" palette, same hex as bootstrap.md and docs/style.css.
-const juce::Colour kNight { 0xff14121f };
-const juce::Colour kDusk  { 0xff24233a };
-const juce::Colour kFog   { 0xff9aa3b5 };
-const juce::Colour kTeal  { 0xff6fc3b8 };
-const juce::Colour kAmber { 0xffe0a458 };
-const juce::Colour kWhite { 0xffffffff };
-
-juce::Font boldFont (float h)
-{
-    return juce::Font (juce::FontOptions (h).withStyle ("Bold"));
-}
+constexpr int kKeyHigh = 84;  // C6
+constexpr int kTitleHitW = 140;
 
 int whiteKeysInRange (int low, int high)
 {
@@ -43,73 +27,7 @@ int whiteKeysInRange (int low, int high)
 }
 } // namespace
 
-V4JBAudioProcessorEditor::Knob::Knob (juce::AudioProcessorValueTreeState& st,
-                                      const juce::String& id, const juce::String& name)
-{
-    label.setText (name, juce::dontSendNotification);
-    label.setJustificationType (juce::Justification::centred);
-    label.setColour (juce::Label::textColourId, kFog);
-    label.setColour (juce::Label::backgroundColourId, juce::Colours::transparentBlack);
-    addAndMakeVisible (label);
-
-    slider.setSliderStyle (juce::Slider::RotaryHorizontalVerticalDrag);
-    slider.setTextBoxStyle (juce::Slider::TextBoxBelow, false, 56, 12);
-    slider.setColour (juce::Slider::textBoxTextColourId, kFog);
-    slider.setColour (juce::Slider::textBoxBackgroundColourId, juce::Colours::transparentBlack);
-    slider.setColour (juce::Slider::textBoxOutlineColourId, juce::Colours::transparentBlack);
-    addAndMakeVisible (slider);
-    att = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment> (st, id, slider);
-}
-
-void V4JBAudioProcessorEditor::Knob::resized()
-{
-    auto r = getLocalBounds();
-    label.setBounds (r.removeFromTop (kLabelH));
-    slider.setBounds (r);
-}
-
-void V4JBAudioProcessorEditor::PanelLnF::drawRotarySlider (juce::Graphics& g, int x, int y, int w, int h,
-                                                           float pos, float startAngle, float endAngle,
-                                                           juce::Slider&)
-{
-    auto bounds = juce::Rectangle<float> ((float) x, (float) y, (float) w, (float) h).reduced (3.f);
-    const float d = juce::jmin (bounds.getWidth(), bounds.getHeight());
-    auto rc = bounds.withSizeKeepingCentre (d, d);
-    const auto c = rc.getCentre();
-    const float angle = startAngle + pos * (endAngle - startAngle);
-
-    g.setColour (kDusk);
-    g.fillEllipse (rc);
-
-    // Teal arc shows the value, cap sits on top.
-    juce::Path arc;
-    arc.addCentredArc (c.x, c.y, d * 0.44f, d * 0.44f, 0.f, startAngle, angle, true);
-    g.setColour (kTeal);
-    g.strokePath (arc, juce::PathStrokeType (2.5f, juce::PathStrokeType::curved, juce::PathStrokeType::rounded));
-
-    auto cap = rc.reduced (d * 0.18f);
-    g.setColour (kFog);
-    g.fillEllipse (cap);
-
-    const auto tip = c.getPointOnCircumference (cap.getWidth() * 0.42f, angle);
-    g.setColour (kNight);
-    g.drawLine (c.x, c.y, tip.x, tip.y, 2.2f);
-}
-
-void V4JBAudioProcessorEditor::PanelLnF::drawToggleButton (juce::Graphics& g, juce::ToggleButton& b, bool over, bool)
-{
-    auto bounds = b.getLocalBounds().toFloat().reduced (2.f);
-    g.setColour (over ? kDusk.brighter (0.2f) : kDusk);
-    g.fillRoundedRectangle (bounds, 3.f);
-    g.setFont (boldFont (11.f));
-    g.setColour (kFog);
-    g.drawText (b.getButtonText(), bounds.toNearestInt(), juce::Justification::centred, false);
-}
-
-juce::Font V4JBAudioProcessorEditor::PanelLnF::getLabelFont (juce::Label&)
-{
-    return boldFont (11.f);
-}
+// ---------------------------------------------------------------- About
 
 V4JBAudioProcessorEditor::AboutBox::AboutBox()
 {
@@ -232,17 +150,40 @@ void V4JBAudioProcessorEditor::AboutBox::checkForUpdate()
     }).detach();
 }
 
+// ---------------------------------------------------------------- Editor
+
 V4JBAudioProcessorEditor::V4JBAudioProcessorEditor (V4JBAudioProcessor& p)
     : juce::AudioProcessorEditor (p), proc (p)
 {
     setLookAndFeel (&panelLnF);
     setOpaque (true);
-
     logo = juce::ImageCache::getFromMemory (BinaryData::logo_png, BinaryData::logo_pngSize);
 
-    for (auto* k : { &volume, &motion, &crackle, &acid, &air, &ghost, &vowel, &breath, &haunt })
-        addAndMakeVisible (k);
-    addChildComponent (aboutBox);
+    presetBtn.onClick = [this] { showPresetMenu(); };
+    presetBtn.setTooltip ("Presets");
+    prevBtn.onClick = [this] { stepPreset (-1); };
+    nextBtn.onClick = [this] { stepPreset (1); };
+    saveBtn.onClick = [this] { savePresetDialog(); };
+    randBtn.onClick = [this] { showRandomMenu(); };
+    randBtn.setTooltip ("Smart randomizer: new values, or a whole new module chain");
+    economy.setTooltip ("Economy: at most 128 partials per voice, much lighter on CPU");
+    for (juce::Component* c : { (juce::Component*) &presetBtn, (juce::Component*) &prevBtn, (juce::Component*) &nextBtn,
+                                (juce::Component*) &saveBtn, (juce::Component*) &randBtn, (juce::Component*) &economy,
+                                (juce::Component*) &poly, (juce::Component*) &octave, (juce::Component*) &pitch,
+                                (juce::Component*) &glide, (juce::Component*) &volume })
+        content.addAndMakeVisible (c);
+
+    const auto tabColour = kNight.brighter (0.05f);
+    tabs.addTab ("Edit", tabColour, &editPage, false);
+    tabs.addTab ("Mod", tabColour, &modPage, false);
+    tabs.addTab ("Morph", tabColour, &morphPage, false);
+    tabs.addTab ("Wave", tabColour, &wavePage, false);
+    tabs.setTabBarDepth (28);
+    tabs.setOutline (0);
+    content.addAndMakeVisible (tabs);
+    content.addChildComponent (aboutBox);
+
+    presetList = proc.getFactoryPresets();
 
     // VST3 stays keyboard-free. The host already has keys; this strip is for Standalone.
     if (proc.wrapperType == juce::AudioProcessor::wrapperType_Standalone)
@@ -262,17 +203,30 @@ V4JBAudioProcessorEditor::V4JBAudioProcessorEditor (V4JBAudioProcessor& p)
         keyboard->setColour (juce::MidiKeyboardComponent::textLabelColourId, kNight);
         keyboard->setColour (juce::MidiKeyboardComponent::shadowColourId, juce::Colours::transparentBlack);
         keyboardState.addListener (this);
-        addAndMakeVisible (*keyboard);
+        content.addAndMakeVisible (*keyboard);
     }
 
-    setSize (kEditorW, kEditorH + (keyboard != nullptr ? kKeyboardH : 0));
+    baseW = kEditorW;
+    baseH = kEditorH + (keyboard != nullptr ? kKeyboardH : 0);
+    content.setSize (baseW, baseH);
+    addAndMakeVisible (content);
+
+    // Drag the corner to scale (40%..150%), aspect ratio locked. The scale is saved with the session.
+    // Read it first: setResizeLimits clamps the still-empty editor and resized() overwrites uiScale.
+    const float s = juce::jlimit (0.4f, 1.5f, proc.uiScale);
+    setResizable (true, true);
+    setResizeLimits (baseW * 2 / 5, baseH * 2 / 5, baseW * 3 / 2, baseH * 3 / 2);
+    getConstrainer()->setFixedAspectRatio ((double) baseW / (double) baseH);
+    setSize (juce::roundToInt ((float) baseW * s), juce::roundToInt ((float) baseH * s));
+    startTimerHz (30);
 }
 
 V4JBAudioProcessorEditor::~V4JBAudioProcessorEditor()
 {
+    stopTimer();
     if (keyboard != nullptr)
     {
-        keyboardState.allNotesOff (1);  // note-offs reach Swirl before the keys are destroyed
+        keyboardState.allNotesOff (1);  // note-offs reach the engine before the keys are destroyed
         keyboardState.removeListener (this);
     }
     setLookAndFeel (nullptr);
@@ -288,83 +242,171 @@ void V4JBAudioProcessorEditor::handleNoteOff (juce::MidiKeyboardState*, int, int
     proc.pushKey (note, false);
 }
 
+// 30 Hz: only the visible page pulls spectra and meters.
+void V4JBAudioProcessorEditor::timerCallback()
+{
+    presetBtn.setButtonText (proc.currentPresetName);
+    switch (tabs.getCurrentTabIndex())
+    {
+        case 0: editPage.refresh(); break;
+        case 2: morphPage.refresh(); break;
+        case 3: wavePage.refresh(); break;
+        default: break;
+    }
+}
+
+void V4JBAudioProcessorEditor::showPresetMenu()
+{
+    presetList = proc.getFactoryPresets();
+    presetList.addArray (Presets::user());
+
+    // Group by category, factory first; menu ids are presetList index + 1.
+    juce::PopupMenu menu;
+    juce::StringArray categories;
+    for (auto& e : presetList)
+        categories.addIfNotAlreadyThere (e.category);
+    for (auto& cat : categories)
+    {
+        juce::PopupMenu sub;
+        for (int i = 0; i < presetList.size(); ++i)
+            if (presetList[i].category == cat)
+                sub.addItem (i + 1, presetList[i].name, true, presetList[i].name == proc.currentPresetName);
+        menu.addSubMenu (cat, sub);
+    }
+    menu.addSeparator();
+    menu.addItem (-1, "Save preset...");
+    menu.addItem (-2, "Open user preset folder");
+
+    juce::Component::SafePointer<V4JBAudioProcessorEditor> safe (this);
+    menu.showMenuAsync (juce::PopupMenu::Options().withTargetComponent (&presetBtn), [safe] (int id)
+    {
+        if (safe == nullptr || id == 0)
+            return;
+        if (id == -1)
+            safe->savePresetDialog();
+        else if (id == -2)
+        {
+            Presets::userDir().createDirectory();
+            Presets::userDir().startAsProcess();
+        }
+        else if (juce::isPositiveAndBelow (id - 1, safe->presetList.size()))
+        {
+            safe->presetIndex = id - 1;
+            safe->proc.loadPreset (safe->presetList[id - 1]);
+        }
+    });
+}
+
+void V4JBAudioProcessorEditor::stepPreset (int delta)
+{
+    if (presetList.isEmpty())
+        return;
+    presetIndex = (presetIndex + delta + presetList.size()) % presetList.size();
+    proc.loadPreset (presetList[presetIndex]);
+}
+
+void V4JBAudioProcessorEditor::savePresetDialog()
+{
+    auto* w = new juce::AlertWindow ("Save preset", "Saved to Documents/V4JB/Presets", juce::MessageBoxIconType::NoIcon);
+    w->addTextEditor ("name", proc.currentPresetName, "Name");
+    w->addTextEditor ("category", "User", "Category");
+    w->addButton ("Save", 1, juce::KeyPress (juce::KeyPress::returnKey));
+    w->addButton ("Cancel", 0, juce::KeyPress (juce::KeyPress::escapeKey));
+    juce::Component::SafePointer<V4JBAudioProcessorEditor> safe (this);
+    // deleteWhenDismissed: the window is deleted after this callback runs.
+    w->enterModalState (true, juce::ModalCallbackFunction::create ([safe, w] (int result)
+    {
+        if (safe != nullptr && result == 1)
+            safe->proc.saveUserPreset (w->getTextEditorContents ("name"), w->getTextEditorContents ("category"));
+    }), true);
+}
+
+void V4JBAudioProcessorEditor::showRandomMenu()
+{
+    juce::PopupMenu menu;
+    menu.addItem (1, "New sound (new module chain)");
+    menu.addItem (2, "Vary values (keep modules)");
+    juce::Component::SafePointer<V4JBAudioProcessorEditor> safe (this);
+    menu.showMenuAsync (juce::PopupMenu::Options().withTargetComponent (&randBtn), [safe] (int id)
+    {
+        if (safe != nullptr && id > 0)
+            safe->proc.randomize (id == 1);
+    });
+}
+
 void V4JBAudioProcessorEditor::paint (juce::Graphics& g)
+{
+    g.fillAll (kNight);  // covers the sub-pixel edge the scaled content may leave
+}
+
+void V4JBAudioProcessorEditor::resized()
+{
+    if (baseW == 0)
+        return;  // called before the constructor finished
+    const float s = (float) getWidth() / (float) baseW;
+    content.setTransform (juce::AffineTransform::scale (s));
+    proc.uiScale = s;
+}
+
+void V4JBAudioProcessorEditor::paintContent (juce::Graphics& g)
 {
     g.fillAll (kNight);
 
-    auto r = getLocalBounds().reduced (kPad);
-    auto title = r.removeFromTop (kTitleH);
+    auto title = content.getLocalBounds().reduced (kPad).removeFromTop (kTopH - kPad);
     if (logo.isValid())
     {
-        auto logoR = title.removeFromLeft (kTitleH).reduced (2);
+        auto logoR = title.removeFromLeft (44).reduced (2);
         g.drawImage (logo, logoR.toFloat(), juce::RectanglePlacement::centred);
         title.removeFromLeft (6);
     }
-    auto nameCol = title.removeFromLeft (90);
+    auto nameCol = title.removeFromLeft (90).withSizeKeepingCentre (90, 40);
     g.setColour (kFog);
     g.setFont (boldFont (16.f));
     g.drawText ("V4JB", nameCol.removeFromTop (22), juce::Justification::centredLeft, false);
     g.setFont (boldFont (10.f));
     g.drawText ("v" JucePlugin_VersionString, nameCol, juce::Justification::centredLeft, false);
 
-    // Texture well: the Swirl macros sit in here (see resized()).
-    auto well = textureArea();
-    g.setColour (kDusk);
-    g.fillRoundedRectangle (well.toFloat(), 4.f);
-    g.setColour (kFog.withAlpha (0.4f));
-    g.setFont (boldFont (11.f));
-    g.drawText (keyboard != nullptr ? "Click a key, or hold a MIDI note"
-                                   : "Hold a MIDI note to play",
-                well.removeFromBottom (kHintH), juce::Justification::centred, false);
-
     g.setColour (kNight.brighter (0.08f));
-    g.drawRoundedRectangle (getLocalBounds().toFloat().reduced (1.5f), 2.f, 2.f);
+    g.drawRoundedRectangle (content.getLocalBounds().toFloat().reduced (1.5f), 2.f, 2.f);
 }
 
-void V4JBAudioProcessorEditor::resized()
+void V4JBAudioProcessorEditor::layoutContent()
 {
-    auto r = getLocalBounds().reduced (kPad);
-    auto title = r.removeFromTop (kTitleH);
-    volume.setBounds (title.removeFromRight (kKnobW).withHeight (kTitleH + 40));
+    auto r = content.getLocalBounds().reduced (kPad);
+    auto top = r.removeFromTop (kTopH - kPad);
+    top.removeFromLeft (44 + 6 + 90 + 10);
 
-    // Two rows of four macro knobs centred in the well, above the hint text:
-    // the fog on top, the ghost choir below.
-    auto well = textureArea();
-    well.removeFromBottom (kHintH);
-    auto rows = well.withSizeKeepingCentre (4 * kMacroW, 2 * kMacroH);
-    for (auto knobs : { std::initializer_list<Knob*> { &motion, &crackle, &acid, &air },
-                        std::initializer_list<Knob*> { &ghost, &vowel, &breath, &haunt } })
-    {
-        auto row = rows.removeFromTop (kMacroH);
-        for (auto* k : knobs)
-            k->setBounds (row.removeFromLeft (kMacroW).reduced (kPad, 0));
-    }
+    volume.setBounds (top.removeFromRight (70));
+    for (auto* k : { &glide, &pitch, &octave, &poly })
+        k->setBounds (top.removeFromRight (62));
+    economy.setBounds (top.removeFromRight (84).withSizeKeepingCentre (76, 26));
+
+    auto presets = top.withSizeKeepingCentre (top.getWidth(), 28);
+    prevBtn.setBounds (presets.removeFromLeft (28).reduced (1));
+    presetBtn.setBounds (presets.removeFromLeft (260).reduced (1));
+    nextBtn.setBounds (presets.removeFromLeft (28).reduced (1));
+    presets.removeFromLeft (8);
+    saveBtn.setBounds (presets.removeFromLeft (60).reduced (1));
+    presets.removeFromLeft (8);
+    randBtn.setBounds (presets.removeFromLeft (100).reduced (1));
 
     if (keyboard != nullptr)
     {
-        auto keys = getLocalBounds().reduced (kPad).removeFromBottom (kKeyboardH);
+        auto keys = r.removeFromBottom (kKeyboardH);
         keyboard->setBounds (keys);
         keyboard->setKeyWidth ((float) keys.getWidth() / (float) whiteKeysInRange (kKeyLow, kKeyHigh));
+        r.removeFromBottom (kPad);
     }
-
-    aboutBox.setBounds (getLocalBounds());
+    tabs.setBounds (r);
+    aboutBox.setBounds (content.getLocalBounds());
 }
 
 juce::Rectangle<int> V4JBAudioProcessorEditor::titleHitBounds() const
 {
-    return { kPad, kPad, kTitleHitW, kTitleH };
+    return { kPad, kPad, kTitleHitW, kTopH - kPad };
 }
 
-juce::Rectangle<int> V4JBAudioProcessorEditor::textureArea() const
-{
-    auto r = getLocalBounds().reduced (kPad);
-    r.removeFromTop (kTitleH + 44);
-    if (keyboard != nullptr)
-        r.removeFromBottom (kKeyboardH);
-    return r;
-}
-
-void V4JBAudioProcessorEditor::mouseUp (const juce::MouseEvent& e)
+void V4JBAudioProcessorEditor::contentMouseUp (const juce::MouseEvent& e)
 {
     if (e.mouseWasClicked() && titleHitBounds().contains (e.getPosition()))
     {

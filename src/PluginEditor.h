@@ -1,11 +1,18 @@
 #pragma once
 
 #include "PluginProcessor.h"
+#include "ui/EditPage.h"
+#include "ui/ModPage.h"
+#include "ui/MorphPage.h"
+#include "ui/WavePage.h"
 
 #include <atomic>
 
+// Top bar (About, presets, randomizer, voice controls, volume) over four tabs:
+// Edit (the 12-slot chain), Mod (envelopes, LFOs), Morph, Wave.
 class V4JBAudioProcessorEditor : public juce::AudioProcessorEditor,
-                                 private juce::MidiKeyboardState::Listener
+                                 private juce::MidiKeyboardState::Listener,
+                                 private juce::Timer
 {
 public:
     explicit V4JBAudioProcessorEditor (V4JBAudioProcessor&);
@@ -13,23 +20,36 @@ public:
 
     void paint (juce::Graphics&) override;
     void resized() override;
-    void mouseUp (const juce::MouseEvent&) override;
 
 private:
+    // Everything lives in `content`, laid out at a fixed base size and scaled as
+    // one picture. Dragging the corner changes only the scale, so nothing reflows.
+    struct Content : public juce::Component
+    {
+        explicit Content (V4JBAudioProcessorEditor& e) : ed (e) {}
+        void paint (juce::Graphics& g) override { ed.paintContent (g); }
+        void resized() override { ed.layoutContent(); }
+        void mouseUp (const juce::MouseEvent& e) override { ed.contentMouseUp (e); }
+        V4JBAudioProcessorEditor& ed;
+    };
+    void paintContent (juce::Graphics&);
+    void layoutContent();
+    void contentMouseUp (const juce::MouseEvent&);
+
     void handleNoteOn (juce::MidiKeyboardState*, int midiChannel, int midiNoteNumber, float velocity) override;
     void handleNoteOff (juce::MidiKeyboardState*, int midiChannel, int midiNoteNumber, float velocity) override;
+    void timerCallback() override;
     juce::Rectangle<int> titleHitBounds() const;
-    juce::Rectangle<int> textureArea() const;
+
+    void showPresetMenu();
+    void stepPreset (int delta);
+    void savePresetDialog();
+    void showRandomMenu();
 
     V4JBAudioProcessor& proc;
-
-    struct PanelLnF : public juce::LookAndFeel_V4
-    {
-        void drawRotarySlider (juce::Graphics&, int x, int y, int w, int h, float pos,
-                               float startAngle, float endAngle, juce::Slider&) override;
-        void drawToggleButton (juce::Graphics&, juce::ToggleButton&, bool, bool) override;
-        juce::Font getLabelFont (juce::Label&) override;
-    };
+    ui::PanelLnF panelLnF;
+    Content content { *this };  // declared before its children so it is destroyed after them
+    int baseW = 0, baseH = 0;   // unscaled size (taller in Standalone: piano keys)
 
     // Click the name/version in the top left. "Check for update" asks GitHub for tags.
     struct AboutBox : public juce::Component
@@ -52,28 +72,27 @@ private:
         std::atomic<bool> fetching { false };
     };
 
-    struct Knob : public juce::Component
-    {
-        Knob (juce::AudioProcessorValueTreeState& st, const juce::String& id, const juce::String& name);
-        void resized() override;
+    // Top bar.
+    juce::TextButton presetBtn, prevBtn { "<" }, nextBtn { ">" }, saveBtn { "Save" }, randBtn { "Randomize" };
+    ui::Toggle economy { proc.apvts, ParamID::economy, "Economy" };
+    ui::Knob poly   { proc.apvts, ParamID::poly,   "Voices" };
+    ui::Knob octave { proc.apvts, ParamID::octave, "Octave" };
+    ui::Knob pitch  { proc.apvts, ParamID::pitch,  "Pitch" };
+    ui::Knob glide  { proc.apvts, ParamID::glide,  "Glide" };
+    ui::Knob volume { proc.apvts, ParamID::level,  "Volume" };
 
-        juce::Label label;
-        juce::Slider slider;
-        std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> att;
-    };
+    // Pages.
+    ui::EditPage editPage { proc };
+    ui::ModPage modPage { proc };
+    ui::MorphPage morphPage { proc };
+    ui::WavePage wavePage { proc };
+    juce::TabbedComponent tabs { juce::TabbedButtonBar::TabsAtTop };
 
-    PanelLnF panelLnF;
-    Knob volume { proc.apvts, ParamID::level, "Volume" };
-    Knob motion  { proc.apvts, ParamID::motion,  "Motion" };
-    Knob crackle { proc.apvts, ParamID::crackle, "Crackle" };
-    Knob acid    { proc.apvts, ParamID::acid,    "Acid" };
-    Knob air     { proc.apvts, ParamID::air,     "Air" };
-    Knob ghost   { proc.apvts, ParamID::ghost,   "Ghost" };
-    Knob vowel   { proc.apvts, ParamID::vowel,   "Vowel" };
-    Knob breath  { proc.apvts, ParamID::breath,  "Breath" };
-    Knob haunt   { proc.apvts, ParamID::haunt,   "Haunt" };
     AboutBox aboutBox;
+    juce::TooltipWindow tooltips { this };
     juce::Image logo;
+    juce::Array<PresetEntry> presetList;  // factory then user, rebuilt when the menu opens
+    int presetIndex = 0;
 
     // Standalone only. Declared after the state so the component dies first.
     juce::MidiKeyboardState keyboardState;
