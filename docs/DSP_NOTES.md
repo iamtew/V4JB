@@ -1,41 +1,76 @@
 # V4JB – DSP notes
 
-Where the texture engine gets designed.
+How the additive engine works. Functional model taken from public descriptions of modular additive synths (Loom II style); every algorithm and preset here is our own.
 
-## Built: Swirl (`src/dsp/Swirl.h`)
+## Signal flow
 
-One mono voice, played by holding a MIDI note (last note wins, short 303-style slide between notes). Stereo comes from the whirl pan. Header-only and JUCE-free; `tests/swirl_check.cpp` renders it.
+```
+MIDI -> voice allocator (8 voices, oldest stolen)
+     -> per voice, every 64 samples (control block):
+          slot 1   spectral stage   -> partial frequencies + amplitudes
+          slots 2..11 module chain  -> edits those arrays in series
+          amp envelope (Env 1)      -> target levels for the sine bank
+     -> sine bank sums partials every sample, levels ramp across the block
+     -> tanh safety
+slot 12 (processor): drive, chorus/phaser, ping-pong delay, reverb, M/S width, limiter, volume
+```
 
-- **Wind**: white noise through a TPT state-variable bandpass. The centre wanders by random walks (the "ups and downs") and brightens as the whirl swings past.
-- **Acid**: PolyBLEP saw at the note pitch into a 4-pole ladder with tanh feedback. Random **blurts** zap the cutoff up and bend the pitch down as they decay (80–300 ms each).
-- **Cracks and pops**: Dust. Rare random impulses; each one is a click (crack) and retunes a high-Q resonator (pop).
-- **Whirl**: equal-power pan circling at a drifting rate, width grows with Motion.
-- **Ghosts**: three choir voices (centre, left, right), each with its own PolyBLEP saw at the note (detuned up to +-30 cents) mixed with noise, into three parallel TPT bandpasses at the vowel's formants F1-F3 (Q 8, gains 1 / 0.5 / 0.25). The vowel table (u-o-a-e-i, adult averages) is blended in log-frequency. Side voices get a slightly bigger or smaller "throat" (formants shifted up to +-0.08 octave). Each voice has its own random walks for vowel wander and amplitude swell. Ghosts that are faded out by the Ghost knob are skipped entirely.
-- **Gate**: one-pole attack (~30 ms) and release (~0.32 s time constant, silent inside the 3 s tail). Shared by fog and ghosts.
-- **Limiter**: tanh on the output. Transparent at fog levels, grit when cranked.
+All engine code is header-only and JUCE-free in `src/dsp/`; `tests/engine_check.cpp` renders it. Effects use `juce::dsp`.
 
-Macros, all 0–1:
+## Sine bank (`Partials.h`)
 
-| Knob | Does |
+Up to 512 partials plus two sub sines. Each partial is a complex rotator `(re, im) *= (cos w, sin w)`: four multiplies per sample, no `sin()`. One Newton step per block keeps the rotators on the unit circle. Start phases are fixed and scattered so big harmonic stacks do not spike. Partials at or above 0.48 x sample rate are muted, and silent partials are skipped. **Spread** pans odd harmonics left and even right; the fundamental and subs stay centred. **Economy** caps the count at 128.
+
+## Slot 1: spectral stage (`Spectral.h`)
+
+- **Distortion**: 18 spacing algorithms (Stiff String, Stretch, Compress, Bar, Membrane, Primes, Golden, Octaves, Fifths, Root, Log, Fold, Even Shift, Odd Shift, Scatter, Bell, Offset, Pairs). **Depth** blends from n x f0 to the algorithm in log-frequency. Tables are built once.
+- **Tilt**: start amplitudes n^-tilt (1 = saw-like).
+- **Spectral modulation**: each partial does its own random walk in pitch (up to 60 cents), at a rate around **Mod Rate**. The partials wander at slightly different speeds.
+- **Spectral noise**: each partial's amplitude is multiplied by its own smoothed random signal, which turns the sine into a band of noise at the same frequency. **Width** sets the smoothing (bandwidth up to about ±375 Hz at 48 kHz), and the result is normalised to RMS 1. **Low/High Cut** shape which partials get noise. **Decay** makes the noise a burst after note-on (breath, chiff). **Mix** crossfades sines to noise.
+- **Subs**: sines at f0/2 and f0/4, added after the module chain.
+
+## Module pool (`Modules.h`)
+
+One `processModule()` switch, per-voice state per slot. Knobs are all 0..1. A slot's **main** knob can be pushed by one envelope, one LFO, and one MIDI source (velocity, mod wheel, aftertouch, key, key x velocity).
+
+| Group | Modules |
+|------|---------|
+| Basic | 5-Sines, Odd/Even, Sync (hump at the slave pitch), Adder, Discrete Adder (every Nth boosted, Discrete thins), Every Nth, Harmonic Add, Range Enhance, Clip |
+| Filter | Lowpass / Highpass (6..48 dB/oct + resonant bump, key track), Bandpass, Notch, Moving Filter (notches on a sqrt-frequency scale, so they spread apart as they rise), Decay (high partials die faster), Hype (two shelves, ±18 dB at Amount 0.5) |
+| Effect | Modulator (a travelling loudness wave up the partials), Detuned (alternating / random / growing detune plus beating), Blur (random level wander), Noise (fresh random level each block), Octaver (copies to 2n and 4n), Second Tone (half the partials become a second tone at an interval) |
+| Rhythm | Phrase (8-step spectral arpeggio over the low partials, on the beat clock), Random Drops (random partials flare and fade), Tail (per-partial peak hold that rings down) |
+| Wave | Wave (follow file A or B), Double Wave (A and B mixed by Balance) |
+
+**Level guard**: if total spectral power after the chain is above 4, the voice is scaled down, so stacked boosts cannot blow up.
+
+## Envelopes and LFOs (`Mod.h`)
+
+Four ADSRs per voice: linear attack, exponential decay and release (down 60 dB after Release). Env 1 is the amp. The velocity setting decides how much velocity scales each envelope. Three global LFOs (sine, triangle, saw, square, S&H) run free or lock to the beat clock: host position while playing, otherwise free-running at host tempo (120 if none).
+
+## Morph (`Morph.h`) and macros (`Engine.h`, `macro::apply`)
+
+11 macros. Each one sits at 0.5 when neutral and pushes a fixed set of targets:
+
+| Macro | Moves |
 |------|------|
-| Motion | sweep speed and depth, pitch ups and downs, whirl speed and width |
-| Crackle | pop density (up to ~60/s) and level |
-| Acid | blurt rate (up to ~3/s), ladder resonance and drive |
-| Air | noise vs saw balance, brightness |
-| Ghost | ghost level; voices fade in one by one (centre, then L and R), pan spread widens |
-| Vowel | u-o-a-e-i, dark to bright |
-| Breath | ghost excitation: sung saw at 0, whispered noise at 1 |
-| Haunt | vowel wander depth and speed, swell depth (to silence at 1), choir detune, throat spread |
+| Character | distortion depth, noise mix, Double Wave balance |
+| Complexity | partial count (x1/4..x4), tilt |
+| Tone | main knob of filter-type modules, tilt |
+| Punch | amp attack (shorter), decay, velocity |
+| Length | amp decay, release, sustain |
+| Time FX | main knob of Phrase, Random Drops, Tail, Decay, Modulator, Blur |
+| Depth | all route amounts (x0..x2), spectral mod depth |
+| Speed | LFO rates, spectral mod rate |
+| FX Mix | every effect mix (processor) |
+| Width | partial spread, master width |
+| User | main knob of the slot picked in "User Macro Slot" |
 
-Defaults (Motion 0.3, Air 0.7, Ghost 0, rest of the fog knobs 0) are the fog. Vowel 0.5, Breath 0.3 and Haunt 0.4 are waiting for Ghost to come up.
+Macro value = morph-pad blend of the four corners (bilinear), or 0.5 if the macro is set to **Free**, plus the automatable **offset**. The puck moves by hand (**Manual**), around a closed node path (**Path**, one bar per Time seconds; **Path Sync**, bar lengths on the beat clock), or as an envelope (**X-Axis Env**: X sweeps 0 to 1 over Time after a note starts from silence, Y is read off the path as a curve, Snap steps it).
 
-## Ideas still on the table
+## Wave analysis (`WaveAnalyzer.h`, `Wave.h`)
 
-- **Granular cloud**: grains read from an internal oscillator buffer.
-- **Big space**: FDN reverb with a freeze or infinite mode as the glue.
-- **Polyphony**: Swirl is mono today.
+On a worker thread: mono mixdown (max 120 s), Hann 2048-point FFT every 1024 samples, loudest bin per band into 256 log bands (20 Hz..20 kHz), peak-normalised, at most 2048 frames. The audio thread gets a raw pointer through an atomic. The replaced data is freed on the message thread after two more audio blocks. Per voice, each wave plays through its Start..End region at Speed (0.25x..4x) and loops.
 
-## Rules
+## Cost
 
-- Real-time safe: allocate in `prepareToPlay`, never in `processBlock`.
-- Every non-trivial DSP block gets one runnable check in `tests/`.
+The sine sum dominates. At 48 kHz a 130 Hz note has about 176 audible partials, and a 520 Hz note about 44. Spectral work runs about 750 times a second per voice. Use Economy (128 partials) on big chords if CPU is tight.

@@ -6,11 +6,13 @@
 
 VST3 and standalone. Stupid Systems LLC. [MIT](LICENSE). Site: [docs/](docs/index.html). Manual: [docs/MANUAL.md](docs/MANUAL.md).
 
-Early days: one texture voice, Swirl, played from MIDI with four macros (Motion, Crackle, Acid, Air). From soft fog to whirlwinds, pops and acid blurts. A ghost choir sits inside the fog with four macros of its own (Ghost, Vowel, Breath, Haunt): formant voices that whisper or sing vowels, drift and swell. Design in [docs/DSP_NOTES.md](docs/DSP_NOTES.md).
+A modular additive synth: up to 512 sine partials per voice, 8 voices. A fixed spectral stage (18 spacing algorithms, shimmer, spectral noise, sub octaves) feeds 10 slots of swappable spectral modules (filters, Hype, Modulator, Random Drops, Phrase, Wave and more), then drive, chorus/phaser, delay and reverb. A morph pad blends four macro snapshots by hand, along drawn paths, or as an envelope. Design in [docs/DSP_NOTES.md](docs/DSP_NOTES.md).
 
 ## Build
 
-`just build-debug` (Projucer resave + MSBuild). `just check` runs the version compare test and the Swirl render check. JUCE is expected at `%USERPROFILE%\JUCE` (override with `JUCE_PATH`).
+`just build-debug` (Projucer resave + MSBuild). `just check` runs the version compare test and the engine render check (`tests/engine_check.cpp`). JUCE is expected at `%USERPROFILE%\JUCE` (override with `JUCE_PATH`).
+
+Factory presets live in `presets/*.xml` (compiled in as BinaryData; list only what differs from the defaults).
 
 ## Release
 

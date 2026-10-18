@@ -10,11 +10,14 @@ Atmosphere and texture instrument, VST3 + Standalone. Pads, drones, air, fog. Si
 
 ## Layout
 src/
- PluginProcessor.h/.cpp
- PluginEditor.h/.cpp
+ PluginProcessor.h/.cpp   engine + effects + state, presets, waves
+ PluginEditor.h/.cpp      top bar + tabs
+ Presets.h WaveAnalyzer.h
+ dsp/                     header-only, JUCE-free engine (tested by `just check`)
  parameters/ParameterIDs.h ParameterLayout.h
- ui/VersionCompare.h
-tests/version_check.cpp
+ ui/Theme.h EditPage.h ModPage.h MorphPage.h WavePage.h VersionCompare.h
+presets/*.xml             factory presets (BinaryData)
+tests/version_check.cpp engine_check.cpp
 docs/
 installer/
 justfile
