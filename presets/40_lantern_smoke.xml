@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Golden spacing through a dense Moving Filter; LFO 3 slowly opens the Lowpass. -->
+<PARAMS presetName="Lantern Smoke" category="Atmospheres">
+  <PARAM id="sp_algo" value="6"/>
+  <PARAM id="sp_depth" value="0.4"/>
+  <PARAM id="nz_mix" value="0.3"/>
+  <PARAM id="s2_type" value="11"/>
+  <PARAM id="s2_main" value="0.6"/>
+  <PARAM id="s2_p1" value="0.6"/>
+  <PARAM id="s2_p2" value="0.1"/>
+  <PARAM id="s2_p3" value="0.8"/>
+  <PARAM id="s3_type" value="16"/>
+  <PARAM id="s3_main" value="0.3"/>
+  <PARAM id="s3_p1" value="0.5"/>
+  <PARAM id="s4_type" value="7"/>
+  <PARAM id="s4_main" value="0.55"/>
+  <PARAM id="s4_ls" value="3"/>
+  <PARAM id="s4_la" value="0.2"/>
+  <PARAM id="l3_rate" value="0.03"/>
+  <PARAM id="e1_a" value="2"/>
+  <PARAM id="e1_d" value="1"/>
+  <PARAM id="e1_s" value="0.8"/>
+  <PARAM id="e1_r" value="4"/>
+  <PARAM id="rv_mix" value="0.45"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+</PARAMS>

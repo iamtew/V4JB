@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Odd harmonics through a nasal Bandpass over a sub: a far-off chanter and drone. -->
+<PARAMS presetName="Bagpipe Ghost" category="Drones">
+  <PARAM id="sp_algo" value="0"/>
+  <PARAM id="nz_mix" value="0.08"/>
+  <PARAM id="sub1" value="0.3"/>
+  <PARAM id="s2_type" value="2"/>
+  <PARAM id="s2_main" value="0"/>
+  <PARAM id="s2_p1" value="1"/>
+  <PARAM id="s3_type" value="9"/>
+  <PARAM id="s3_main" value="0.5"/>
+  <PARAM id="s3_p1" value="0.6"/>
+  <PARAM id="s3_p2" value="0.3"/>
+  <PARAM id="s4_type" value="16"/>
+  <PARAM id="s4_main" value="0.2"/>
+  <PARAM id="e1_a" value="1"/>
+  <PARAM id="e1_d" value="1"/>
+  <PARAM id="e1_s" value="1"/>
+  <PARAM id="e1_r" value="4"/>
+  <PARAM id="rv_mix" value="0.35"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+</PARAMS>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Env 2 flicks a narrow Bandpass up the spectrum: a bubbly blip, sixteenth echoes. -->
+<PARAMS presetName="Bubble Pluck" category="Plucks">
+  <PARAM id="sp_algo" value="0"/>
+  <PARAM id="nz_mix" value="0"/>
+  <PARAM id="s2_type" value="9"/>
+  <PARAM id="s2_main" value="0.3"/>
+  <PARAM id="s2_p1" value="0.1"/>
+  <PARAM id="s2_p2" value="0.8"/>
+  <PARAM id="s2_es" value="2"/>
+  <PARAM id="s2_ea" value="0.5"/>
+  <PARAM id="e2_a" value="0.001"/>
+  <PARAM id="e2_d" value="0.25"/>
+  <PARAM id="e2_s" value="0"/>
+  <PARAM id="e2_r" value="0.2"/>
+  <PARAM id="s3_type" value="12"/>
+  <PARAM id="s3_main" value="0.5"/>
+  <PARAM id="e1_a" value="0.001"/>
+  <PARAM id="e1_d" value="0.6"/>
+  <PARAM id="e1_s" value="0"/>
+  <PARAM id="e1_r" value="0.4"/>
+  <PARAM id="dl_on" value="1"/>
+  <PARAM id="dl_div" value="0"/>
+  <PARAM id="dl_fb" value="0.3"/>
+  <PARAM id="dl_mix" value="0.2"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+</PARAMS>

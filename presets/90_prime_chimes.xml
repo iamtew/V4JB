@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Primes spacing at full depth: clangy, unfamiliar chimes. -->
+<PARAMS presetName="Prime Chimes" category="Bells">
+  <PARAM id="sp_algo" value="5"/>
+  <PARAM id="sp_depth" value="0.8"/>
+  <PARAM id="nz_mix" value="0"/>
+  <PARAM id="s2_type" value="12"/>
+  <PARAM id="s2_main" value="0.4"/>
+  <PARAM id="s2_p1" value="0.6"/>
+  <PARAM id="s3_type" value="22"/>
+  <PARAM id="s3_main" value="0.4"/>
+  <PARAM id="e1_a" value="0.001"/>
+  <PARAM id="e1_d" value="3"/>
+  <PARAM id="e1_s" value="0"/>
+  <PARAM id="e1_r" value="3"/>
+  <PARAM id="rv_mix" value="0.4"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+</PARAMS>

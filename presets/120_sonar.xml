@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A narrow resonant Bandpass ping with a long free-time echo into a big space. -->
+<PARAMS presetName="Sonar" category="SFX">
+  <PARAM id="sp_algo" value="15"/>
+  <PARAM id="sp_depth" value="0.5"/>
+  <PARAM id="nz_mix" value="0"/>
+  <PARAM id="s2_type" value="9"/>
+  <PARAM id="s2_main" value="0.6"/>
+  <PARAM id="s2_p1" value="0"/>
+  <PARAM id="s2_p2" value="0.9"/>
+  <PARAM id="s3_type" value="12"/>
+  <PARAM id="s3_main" value="0.5"/>
+  <PARAM id="e1_a" value="0.001"/>
+  <PARAM id="e1_d" value="2"/>
+  <PARAM id="e1_s" value="0"/>
+  <PARAM id="e1_r" value="2"/>
+  <PARAM id="dl_on" value="1"/>
+  <PARAM id="dl_sync" value="0"/>
+  <PARAM id="dl_time" value="1200"/>
+  <PARAM id="dl_fb" value="0.7"/>
+  <PARAM id="dl_mix" value="0.35"/>
+  <PARAM id="rv_size" value="0.9"/>
+  <PARAM id="rv_mix" value="0.5"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+</PARAMS>

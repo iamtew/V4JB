@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Octaves spacing, 5-Sines registration; Env 3 acts like a swell pedal on the Lowpass. -->
+<PARAMS presetName="Swell Organ" category="Swells">
+  <PARAM id="sp_algo" value="7"/>
+  <PARAM id="s2_type" value="1"/>
+  <PARAM id="s2_main" value="0.5"/>
+  <PARAM id="s2_p1" value="0.6"/>
+  <PARAM id="s2_p2" value="0.4"/>
+  <PARAM id="s2_p3" value="0.3"/>
+  <PARAM id="s2_p4" value="0.2"/>
+  <PARAM id="s3_type" value="7"/>
+  <PARAM id="s3_main" value="0.3"/>
+  <PARAM id="s3_es" value="3"/>
+  <PARAM id="s3_ea" value="0.6"/>
+  <PARAM id="e1_a" value="3"/>
+  <PARAM id="e1_d" value="1"/>
+  <PARAM id="e1_s" value="1"/>
+  <PARAM id="e1_r" value="3"/>
+  <PARAM id="e3_a" value="4"/>
+  <PARAM id="e3_d" value="1"/>
+  <PARAM id="e3_s" value="1"/>
+  <PARAM id="e3_r" value="3"/>
+  <PARAM id="md_mix" value="0.3"/>
+  <PARAM id="rv_mix" value="0.35"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+</PARAMS>

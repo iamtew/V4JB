@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- X-Axis Env morph falls from bright to dark: a swell that sighs out. -->
+<PARAMS presetName="Long Exhale" category="Swells">
+  <PARAM id="sp_algo" value="1"/>
+  <PARAM id="s2_type" value="7"/>
+  <PARAM id="s2_main" value="0.6"/>
+  <PARAM id="s2_p1" value="0.4"/>
+  <PARAM id="s3_type" value="16"/>
+  <PARAM id="s3_main" value="0.3"/>
+  <PARAM id="s4_type" value="22"/>
+  <PARAM id="s4_main" value="0.5"/>
+  <PARAM id="mmode" value="3"/>
+  <PARAM id="mtime" value="6"/>
+  <PARAM id="e1_a" value="2"/>
+  <PARAM id="e1_d" value="4"/>
+  <PARAM id="e1_s" value="0.7"/>
+  <PARAM id="e1_r" value="6"/>
+  <PARAM id="rv_mix" value="0.45"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <MORPH c0="0.4 0.4 0.25 0.5 0.6 0.5 0.3 0.4 0.5 0.5 0.5"
+         c1="0.5 0.5 0.4 0.5 0.6 0.5 0.4 0.5 0.5 0.6 0.5"
+         c2="0.5 0.6 0.6 0.5 0.6 0.5 0.5 0.5 0.6 0.6 0.5"
+         c3="0.6 0.7 0.8 0.5 0.6 0.5 0.6 0.6 0.6 0.7 0.5"
+         nodes="0 1 2;1 0.15 2"/>
+</PARAMS>

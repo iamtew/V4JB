@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A Bandpass formant the mod wheel slides up; mono with glide. -->
+<PARAMS presetName="Formant Bass" category="Basses">
+  <PARAM id="sp_algo" value="0"/>
+  <PARAM id="nz_mix" value="0"/>
+  <PARAM id="sub1" value="0.3"/>
+  <PARAM id="octave" value="-1"/>
+  <PARAM id="poly" value="1"/>
+  <PARAM id="glide" value="0.05"/>
+  <PARAM id="s2_type" value="9"/>
+  <PARAM id="s2_main" value="0.35"/>
+  <PARAM id="s2_p1" value="0.3"/>
+  <PARAM id="s2_p2" value="0.6"/>
+  <PARAM id="s2_ms" value="2"/>
+  <PARAM id="s2_ma" value="0.4"/>
+  <PARAM id="s3_type" value="7"/>
+  <PARAM id="s3_main" value="0.55"/>
+  <PARAM id="e1_a" value="0.005"/>
+  <PARAM id="e1_d" value="0.3"/>
+  <PARAM id="e1_s" value="0.9"/>
+  <PARAM id="e1_r" value="0.2"/>
+  <PARAM id="md_on" value="0"/>
+  <PARAM id="rv_on" value="0"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+</PARAMS>

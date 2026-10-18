@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Bar spacing kept low, a steep Decay, an octave down. -->
+<PARAMS presetName="Log Drum" category="Percussive">
+  <PARAM id="sp_algo" value="3"/>
+  <PARAM id="sp_depth" value="0.3"/>
+  <PARAM id="nz_mix" value="0.05"/>
+  <PARAM id="octave" value="-1"/>
+  <PARAM id="s2_type" value="7"/>
+  <PARAM id="s2_main" value="0.35"/>
+  <PARAM id="s3_type" value="12"/>
+  <PARAM id="s3_main" value="0.6"/>
+  <PARAM id="s3_p1" value="0.9"/>
+  <PARAM id="e1_a" value="0.001"/>
+  <PARAM id="e1_d" value="0.6"/>
+  <PARAM id="e1_s" value="0"/>
+  <PARAM id="e1_r" value="0.4"/>
+  <PARAM id="md_on" value="0"/>
+  <PARAM id="rv_mix" value="0.2"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+</PARAMS>

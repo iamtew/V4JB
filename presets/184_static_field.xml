@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Scatter spacing, the Noise module and Every Nth hopping on a sample-and-hold LFO. -->
+<PARAMS presetName="Static Field" category="Textures">
+  <PARAM id="sp_algo" value="14"/>
+  <PARAM id="sp_depth" value="0.8"/>
+  <PARAM id="nz_mix" value="0.5"/>
+  <PARAM id="s2_type" value="17"/>
+  <PARAM id="s2_main" value="0.5"/>
+  <PARAM id="s2_p1" value="0.6"/>
+  <PARAM id="s3_type" value="6"/>
+  <PARAM id="s3_main" value="0.2"/>
+  <PARAM id="s3_p1" value="0.6"/>
+  <PARAM id="s3_ls" value="3"/>
+  <PARAM id="s3_la" value="0.3"/>
+  <PARAM id="l3_shape" value="4"/>
+  <PARAM id="l3_rate" value="2"/>
+  <PARAM id="s4_type" value="7"/>
+  <PARAM id="s4_main" value="0.6"/>
+  <PARAM id="e1_a" value="1"/>
+  <PARAM id="e1_d" value="1"/>
+  <PARAM id="e1_s" value="1"/>
+  <PARAM id="e1_r" value="3"/>
+  <PARAM id="rv_mix" value="0.4"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+</PARAMS>

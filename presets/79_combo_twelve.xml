@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Even Shift spacing with even harmonics favoured: a thin combo organ with a slow phaser. -->
+<PARAMS presetName="Combo Twelve" category="Organs">
+  <PARAM id="sp_algo" value="12"/>
+  <PARAM id="sp_depth" value="0.15"/>
+  <PARAM id="nz_mix" value="0"/>
+  <PARAM id="s2_type" value="2"/>
+  <PARAM id="s2_main" value="0.75"/>
+  <PARAM id="s2_p1" value="0"/>
+  <PARAM id="s3_type" value="7"/>
+  <PARAM id="s3_main" value="0.7"/>
+  <PARAM id="e1_a" value="0.003"/>
+  <PARAM id="e1_d" value="0.05"/>
+  <PARAM id="e1_s" value="1"/>
+  <PARAM id="e1_r" value="0.1"/>
+  <PARAM id="md_type" value="1"/>
+  <PARAM id="md_rate" value="0.7"/>
+  <PARAM id="md_mix" value="0.35"/>
+  <PARAM id="rv_mix" value="0.2"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+</PARAMS>

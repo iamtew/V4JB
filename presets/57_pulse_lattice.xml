@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Octaves spacing; Every Nth switched by a square LFO 2 on 1/8 notes. -->
+<PARAMS presetName="Pulse Lattice" category="Moving Pads">
+  <PARAM id="sp_algo" value="7"/>
+  <PARAM id="s2_type" value="6"/>
+  <PARAM id="s2_main" value="0.1"/>
+  <PARAM id="s2_p1" value="0.7"/>
+  <PARAM id="s2_ls" value="2"/>
+  <PARAM id="s2_la" value="0.3"/>
+  <PARAM id="l2_sync" value="1"/>
+  <PARAM id="l2_div" value="1"/>
+  <PARAM id="l2_shape" value="3"/>
+  <PARAM id="s3_type" value="22"/>
+  <PARAM id="s3_main" value="0.4"/>
+  <PARAM id="s4_type" value="7"/>
+  <PARAM id="s4_main" value="0.6"/>
+  <PARAM id="e1_a" value="0.5"/>
+  <PARAM id="e1_d" value="1"/>
+  <PARAM id="e1_s" value="0.8"/>
+  <PARAM id="e1_r" value="2.5"/>
+  <PARAM id="rv_mix" value="0.3"/>
+</PARAMS>

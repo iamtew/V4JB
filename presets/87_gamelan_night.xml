@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Membrane spacing with alternating Detuned beating, as in paired gamelan tunings. -->
+<PARAMS presetName="Gamelan Night" category="Bells">
+  <PARAM id="sp_algo" value="4"/>
+  <PARAM id="sp_depth" value="0.7"/>
+  <PARAM id="nz_mix" value="0"/>
+  <PARAM id="s2_type" value="12"/>
+  <PARAM id="s2_main" value="0.35"/>
+  <PARAM id="s2_p1" value="0.4"/>
+  <PARAM id="s3_type" value="15"/>
+  <PARAM id="s3_main" value="0.25"/>
+  <PARAM id="s3_p1" value="0"/>
+  <PARAM id="s3_p2" value="0.5"/>
+  <PARAM id="s4_type" value="7"/>
+  <PARAM id="s4_main" value="0.7"/>
+  <PARAM id="e1_a" value="0.001"/>
+  <PARAM id="e1_d" value="2"/>
+  <PARAM id="e1_s" value="0"/>
+  <PARAM id="e1_r" value="2"/>
+  <PARAM id="rv_mix" value="0.35"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+</PARAMS>

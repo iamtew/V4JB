@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Harmonic Add stacks partials 1 to 4; the mod wheel opens the Lowpass. Drive and fast chorus. -->
+<PARAMS presetName="Gospel Wheel" category="Organs">
+  <PARAM id="sp_algo" value="0"/>
+  <PARAM id="nz_mix" value="0"/>
+  <PARAM id="s2_type" value="26"/>
+  <PARAM id="s2_main" value="0"/>
+  <PARAM id="s2_p1" value="0.7"/>
+  <PARAM id="s2_p2" value="0.5"/>
+  <PARAM id="s2_p3" value="0.4"/>
+  <PARAM id="s2_p4" value="0.3"/>
+  <PARAM id="s3_type" value="7"/>
+  <PARAM id="s3_main" value="0.75"/>
+  <PARAM id="s3_ms" value="2"/>
+  <PARAM id="s3_ma" value="0.2"/>
+  <PARAM id="e1_a" value="0.005"/>
+  <PARAM id="e1_d" value="0.1"/>
+  <PARAM id="e1_s" value="1"/>
+  <PARAM id="e1_r" value="0.2"/>
+  <PARAM id="md_rate" value="6.5"/>
+  <PARAM id="md_depth" value="0.5"/>
+  <PARAM id="md_mix" value="0.4"/>
+  <PARAM id="dr_on" value="1"/>
+  <PARAM id="dr_amt" value="0.3"/>
+  <PARAM id="dr_mix" value="0.35"/>
+  <PARAM id="rv_mix" value="0.2"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+</PARAMS>

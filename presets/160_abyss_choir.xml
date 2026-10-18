@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Root spacing, a low Bandpass choir an octave down; a free morph path slowly changes the tone. -->
+<PARAMS presetName="Abyss Choir" category="Drones">
+  <PARAM id="sp_algo" value="9"/>
+  <PARAM id="sp_depth" value="0.3"/>
+  <PARAM id="nz_mix" value="0.05"/>
+  <PARAM id="sub1" value="0.3"/>
+  <PARAM id="octave" value="-1"/>
+  <PARAM id="s2_type" value="9"/>
+  <PARAM id="s2_main" value="0.35"/>
+  <PARAM id="s2_p1" value="0.6"/>
+  <PARAM id="s2_p2" value="0.4"/>
+  <PARAM id="s2_p3" value="0.3"/>
+  <PARAM id="s3_type" value="15"/>
+  <PARAM id="s3_main" value="0.3"/>
+  <PARAM id="s4_type" value="22"/>
+  <PARAM id="s4_main" value="0.4"/>
+  <PARAM id="mmode" value="1"/>
+  <PARAM id="mtime" value="12"/>
+  <PARAM id="e1_a" value="4"/>
+  <PARAM id="e1_d" value="2"/>
+  <PARAM id="e1_s" value="1"/>
+  <PARAM id="e1_r" value="8"/>
+  <PARAM id="rv_mix" value="0.5"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <MORPH c0="0.4 0.4 0.25 0.5 0.6 0.5 0.3 0.4 0.5 0.5 0.5"
+         c1="0.5 0.5 0.4 0.5 0.6 0.5 0.4 0.5 0.5 0.6 0.5"
+         c2="0.5 0.6 0.6 0.5 0.6 0.5 0.5 0.5 0.6 0.6 0.5"
+         c3="0.6 0.7 0.8 0.5 0.6 0.5 0.6 0.6 0.6 0.7 0.5"
+         nodes="0.1 0.1 4;0.9 0.5 4;0.4 0.9 4"/>
+</PARAMS>

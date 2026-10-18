@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Root spacing through a Bandpass; a Path Sync morph circles the four corners every 4 bars. -->
+<PARAMS presetName="Orbit Chant" category="Moving Pads">
+  <PARAM id="sp_algo" value="9"/>
+  <PARAM id="s2_type" value="9"/>
+  <PARAM id="s2_main" value="0.5"/>
+  <PARAM id="s2_p1" value="0.6"/>
+  <PARAM id="s2_p2" value="0.3"/>
+  <PARAM id="s2_p3" value="0.3"/>
+  <PARAM id="s3_type" value="15"/>
+  <PARAM id="s3_main" value="0.3"/>
+  <PARAM id="s3_p1" value="0.2"/>
+  <PARAM id="s3_p2" value="0.3"/>
+  <PARAM id="s4_type" value="22"/>
+  <PARAM id="s4_main" value="0.3"/>
+  <PARAM id="mmode" value="2"/>
+  <PARAM id="e1_a" value="0.8"/>
+  <PARAM id="e1_d" value="1.5"/>
+  <PARAM id="e1_s" value="0.8"/>
+  <PARAM id="e1_r" value="3"/>
+  <PARAM id="rv_mix" value="0.35"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <MORPH c0="0.4 0.4 0.25 0.5 0.6 0.5 0.3 0.4 0.5 0.5 0.5"
+         c1="0.5 0.5 0.4 0.5 0.6 0.5 0.4 0.5 0.5 0.6 0.5"
+         c2="0.5 0.6 0.6 0.5 0.6 0.5 0.5 0.5 0.6 0.6 0.5"
+         c3="0.6 0.7 0.8 0.5 0.6 0.5 0.6 0.6 0.6 0.7 0.5"
+         nodes="0.2 0.2 2;0.8 0.3 2;0.7 0.8 2;0.3 0.7 2"/>
+</PARAMS>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Root spacing through a slowly swaying Bandpass: a soft, wordless choir. -->
+<PARAMS presetName="Cotton Choir" category="Pads">
+  <PARAM id="sp_algo" value="9"/>
+  <PARAM id="sp_depth" value="0.25"/>
+  <PARAM id="s2_type" value="9"/>
+  <PARAM id="s2_main" value="0.5"/>
+  <PARAM id="s2_p1" value="0.6"/>
+  <PARAM id="s2_p2" value="0.3"/>
+  <PARAM id="s2_p3" value="0.4"/>
+  <PARAM id="s2_ls" value="1"/>
+  <PARAM id="s2_la" value="0.1"/>
+  <PARAM id="s3_type" value="15"/>
+  <PARAM id="s3_main" value="0.35"/>
+  <PARAM id="s3_p1" value="0.5"/>
+  <PARAM id="s3_p2" value="0.3"/>
+  <PARAM id="s4_type" value="7"/>
+  <PARAM id="s4_main" value="0.7"/>
+  <PARAM id="e1_a" value="1.2"/>
+  <PARAM id="e1_d" value="2"/>
+  <PARAM id="e1_s" value="0.8"/>
+  <PARAM id="e1_r" value="3.5"/>
+  <PARAM id="rv_mix" value="0.4"/>
+</PARAMS>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Bell spacing, a key-tracked Bandpass and a short ring. -->
+<PARAMS presetName="Steel Pan" category="Percussive">
+  <PARAM id="sp_algo" value="15"/>
+  <PARAM id="sp_depth" value="0.4"/>
+  <PARAM id="nz_mix" value="0.03"/>
+  <PARAM id="s2_type" value="12"/>
+  <PARAM id="s2_main" value="0.55"/>
+  <PARAM id="s2_p1" value="0.4"/>
+  <PARAM id="s3_type" value="9"/>
+  <PARAM id="s3_main" value="0.5"/>
+  <PARAM id="s3_p1" value="0.6"/>
+  <PARAM id="s3_p2" value="0.3"/>
+  <PARAM id="s3_p3" value="0.8"/>
+  <PARAM id="e1_a" value="0.001"/>
+  <PARAM id="e1_d" value="0.8"/>
+  <PARAM id="e1_s" value="0"/>
+  <PARAM id="e1_r" value="0.6"/>
+  <PARAM id="md_mix" value="0.2"/>
+  <PARAM id="rv_mix" value="0.25"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+</PARAMS>

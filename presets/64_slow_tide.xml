@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Env 3 opens the Lowpass over six seconds while the amp swells in. -->
+<PARAMS presetName="Slow Tide" category="Swells">
+  <PARAM id="sp_algo" value="0"/>
+  <PARAM id="s2_type" value="7"/>
+  <PARAM id="s2_main" value="0.3"/>
+  <PARAM id="s2_p1" value="0.4"/>
+  <PARAM id="s2_es" value="3"/>
+  <PARAM id="s2_ea" value="0.5"/>
+  <PARAM id="s3_type" value="22"/>
+  <PARAM id="s3_main" value="0.3"/>
+  <PARAM id="e1_a" value="4"/>
+  <PARAM id="e1_d" value="3"/>
+  <PARAM id="e1_s" value="0.9"/>
+  <PARAM id="e1_r" value="5"/>
+  <PARAM id="e3_a" value="6"/>
+  <PARAM id="e3_d" value="3"/>
+  <PARAM id="e3_s" value="0.8"/>
+  <PARAM id="e3_r" value="5"/>
+  <PARAM id="rv_mix" value="0.45"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+</PARAMS>

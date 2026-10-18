@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sync hump swept by Env 2, Clip flattening it, Drive on top. Mono. -->
+<PARAMS presetName="Sync Growl" category="Basses">
+  <PARAM id="sp_algo" value="0"/>
+  <PARAM id="nz_mix" value="0"/>
+  <PARAM id="octave" value="-1"/>
+  <PARAM id="poly" value="1"/>
+  <PARAM id="s2_type" value="3"/>
+  <PARAM id="s2_main" value="0.4"/>
+  <PARAM id="s2_p1" value="0.8"/>
+  <PARAM id="s2_p2" value="0.5"/>
+  <PARAM id="s2_es" value="2"/>
+  <PARAM id="s2_ea" value="0.4"/>
+  <PARAM id="e2_a" value="0.005"/>
+  <PARAM id="e2_d" value="0.4"/>
+  <PARAM id="e2_s" value="0.2"/>
+  <PARAM id="e2_r" value="0.3"/>
+  <PARAM id="s3_type" value="7"/>
+  <PARAM id="s3_main" value="0.5"/>
+  <PARAM id="s4_type" value="25"/>
+  <PARAM id="s4_main" value="0.3"/>
+  <PARAM id="s4_p1" value="0.4"/>
+  <PARAM id="e1_a" value="0.005"/>
+  <PARAM id="e1_d" value="0.3"/>
+  <PARAM id="e1_s" value="0.9"/>
+  <PARAM id="e1_r" value="0.2"/>
+  <PARAM id="dr_on" value="1"/>
+  <PARAM id="dr_amt" value="0.4"/>
+  <PARAM id="dr_mix" value="0.5"/>
+  <PARAM id="md_on" value="0"/>
+  <PARAM id="rv_on" value="0"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+</PARAMS>

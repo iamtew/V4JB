@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Short chords: Env 2 blips the Lowpass, a quarter-note dotted echo trails off. -->
+<PARAMS presetName="Soft Stabs" category="Polys">
+  <PARAM id="sp_algo" value="16"/>
+  <PARAM id="sp_depth" value="0.2"/>
+  <PARAM id="nz_mix" value="0.03"/>
+  <PARAM id="s2_type" value="7"/>
+  <PARAM id="s2_main" value="0.55"/>
+  <PARAM id="s2_p1" value="0.5"/>
+  <PARAM id="s2_p2" value="0.3"/>
+  <PARAM id="s2_es" value="2"/>
+  <PARAM id="s2_ea" value="0.3"/>
+  <PARAM id="e2_a" value="0.001"/>
+  <PARAM id="e2_d" value="0.25"/>
+  <PARAM id="e2_s" value="0"/>
+  <PARAM id="e2_r" value="0.2"/>
+  <PARAM id="e1_a" value="0.002"/>
+  <PARAM id="e1_d" value="0.4"/>
+  <PARAM id="e1_s" value="0.2"/>
+  <PARAM id="e1_r" value="0.3"/>
+  <PARAM id="dl_on" value="1"/>
+  <PARAM id="dl_div" value="4"/>
+  <PARAM id="dl_fb" value="0.3"/>
+  <PARAM id="dl_mix" value="0.2"/>
+  <PARAM id="rv_mix" value="0.3"/>
+  <PARAM id="s3_type" value="0"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+</PARAMS>

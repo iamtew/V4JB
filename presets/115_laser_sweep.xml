@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Env 2 throws the Sync hump from top to bottom on every note; eighth-note echoes. -->
+<PARAMS presetName="Laser Sweep" category="SFX">
+  <PARAM id="sp_algo" value="0"/>
+  <PARAM id="nz_mix" value="0"/>
+  <PARAM id="s2_type" value="3"/>
+  <PARAM id="s2_main" value="0"/>
+  <PARAM id="s2_p1" value="0.9"/>
+  <PARAM id="s2_p2" value="0.6"/>
+  <PARAM id="s2_es" value="2"/>
+  <PARAM id="s2_ea" value="1"/>
+  <PARAM id="e2_a" value="0.001"/>
+  <PARAM id="e2_d" value="1.5"/>
+  <PARAM id="e2_s" value="0"/>
+  <PARAM id="e2_r" value="0.5"/>
+  <PARAM id="e1_a" value="0.001"/>
+  <PARAM id="e1_d" value="1.5"/>
+  <PARAM id="e1_s" value="0"/>
+  <PARAM id="e1_r" value="0.5"/>
+  <PARAM id="dl_on" value="1"/>
+  <PARAM id="dl_div" value="1"/>
+  <PARAM id="dl_fb" value="0.5"/>
+  <PARAM id="dl_mix" value="0.3"/>
+  <PARAM id="s3_type" value="0"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+</PARAMS>

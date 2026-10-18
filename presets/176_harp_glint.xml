@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A slow, bright Decay and a Tail: harp strings in a hall. -->
+<PARAMS presetName="Harp Glint" category="Plucks">
+  <PARAM id="sp_algo" value="9"/>
+  <PARAM id="sp_depth" value="0.2"/>
+  <PARAM id="nz_mix" value="0"/>
+  <PARAM id="s2_type" value="12"/>
+  <PARAM id="s2_main" value="0.35"/>
+  <PARAM id="s2_p1" value="0.8"/>
+  <PARAM id="s3_type" value="22"/>
+  <PARAM id="s3_main" value="0.25"/>
+  <PARAM id="s4_type" value="7"/>
+  <PARAM id="s4_main" value="0.65"/>
+  <PARAM id="e1_a" value="0.001"/>
+  <PARAM id="e1_d" value="2.5"/>
+  <PARAM id="e1_s" value="0"/>
+  <PARAM id="e1_r" value="2"/>
+  <PARAM id="rv_mix" value="0.4"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+</PARAMS>

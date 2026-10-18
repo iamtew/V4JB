@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Bar spacing kept subtle, Decay and an Env 2 filter pluck. Polyphonic. -->
+<PARAMS presetName="Deep Pluck" category="Basses">
+  <PARAM id="sp_algo" value="3"/>
+  <PARAM id="sp_depth" value="0.2"/>
+  <PARAM id="nz_mix" value="0.05"/>
+  <PARAM id="sub1" value="0.4"/>
+  <PARAM id="octave" value="-1"/>
+  <PARAM id="s2_type" value="12"/>
+  <PARAM id="s2_main" value="0.5"/>
+  <PARAM id="s2_p1" value="0.6"/>
+  <PARAM id="s3_type" value="7"/>
+  <PARAM id="s3_main" value="0.4"/>
+  <PARAM id="s3_p1" value="0.4"/>
+  <PARAM id="s3_es" value="2"/>
+  <PARAM id="s3_ea" value="0.4"/>
+  <PARAM id="e2_a" value="0.001"/>
+  <PARAM id="e2_d" value="0.3"/>
+  <PARAM id="e2_s" value="0"/>
+  <PARAM id="e2_r" value="0.2"/>
+  <PARAM id="e1_a" value="0.002"/>
+  <PARAM id="e1_d" value="0.8"/>
+  <PARAM id="e1_s" value="0.3"/>
+  <PARAM id="e1_r" value="0.3"/>
+  <PARAM id="md_on" value="0"/>
+  <PARAM id="rv_on" value="0"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+</PARAMS>

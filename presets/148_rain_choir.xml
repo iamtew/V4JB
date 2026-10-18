@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Double Wave between rain and vowels; a free morph path sweeps Character, which moves the balance. -->
+<PARAMS presetName="Rain Choir" category="Waves" waveA="factory:rain.wav" waveB="factory:vowels.wav">
+  <PARAM id="sp_algo" value="2"/>
+  <PARAM id="sp_depth" value="0.3"/>
+  <PARAM id="nz_mix" value="0.05"/>
+  <PARAM id="s2_type" value="24"/>
+  <PARAM id="s2_main" value="0.85"/>
+  <PARAM id="s2_p1" value="0.5"/>
+  <PARAM id="s2_p2" value="0.5"/>
+  <PARAM id="s2_p3" value="0.6"/>
+  <PARAM id="s3_type" value="7"/>
+  <PARAM id="s3_main" value="0.6"/>
+  <PARAM id="s4_type" value="22"/>
+  <PARAM id="s4_main" value="0.4"/>
+  <PARAM id="mmode" value="1"/>
+  <PARAM id="mtime" value="4"/>
+  <PARAM id="e1_a" value="1"/>
+  <PARAM id="e1_d" value="2"/>
+  <PARAM id="e1_s" value="0.8"/>
+  <PARAM id="e1_r" value="4"/>
+  <PARAM id="rv_mix" value="0.45"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <MORPH c0="0.1 0.5 0.4 0.5 0.5 0.5 0.4 0.4 0.5 0.5 0.5"
+         c1="0.9 0.5 0.6 0.5 0.5 0.5 0.6 0.5 0.5 0.6 0.5"
+         c2="0.3 0.7 0.7 0.5 0.6 0.5 0.5 0.6 0.6 0.5 0.5"
+         c3="0.7 0.4 0.5 0.5 0.6 0.5 0.7 0.5 0.6 0.7 0.5"
+         nodes="0.1 0.2 3;0.9 0.4 3;0.6 0.9 3"/>
+</PARAMS>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A soft guitar pluck: Decay, a gentle Lowpass and a finger noise. -->
+<PARAMS presetName="Nylon" category="Plucks">
+  <PARAM id="sp_algo" value="0"/>
+  <PARAM id="sp_depth" value="0.3"/>
+  <PARAM id="nz_mix" value="0.08"/>
+  <PARAM id="nz_decay" value="0.95"/>
+  <PARAM id="s2_type" value="12"/>
+  <PARAM id="s2_main" value="0.5"/>
+  <PARAM id="s2_p1" value="0.7"/>
+  <PARAM id="s3_type" value="7"/>
+  <PARAM id="s3_main" value="0.55"/>
+  <PARAM id="s3_p1" value="0.2"/>
+  <PARAM id="s3_ms" value="1"/>
+  <PARAM id="s3_ma" value="0.3"/>
+  <PARAM id="e1_a" value="0.001"/>
+  <PARAM id="e1_d" value="1.5"/>
+  <PARAM id="e1_s" value="0"/>
+  <PARAM id="e1_r" value="0.8"/>
+  <PARAM id="md_on" value="0"/>
+  <PARAM id="rv_mix" value="0.25"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+</PARAMS>

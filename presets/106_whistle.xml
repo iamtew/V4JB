@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Almost a pure sine with narrow breath noise; slow glide and a quarter-note echo. -->
+<PARAMS presetName="Whistle" category="Leads">
+  <PARAM id="sp_algo" value="0"/>
+  <PARAM id="sp_depth" value="0"/>
+  <PARAM id="nz_mix" value="0.15"/>
+  <PARAM id="nz_width" value="0.2"/>
+  <PARAM id="poly" value="1"/>
+  <PARAM id="glide" value="0.1"/>
+  <PARAM id="s2_type" value="1"/>
+  <PARAM id="s2_main" value="1"/>
+  <PARAM id="s2_p1" value="0.05"/>
+  <PARAM id="s2_p2" value="0"/>
+  <PARAM id="s2_p3" value="0"/>
+  <PARAM id="s2_p4" value="0"/>
+  <PARAM id="s3_type" value="16"/>
+  <PARAM id="s3_main" value="0.1"/>
+  <PARAM id="e1_a" value="0.05"/>
+  <PARAM id="e1_d" value="0.2"/>
+  <PARAM id="e1_s" value="0.9"/>
+  <PARAM id="e1_r" value="0.3"/>
+  <PARAM id="dl_on" value="1"/>
+  <PARAM id="dl_div" value="3"/>
+  <PARAM id="dl_mix" value="0.2"/>
+  <PARAM id="rv_mix" value="0.35"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+</PARAMS>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Lowpass wobbling on LFO 2 synced to 1/8, Clip and Drive, a heavy sub. Mono. -->
+<PARAMS presetName="Wobble Floor" category="Basses">
+  <PARAM id="sp_algo" value="12"/>
+  <PARAM id="sp_depth" value="0.15"/>
+  <PARAM id="nz_mix" value="0"/>
+  <PARAM id="sub1" value="0.5"/>
+  <PARAM id="octave" value="-1"/>
+  <PARAM id="poly" value="1"/>
+  <PARAM id="s2_type" value="7"/>
+  <PARAM id="s2_main" value="0.35"/>
+  <PARAM id="s2_p1" value="0.6"/>
+  <PARAM id="s2_p2" value="0.5"/>
+  <PARAM id="s2_ls" value="2"/>
+  <PARAM id="s2_la" value="0.35"/>
+  <PARAM id="l2_sync" value="1"/>
+  <PARAM id="l2_div" value="1"/>
+  <PARAM id="s3_type" value="25"/>
+  <PARAM id="s3_main" value="0.3"/>
+  <PARAM id="e1_a" value="0.005"/>
+  <PARAM id="e1_d" value="0.3"/>
+  <PARAM id="e1_s" value="1"/>
+  <PARAM id="e1_r" value="0.2"/>
+  <PARAM id="dr_on" value="1"/>
+  <PARAM id="dr_amt" value="0.3"/>
+  <PARAM id="md_on" value="0"/>
+  <PARAM id="rv_on" value="0"/>
+  <PARAM id="s4_type" value="0"/>
+</PARAMS>
