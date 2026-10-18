@@ -15,9 +15,35 @@ bool V4JBAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts) con
     return layouts.getMainInputChannelSet().isDisabled();
 }
 
+void V4JBAudioProcessor::pushKey (int note, bool on) noexcept
+{
+    const auto scope = keyFifo.write (1);
+    if (scope.blockSize1 > 0)
+        keyEvents[scope.startIndex1] = { (juce::uint8) juce::jlimit (0, 127, note),
+                                         (juce::uint8) (on ? 1 : 0) };
+}
+
+void V4JBAudioProcessor::drainKeys() noexcept
+{
+    const auto scope = keyFifo.read (keyFifo.getNumReady());
+    auto apply = [this] (int i)
+    {
+        const auto e = keyEvents[i];
+        if (e.on != 0)
+            swirl.noteOn ((int) e.note);
+        else
+            swirl.noteOff ((int) e.note);
+    };
+    for (int i = 0; i < scope.blockSize1; ++i)
+        apply (scope.startIndex1 + i);
+    for (int i = 0; i < scope.blockSize2; ++i)
+        apply (scope.startIndex2 + i);
+}
+
 void V4JBAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midi)
 {
     juce::ScopedNoDenormals noDenormals;
+    drainKeys();
     const int n = buffer.getNumSamples();
     swirl.setMacros ({ motion->load(), crackle->load(), acid->load(), air->load(),
                        ghost->load(), vowel->load(), breath->load(), haunt->load() });

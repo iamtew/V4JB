@@ -37,7 +37,20 @@ public:
 
     juce::AudioProcessorValueTreeState apvts;
 
+    // Message thread only. processBlock drains this. A click is dropped if the
+    // queue is still full (AbstractFifo keeps one slot empty, so 31 fit).
+    void pushKey (int note, bool on) noexcept;
+
 private:
+    void drainKeys() noexcept;
+
+    // On-screen keys must not lock or allocate in processBlock. Feeding
+    // MidiKeyboardState into the MIDI buffer would do both, so clicks land here.
+    struct KeyEvent { juce::uint8 note = 0; juce::uint8 on = 0; };
+    static constexpr int kKeyQueue = 32;
+    juce::AbstractFifo keyFifo { kKeyQueue };
+    KeyEvent keyEvents[kKeyQueue] {};
+
     v4jb::Swirl swirl;
     float lastLevel = 0.f;  // Volume ramps from here each block, so moves do not zipper
 
