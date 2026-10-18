@@ -26,11 +26,16 @@ icon:
     magick assets/logo.png -define icon:auto-resize=256,128,64,48,32,16 Builds\VisualStudio2022\icon.ico
     Get-ChildItem Builds\VisualStudio2022 -Recurse -Filter resources.res | Remove-Item -Force
 
+# `just icon` after resave: Projucer rewrites icon.ico; magick must win, then drop .res.
 build-debug: resave
+    just icon
     & '{{MSBUILD}}' {{SOLUTION}} /p:Configuration=Debug /p:Platform=x64 /m
+    ie4uinit.exe -show
 
 build-release: resave
+    just icon
     & '{{MSBUILD}}' {{SOLUTION}} /p:Configuration=Release /p:Platform=x64 /m
+    ie4uinit.exe -show
 
 build-dist: build-release
     if (Test-Path dist) { Remove-Item dist -Recurse -Force }
