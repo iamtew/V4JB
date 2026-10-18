@@ -42,6 +42,7 @@ private:
     juce::Rectangle<int> titleHitBounds() const;
 
     void showPresetMenu();
+    void refreshPresetList();
     void stepPreset (int delta);
     void savePresetDialog();
     void showRandomMenu();
@@ -91,7 +92,7 @@ private:
     AboutBox aboutBox;
     juce::TooltipWindow tooltips { this };
     juce::Image logo;
-    juce::Array<PresetEntry> presetList;  // factory then user, rebuilt when the menu opens
+    juce::Array<PresetEntry> presetList;  // factory then user, rebuilt for the menu and arrows
     int presetIndex = 0;
 
     // Standalone only. Declared after the state so the component dies first.

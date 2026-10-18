@@ -527,6 +527,7 @@ std::unique_ptr<juce::XmlElement> V4JBAudioProcessor::createStateXml()
     state.setProperty ("waveA", waveSource[0], nullptr);
     state.setProperty ("waveB", waveSource[1], nullptr);
     state.setProperty ("presetName", currentPresetName, nullptr);
+    state.setProperty ("category", currentPresetCategory, nullptr);
     state.setProperty ("uiScale", uiScale, nullptr);
     return state.createXml();
 }
@@ -563,6 +564,18 @@ void V4JBAudioProcessor::applyStateXml (const juce::XmlElement& xml, bool fromPr
             clearWave (w);
     }
     currentPresetName = xml.getStringAttribute ("presetName", currentPresetName);
+    if (xml.hasAttribute ("category"))
+        currentPresetCategory = xml.getStringAttribute ("category");
+    else
+    {
+        currentPresetCategory.clear();
+        for (const auto& e : factoryPresets)
+            if (e.name == currentPresetName)
+            {
+                currentPresetCategory = e.category;
+                break;
+            }
+    }
 }
 
 void V4JBAudioProcessor::getStateInformation (juce::MemoryBlock& destData)
@@ -600,6 +613,7 @@ void V4JBAudioProcessor::loadPreset (const PresetEntry& e)
         {
             applyStateXml (*xml, true);
             currentPresetName = e.name;
+            currentPresetCategory = e.category;
         }
 }
 
@@ -609,9 +623,10 @@ bool V4JBAudioProcessor::saveUserPreset (const juce::String& name, const juce::S
     if (clean.isEmpty())
         return false;
     currentPresetName = name.trim();
+    currentPresetCategory = category.isNotEmpty() ? category : juce::String ("User");
     auto xml = createStateXml();
     xml->setAttribute ("presetName", currentPresetName);
-    xml->setAttribute ("category", category.isNotEmpty() ? category : juce::String ("User"));
+    xml->setAttribute ("category", currentPresetCategory);
     const auto dir = Presets::userDir();
     return dir.createDirectory() && xml->writeTo (dir.getChildFile (clean + ".xml"));
 }
@@ -713,6 +728,7 @@ void V4JBAudioProcessor::randomize (bool newModules)
             morph.corner[c][m].store (between (0.2f, 0.8f));
 
     currentPresetName = newModules ? "Random" : "Random (varied)";
+    currentPresetCategory.clear();  // not a real group; arrows fall back to the full list
 }
 
 juce::AudioProcessorEditor* V4JBAudioProcessor::createEditor()

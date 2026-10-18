@@ -73,6 +73,7 @@ public:
     bool saveUserPreset (const juce::String& name, const juce::String& category);
     void randomize (bool newModules);
     juce::String currentPresetName { "Init" };
+    juce::String currentPresetCategory { "Init" };
 
     // Editor scale (drag the corner). 0.85 fits a 1440x900 screen; saved with the session.
     float uiScale = 0.85f;

@@ -183,8 +183,6 @@ V4JBAudioProcessorEditor::V4JBAudioProcessorEditor (V4JBAudioProcessor& p)
     content.addAndMakeVisible (tabs);
     content.addChildComponent (aboutBox);
 
-    presetList = proc.getFactoryPresets();
-
     // VST3 stays keyboard-free. The host already has keys; this strip is for Standalone.
     if (proc.wrapperType == juce::AudioProcessor::wrapperType_Standalone)
     {
@@ -245,7 +243,13 @@ void V4JBAudioProcessorEditor::handleNoteOff (juce::MidiKeyboardState*, int, int
 // 30 Hz: only the visible page pulls spectra and meters.
 void V4JBAudioProcessorEditor::timerCallback()
 {
-    presetBtn.setButtonText (proc.currentPresetName);
+    if (proc.currentPresetCategory.isNotEmpty())
+        presetBtn.setButtonText (proc.currentPresetCategory + "  ·  " + proc.currentPresetName);
+    else
+        presetBtn.setButtonText (proc.currentPresetName);
+    presetBtn.setTooltip (proc.currentPresetCategory.isNotEmpty()
+                              ? proc.currentPresetCategory + " / " + proc.currentPresetName
+                              : proc.currentPresetName);
     switch (tabs.getCurrentTabIndex())
     {
         case 0: editPage.refresh(); break;
@@ -255,10 +259,15 @@ void V4JBAudioProcessorEditor::timerCallback()
     }
 }
 
-void V4JBAudioProcessorEditor::showPresetMenu()
+void V4JBAudioProcessorEditor::refreshPresetList()
 {
     presetList = proc.getFactoryPresets();
     presetList.addArray (Presets::user());
+}
+
+void V4JBAudioProcessorEditor::showPresetMenu()
+{
+    refreshPresetList();
 
     // Group by category, factory first; menu ids are presetList index + 1.
     juce::PopupMenu menu;
@@ -299,9 +308,27 @@ void V4JBAudioProcessorEditor::showPresetMenu()
 
 void V4JBAudioProcessorEditor::stepPreset (int delta)
 {
+    refreshPresetList();
     if (presetList.isEmpty())
         return;
-    presetIndex = (presetIndex + delta + presetList.size()) % presetList.size();
+
+    juce::Array<int> group;
+    for (int i = 0; i < presetList.size(); ++i)
+        if (presetList[i].category == proc.currentPresetCategory)
+            group.add (i);
+    if (group.isEmpty())  // Random / unknown name: walk the whole list
+        for (int i = 0; i < presetList.size(); ++i)
+            group.add (i);
+
+    int pos = 0;
+    for (int g = 0; g < group.size(); ++g)
+        if (presetList[group[g]].name == proc.currentPresetName)
+        {
+            pos = g;
+            break;
+        }
+    pos = (pos + delta + group.size()) % group.size();
+    presetIndex = group[pos];
     proc.loadPreset (presetList[presetIndex]);
 }
 
