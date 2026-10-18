@@ -8,7 +8,7 @@ Or unzip `V4JB-<version>-win-x64-vst3.zip` into your VST3 folder.
 
 ## Controls
 
-Hold a MIDI note to play. The note sets the pitch of the acid squelch; the newest held note wins. In the Standalone, pick your MIDI keyboard under Options > Audio/MIDI Settings.
+Hold a MIDI note to play. The note sets the pitch of the acid squelch; the newest held note wins. In the Standalone, pick your MIDI keyboard under Options > Audio/MIDI Settings. The Standalone window also has piano keys along the bottom (C2 to C5); click or drag them.
 
 - **Motion**: how fast and far the sound sweeps, rises and falls, and whirls between left and right.
 - **Crackle**: cracks and pops. Off at 0, a crackling fire at 100%.
