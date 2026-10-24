@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ghost Root. Bell spacing. Discrete Adder into Tail and Hype. A free morph path drifts the macros. Held, with subs. -->
+<PARAMS presetName="Ghost Root" category="Drones">
+  <PARAM id="sp_algo" value="15"/>
+  <PARAM id="sp_depth" value="0.64"/>
+  <PARAM id="sp_tilt" value="1.8"/>
+  <PARAM id="sp_partials" value="352"/>
+  <PARAM id="sp_moddepth" value="0.25"/>
+  <PARAM id="sp_modrate" value="0.08"/>
+  <PARAM id="nz_mix" value="0.12"/>
+  <PARAM id="sub1" value="0.35"/>
+  <PARAM id="s2_type" value="5"/>
+  <PARAM id="s2_main" value="0.38"/>
+  <PARAM id="s2_p1" value="0.7"/>
+  <PARAM id="s2_p2" value="0.47"/>
+  <PARAM id="s2_p3" value="0.13"/>
+  <PARAM id="s2_ls" value="3"/>
+  <PARAM id="s2_la" value="0.12"/>
+  <PARAM id="s3_type" value="22"/>
+  <PARAM id="s3_main" value="0.4"/>
+  <PARAM id="s3_p1" value="0.55"/>
+  <PARAM id="s3_p2" value="0.52"/>
+  <PARAM id="s4_main" value="0.32"/>
+  <PARAM id="s4_p1" value="0.35"/>
+  <PARAM id="s4_p2" value="0.64"/>
+  <PARAM id="s4_p3" value="0.48"/>
+  <PARAM id="s4_p4" value="0.58"/>
+  <PARAM id="e1_a" value="1.2"/>
+  <PARAM id="e1_s" value="1"/>
+  <PARAM id="e1_r" value="7"/>
+  <PARAM id="l3_rate" value="0.015"/>
+  <PARAM id="md_mix" value="0.12"/>
+  <PARAM id="rv_mix" value="0.36"/>
+  <PARAM id="mmode" value="1"/>
+  <PARAM id="mtime" value="16"/>
+  <MORPH c0="0.48 0.57 0.66 0.75 0.84 0.23 0.33 0.42 0.51 0.60 0.69"
+         c1="0.84 0.23 0.32 0.41 0.50 0.59 0.68 0.77 0.16 0.26 0.35"
+         c2="0.49 0.58 0.68 0.77 0.16 0.25 0.34 0.43 0.52 0.61 0.70"
+         c3="0.27 0.36 0.45 0.54 0.63 0.72 0.82 0.21 0.30 0.39 0.48"
+         nodes="0.00 0.32 1;0.33 0.51 2;0.67 0.70 3;1.00 0.14 4"/>
+</PARAMS>

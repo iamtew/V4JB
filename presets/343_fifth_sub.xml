@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fifth Sub. Octaves spacing. Second Tone at a major third, then Hype and a Lowpass. LFO 1 sine moves the main knob. Mono, an octave down, subs, chorus and reverb off. -->
+<PARAMS presetName="Fifth Sub" category="Basses">
+  <PARAM id="sp_algo" value="7"/>
+  <PARAM id="sp_depth" value="0.4"/>
+  <PARAM id="sp_tilt" value="2"/>
+  <PARAM id="sp_partials" value="132"/>
+  <PARAM id="sp_moddepth" value="0.05"/>
+  <PARAM id="nz_mix" value="0.03"/>
+  <PARAM id="sub1" value="0.58"/>
+  <PARAM id="sub2" value="0.32"/>
+  <PARAM id="octave" value="-1"/>
+  <PARAM id="poly" value="1"/>
+  <PARAM id="s2_type" value="19"/>
+  <PARAM id="s2_main" value="0.312"/>
+  <PARAM id="s2_p1" value="0.57"/>
+  <PARAM id="s2_p2" value="0.23"/>
+  <PARAM id="s2_la" value="0.25"/>
+  <PARAM id="s3_type" value="13"/>
+  <PARAM id="s3_main" value="0.31"/>
+  <PARAM id="s3_p1" value="0.42"/>
+  <PARAM id="s3_p2" value="0.43"/>
+  <PARAM id="s3_p3" value="0.6"/>
+  <PARAM id="s3_p4" value="0.72"/>
+  <PARAM id="s4_type" value="7"/>
+  <PARAM id="s4_main" value="0.57"/>
+  <PARAM id="s4_p1" value="0.4"/>
+  <PARAM id="s4_p2" value="0.16"/>
+  <PARAM id="s4_p3" value="0.15"/>
+  <PARAM id="e1_a" value="0.004"/>
+  <PARAM id="e1_d" value="0.36"/>
+  <PARAM id="e1_s" value="0.9"/>
+  <PARAM id="e1_r" value="0.22"/>
+  <PARAM id="l1_rate" value="0.12"/>
+  <PARAM id="md_on" value="0"/>
+  <PARAM id="rv_on" value="0"/>
+</PARAMS>

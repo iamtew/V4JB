@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Wind Chime. Bell spacing. Moving Filter into Blur. Key tracking opens the main knob up the keyboard. Struck, no sustain. -->
+<PARAMS presetName="Wind Chime" category="Bells">
+  <PARAM id="sp_algo" value="15"/>
+  <PARAM id="sp_depth" value="0.75"/>
+  <PARAM id="sp_tilt" value="0.94"/>
+  <PARAM id="sp_partials" value="200"/>
+  <PARAM id="sp_moddepth" value="0.08"/>
+  <PARAM id="nz_mix" value="0.06"/>
+  <PARAM id="nz_decay" value="0.45"/>
+  <PARAM id="s2_type" value="11"/>
+  <PARAM id="s2_main" value="0.375"/>
+  <PARAM id="s2_p1" value="0.45"/>
+  <PARAM id="s2_p2" value="0.37"/>
+  <PARAM id="s2_p3" value="0.53"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s2_ms" value="4"/>
+  <PARAM id="s2_ma" value="0.4"/>
+  <PARAM id="s3_type" value="16"/>
+  <PARAM id="s3_main" value="0.275"/>
+  <PARAM id="s3_p1" value="0.22"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="s5_type" value="12"/>
+  <PARAM id="s5_main" value="0.62"/>
+  <PARAM id="s5_p1" value="0.7"/>
+  <PARAM id="s5_p2" value="0.18"/>
+  <PARAM id="e1_a" value="0.001"/>
+  <PARAM id="e1_d" value="1.75"/>
+  <PARAM id="e1_s" value="0"/>
+  <PARAM id="e1_r" value="1.8"/>
+  <PARAM id="e1_vel" value="0.6"/>
+  <PARAM id="md_mix" value="0.12"/>
+  <PARAM id="rv_size" value="0.8"/>
+  <PARAM id="rv_mix" value="0.32"/>
+</PARAMS>

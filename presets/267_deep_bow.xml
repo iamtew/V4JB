@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Deep Bow. Odd Shift spacing. Highpass into Tail and Noise. A free morph path drifts the macros. Held, with subs. -->
+<PARAMS presetName="Deep Bow" category="Drones">
+  <PARAM id="sp_algo" value="13"/>
+  <PARAM id="sp_depth" value="0.72"/>
+  <PARAM id="sp_tilt" value="1.8"/>
+  <PARAM id="sp_partials" value="288"/>
+  <PARAM id="sp_moddepth" value="0.35"/>
+  <PARAM id="sp_modrate" value="0.08"/>
+  <PARAM id="nz_mix" value="0.12"/>
+  <PARAM id="sub1" value="0.35"/>
+  <PARAM id="sub2" value="0.24"/>
+  <PARAM id="s2_type" value="8"/>
+  <PARAM id="s2_main" value="0.345"/>
+  <PARAM id="s2_p1" value="0.38"/>
+  <PARAM id="s2_p2" value="0.2"/>
+  <PARAM id="s2_p3" value="0.17"/>
+  <PARAM id="s2_ls" value="3"/>
+  <PARAM id="s2_la" value="0.2"/>
+  <PARAM id="s3_type" value="22"/>
+  <PARAM id="s3_main" value="0.525"/>
+  <PARAM id="s3_p1" value="0.63"/>
+  <PARAM id="s3_p2" value="0.45"/>
+  <PARAM id="s4_type" value="17"/>
+  <PARAM id="s4_main" value="0.305"/>
+  <PARAM id="s4_p1" value="0.38"/>
+  <PARAM id="e1_a" value="1.2"/>
+  <PARAM id="e1_s" value="1"/>
+  <PARAM id="e1_r" value="9"/>
+  <PARAM id="l3_rate" value="0.015"/>
+  <PARAM id="md_mix" value="0.12"/>
+  <PARAM id="rv_mix" value="0.46"/>
+  <PARAM id="mmode" value="1"/>
+  <PARAM id="mtime" value="18"/>
+  <MORPH c0="0.45 0.54 0.63 0.72 0.82 0.21 0.30 0.39 0.48 0.57 0.66"
+         c1="0.81 0.20 0.29 0.38 0.47 0.56 0.65 0.75 0.84 0.23 0.32"
+         c2="0.47 0.56 0.65 0.74 0.83 0.22 0.31 0.40 0.49 0.58 0.68"
+         c3="0.24 0.33 0.42 0.51 0.61 0.70 0.79 0.18 0.27 0.36 0.45"
+         nodes="0.00 0.47 1;0.33 0.66 2;0.67 0.85 3;1.00 0.29 4"/>
+</PARAMS>

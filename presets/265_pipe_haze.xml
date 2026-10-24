@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Pipe Haze. Bar spacing. Moving Filter into Blur. LFO 3 drifts the main knob very slowly. Held, with subs. Free morph path. -->
+<PARAMS presetName="Pipe Haze" category="Drones">
+  <PARAM id="sp_algo" value="3"/>
+  <PARAM id="sp_depth" value="0.56"/>
+  <PARAM id="sp_tilt" value="2.1"/>
+  <PARAM id="sp_partials" value="248"/>
+  <PARAM id="sp_moddepth" value="0.25"/>
+  <PARAM id="sp_modrate" value="0.08"/>
+  <PARAM id="nz_mix" value="0.22"/>
+  <PARAM id="sub1" value="0.49"/>
+  <PARAM id="s2_type" value="11"/>
+  <PARAM id="s2_main" value="0.375"/>
+  <PARAM id="s2_p1" value="0.45"/>
+  <PARAM id="s2_p2" value="0.37"/>
+  <PARAM id="s2_p3" value="0.53"/>
+  <PARAM id="s2_ls" value="3"/>
+  <PARAM id="s2_la" value="0.26"/>
+  <PARAM id="s3_type" value="16"/>
+  <PARAM id="s3_main" value="0.275"/>
+  <PARAM id="s3_p1" value="0.22"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="e1_a" value="2"/>
+  <PARAM id="e1_s" value="1"/>
+  <PARAM id="e1_r" value="7"/>
+  <PARAM id="l3_rate" value="0.031"/>
+  <PARAM id="md_mix" value="0.12"/>
+  <PARAM id="rv_mix" value="0.36"/>
+  <PARAM id="mmode" value="1"/>
+  <PARAM id="mtime" value="14"/>
+  <MORPH c0="0.44 0.53 0.62 0.71 0.80 0.19 0.28 0.37 0.47 0.56 0.65"
+         c1="0.79 0.19 0.28 0.37 0.46 0.55 0.64 0.73 0.82 0.21 0.30"
+         c2="0.45 0.54 0.63 0.72 0.82 0.21 0.30 0.39 0.48 0.57 0.66"
+         c3="0.23 0.32 0.41 0.50 0.59 0.68 0.77 0.16 0.26 0.35 0.44"
+         nodes="0.00 0.17 1;0.33 0.36 2;0.67 0.55 3;1.00 0.74 4"/>
+</PARAMS>

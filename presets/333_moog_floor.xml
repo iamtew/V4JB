@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Moog Floor. Stiff String spacing. Lowpass into Blur. Mod wheel pushes the main knob. Mono, an octave down, subs, chorus and reverb off. -->
+<PARAMS presetName="Moog Floor" category="Basses">
+  <PARAM id="sp_depth" value="0.4"/>
+  <PARAM id="sp_tilt" value="1.7"/>
+  <PARAM id="sp_partials" value="72"/>
+  <PARAM id="sp_moddepth" value="0.05"/>
+  <PARAM id="nz_mix" value="0"/>
+  <PARAM id="sub1" value="0.5"/>
+  <PARAM id="sub2" value="0.2"/>
+  <PARAM id="octave" value="-1"/>
+  <PARAM id="poly" value="1"/>
+  <PARAM id="s2_main" value="0.41"/>
+  <PARAM id="s2_p1" value="0.42"/>
+  <PARAM id="s2_p2" value="0.24"/>
+  <PARAM id="s2_p3" value="0.08"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s2_ms" value="2"/>
+  <PARAM id="s2_ma" value="0.7"/>
+  <PARAM id="s3_type" value="16"/>
+  <PARAM id="s3_main" value="0.33"/>
+  <PARAM id="s3_p1" value="0.28"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="e1_a" value="0.004"/>
+  <PARAM id="e1_d" value="0.2"/>
+  <PARAM id="e1_s" value="0.9"/>
+  <PARAM id="e1_r" value="0.22"/>
+  <PARAM id="md_on" value="0"/>
+  <PARAM id="rv_on" value="0"/>
+</PARAMS>

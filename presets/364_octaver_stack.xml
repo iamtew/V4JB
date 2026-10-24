@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Octaver Stack. Octaves spacing. Harmonic Add into a Notch and Clip. Key tracking opens the main knob up the keyboard. Chord voicing. -->
+<PARAMS presetName="Octaver Stack" category="Polys">
+  <PARAM id="sp_algo" value="7"/>
+  <PARAM id="sp_depth" value="0.54"/>
+  <PARAM id="sp_tilt" value="1.5"/>
+  <PARAM id="sp_partials" value="282"/>
+  <PARAM id="nz_mix" value="0.08"/>
+  <PARAM id="poly" value="6"/>
+  <PARAM id="spread" value="0.58"/>
+  <PARAM id="width" value="1.25"/>
+  <PARAM id="s2_type" value="26"/>
+  <PARAM id="s2_main" value="0.28"/>
+  <PARAM id="s2_p1" value="0.57"/>
+  <PARAM id="s2_p2" value="0.38"/>
+  <PARAM id="s2_p3" value="0.3"/>
+  <PARAM id="s2_p4" value="0.22"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s2_ms" value="4"/>
+  <PARAM id="s2_ma" value="0.4"/>
+  <PARAM id="s3_type" value="10"/>
+  <PARAM id="s3_main" value="0.45"/>
+  <PARAM id="s3_p1" value="0.32"/>
+  <PARAM id="s3_p2" value="0.63"/>
+  <PARAM id="s3_p3" value="0.2"/>
+  <PARAM id="s4_type" value="25"/>
+  <PARAM id="s4_main" value="0.55"/>
+  <PARAM id="s4_p1" value="0.62"/>
+  <PARAM id="e1_a" value="0.11"/>
+  <PARAM id="e1_d" value="0.7"/>
+  <PARAM id="e1_s" value="0.82"/>
+  <PARAM id="e1_r" value="1.4"/>
+</PARAMS>

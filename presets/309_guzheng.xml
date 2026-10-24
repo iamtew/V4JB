@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Guzheng. Stiff String spacing. Bandpass into Decay and Hype. Env 2 plucks the main knob. Short pluck, chorus off. -->
+<PARAMS presetName="Guzheng" category="Plucks">
+  <PARAM id="sp_depth" value="0.35"/>
+  <PARAM id="sp_tilt" value="1.05"/>
+  <PARAM id="sp_partials" value="100"/>
+  <PARAM id="nz_mix" value="0.02"/>
+  <PARAM id="s2_type" value="9"/>
+  <PARAM id="s2_main" value="0.47"/>
+  <PARAM id="s2_p1" value="0.32"/>
+  <PARAM id="s2_p2" value="0.37"/>
+  <PARAM id="s2_p3" value="0.18"/>
+  <PARAM id="s2_es" value="2"/>
+  <PARAM id="s2_ea" value="0.45"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s3_type" value="12"/>
+  <PARAM id="s3_main" value="0.37"/>
+  <PARAM id="s3_p1" value="0.55"/>
+  <PARAM id="s3_p2" value="0.22"/>
+  <PARAM id="s4_main" value="0.35"/>
+  <PARAM id="s4_p1" value="0.4"/>
+  <PARAM id="s4_p2" value="0.42"/>
+  <PARAM id="s4_p3" value="0.6"/>
+  <PARAM id="s4_p4" value="0.72"/>
+  <PARAM id="e1_a" value="0.001"/>
+  <PARAM id="e1_d" value="0.12"/>
+  <PARAM id="e1_s" value="0"/>
+  <PARAM id="e1_r" value="0.14"/>
+  <PARAM id="e1_vel" value="0.65"/>
+  <PARAM id="e2_d" value="0.35"/>
+  <PARAM id="e2_s" value="0.15"/>
+  <PARAM id="md_on" value="0"/>
+  <PARAM id="rv_mix" value="0.16"/>
+</PARAMS>

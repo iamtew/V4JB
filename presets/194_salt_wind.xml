@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Salt Wind. Log spacing. Lowpass into Blur. LFO 3 drifts the main knob very slowly. Slow attack, long release, big reverb. -->
+<PARAMS presetName="Salt Wind" category="Atmospheres">
+  <PARAM id="sp_algo" value="10"/>
+  <PARAM id="sp_depth" value="0.5"/>
+  <PARAM id="sp_tilt" value="1.7"/>
+  <PARAM id="sp_partials" value="180"/>
+  <PARAM id="sp_moddepth" value="0.3"/>
+  <PARAM id="sp_modrate" value="0.08"/>
+  <PARAM id="nz_mix" value="0.28"/>
+  <PARAM id="nz_width" value="0.4"/>
+  <PARAM id="spread" value="0.55"/>
+  <PARAM id="width" value="1.2"/>
+  <PARAM id="s2_main" value="0.41"/>
+  <PARAM id="s2_p1" value="0.42"/>
+  <PARAM id="s2_p2" value="0.24"/>
+  <PARAM id="s2_p3" value="0.08"/>
+  <PARAM id="s2_ls" value="3"/>
+  <PARAM id="s2_la" value="0.26"/>
+  <PARAM id="s3_type" value="16"/>
+  <PARAM id="s3_main" value="0.33"/>
+  <PARAM id="s3_p1" value="0.28"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="e1_a" value="2.2"/>
+  <PARAM id="e1_d" value="2.2"/>
+  <PARAM id="e1_s" value="1"/>
+  <PARAM id="e1_r" value="6"/>
+  <PARAM id="l3_rate" value="0.02"/>
+  <PARAM id="md_type" value="1"/>
+  <PARAM id="md_rate" value="0.08"/>
+  <PARAM id="md_mix" value="0.12"/>
+  <PARAM id="rv_size" value="0.78"/>
+  <PARAM id="rv_damp" value="0.5"/>
+  <PARAM id="rv_mix" value="0.48"/>
+</PARAMS>

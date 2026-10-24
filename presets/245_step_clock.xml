@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Step Clock. Membrane spacing. Modulator into a Lowpass and Detuned. Velocity pushes the main knob. Tempo-synced motion. Path Sync morph. -->
+<PARAMS presetName="Step Clock" category="Moving Pads">
+  <PARAM id="sp_algo" value="4"/>
+  <PARAM id="sp_depth" value="0.51"/>
+  <PARAM id="sp_tilt" value="1.5"/>
+  <PARAM id="sp_partials" value="280"/>
+  <PARAM id="nz_mix" value="0.12"/>
+  <PARAM id="s2_type" value="14"/>
+  <PARAM id="s2_main" value="0.45"/>
+  <PARAM id="s2_p1" value="0.37"/>
+  <PARAM id="s2_p2" value="0.38"/>
+  <PARAM id="s2_p3" value="0.3"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s2_ms" value="1"/>
+  <PARAM id="s2_ma" value="0.6"/>
+  <PARAM id="s3_type" value="7"/>
+  <PARAM id="s3_main" value="0.5"/>
+  <PARAM id="s3_p1" value="0.42"/>
+  <PARAM id="s3_p2" value="0.18"/>
+  <PARAM id="s3_p3" value="0.2"/>
+  <PARAM id="s3_ls" value="2"/>
+  <PARAM id="s3_la" value="0.2"/>
+  <PARAM id="s4_type" value="15"/>
+  <PARAM id="s4_main" value="0.17"/>
+  <PARAM id="s4_p1" value="0.07"/>
+  <PARAM id="s4_p2" value="0.38"/>
+  <PARAM id="e1_a" value="0.5"/>
+  <PARAM id="e1_s" value="0.82"/>
+  <PARAM id="e1_r" value="2.2"/>
+  <PARAM id="l2_sync" value="1"/>
+  <PARAM id="l2_div" value="2"/>
+  <PARAM id="l2_shape" value="1"/>
+  <PARAM id="dl_on" value="1"/>
+  <PARAM id="dl_div" value="4"/>
+  <PARAM id="dl_fb" value="0.35"/>
+  <PARAM id="dl_mix" value="0.18"/>
+  <PARAM id="rv_mix" value="0.32"/>
+  <PARAM id="mmode" value="2"/>
+  <PARAM id="mtime" value="6"/>
+  <MORPH c0="0.58 0.68 0.77 0.16 0.25 0.34 0.43 0.52 0.61 0.70 0.79"
+         c1="0.24 0.33 0.42 0.51 0.61 0.70 0.79 0.18 0.27 0.36 0.45"
+         c2="0.60 0.69 0.78 0.17 0.26 0.35 0.44 0.54 0.63 0.72 0.81"
+         c3="0.37 0.47 0.56 0.65 0.74 0.83 0.22 0.31 0.40 0.49 0.58"
+         nodes="0.00 0.32 4;0.33 0.51 5;0.67 0.70 0;1.00 0.14 1"/>
+</PARAMS>

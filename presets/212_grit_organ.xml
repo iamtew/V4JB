@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Grit Organ. Offset spacing. Lowpass into Blur. Mod wheel pushes the main knob. Grain stays in the sustain. -->
+<PARAMS presetName="Grit Organ" category="Textures">
+  <PARAM id="sp_algo" value="16"/>
+  <PARAM id="sp_depth" value="0.55"/>
+  <PARAM id="sp_tilt" value="1.05"/>
+  <PARAM id="sp_partials" value="188"/>
+  <PARAM id="sp_moddepth" value="0.28"/>
+  <PARAM id="nz_mix" value="0.4"/>
+  <PARAM id="nz_width" value="0.75"/>
+  <PARAM id="nz_decay" value="0.3"/>
+  <PARAM id="s2_main" value="0.51"/>
+  <PARAM id="s2_p1" value="0.44"/>
+  <PARAM id="s2_p2" value="0.2"/>
+  <PARAM id="s2_p3" value="0.1"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s2_ms" value="2"/>
+  <PARAM id="s2_ma" value="0.7"/>
+  <PARAM id="s3_type" value="16"/>
+  <PARAM id="s3_main" value="0.43"/>
+  <PARAM id="s3_p1" value="0.3"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="s5_type" value="17"/>
+  <PARAM id="s5_main" value="0.28"/>
+  <PARAM id="s5_p1" value="0.45"/>
+  <PARAM id="e1_a" value="1.05"/>
+  <PARAM id="e1_d" value="1.1"/>
+  <PARAM id="e1_s" value="0.7"/>
+  <PARAM id="e1_r" value="2.2"/>
+  <PARAM id="md_on" value="0"/>
+  <PARAM id="rv_mix" value="0.33"/>
+</PARAMS>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Finger Bass. Fold spacing. Bandpass into Decay and Hype. LFO 1 sine moves the main knob. Mono, an octave down, subs, chorus and reverb off. -->
+<PARAMS presetName="Finger Bass" category="Basses">
+  <PARAM id="sp_algo" value="11"/>
+  <PARAM id="sp_depth" value="0.5"/>
+  <PARAM id="sp_tilt" value="1.85"/>
+  <PARAM id="sp_partials" value="78"/>
+  <PARAM id="sp_moddepth" value="0.05"/>
+  <PARAM id="nz_mix" value="0.03"/>
+  <PARAM id="sub1" value="0.58"/>
+  <PARAM id="sub2" value="0.26"/>
+  <PARAM id="octave" value="-1"/>
+  <PARAM id="poly" value="1"/>
+  <PARAM id="s2_type" value="9"/>
+  <PARAM id="s2_main" value="0.495"/>
+  <PARAM id="s2_p1" value="0.34"/>
+  <PARAM id="s2_p2" value="0.33"/>
+  <PARAM id="s2_p3" value="0.2"/>
+  <PARAM id="s2_la" value="0.25"/>
+  <PARAM id="s3_type" value="12"/>
+  <PARAM id="s3_main" value="0.395"/>
+  <PARAM id="s3_p1" value="0.57"/>
+  <PARAM id="s3_p2" value="0.18"/>
+  <PARAM id="s4_main" value="0.375"/>
+  <PARAM id="s4_p1" value="0.42"/>
+  <PARAM id="s4_p2" value="0.38"/>
+  <PARAM id="s4_p3" value="0.62"/>
+  <PARAM id="s4_p4" value="0.74"/>
+  <PARAM id="e1_a" value="0.004"/>
+  <PARAM id="e1_d" value="0.28"/>
+  <PARAM id="e1_s" value="0.9"/>
+  <PARAM id="e1_r" value="0.22"/>
+  <PARAM id="l1_rate" value="0.12"/>
+  <PARAM id="md_on" value="0"/>
+  <PARAM id="rv_on" value="0"/>
+</PARAMS>

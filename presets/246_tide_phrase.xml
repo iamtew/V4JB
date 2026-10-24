@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Tide Phrase. Root spacing. Moving Filter into Blur. Path Sync morph walks the macros in time. Tempo-synced motion. -->
+<PARAMS presetName="Tide Phrase" category="Moving Pads">
+  <PARAM id="sp_algo" value="9"/>
+  <PARAM id="sp_depth" value="0.59"/>
+  <PARAM id="sp_tilt" value="1.6"/>
+  <PARAM id="sp_partials" value="290"/>
+  <PARAM id="nz_mix" value="0.16"/>
+  <PARAM id="s2_type" value="11"/>
+  <PARAM id="s2_main" value="0.375"/>
+  <PARAM id="s2_p1" value="0.43"/>
+  <PARAM id="s2_p2" value="0.35"/>
+  <PARAM id="s2_p3" value="0.57"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s3_type" value="16"/>
+  <PARAM id="s3_main" value="0.275"/>
+  <PARAM id="s3_p1" value="0.2"/>
+  <PARAM id="s3_ls" value="2"/>
+  <PARAM id="s3_la" value="0.24"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="e1_a" value="0.65"/>
+  <PARAM id="e1_s" value="0.82"/>
+  <PARAM id="e1_r" value="2.2"/>
+  <PARAM id="l2_sync" value="1"/>
+  <PARAM id="l2_div" value="3"/>
+  <PARAM id="l2_shape" value="1"/>
+  <PARAM id="rv_mix" value="0.32"/>
+  <PARAM id="mmode" value="2"/>
+  <PARAM id="mtime" value="8"/>
+  <MORPH c0="0.24 0.33 0.42 0.51 0.61 0.70 0.79 0.18 0.27 0.36 0.45"
+         c1="0.60 0.69 0.78 0.17 0.26 0.35 0.44 0.54 0.63 0.72 0.81"
+         c2="0.26 0.35 0.44 0.53 0.62 0.71 0.80 0.19 0.28 0.37 0.47"
+         c3="0.73 0.82 0.21 0.30 0.40 0.49 0.58 0.67 0.76 0.15 0.24"
+         nodes="0.00 0.47 1;0.33 0.66 2;0.67 0.85 3;1.00 0.29 4"/>
+</PARAMS>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Bell Chord. Pairs spacing. Double Wave mixes bells with chords. Env 2 plucks the main knob. -->
+<PARAMS presetName="Bell Chord" category="Waves" waveA="factory:bells.wav" waveB="factory:chords.wav">
+  <PARAM id="sp_algo" value="17"/>
+  <PARAM id="sp_depth" value="0.55"/>
+  <PARAM id="sp_tilt" value="1.4"/>
+  <PARAM id="sp_partials" value="232"/>
+  <PARAM id="nz_mix" value="0.05"/>
+  <PARAM id="s2_type" value="24"/>
+  <PARAM id="s2_p1" value="0.35"/>
+  <PARAM id="s2_p2" value="0.42"/>
+  <PARAM id="s2_p3" value="0.55"/>
+  <PARAM id="s2_p4" value="0.15"/>
+  <PARAM id="s2_es" value="2"/>
+  <PARAM id="s2_ea" value="0.45"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s3_type" value="22"/>
+  <PARAM id="s3_main" value="0.375"/>
+  <PARAM id="s3_p1" value="0.55"/>
+  <PARAM id="s3_p2" value="0.52"/>
+  <PARAM id="s4_main" value="0.295"/>
+  <PARAM id="s4_p1" value="0.35"/>
+  <PARAM id="s4_p2" value="0.64"/>
+  <PARAM id="s4_p3" value="0.48"/>
+  <PARAM id="s4_p4" value="0.58"/>
+  <PARAM id="e1_a" value="0.55"/>
+  <PARAM id="e1_d" value="1.2"/>
+  <PARAM id="e1_r" value="2.2"/>
+  <PARAM id="e2_d" value="0.55"/>
+  <PARAM id="e2_s" value="0.15"/>
+  <PARAM id="wa_speed" value="0.48"/>
+  <PARAM id="wb_speed" value="0.56"/>
+  <PARAM id="w_bal" value="0.35"/>
+  <PARAM id="rv_size" value="0.75"/>
+</PARAMS>

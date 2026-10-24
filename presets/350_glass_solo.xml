@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Glass Solo. Stretch spacing. Odd/Even into Detuned and a Lowpass. Aftertouch pushes the main knob. Lead with glide. -->
+<PARAMS presetName="Glass Solo" category="Leads">
+  <PARAM id="sp_algo" value="1"/>
+  <PARAM id="sp_depth" value="0.52"/>
+  <PARAM id="sp_tilt" value="1.07"/>
+  <PARAM id="sp_partials" value="200"/>
+  <PARAM id="glide" value="0.05"/>
+  <PARAM id="poly" value="1"/>
+  <PARAM id="s2_type" value="2"/>
+  <PARAM id="s2_main" value="0.13"/>
+  <PARAM id="s2_p1" value="0.68"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s2_ms" value="3"/>
+  <PARAM id="s2_ma" value="0.55"/>
+  <PARAM id="s3_type" value="15"/>
+  <PARAM id="s3_main" value="0.27"/>
+  <PARAM id="s3_p1" value="0.08"/>
+  <PARAM id="s3_p2" value="0.35"/>
+  <PARAM id="s4_type" value="7"/>
+  <PARAM id="s4_main" value="0.53"/>
+  <PARAM id="s4_p1" value="0.38"/>
+  <PARAM id="s4_p2" value="0.15"/>
+  <PARAM id="s4_p3" value="0.22"/>
+  <PARAM id="e1_a" value="0.008"/>
+  <PARAM id="e1_d" value="0.28"/>
+  <PARAM id="e1_s" value="0.86"/>
+  <PARAM id="e1_r" value="0.24"/>
+  <PARAM id="e1_vel" value="0.4"/>
+  <PARAM id="md_mix" value="0.22"/>
+  <PARAM id="rv_mix" value="0.2"/>
+</PARAMS>

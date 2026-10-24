@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Orbit Loom. Even Shift spacing. Bandpass into Decay and Hype. Path Sync morph walks the macros in time. Tempo-synced motion. -->
+<PARAMS presetName="Orbit Loom" category="Moving Pads">
+  <PARAM id="sp_algo" value="12"/>
+  <PARAM id="sp_depth" value="0.35"/>
+  <PARAM id="sp_tilt" value="1.3"/>
+  <PARAM id="sp_partials" value="260"/>
+  <PARAM id="nz_mix" value="0.16"/>
+  <PARAM id="s2_type" value="9"/>
+  <PARAM id="s2_main" value="0.545"/>
+  <PARAM id="s2_p1" value="0.3"/>
+  <PARAM id="s2_p2" value="0.35"/>
+  <PARAM id="s2_p3" value="0.22"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s3_type" value="12"/>
+  <PARAM id="s3_main" value="0.445"/>
+  <PARAM id="s3_p1" value="0.53"/>
+  <PARAM id="s3_p2" value="0.2"/>
+  <PARAM id="s3_ls" value="2"/>
+  <PARAM id="s3_la" value="0.24"/>
+  <PARAM id="s4_main" value="0.425"/>
+  <PARAM id="s4_p1" value="0.38"/>
+  <PARAM id="s4_p2" value="0.4"/>
+  <PARAM id="s4_p3" value="0.64"/>
+  <PARAM id="s4_p4" value="0.7"/>
+  <PARAM id="e1_a" value="0.2"/>
+  <PARAM id="e1_s" value="0.82"/>
+  <PARAM id="e1_r" value="2.2"/>
+  <PARAM id="l2_sync" value="1"/>
+  <PARAM id="l2_div" value="3"/>
+  <PARAM id="l2_shape" value="1"/>
+  <PARAM id="dl_on" value="1"/>
+  <PARAM id="dl_div" value="2"/>
+  <PARAM id="dl_fb" value="0.35"/>
+  <PARAM id="dl_mix" value="0.18"/>
+  <PARAM id="rv_mix" value="0.32"/>
+  <PARAM id="mmode" value="2"/>
+  <PARAM id="mtime" value="2"/>
+  <MORPH c0="0.57 0.66 0.75 0.84 0.23 0.33 0.42 0.51 0.60 0.69 0.78"
+         c1="0.23 0.32 0.41 0.50 0.59 0.68 0.77 0.16 0.26 0.35 0.44"
+         c2="0.58 0.68 0.77 0.16 0.25 0.34 0.43 0.52 0.61 0.70 0.79"
+         c3="0.36 0.45 0.54 0.63 0.72 0.82 0.21 0.30 0.39 0.48 0.57"
+         nodes="0.00 0.77 4;0.33 0.21 5;0.67 0.40 0;1.00 0.59 1"/>
+</PARAMS>

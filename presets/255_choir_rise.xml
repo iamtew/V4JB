@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Choir Rise. Log spacing. Odd/Even into Detuned and a Lowpass. Env 3 opens the main knob. The note swells in. X-Axis Env morph. -->
+<PARAMS presetName="Choir Rise" category="Swells">
+  <PARAM id="sp_algo" value="10"/>
+  <PARAM id="sp_depth" value="0.4"/>
+  <PARAM id="sp_tilt" value="1.5"/>
+  <PARAM id="sp_partials" value="286"/>
+  <PARAM id="nz_mix" value="0.18"/>
+  <PARAM id="s2_type" value="2"/>
+  <PARAM id="s2_main" value="0.205"/>
+  <PARAM id="s2_p1" value="0.68"/>
+  <PARAM id="s2_es" value="3"/>
+  <PARAM id="s2_ea" value="0.58"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s3_type" value="15"/>
+  <PARAM id="s3_main" value="0.345"/>
+  <PARAM id="s3_p1" value="0.08"/>
+  <PARAM id="s3_p2" value="0.35"/>
+  <PARAM id="s4_type" value="7"/>
+  <PARAM id="s4_main" value="0.605"/>
+  <PARAM id="s4_p1" value="0.38"/>
+  <PARAM id="s4_p2" value="0.15"/>
+  <PARAM id="s4_p3" value="0.22"/>
+  <PARAM id="e1_a" value="5.6"/>
+  <PARAM id="e1_d" value="2"/>
+  <PARAM id="e1_s" value="0.9"/>
+  <PARAM id="e1_r" value="4"/>
+  <PARAM id="e3_a" value="3.4"/>
+  <PARAM id="e3_d" value="4"/>
+  <PARAM id="e3_s" value="1"/>
+  <PARAM id="e3_r" value="3.5"/>
+  <PARAM id="rv_size" value="0.85"/>
+  <PARAM id="rv_mix" value="0.54"/>
+  <PARAM id="mmode" value="3"/>
+  <PARAM id="mtime" value="3.6"/>
+  <PARAM id="msnap" value="1"/>
+  <MORPH c0="0.34 0.43 0.52 0.61 0.70 0.79 0.19 0.28 0.37 0.46 0.55"
+         c1="0.70 0.79 0.18 0.27 0.36 0.45 0.54 0.63 0.72 0.82 0.21"
+         c2="0.35 0.44 0.54 0.63 0.72 0.81 0.20 0.29 0.38 0.47 0.56"
+         c3="0.83 0.22 0.31 0.40 0.49 0.58 0.68 0.77 0.16 0.25 0.34"
+         nodes="0.00 0.32 1;0.33 0.51 2;0.67 0.70 3;1.00 0.14 4"/>
+</PARAMS>

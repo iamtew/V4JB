@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Epiano Stack. Bell spacing. Lowpass into Blur. Key and velocity together push the main knob. Chord voicing. -->
+<PARAMS presetName="Epiano Stack" category="Polys">
+  <PARAM id="sp_algo" value="15"/>
+  <PARAM id="sp_depth" value="0.38"/>
+  <PARAM id="sp_tilt" value="1.3"/>
+  <PARAM id="sp_partials" value="270"/>
+  <PARAM id="nz_mix" value="0.11"/>
+  <PARAM id="poly" value="6"/>
+  <PARAM id="spread" value="0.66"/>
+  <PARAM id="width" value="1.4"/>
+  <PARAM id="s2_main" value="0.41"/>
+  <PARAM id="s2_p1" value="0.4"/>
+  <PARAM id="s2_p2" value="0.22"/>
+  <PARAM id="s2_p3" value="0.12"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s2_ms" value="5"/>
+  <PARAM id="s2_ma" value="0.5"/>
+  <PARAM id="s3_type" value="16"/>
+  <PARAM id="s3_main" value="0.33"/>
+  <PARAM id="s3_p1" value="0.26"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="e1_a" value="0.05"/>
+  <PARAM id="e1_d" value="0.7"/>
+  <PARAM id="e1_s" value="0.82"/>
+  <PARAM id="e1_r" value="1.7"/>
+</PARAMS>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sync Solo. Membrane spacing. Lowpass into Blur. Velocity pushes the main knob. Lead with glide. -->
+<PARAMS presetName="Sync Solo" category="Leads">
+  <PARAM id="sp_algo" value="4"/>
+  <PARAM id="sp_depth" value="0.62"/>
+  <PARAM id="sp_tilt" value="1.19"/>
+  <PARAM id="sp_partials" value="176"/>
+  <PARAM id="glide" value="0.13"/>
+  <PARAM id="poly" value="1"/>
+  <PARAM id="s2_main" value="0.46"/>
+  <PARAM id="s2_p1" value="0.4"/>
+  <PARAM id="s2_p2" value="0.22"/>
+  <PARAM id="s2_p3" value="0.12"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s2_ms" value="1"/>
+  <PARAM id="s2_ma" value="0.6"/>
+  <PARAM id="s3_type" value="16"/>
+  <PARAM id="s3_main" value="0.38"/>
+  <PARAM id="s3_p1" value="0.26"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="e1_a" value="0.008"/>
+  <PARAM id="e1_d" value="0.28"/>
+  <PARAM id="e1_s" value="0.86"/>
+  <PARAM id="e1_r" value="0.24"/>
+  <PARAM id="e1_vel" value="0.4"/>
+  <PARAM id="md_mix" value="0.22"/>
+  <PARAM id="dl_on" value="1"/>
+  <PARAM id="dl_div" value="2"/>
+  <PARAM id="dl_fb" value="0.32"/>
+  <PARAM id="dl_mix" value="0.16"/>
+  <PARAM id="rv_mix" value="0.2"/>
+</PARAMS>

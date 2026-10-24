@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Horn Section. Fifths spacing. Second Tone at a detuned unison, then Hype and a Lowpass. Velocity pushes the main knob. Chord voicing. Economy on. -->
+<PARAMS presetName="Horn Section" category="Polys">
+  <PARAM id="sp_algo" value="8"/>
+  <PARAM id="sp_depth" value="0.3"/>
+  <PARAM id="sp_partials" value="120"/>
+  <PARAM id="nz_mix" value="0.05"/>
+  <PARAM id="poly" value="6"/>
+  <PARAM id="economy" value="1"/>
+  <PARAM id="spread" value="0.5"/>
+  <PARAM id="width" value="1.1"/>
+  <PARAM id="s2_type" value="19"/>
+  <PARAM id="s2_main" value="0.062"/>
+  <PARAM id="s2_p1" value="0.55"/>
+  <PARAM id="s2_p2" value="0.27"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s2_ms" value="1"/>
+  <PARAM id="s2_ma" value="0.6"/>
+  <PARAM id="s3_type" value="13"/>
+  <PARAM id="s3_main" value="0.31"/>
+  <PARAM id="s3_p1" value="0.4"/>
+  <PARAM id="s3_p2" value="0.47"/>
+  <PARAM id="s3_p3" value="0.58"/>
+  <PARAM id="s3_p4" value="0.7"/>
+  <PARAM id="s4_type" value="7"/>
+  <PARAM id="s4_main" value="0.57"/>
+  <PARAM id="s4_p1" value="0.38"/>
+  <PARAM id="s4_p2" value="0.2"/>
+  <PARAM id="s4_p3" value="0.13"/>
+  <PARAM id="e1_a" value="0.02"/>
+  <PARAM id="e1_d" value="0.7"/>
+  <PARAM id="e1_s" value="0.82"/>
+  <PARAM id="e1_r" value="1.1"/>
+</PARAMS>

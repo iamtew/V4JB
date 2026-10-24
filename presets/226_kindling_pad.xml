@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Kindling Pad. Octaves spacing. Moving Filter into Blur. LFO 2 triangle is synced to a quarter note. Soft sustain. -->
+<PARAMS presetName="Kindling Pad" category="Pads">
+  <PARAM id="sp_algo" value="7"/>
+  <PARAM id="sp_depth" value="0.22"/>
+  <PARAM id="sp_tilt" value="1.57"/>
+  <PARAM id="sp_partials" value="240"/>
+  <PARAM id="sp_moddepth" value="0.24"/>
+  <PARAM id="nz_mix" value="0.09"/>
+  <PARAM id="spread" value="0.55"/>
+  <PARAM id="s2_type" value="11"/>
+  <PARAM id="s2_main" value="0.35"/>
+  <PARAM id="s2_p1" value="0.43"/>
+  <PARAM id="s2_p2" value="0.35"/>
+  <PARAM id="s2_p3" value="0.57"/>
+  <PARAM id="s2_ls" value="2"/>
+  <PARAM id="s2_la" value="0.34"/>
+  <PARAM id="s3_type" value="16"/>
+  <PARAM id="s3_main" value="0.25"/>
+  <PARAM id="s3_p1" value="0.2"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="e1_a" value="0.45"/>
+  <PARAM id="e1_d" value="1.3"/>
+  <PARAM id="e1_s" value="0.88"/>
+  <PARAM id="e1_r" value="3.6"/>
+  <PARAM id="l2_sync" value="1"/>
+  <PARAM id="l2_div" value="2"/>
+  <PARAM id="l2_shape" value="1"/>
+  <PARAM id="md_mix" value="0.28"/>
+  <PARAM id="rv_mix" value="0.42"/>
+</PARAMS>

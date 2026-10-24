@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Larigot. Pairs spacing. 5-Sines into Octaver. LFO 2 triangle is synced to a quarter note. Instant full sustain, noise off. -->
+<PARAMS presetName="Larigot" category="Organs">
+  <PARAM id="sp_algo" value="17"/>
+  <PARAM id="sp_depth" value="0.3"/>
+  <PARAM id="sp_tilt" value="1.25"/>
+  <PARAM id="sp_partials" value="144"/>
+  <PARAM id="sp_moddepth" value="0.05"/>
+  <PARAM id="nz_mix" value="0"/>
+  <PARAM id="s2_type" value="1"/>
+  <PARAM id="s2_main" value="0.76"/>
+  <PARAM id="s2_p1" value="0.45"/>
+  <PARAM id="s2_p2" value="0.49"/>
+  <PARAM id="s2_p3" value="0.15"/>
+  <PARAM id="s2_p4" value="0.24"/>
+  <PARAM id="s2_ls" value="2"/>
+  <PARAM id="s2_la" value="0.28"/>
+  <PARAM id="s3_type" value="18"/>
+  <PARAM id="s3_main" value="0.375"/>
+  <PARAM id="s3_p1" value="0.22"/>
+  <PARAM id="s3_p2" value="0.72"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="e1_a" value="0.001"/>
+  <PARAM id="e1_d" value="0.2"/>
+  <PARAM id="e1_s" value="1"/>
+  <PARAM id="e1_r" value="0.28"/>
+  <PARAM id="l2_sync" value="1"/>
+  <PARAM id="l2_div" value="2"/>
+  <PARAM id="l2_shape" value="1"/>
+  <PARAM id="md_rate" value="0.95"/>
+  <PARAM id="md_depth" value="0.35"/>
+  <PARAM id="rv_mix" value="0.18"/>
+</PARAMS>

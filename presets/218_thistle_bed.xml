@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Thistle Bed. Log spacing. Odd/Even into Detuned and a Lowpass. Velocity pushes the main knob. Grain stays in the sustain. -->
+<PARAMS presetName="Thistle Bed" category="Textures">
+  <PARAM id="sp_algo" value="10"/>
+  <PARAM id="sp_depth" value="0.71"/>
+  <PARAM id="sp_tilt" value="1.29"/>
+  <PARAM id="sp_partials" value="260"/>
+  <PARAM id="sp_moddepth" value="0.28"/>
+  <PARAM id="nz_mix" value="0.56"/>
+  <PARAM id="nz_width" value="0.35"/>
+  <PARAM id="nz_decay" value="0.3"/>
+  <PARAM id="s2_type" value="2"/>
+  <PARAM id="s2_main" value="0.13"/>
+  <PARAM id="s2_p1" value="0.72"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s2_ms" value="1"/>
+  <PARAM id="s2_ma" value="0.6"/>
+  <PARAM id="s3_type" value="15"/>
+  <PARAM id="s3_main" value="0.27"/>
+  <PARAM id="s3_p1" value="0.12"/>
+  <PARAM id="s3_p2" value="0.33"/>
+  <PARAM id="s4_type" value="7"/>
+  <PARAM id="s4_main" value="0.53"/>
+  <PARAM id="s4_p1" value="0.42"/>
+  <PARAM id="s4_p2" value="0.13"/>
+  <PARAM id="s4_p3" value="0.2"/>
+  <PARAM id="s5_type" value="17"/>
+  <PARAM id="s5_main" value="0.38"/>
+  <PARAM id="s5_p1" value="0.45"/>
+  <PARAM id="e1_a" value="0.25"/>
+  <PARAM id="e1_d" value="1.1"/>
+  <PARAM id="e1_s" value="0.7"/>
+  <PARAM id="e1_r" value="2.2"/>
+  <PARAM id="md_on" value="0"/>
+  <PARAM id="rv_mix" value="0.33"/>
+</PARAMS>

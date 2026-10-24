@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Candle Wool. Primes spacing. Odd/Even into Detuned and a Lowpass. LFO 3 drifts the main knob very slowly. Soft sustain. -->
+<PARAMS presetName="Candle Wool" category="Pads">
+  <PARAM id="sp_algo" value="5"/>
+  <PARAM id="sp_depth" value="0.29"/>
+  <PARAM id="sp_tilt" value="1.57"/>
+  <PARAM id="sp_partials" value="208"/>
+  <PARAM id="nz_mix" value="0.09"/>
+  <PARAM id="spread" value="0.5"/>
+  <PARAM id="s2_type" value="2"/>
+  <PARAM id="s2_main" value="0.155"/>
+  <PARAM id="s2_p1" value="0.72"/>
+  <PARAM id="s2_ls" value="3"/>
+  <PARAM id="s2_la" value="0.29"/>
+  <PARAM id="s3_type" value="15"/>
+  <PARAM id="s3_main" value="0.295"/>
+  <PARAM id="s3_p1" value="0.12"/>
+  <PARAM id="s3_p2" value="0.33"/>
+  <PARAM id="s4_type" value="7"/>
+  <PARAM id="s4_main" value="0.555"/>
+  <PARAM id="s4_p1" value="0.42"/>
+  <PARAM id="s4_p2" value="0.13"/>
+  <PARAM id="s4_p3" value="0.2"/>
+  <PARAM id="e1_a" value="0.7"/>
+  <PARAM id="e1_d" value="1.3"/>
+  <PARAM id="e1_s" value="0.88"/>
+  <PARAM id="e1_r" value="3.2"/>
+  <PARAM id="l3_rate" value="0.02"/>
+  <PARAM id="md_mix" value="0.28"/>
+  <PARAM id="rv_mix" value="0.37"/>
+</PARAMS>

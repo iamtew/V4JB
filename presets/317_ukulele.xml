@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ukulele. Membrane spacing. Second Tone at a detuned unison, then Hype and a Lowpass. Env 2 plucks the main knob. Short pluck, chorus off. -->
+<PARAMS presetName="Ukulele" category="Plucks">
+  <PARAM id="sp_algo" value="4"/>
+  <PARAM id="sp_depth" value="0.65"/>
+  <PARAM id="sp_tilt" value="1.05"/>
+  <PARAM id="sp_partials" value="164"/>
+  <PARAM id="nz_mix" value="0.06"/>
+  <PARAM id="s2_type" value="19"/>
+  <PARAM id="s2_main" value="0.062"/>
+  <PARAM id="s2_p1" value="0.53"/>
+  <PARAM id="s2_p2" value="0.25"/>
+  <PARAM id="s2_es" value="2"/>
+  <PARAM id="s2_ea" value="0.53"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s3_type" value="13"/>
+  <PARAM id="s3_main" value="0.385"/>
+  <PARAM id="s3_p1" value="0.38"/>
+  <PARAM id="s3_p2" value="0.45"/>
+  <PARAM id="s3_p3" value="0.62"/>
+  <PARAM id="s3_p4" value="0.68"/>
+  <PARAM id="s4_type" value="7"/>
+  <PARAM id="s4_main" value="0.645"/>
+  <PARAM id="s4_p1" value="0.36"/>
+  <PARAM id="s4_p2" value="0.18"/>
+  <PARAM id="s4_p3" value="0.17"/>
+  <PARAM id="s5_type" value="12"/>
+  <PARAM id="s5_main" value="0.78"/>
+  <PARAM id="s5_p1" value="0.7"/>
+  <PARAM id="s5_p2" value="0.05"/>
+  <PARAM id="e1_a" value="0.001"/>
+  <PARAM id="e1_d" value="0.26"/>
+  <PARAM id="e1_s" value="0"/>
+  <PARAM id="e1_r" value="0.14"/>
+  <PARAM id="e1_vel" value="0.65"/>
+  <PARAM id="e2_d" value="0.35"/>
+  <PARAM id="e2_s" value="0.15"/>
+  <PARAM id="md_on" value="0"/>
+  <PARAM id="rv_mix" value="0.24"/>
+</PARAMS>

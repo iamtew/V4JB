@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ship Bell. Golden spacing. Lowpass into Blur. LFO 3 drifts the main knob very slowly. Struck, no sustain. -->
+<PARAMS presetName="Ship Bell" category="Bells">
+  <PARAM id="sp_algo" value="6"/>
+  <PARAM id="sp_depth" value="0.83"/>
+  <PARAM id="sp_tilt" value="0.7"/>
+  <PARAM id="sp_partials" value="180"/>
+  <PARAM id="sp_moddepth" value="0.08"/>
+  <PARAM id="nz_decay" value="0.6"/>
+  <PARAM id="s2_main" value="0.51"/>
+  <PARAM id="s2_p1" value="0.44"/>
+  <PARAM id="s2_p2" value="0.2"/>
+  <PARAM id="s2_p3" value="0.1"/>
+  <PARAM id="s2_ls" value="3"/>
+  <PARAM id="s2_la" value="0.29"/>
+  <PARAM id="s3_type" value="16"/>
+  <PARAM id="s3_main" value="0.43"/>
+  <PARAM id="s3_p1" value="0.3"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="s5_type" value="12"/>
+  <PARAM id="s5_main" value="0.7"/>
+  <PARAM id="s5_p1" value="0.7"/>
+  <PARAM id="s5_p2" value="0.18"/>
+  <PARAM id="e1_a" value="0.001"/>
+  <PARAM id="e1_d" value="3.1"/>
+  <PARAM id="e1_s" value="0"/>
+  <PARAM id="e1_r" value="1.1"/>
+  <PARAM id="e1_vel" value="0.6"/>
+  <PARAM id="l3_rate" value="0.02"/>
+  <PARAM id="md_mix" value="0.12"/>
+  <PARAM id="rv_size" value="0.8"/>
+  <PARAM id="rv_mix" value="0.38"/>
+</PARAMS>

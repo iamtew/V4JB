@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Rohrflute. Octaves spacing. Highpass into Tail and Noise. Velocity pushes the main knob. Instant full sustain, noise off. -->
+<PARAMS presetName="Rohrflute" category="Organs">
+  <PARAM id="sp_algo" value="7"/>
+  <PARAM id="sp_depth" value="0.3"/>
+  <PARAM id="sp_tilt" value="1.35"/>
+  <PARAM id="sp_partials" value="176"/>
+  <PARAM id="sp_moddepth" value="0.05"/>
+  <PARAM id="nz_mix" value="0"/>
+  <PARAM id="s2_type" value="8"/>
+  <PARAM id="s2_main" value="0.27"/>
+  <PARAM id="s2_p1" value="0.42"/>
+  <PARAM id="s2_p2" value="0.18"/>
+  <PARAM id="s2_p3" value="0.15"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s2_ms" value="1"/>
+  <PARAM id="s2_ma" value="0.6"/>
+  <PARAM id="s3_type" value="22"/>
+  <PARAM id="s3_main" value="0.45"/>
+  <PARAM id="s3_p1" value="0.67"/>
+  <PARAM id="s3_p2" value="0.43"/>
+  <PARAM id="s4_type" value="17"/>
+  <PARAM id="s4_main" value="0.23"/>
+  <PARAM id="s4_p1" value="0.42"/>
+  <PARAM id="e1_a" value="0.001"/>
+  <PARAM id="e1_d" value="0.2"/>
+  <PARAM id="e1_s" value="1"/>
+  <PARAM id="e1_r" value="0.28"/>
+  <PARAM id="md_rate" value="0.95"/>
+  <PARAM id="md_depth" value="0.45"/>
+  <PARAM id="rv_mix" value="0.22"/>
+</PARAMS>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Milk Fifths. Root spacing. Harmonic Add into a Notch and Clip. Key tracking opens the main knob up the keyboard. Soft sustain. -->
+<PARAMS presetName="Milk Fifths" category="Pads">
+  <PARAM id="sp_algo" value="9"/>
+  <PARAM id="sp_depth" value="0.5"/>
+  <PARAM id="sp_tilt" value="1.57"/>
+  <PARAM id="sp_partials" value="272"/>
+  <PARAM id="sp_moddepth" value="0.16"/>
+  <PARAM id="nz_mix" value="0.09"/>
+  <PARAM id="spread" value="0.45"/>
+  <PARAM id="s2_type" value="26"/>
+  <PARAM id="s2_main" value="0.33"/>
+  <PARAM id="s2_p1" value="0.55"/>
+  <PARAM id="s2_p2" value="0.42"/>
+  <PARAM id="s2_p3" value="0.28"/>
+  <PARAM id="s2_p4" value="0.2"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s2_ms" value="4"/>
+  <PARAM id="s2_ma" value="0.4"/>
+  <PARAM id="s3_type" value="10"/>
+  <PARAM id="s3_main" value="0.5"/>
+  <PARAM id="s3_p1" value="0.3"/>
+  <PARAM id="s3_p2" value="0.67"/>
+  <PARAM id="s3_p3" value="0.18"/>
+  <PARAM id="s4_type" value="25"/>
+  <PARAM id="s4_main" value="0.6"/>
+  <PARAM id="s4_p1" value="0.6"/>
+  <PARAM id="e1_a" value="1.45"/>
+  <PARAM id="e1_d" value="1.3"/>
+  <PARAM id="e1_s" value="0.88"/>
+  <PARAM id="e1_r" value="2.8"/>
+  <PARAM id="md_mix" value="0.28"/>
+  <PARAM id="rv_mix" value="0.32"/>
+</PARAMS>

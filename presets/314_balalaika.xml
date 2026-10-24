@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Balalaika. Octaves spacing. Harmonic Add into a Notch and Clip. LFO 1 sine moves the main knob. Short pluck, chorus off. -->
+<PARAMS presetName="Balalaika" category="Plucks">
+  <PARAM id="sp_algo" value="7"/>
+  <PARAM id="sp_depth" value="0.35"/>
+  <PARAM id="sp_tilt" value="1.17"/>
+  <PARAM id="sp_partials" value="140"/>
+  <PARAM id="nz_mix" value="0.06"/>
+  <PARAM id="s2_type" value="26"/>
+  <PARAM id="s2_main" value="0.23"/>
+  <PARAM id="s2_p1" value="0.53"/>
+  <PARAM id="s2_p2" value="0.4"/>
+  <PARAM id="s2_p3" value="0.32"/>
+  <PARAM id="s2_p4" value="0.18"/>
+  <PARAM id="s2_la" value="0.28"/>
+  <PARAM id="s3_type" value="10"/>
+  <PARAM id="s3_main" value="0.4"/>
+  <PARAM id="s3_p1" value="0.28"/>
+  <PARAM id="s3_p2" value="0.65"/>
+  <PARAM id="s3_p3" value="0.22"/>
+  <PARAM id="s4_type" value="25"/>
+  <PARAM id="s4_p1" value="0.58"/>
+  <PARAM id="s5_type" value="12"/>
+  <PARAM id="s5_main" value="0.78"/>
+  <PARAM id="s5_p1" value="0.7"/>
+  <PARAM id="s5_p2" value="0.05"/>
+  <PARAM id="e1_a" value="0.001"/>
+  <PARAM id="e1_d" value="0.47"/>
+  <PARAM id="e1_s" value="0"/>
+  <PARAM id="e1_r" value="0.14"/>
+  <PARAM id="e1_vel" value="0.65"/>
+  <PARAM id="l1_rate" value="0.12"/>
+  <PARAM id="md_on" value="0"/>
+  <PARAM id="rv_mix" value="0.24"/>
+</PARAMS>

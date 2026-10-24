@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Cajon. Scatter spacing. Every Nth into Noise and Decay. LFO 1 sample-and-hold flutters the main knob. Very short hit, chorus off. -->
+<PARAMS presetName="Cajon" category="Percussive">
+  <PARAM id="sp_algo" value="14"/>
+  <PARAM id="sp_depth" value="0.86"/>
+  <PARAM id="sp_tilt" value="1.05"/>
+  <PARAM id="sp_partials" value="60"/>
+  <PARAM id="sp_moddepth" value="0.04"/>
+  <PARAM id="nz_mix" value="0.5"/>
+  <PARAM id="nz_width" value="0.45"/>
+  <PARAM id="nz_decay" value="0.89"/>
+  <PARAM id="poly" value="4"/>
+  <PARAM id="s2_type" value="6"/>
+  <PARAM id="s2_main" value="0.48"/>
+  <PARAM id="s2_p1" value="0.78"/>
+  <PARAM id="s2_p2" value="0.1"/>
+  <PARAM id="s2_la" value="0.38"/>
+  <PARAM id="s3_type" value="17"/>
+  <PARAM id="s3_main" value="0.4"/>
+  <PARAM id="s3_p1" value="0.43"/>
+  <PARAM id="s4_type" value="12"/>
+  <PARAM id="s4_main" value="0.35"/>
+  <PARAM id="s4_p1" value="0.58"/>
+  <PARAM id="s4_p2" value="0.15"/>
+  <PARAM id="e1_a" value="0.001"/>
+  <PARAM id="e1_d" value="0.14"/>
+  <PARAM id="e1_s" value="0"/>
+  <PARAM id="e1_r" value="0.08"/>
+  <PARAM id="l1_rate" value="6"/>
+  <PARAM id="l1_shape" value="4"/>
+  <PARAM id="md_on" value="0"/>
+  <PARAM id="rv_size" value="0.35"/>
+  <PARAM id="rv_mix" value="0.14"/>
+</PARAMS>

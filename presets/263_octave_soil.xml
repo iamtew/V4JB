@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Octave Soil. Fold spacing. Second Tone at a fifth, then Hype and a Lowpass. A free morph path drifts the macros. Held, with subs. -->
+<PARAMS presetName="Octave Soil" category="Drones">
+  <PARAM id="sp_algo" value="11"/>
+  <PARAM id="sp_depth" value="0.8"/>
+  <PARAM id="sp_tilt" value="1.8"/>
+  <PARAM id="sp_partials" value="224"/>
+  <PARAM id="sp_moddepth" value="0.3"/>
+  <PARAM id="sp_modrate" value="0.08"/>
+  <PARAM id="nz_mix" value="0.12"/>
+  <PARAM id="sub1" value="0.35"/>
+  <PARAM id="sub2" value="0.12"/>
+  <PARAM id="s2_type" value="19"/>
+  <PARAM id="s2_main" value="0.562"/>
+  <PARAM id="s2_p1" value="0.57"/>
+  <PARAM id="s2_p2" value="0.23"/>
+  <PARAM id="s2_ls" value="3"/>
+  <PARAM id="s2_la" value="0.16"/>
+  <PARAM id="s3_type" value="13"/>
+  <PARAM id="s3_main" value="0.41"/>
+  <PARAM id="s3_p1" value="0.42"/>
+  <PARAM id="s3_p2" value="0.43"/>
+  <PARAM id="s3_p3" value="0.6"/>
+  <PARAM id="s3_p4" value="0.72"/>
+  <PARAM id="s4_type" value="7"/>
+  <PARAM id="s4_main" value="0.67"/>
+  <PARAM id="s4_p1" value="0.4"/>
+  <PARAM id="s4_p2" value="0.16"/>
+  <PARAM id="s4_p3" value="0.15"/>
+  <PARAM id="e1_a" value="1.2"/>
+  <PARAM id="e1_s" value="1"/>
+  <PARAM id="e1_r" value="8"/>
+  <PARAM id="l3_rate" value="0.015"/>
+  <PARAM id="md_mix" value="0.12"/>
+  <PARAM id="rv_mix" value="0.41"/>
+  <PARAM id="mmode" value="1"/>
+  <PARAM id="mtime" value="20"/>
+  <MORPH c0="0.42 0.51 0.61 0.70 0.79 0.18 0.27 0.36 0.45 0.54 0.63"
+         c1="0.78 0.17 0.26 0.35 0.44 0.54 0.63 0.72 0.81 0.20 0.29"
+         c2="0.44 0.53 0.62 0.71 0.80 0.19 0.28 0.37 0.47 0.56 0.65"
+         c3="0.21 0.30 0.40 0.49 0.58 0.67 0.76 0.15 0.24 0.33 0.42"
+         nodes="0.00 0.62 1;0.33 0.81 2;0.67 0.25 3;1.00 0.44 4"/>
+</PARAMS>

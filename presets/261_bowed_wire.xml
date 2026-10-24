@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Bowed Wire. Stretch spacing. Modulator into a Lowpass and Detuned. LFO 1 sine moves the main knob. Held, with subs. Free morph path. -->
+<PARAMS presetName="Bowed Wire" category="Drones">
+  <PARAM id="sp_algo" value="1"/>
+  <PARAM id="sp_depth" value="0.64"/>
+  <PARAM id="sp_tilt" value="2.1"/>
+  <PARAM id="sp_partials" value="192"/>
+  <PARAM id="sp_moddepth" value="0.35"/>
+  <PARAM id="sp_modrate" value="0.08"/>
+  <PARAM id="nz_mix" value="0.22"/>
+  <PARAM id="sub1" value="0.49"/>
+  <PARAM id="sub2" value="0.24"/>
+  <PARAM id="s2_type" value="14"/>
+  <PARAM id="s2_main" value="0.5"/>
+  <PARAM id="s2_p1" value="0.33"/>
+  <PARAM id="s2_p2" value="0.4"/>
+  <PARAM id="s2_p3" value="0.32"/>
+  <PARAM id="s2_la" value="0.28"/>
+  <PARAM id="s3_type" value="7"/>
+  <PARAM id="s3_main" value="0.55"/>
+  <PARAM id="s3_p1" value="0.38"/>
+  <PARAM id="s3_p2" value="0.2"/>
+  <PARAM id="s3_p3" value="0.22"/>
+  <PARAM id="s4_type" value="15"/>
+  <PARAM id="s4_main" value="0.22"/>
+  <PARAM id="s4_p1" value="0.03"/>
+  <PARAM id="s4_p2" value="0.4"/>
+  <PARAM id="e1_a" value="2"/>
+  <PARAM id="e1_s" value="1"/>
+  <PARAM id="e1_r" value="9"/>
+  <PARAM id="l1_rate" value="0.12"/>
+  <PARAM id="l3_rate" value="0.031"/>
+  <PARAM id="md_mix" value="0.12"/>
+  <PARAM id="rv_mix" value="0.46"/>
+  <PARAM id="mmode" value="1"/>
+  <PARAM id="mtime" value="16"/>
+  <MORPH c0="0.41 0.50 0.59 0.68 0.77 0.16 0.26 0.35 0.44 0.53 0.62"
+         c1="0.77 0.16 0.25 0.34 0.43 0.52 0.61 0.70 0.79 0.19 0.28"
+         c2="0.42 0.51 0.61 0.70 0.79 0.18 0.27 0.36 0.45 0.54 0.63"
+         c3="0.20 0.29 0.38 0.47 0.56 0.65 0.75 0.84 0.23 0.32 0.41"
+         nodes="0.00 0.32 1;0.33 0.51 2;0.67 0.70 3;1.00 0.14 4"/>
+</PARAMS>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Mandolin. Log spacing. Every Nth into Noise and Decay. Velocity pushes the main knob. Short pluck, chorus off. -->
+<PARAMS presetName="Mandolin" category="Plucks">
+  <PARAM id="sp_algo" value="10"/>
+  <PARAM id="sp_depth" value="0.55"/>
+  <PARAM id="sp_tilt" value="1.29"/>
+  <PARAM id="sp_partials" value="116"/>
+  <PARAM id="nz_mix" value="0.06"/>
+  <PARAM id="s2_type" value="6"/>
+  <PARAM id="s2_main" value="0.48"/>
+  <PARAM id="s2_p1" value="0.78"/>
+  <PARAM id="s2_p2" value="0.1"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s2_ms" value="1"/>
+  <PARAM id="s2_ma" value="0.6"/>
+  <PARAM id="s3_type" value="17"/>
+  <PARAM id="s3_main" value="0.4"/>
+  <PARAM id="s3_p1" value="0.43"/>
+  <PARAM id="s4_type" value="12"/>
+  <PARAM id="s4_main" value="0.35"/>
+  <PARAM id="s4_p1" value="0.58"/>
+  <PARAM id="s4_p2" value="0.15"/>
+  <PARAM id="e1_a" value="0.001"/>
+  <PARAM id="e1_d" value="0.26"/>
+  <PARAM id="e1_s" value="0"/>
+  <PARAM id="e1_r" value="0.14"/>
+  <PARAM id="e1_vel" value="0.65"/>
+  <PARAM id="md_on" value="0"/>
+  <PARAM id="rv_mix" value="0.24"/>
+</PARAMS>

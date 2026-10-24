@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Dark Clav. Odd Shift spacing. Discrete Adder into Tail and Hype. Velocity pushes the main knob. Fast attack, a decaying body, velocity on the tone. -->
+<PARAMS presetName="Dark Clav" category="Keys">
+  <PARAM id="sp_algo" value="13"/>
+  <PARAM id="sp_depth" value="0.5"/>
+  <PARAM id="sp_tilt" value="1.35"/>
+  <PARAM id="sp_partials" value="176"/>
+  <PARAM id="nz_mix" value="0.03"/>
+  <PARAM id="poly" value="6"/>
+  <PARAM id="s2_type" value="5"/>
+  <PARAM id="s2_main" value="0.3"/>
+  <PARAM id="s2_p1" value="0.7"/>
+  <PARAM id="s2_p2" value="0.47"/>
+  <PARAM id="s2_p3" value="0.13"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s2_ms" value="1"/>
+  <PARAM id="s2_ma" value="0.6"/>
+  <PARAM id="s3_type" value="22"/>
+  <PARAM id="s3_main" value="0.375"/>
+  <PARAM id="s3_p1" value="0.55"/>
+  <PARAM id="s3_p2" value="0.52"/>
+  <PARAM id="s4_main" value="0.295"/>
+  <PARAM id="s4_p1" value="0.35"/>
+  <PARAM id="s4_p2" value="0.64"/>
+  <PARAM id="s4_p3" value="0.48"/>
+  <PARAM id="s4_p4" value="0.58"/>
+  <PARAM id="e1_a" value="0.001"/>
+  <PARAM id="e1_d" value="0.85"/>
+  <PARAM id="e1_s" value="0.12"/>
+  <PARAM id="e1_r" value="0.28"/>
+  <PARAM id="e1_vel" value="0.75"/>
+  <PARAM id="md_mix" value="0.28"/>
+  <PARAM id="rv_mix" value="0.22"/>
+</PARAMS>

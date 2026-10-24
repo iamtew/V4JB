@@ -12,7 +12,7 @@ A modular additive synth: up to 512 sine partials per voice, 8 voices. A fixed s
 
 `just build-debug` (Projucer resave + MSBuild). `just check` runs the version compare test and the engine render check (`tests/engine_check.cpp`). JUCE is expected at `%USERPROFILE%\JUCE` (override with `JUCE_PATH`).
 
-194 factory presets in 16 categories live in `presets/*.xml` (compiled in as BinaryData; list only what differs from the defaults). `just check` validates them with `tools/check_presets.ps1`. The built-in Wave page sources in `presets/waves/` are synthesised by `tools/make_waves.cpp`; regenerate them with `just waves`.
+394 factory presets in 16 categories live in `presets/*.xml` (compiled in as BinaryData; list only what differs from the defaults). `just check` validates them with `tools/check_presets.ps1`. The built-in Wave page sources in `presets/waves/` are synthesised by `tools/make_waves.cpp`; regenerate them with `just waves`.
 
 ## Release
 

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Harbour Mist. Bell spacing. Highpass into Tail and Noise. LFO 1 sine moves the main knob. Slow attack, long release, big reverb. -->
+<PARAMS presetName="Harbour Mist" category="Atmospheres">
+  <PARAM id="sp_algo" value="15"/>
+  <PARAM id="sp_depth" value="0.58"/>
+  <PARAM id="sp_tilt" value="1.88"/>
+  <PARAM id="sp_partials" value="194"/>
+  <PARAM id="sp_moddepth" value="0.36"/>
+  <PARAM id="sp_modrate" value="0.12"/>
+  <PARAM id="nz_mix" value="0.35"/>
+  <PARAM id="nz_width" value="0.55"/>
+  <PARAM id="spread" value="0.61"/>
+  <PARAM id="width" value="1.35"/>
+  <PARAM id="s2_type" value="8"/>
+  <PARAM id="s2_main" value="0.295"/>
+  <PARAM id="s2_p1" value="0.42"/>
+  <PARAM id="s2_p2" value="0.18"/>
+  <PARAM id="s2_p3" value="0.15"/>
+  <PARAM id="s2_la" value="0.25"/>
+  <PARAM id="s3_type" value="22"/>
+  <PARAM id="s3_main" value="0.475"/>
+  <PARAM id="s3_p1" value="0.67"/>
+  <PARAM id="s3_p2" value="0.43"/>
+  <PARAM id="s4_type" value="17"/>
+  <PARAM id="s4_main" value="0.255"/>
+  <PARAM id="s4_p1" value="0.42"/>
+  <PARAM id="e1_a" value="2.55"/>
+  <PARAM id="e1_d" value="2.2"/>
+  <PARAM id="e1_s" value="1"/>
+  <PARAM id="e1_r" value="7"/>
+  <PARAM id="l1_rate" value="0.12"/>
+  <PARAM id="md_mix" value="0.2"/>
+  <PARAM id="rv_size" value="0.84"/>
+  <PARAM id="rv_damp" value="0.58"/>
+  <PARAM id="rv_mix" value="0.55"/>
+</PARAMS>

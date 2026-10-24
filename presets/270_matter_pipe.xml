@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Matter Pipe. Log spacing. Lowpass into Blur. Env 2 plucks the main knob. Held, with subs. Free morph path. -->
+<PARAMS presetName="Matter Pipe" category="Drones">
+  <PARAM id="sp_algo" value="10"/>
+  <PARAM id="sp_depth" value="0.56"/>
+  <PARAM id="sp_tilt" value="2.25"/>
+  <PARAM id="sp_partials" value="336"/>
+  <PARAM id="sp_moddepth" value="0.35"/>
+  <PARAM id="sp_modrate" value="0.08"/>
+  <PARAM id="nz_mix" value="0.27"/>
+  <PARAM id="sub1" value="0.56"/>
+  <PARAM id="sub2" value="0.24"/>
+  <PARAM id="s2_main" value="0.435"/>
+  <PARAM id="s2_p1" value="0.4"/>
+  <PARAM id="s2_p2" value="0.22"/>
+  <PARAM id="s2_p3" value="0.12"/>
+  <PARAM id="s2_es" value="2"/>
+  <PARAM id="s2_ea" value="0.53"/>
+  <PARAM id="s2_ls" value="3"/>
+  <PARAM id="s2_la" value="0.2"/>
+  <PARAM id="s3_type" value="16"/>
+  <PARAM id="s3_main" value="0.355"/>
+  <PARAM id="s3_p1" value="0.26"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="e1_a" value="2.4"/>
+  <PARAM id="e1_s" value="1"/>
+  <PARAM id="e1_r" value="9"/>
+  <PARAM id="e2_d" value="0.65"/>
+  <PARAM id="e2_s" value="0.15"/>
+  <PARAM id="l3_rate" value="0.039"/>
+  <PARAM id="md_mix" value="0.12"/>
+  <PARAM id="rv_mix" value="0.46"/>
+  <PARAM id="mmode" value="1"/>
+  <PARAM id="mtime" value="14"/>
+  <MORPH c0="0.82 0.21 0.30 0.40 0.49 0.58 0.67 0.76 0.15 0.24 0.33"
+         c1="0.48 0.57 0.66 0.75 0.84 0.23 0.33 0.42 0.51 0.60 0.69"
+         c2="0.84 0.23 0.32 0.41 0.50 0.59 0.68 0.77 0.16 0.26 0.35"
+         c3="0.61 0.70 0.79 0.19 0.28 0.37 0.46 0.55 0.64 0.73 0.82"
+         nodes="0.00 0.17 4;0.33 0.36 5;0.67 0.55 0;1.00 0.74 1"/>
+</PARAMS>

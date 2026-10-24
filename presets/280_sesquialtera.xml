@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sesquialtera. Stiff String spacing. Odd/Even into Detuned and a Lowpass. Aftertouch pushes the main knob. Instant full sustain, noise off. Phaser instead of chorus. -->
+<PARAMS presetName="Sesquialtera" category="Organs">
+  <PARAM id="sp_depth" value="0.37"/>
+  <PARAM id="sp_tilt" value="1.35"/>
+  <PARAM id="sp_partials" value="152"/>
+  <PARAM id="sp_moddepth" value="0.05"/>
+  <PARAM id="nz_mix" value="0"/>
+  <PARAM id="s2_type" value="2"/>
+  <PARAM id="s2_main" value="0.18"/>
+  <PARAM id="s2_p1" value="0.72"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s2_ms" value="3"/>
+  <PARAM id="s2_ma" value="0.55"/>
+  <PARAM id="s3_type" value="15"/>
+  <PARAM id="s3_main" value="0.32"/>
+  <PARAM id="s3_p1" value="0.12"/>
+  <PARAM id="s3_p2" value="0.33"/>
+  <PARAM id="s4_type" value="7"/>
+  <PARAM id="s4_main" value="0.58"/>
+  <PARAM id="s4_p1" value="0.42"/>
+  <PARAM id="s4_p2" value="0.13"/>
+  <PARAM id="s4_p3" value="0.2"/>
+  <PARAM id="e1_a" value="0.001"/>
+  <PARAM id="e1_d" value="0.2"/>
+  <PARAM id="e1_s" value="1"/>
+  <PARAM id="e1_r" value="0.28"/>
+  <PARAM id="md_type" value="1"/>
+  <PARAM id="md_rate" value="1.2"/>
+  <PARAM id="md_depth" value="0.45"/>
+  <PARAM id="rv_mix" value="0.22"/>
+</PARAMS>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Peach Air. Compress spacing. Bandpass into Decay and Hype. Env 3 opens the main knob. Soft sustain. -->
+<PARAMS presetName="Peach Air" category="Pads">
+  <PARAM id="sp_algo" value="2"/>
+  <PARAM id="sp_depth" value="0.5"/>
+  <PARAM id="sp_tilt" value="1.45"/>
+  <PARAM id="sp_partials" value="232"/>
+  <PARAM id="nz_mix" value="0.06"/>
+  <PARAM id="spread" value="0.5"/>
+  <PARAM id="s2_type" value="9"/>
+  <PARAM id="s2_main" value="0.57"/>
+  <PARAM id="s2_p1" value="0.34"/>
+  <PARAM id="s2_p2" value="0.33"/>
+  <PARAM id="s2_p3" value="0.2"/>
+  <PARAM id="s2_es" value="3"/>
+  <PARAM id="s2_ea" value="0.54"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s3_type" value="12"/>
+  <PARAM id="s3_main" value="0.47"/>
+  <PARAM id="s3_p1" value="0.57"/>
+  <PARAM id="s3_p2" value="0.18"/>
+  <PARAM id="s4_main" value="0.45"/>
+  <PARAM id="s4_p1" value="0.42"/>
+  <PARAM id="s4_p2" value="0.38"/>
+  <PARAM id="s4_p3" value="0.62"/>
+  <PARAM id="s4_p4" value="0.74"/>
+  <PARAM id="e1_a" value="1.45"/>
+  <PARAM id="e1_d" value="1.3"/>
+  <PARAM id="e1_s" value="0.88"/>
+  <PARAM id="e1_r" value="3.2"/>
+  <PARAM id="e3_a" value="0.4"/>
+  <PARAM id="e3_s" value="0.85"/>
+  <PARAM id="e3_r" value="2.5"/>
+  <PARAM id="md_mix" value="0.22"/>
+  <PARAM id="rv_mix" value="0.37"/>
+</PARAMS>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Laser Gate. Stiff String spacing. Highpass into Tail and Noise. LFO 1 sample-and-hold flutters the main knob. Delay is in the gesture. -->
+<PARAMS presetName="Laser Gate" category="SFX">
+  <PARAM id="sp_depth" value="0.68"/>
+  <PARAM id="sp_tilt" value="0.9"/>
+  <PARAM id="sp_partials" value="186"/>
+  <PARAM id="sp_moddepth" value="0.4"/>
+  <PARAM id="nz_mix" value="0.32"/>
+  <PARAM id="s2_type" value="8"/>
+  <PARAM id="s2_main" value="0.27"/>
+  <PARAM id="s2_p1" value="0.38"/>
+  <PARAM id="s2_p2" value="0.2"/>
+  <PARAM id="s2_p3" value="0.17"/>
+  <PARAM id="s2_la" value="0.38"/>
+  <PARAM id="s3_type" value="22"/>
+  <PARAM id="s3_main" value="0.45"/>
+  <PARAM id="s3_p1" value="0.63"/>
+  <PARAM id="s3_p2" value="0.45"/>
+  <PARAM id="s4_type" value="17"/>
+  <PARAM id="s4_main" value="0.23"/>
+  <PARAM id="s4_p1" value="0.38"/>
+  <PARAM id="e1_a" value="0.001"/>
+  <PARAM id="e1_d" value="0.15"/>
+  <PARAM id="e1_s" value="0"/>
+  <PARAM id="e1_r" value="0.55"/>
+  <PARAM id="l1_rate" value="6"/>
+  <PARAM id="l1_shape" value="4"/>
+  <PARAM id="md_type" value="1"/>
+  <PARAM id="md_rate" value="1.2"/>
+  <PARAM id="dl_on" value="1"/>
+  <PARAM id="dl_div" value="5"/>
+  <PARAM id="dl_fb" value="0.45"/>
+  <PARAM id="dl_mix" value="0.34"/>
+</PARAMS>

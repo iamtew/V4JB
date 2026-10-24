@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Oud. Compress spacing. Lowpass into Blur. Env 2 plucks the main knob. Short pluck, chorus off. -->
+<PARAMS presetName="Oud" category="Plucks">
+  <PARAM id="sp_algo" value="2"/>
+  <PARAM id="sp_depth" value="0.75"/>
+  <PARAM id="sp_tilt" value="1.05"/>
+  <PARAM id="sp_partials" value="132"/>
+  <PARAM id="nz_mix" value="0.04"/>
+  <PARAM id="s2_main" value="0.51"/>
+  <PARAM id="s2_p1" value="0.44"/>
+  <PARAM id="s2_p2" value="0.2"/>
+  <PARAM id="s2_p3" value="0.1"/>
+  <PARAM id="s2_es" value="2"/>
+  <PARAM id="s2_ea" value="0.49"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s3_type" value="16"/>
+  <PARAM id="s3_main" value="0.43"/>
+  <PARAM id="s3_p1" value="0.3"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="s5_type" value="12"/>
+  <PARAM id="s5_main" value="0.7"/>
+  <PARAM id="s5_p1" value="0.7"/>
+  <PARAM id="s5_p2" value="0.05"/>
+  <PARAM id="e1_a" value="0.001"/>
+  <PARAM id="e1_d" value="0.4"/>
+  <PARAM id="e1_s" value="0"/>
+  <PARAM id="e1_r" value="0.14"/>
+  <PARAM id="e1_vel" value="0.65"/>
+  <PARAM id="e2_d" value="0.35"/>
+  <PARAM id="e2_s" value="0.15"/>
+  <PARAM id="md_on" value="0"/>
+  <PARAM id="rv_mix" value="0.2"/>
+</PARAMS>

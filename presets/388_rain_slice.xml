@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Rain Slice. Membrane spacing. A short slice of rain through Wave. LFO 2 triangle is synced to a quarter note. -->
+<PARAMS presetName="Rain Slice" category="Waves" waveA="factory:rain.wav">
+  <PARAM id="sp_algo" value="4"/>
+  <PARAM id="sp_depth" value="0.65"/>
+  <PARAM id="sp_tilt" value="1.55"/>
+  <PARAM id="sp_partials" value="244"/>
+  <PARAM id="nz_mix" value="0.08"/>
+  <PARAM id="s2_type" value="23"/>
+  <PARAM id="s2_main" value="0.85"/>
+  <PARAM id="s2_p1" value="0.55"/>
+  <PARAM id="s2_p2" value="0.64"/>
+  <PARAM id="s2_p3" value="0.12"/>
+  <PARAM id="s2_p4" value="0.12"/>
+  <PARAM id="s2_ls" value="2"/>
+  <PARAM id="s2_la" value="0.31"/>
+  <PARAM id="s3_type" value="12"/>
+  <PARAM id="s3_main" value="0.55"/>
+  <PARAM id="s3_p1" value="0.72"/>
+  <PARAM id="s3_p2" value="0.08"/>
+  <PARAM id="s4_type" value="9"/>
+  <PARAM id="s4_main" value="0.48"/>
+  <PARAM id="s4_p1" value="0.3"/>
+  <PARAM id="s4_p2" value="0.38"/>
+  <PARAM id="s4_p3" value="0.15"/>
+  <PARAM id="e1_a" value="0.75"/>
+  <PARAM id="e1_d" value="1.2"/>
+  <PARAM id="e1_r" value="2.7"/>
+  <PARAM id="l2_sync" value="1"/>
+  <PARAM id="l2_div" value="2"/>
+  <PARAM id="l2_shape" value="1"/>
+  <PARAM id="wa_start" value="0.08"/>
+  <PARAM id="wa_end" value="0.33"/>
+  <PARAM id="wa_speed" value="0.7"/>
+  <PARAM id="rv_size" value="0.75"/>
+  <PARAM id="rv_mix" value="0.36"/>
+</PARAMS>

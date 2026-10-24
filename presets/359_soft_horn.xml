@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Soft Horn. Stiff String spacing. Odd/Even into Detuned and a Lowpass. LFO 2 triangle is synced to a quarter note. Chord voicing. Economy on. -->
+<PARAMS presetName="Soft Horn" category="Polys">
+  <PARAM id="sp_depth" value="0.46"/>
+  <PARAM id="sp_tilt" value="1.4"/>
+  <PARAM id="sp_partials" value="128"/>
+  <PARAM id="nz_mix" value="0.11"/>
+  <PARAM id="poly" value="6"/>
+  <PARAM id="economy" value="1"/>
+  <PARAM id="spread" value="0.66"/>
+  <PARAM id="width" value="1.4"/>
+  <PARAM id="s2_type" value="2"/>
+  <PARAM id="s2_main" value="0.18"/>
+  <PARAM id="s2_p1" value="0.68"/>
+  <PARAM id="s2_ls" value="2"/>
+  <PARAM id="s2_la" value="0.34"/>
+  <PARAM id="s3_type" value="15"/>
+  <PARAM id="s3_main" value="0.32"/>
+  <PARAM id="s3_p1" value="0.08"/>
+  <PARAM id="s3_p2" value="0.35"/>
+  <PARAM id="s4_type" value="7"/>
+  <PARAM id="s4_main" value="0.58"/>
+  <PARAM id="s4_p1" value="0.38"/>
+  <PARAM id="s4_p2" value="0.15"/>
+  <PARAM id="s4_p3" value="0.22"/>
+  <PARAM id="e1_a" value="0.08"/>
+  <PARAM id="e1_d" value="0.7"/>
+  <PARAM id="e1_s" value="0.82"/>
+  <PARAM id="e1_r" value="1.7"/>
+  <PARAM id="l2_sync" value="1"/>
+  <PARAM id="l2_div" value="2"/>
+  <PARAM id="l2_shape" value="1"/>
+</PARAMS>

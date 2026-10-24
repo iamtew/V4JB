@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Bongo. Bar spacing. Bandpass into Decay and Hype. Key and velocity together push the main knob. Very short hit, chorus off. -->
+<PARAMS presetName="Bongo" category="Percussive">
+  <PARAM id="sp_algo" value="3"/>
+  <PARAM id="sp_depth" value="0.78"/>
+  <PARAM id="sp_tilt" value="0.95"/>
+  <PARAM id="sp_partials" value="54"/>
+  <PARAM id="sp_moddepth" value="0.04"/>
+  <PARAM id="nz_mix" value="0.4"/>
+  <PARAM id="nz_width" value="0.35"/>
+  <PARAM id="nz_decay" value="0.82"/>
+  <PARAM id="poly" value="4"/>
+  <PARAM id="s2_type" value="9"/>
+  <PARAM id="s2_main" value="0.495"/>
+  <PARAM id="s2_p1" value="0.34"/>
+  <PARAM id="s2_p2" value="0.33"/>
+  <PARAM id="s2_p3" value="0.2"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s2_ms" value="5"/>
+  <PARAM id="s2_ma" value="0.5"/>
+  <PARAM id="s3_type" value="12"/>
+  <PARAM id="s3_main" value="0.395"/>
+  <PARAM id="s3_p1" value="0.57"/>
+  <PARAM id="s3_p2" value="0.18"/>
+  <PARAM id="s4_main" value="0.375"/>
+  <PARAM id="s4_p1" value="0.42"/>
+  <PARAM id="s4_p2" value="0.38"/>
+  <PARAM id="s4_p3" value="0.62"/>
+  <PARAM id="s4_p4" value="0.74"/>
+  <PARAM id="e1_a" value="0.001"/>
+  <PARAM id="e1_d" value="0.1"/>
+  <PARAM id="e1_s" value="0"/>
+  <PARAM id="e1_r" value="0.08"/>
+  <PARAM id="md_on" value="0"/>
+  <PARAM id="rv_size" value="0.35"/>
+  <PARAM id="rv_mix" value="0.11"/>
+</PARAMS>

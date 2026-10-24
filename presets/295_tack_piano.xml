@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Tack Piano. Bell spacing. Second Tone at a major third, then Hype and a Lowpass. LFO 1 sine moves the main knob. Fast attack, a decaying body, velocity on the tone. -->
+<PARAMS presetName="Tack Piano" category="Keys">
+  <PARAM id="sp_algo" value="15"/>
+  <PARAM id="sp_depth" value="0.5"/>
+  <PARAM id="sp_tilt" value="1.35"/>
+  <PARAM id="sp_partials" value="208"/>
+  <PARAM id="nz_mix" value="0.03"/>
+  <PARAM id="poly" value="6"/>
+  <PARAM id="s2_type" value="19"/>
+  <PARAM id="s2_main" value="0.312"/>
+  <PARAM id="s2_p1" value="0.57"/>
+  <PARAM id="s2_p2" value="0.23"/>
+  <PARAM id="s2_la" value="0.25"/>
+  <PARAM id="s2_ms" value="1"/>
+  <PARAM id="s2_ma" value="0.53"/>
+  <PARAM id="s3_type" value="13"/>
+  <PARAM id="s3_main" value="0.31"/>
+  <PARAM id="s3_p1" value="0.42"/>
+  <PARAM id="s3_p2" value="0.43"/>
+  <PARAM id="s3_p3" value="0.6"/>
+  <PARAM id="s3_p4" value="0.72"/>
+  <PARAM id="s4_type" value="7"/>
+  <PARAM id="s4_main" value="0.57"/>
+  <PARAM id="s4_p1" value="0.4"/>
+  <PARAM id="s4_p2" value="0.16"/>
+  <PARAM id="s4_p3" value="0.15"/>
+  <PARAM id="e1_a" value="0.001"/>
+  <PARAM id="e1_d" value="0.55"/>
+  <PARAM id="e1_s" value="0.22"/>
+  <PARAM id="e1_r" value="0.36"/>
+  <PARAM id="e1_vel" value="0.75"/>
+  <PARAM id="l1_rate" value="0.12"/>
+  <PARAM id="md_mix" value="0.28"/>
+  <PARAM id="rv_mix" value="0.22"/>
+</PARAMS>

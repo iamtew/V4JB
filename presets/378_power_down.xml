@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Power Down. Compress spacing. Lowpass into Blur. LFO 1 square chops the main knob. Delay is in the gesture. -->
+<PARAMS presetName="Power Down" category="SFX">
+  <PARAM id="sp_algo" value="2"/>
+  <PARAM id="sp_depth" value="0.68"/>
+  <PARAM id="sp_tilt" value="1.7"/>
+  <PARAM id="sp_partials" value="258"/>
+  <PARAM id="nz_mix" value="0.32"/>
+  <PARAM id="s2_main" value="0.51"/>
+  <PARAM id="s2_p1" value="0.42"/>
+  <PARAM id="s2_p2" value="0.24"/>
+  <PARAM id="s2_p3" value="0.08"/>
+  <PARAM id="s2_la" value="0.24"/>
+  <PARAM id="s3_type" value="16"/>
+  <PARAM id="s3_main" value="0.43"/>
+  <PARAM id="s3_p1" value="0.28"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="e1_a" value="0.001"/>
+  <PARAM id="e1_d" value="1.15"/>
+  <PARAM id="e1_s" value="0"/>
+  <PARAM id="e1_r" value="0.55"/>
+  <PARAM id="l1_rate" value="0.45"/>
+  <PARAM id="l1_shape" value="3"/>
+  <PARAM id="dr_on" value="1"/>
+  <PARAM id="dr_amt" value="0.5"/>
+  <PARAM id="dr_mix" value="0.4"/>
+  <PARAM id="md_type" value="1"/>
+  <PARAM id="md_rate" value="1.2"/>
+  <PARAM id="dl_on" value="1"/>
+  <PARAM id="dl_div" value="2"/>
+  <PARAM id="dl_fb" value="0.45"/>
+  <PARAM id="dl_mix" value="0.22"/>
+  <PARAM id="rv_mix" value="0.18"/>
+</PARAMS>

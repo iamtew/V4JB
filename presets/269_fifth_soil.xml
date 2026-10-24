@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fifth Soil. Primes spacing. Every Nth into Noise and Decay. LFO 3 drifts the main knob very slowly. Held, with subs. Free morph path. -->
+<PARAMS presetName="Fifth Soil" category="Drones">
+  <PARAM id="sp_algo" value="5"/>
+  <PARAM id="sp_depth" value="0.48"/>
+  <PARAM id="sp_tilt" value="2.1"/>
+  <PARAM id="sp_partials" value="320"/>
+  <PARAM id="sp_moddepth" value="0.3"/>
+  <PARAM id="sp_modrate" value="0.08"/>
+  <PARAM id="nz_mix" value="0.22"/>
+  <PARAM id="sub1" value="0.49"/>
+  <PARAM id="sub2" value="0.12"/>
+  <PARAM id="octave" value="-1"/>
+  <PARAM id="s2_type" value="6"/>
+  <PARAM id="s2_main" value="0.32"/>
+  <PARAM id="s2_p1" value="0.82"/>
+  <PARAM id="s2_p2" value="0.08"/>
+  <PARAM id="s2_ls" value="3"/>
+  <PARAM id="s2_la" value="0.29"/>
+  <PARAM id="s3_type" value="17"/>
+  <PARAM id="s3_main" value="0.35"/>
+  <PARAM id="s3_p1" value="0.47"/>
+  <PARAM id="s4_type" value="12"/>
+  <PARAM id="s4_main" value="0.3"/>
+  <PARAM id="s4_p1" value="0.62"/>
+  <PARAM id="s4_p2" value="0.13"/>
+  <PARAM id="e1_a" value="2"/>
+  <PARAM id="e1_s" value="1"/>
+  <PARAM id="e1_r" value="8"/>
+  <PARAM id="l3_rate" value="0.031"/>
+  <PARAM id="md_mix" value="0.12"/>
+  <PARAM id="rv_mix" value="0.41"/>
+  <PARAM id="mmode" value="1"/>
+  <PARAM id="mtime" value="12"/>
+  <MORPH c0="0.47 0.56 0.65 0.74 0.83 0.22 0.31 0.40 0.49 0.58 0.68"
+         c1="0.82 0.21 0.30 0.40 0.49 0.58 0.67 0.76 0.15 0.24 0.33"
+         c2="0.48 0.57 0.66 0.75 0.84 0.23 0.33 0.42 0.51 0.60 0.69"
+         c3="0.26 0.35 0.44 0.53 0.62 0.71 0.80 0.19 0.28 0.37 0.47"
+         nodes="0.00 0.77 1;0.33 0.21 2;0.67 0.40 3;1.00 0.59 4"/>
+</PARAMS>

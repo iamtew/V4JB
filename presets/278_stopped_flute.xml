@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Stopped Flute. Octaves spacing. Harmonic Add into a Notch and Clip. LFO 1 sine moves the main knob. Instant full sustain, noise off. -->
+<PARAMS presetName="Stopped Flute" category="Organs">
+  <PARAM id="sp_algo" value="7"/>
+  <PARAM id="sp_depth" value="0.23"/>
+  <PARAM id="sp_tilt" value="1.45"/>
+  <PARAM id="sp_partials" value="136"/>
+  <PARAM id="sp_moddepth" value="0.05"/>
+  <PARAM id="nz_mix" value="0"/>
+  <PARAM id="s2_type" value="26"/>
+  <PARAM id="s2_main" value="0.23"/>
+  <PARAM id="s2_p1" value="0.53"/>
+  <PARAM id="s2_p2" value="0.4"/>
+  <PARAM id="s2_p3" value="0.32"/>
+  <PARAM id="s2_p4" value="0.18"/>
+  <PARAM id="s2_la" value="0.28"/>
+  <PARAM id="s3_type" value="10"/>
+  <PARAM id="s3_main" value="0.4"/>
+  <PARAM id="s3_p1" value="0.28"/>
+  <PARAM id="s3_p2" value="0.65"/>
+  <PARAM id="s3_p3" value="0.22"/>
+  <PARAM id="s4_type" value="25"/>
+  <PARAM id="s4_p1" value="0.58"/>
+  <PARAM id="e1_a" value="0.001"/>
+  <PARAM id="e1_d" value="0.2"/>
+  <PARAM id="e1_s" value="1"/>
+  <PARAM id="e1_r" value="0.28"/>
+  <PARAM id="l1_rate" value="0.12"/>
+  <PARAM id="md_rate" value="0.7"/>
+  <PARAM id="md_depth" value="0.55"/>
+  <PARAM id="rv_mix" value="0.26"/>
+</PARAMS>

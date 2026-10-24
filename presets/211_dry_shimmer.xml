@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Dry Shimmer. Fold spacing. Moving Filter into Blur. LFO 2 saw is synced to an eighth note. Grain stays in the sustain. -->
+<PARAMS presetName="Dry Shimmer" category="Textures">
+  <PARAM id="sp_algo" value="11"/>
+  <PARAM id="sp_depth" value="0.79"/>
+  <PARAM id="sp_tilt" value="1.41"/>
+  <PARAM id="sp_partials" value="176"/>
+  <PARAM id="sp_moddepth" value="0.28"/>
+  <PARAM id="nz_mix" value="0.64"/>
+  <PARAM id="nz_width" value="0.65"/>
+  <PARAM id="nz_decay" value="0.15"/>
+  <PARAM id="s2_type" value="11"/>
+  <PARAM id="s2_main" value="0.425"/>
+  <PARAM id="s2_p1" value="0.45"/>
+  <PARAM id="s2_p2" value="0.37"/>
+  <PARAM id="s2_p3" value="0.53"/>
+  <PARAM id="s2_ls" value="2"/>
+  <PARAM id="s2_la" value="0.3"/>
+  <PARAM id="s3_type" value="16"/>
+  <PARAM id="s3_main" value="0.325"/>
+  <PARAM id="s3_p1" value="0.22"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="s5_type" value="17"/>
+  <PARAM id="s5_main" value="0.43"/>
+  <PARAM id="s5_p1" value="0.3"/>
+  <PARAM id="e1_a" value="0.85"/>
+  <PARAM id="e1_d" value="1.1"/>
+  <PARAM id="e1_s" value="0.7"/>
+  <PARAM id="e1_r" value="1.8"/>
+  <PARAM id="l2_sync" value="1"/>
+  <PARAM id="l2_div" value="1"/>
+  <PARAM id="l2_shape" value="2"/>
+  <PARAM id="md_mix" value="0.18"/>
+  <PARAM id="rv_mix" value="0.28"/>
+</PARAMS>

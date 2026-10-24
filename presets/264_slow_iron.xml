@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Slow Iron. Offset spacing. Bandpass into Decay and Hype. Env 3 opens the main knob. Held, with subs. Free morph path. -->
+<PARAMS presetName="Slow Iron" category="Drones">
+  <PARAM id="sp_algo" value="16"/>
+  <PARAM id="sp_depth" value="0.48"/>
+  <PARAM id="sp_tilt" value="1.95"/>
+  <PARAM id="sp_partials" value="240"/>
+  <PARAM id="sp_moddepth" value="0.35"/>
+  <PARAM id="sp_modrate" value="0.08"/>
+  <PARAM id="nz_mix" value="0.17"/>
+  <PARAM id="sub1" value="0.42"/>
+  <PARAM id="sub2" value="0.24"/>
+  <PARAM id="octave" value="-1"/>
+  <PARAM id="s2_type" value="9"/>
+  <PARAM id="s2_main" value="0.47"/>
+  <PARAM id="s2_p1" value="0.3"/>
+  <PARAM id="s2_p2" value="0.35"/>
+  <PARAM id="s2_p3" value="0.22"/>
+  <PARAM id="s2_es" value="3"/>
+  <PARAM id="s2_ea" value="0.58"/>
+  <PARAM id="s2_ls" value="3"/>
+  <PARAM id="s2_la" value="0.2"/>
+  <PARAM id="s3_type" value="12"/>
+  <PARAM id="s3_main" value="0.37"/>
+  <PARAM id="s3_p1" value="0.53"/>
+  <PARAM id="s3_p2" value="0.2"/>
+  <PARAM id="s4_main" value="0.35"/>
+  <PARAM id="s4_p1" value="0.38"/>
+  <PARAM id="s4_p2" value="0.4"/>
+  <PARAM id="s4_p3" value="0.64"/>
+  <PARAM id="s4_p4" value="0.7"/>
+  <PARAM id="e1_a" value="1.6"/>
+  <PARAM id="e1_s" value="1"/>
+  <PARAM id="e1_r" value="9"/>
+  <PARAM id="e3_a" value="0.7"/>
+  <PARAM id="e3_s" value="0.85"/>
+  <PARAM id="e3_r" value="2.5"/>
+  <PARAM id="l3_rate" value="0.023"/>
+  <PARAM id="md_mix" value="0.12"/>
+  <PARAM id="rv_mix" value="0.46"/>
+  <PARAM id="mmode" value="1"/>
+  <PARAM id="mtime" value="12"/>
+  <MORPH c0="0.78 0.17 0.26 0.35 0.44 0.54 0.63 0.72 0.81 0.20 0.29"
+         c1="0.44 0.53 0.62 0.71 0.80 0.19 0.28 0.37 0.47 0.56 0.65"
+         c2="0.79 0.19 0.28 0.37 0.46 0.55 0.64 0.73 0.82 0.21 0.30"
+         c3="0.57 0.66 0.75 0.84 0.23 0.33 0.42 0.51 0.60 0.69 0.78"
+         nodes="0.00 0.77 4;0.33 0.21 5;0.67 0.40 0;1.00 0.59 1"/>
+</PARAMS>

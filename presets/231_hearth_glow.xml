@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hearth Glow. Scatter spacing. Highpass into Tail and Noise. Env 4 blips the main knob. Soft sustain. -->
+<PARAMS presetName="Hearth Glow" category="Pads">
+  <PARAM id="sp_algo" value="14"/>
+  <PARAM id="sp_depth" value="0.22"/>
+  <PARAM id="sp_tilt" value="1.69"/>
+  <PARAM id="sp_partials" value="280"/>
+  <PARAM id="nz_mix" value="0.12"/>
+  <PARAM id="spread" value="0.5"/>
+  <PARAM id="s2_type" value="8"/>
+  <PARAM id="s2_main" value="0.27"/>
+  <PARAM id="s2_p1" value="0.42"/>
+  <PARAM id="s2_p2" value="0.18"/>
+  <PARAM id="s2_p3" value="0.15"/>
+  <PARAM id="s2_es" value="4"/>
+  <PARAM id="s2_ea" value="0.64"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s3_type" value="22"/>
+  <PARAM id="s3_main" value="0.45"/>
+  <PARAM id="s3_p1" value="0.67"/>
+  <PARAM id="s3_p2" value="0.43"/>
+  <PARAM id="s4_type" value="17"/>
+  <PARAM id="s4_main" value="0.23"/>
+  <PARAM id="s4_p1" value="0.42"/>
+  <PARAM id="e1_a" value="0.45"/>
+  <PARAM id="e1_d" value="1.3"/>
+  <PARAM id="e1_s" value="0.88"/>
+  <PARAM id="e1_r" value="3.2"/>
+  <PARAM id="e4_d" value="0.08"/>
+  <PARAM id="e4_r" value="0.08"/>
+  <PARAM id="md_mix" value="0.22"/>
+  <PARAM id="rv_mix" value="0.37"/>
+</PARAMS>

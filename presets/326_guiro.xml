@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Guiro. Offset spacing. Lowpass into Blur. Env 4 blips the main knob. Very short hit, chorus off. -->
+<PARAMS presetName="Guiro" category="Percussive">
+  <PARAM id="sp_algo" value="16"/>
+  <PARAM id="sp_depth" value="0.86"/>
+  <PARAM id="sp_tilt" value="0.95"/>
+  <PARAM id="sp_partials" value="78"/>
+  <PARAM id="sp_moddepth" value="0.04"/>
+  <PARAM id="nz_mix" value="0.4"/>
+  <PARAM id="nz_width" value="0.35"/>
+  <PARAM id="nz_decay" value="0.89"/>
+  <PARAM id="poly" value="4"/>
+  <PARAM id="s2_main" value="0.41"/>
+  <PARAM id="s2_p1" value="0.4"/>
+  <PARAM id="s2_p2" value="0.22"/>
+  <PARAM id="s2_p3" value="0.12"/>
+  <PARAM id="s2_es" value="4"/>
+  <PARAM id="s2_ea" value="0.68"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s3_type" value="16"/>
+  <PARAM id="s3_main" value="0.33"/>
+  <PARAM id="s3_p1" value="0.26"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="s5_type" value="12"/>
+  <PARAM id="s5_main" value="0.82"/>
+  <PARAM id="s5_p1" value="0.7"/>
+  <PARAM id="s5_p2" value="0.05"/>
+  <PARAM id="e1_a" value="0.001"/>
+  <PARAM id="e1_d" value="0.1"/>
+  <PARAM id="e1_s" value="0"/>
+  <PARAM id="e1_r" value="0.08"/>
+  <PARAM id="e4_d" value="0.08"/>
+  <PARAM id="e4_r" value="0.08"/>
+  <PARAM id="md_on" value="0"/>
+  <PARAM id="rv_size" value="0.35"/>
+  <PARAM id="rv_mix" value="0.14"/>
+</PARAMS>

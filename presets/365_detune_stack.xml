@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Detune Stack. Even Shift spacing. Bandpass into Decay and Hype. Velocity pushes the main knob. Chord voicing. Economy on. -->
+<PARAMS presetName="Detune Stack" category="Polys">
+  <PARAM id="sp_algo" value="12"/>
+  <PARAM id="sp_depth" value="0.3"/>
+  <PARAM id="sp_partials" value="152"/>
+  <PARAM id="nz_mix" value="0.11"/>
+  <PARAM id="poly" value="6"/>
+  <PARAM id="economy" value="1"/>
+  <PARAM id="spread" value="0.66"/>
+  <PARAM id="width" value="1.4"/>
+  <PARAM id="s2_type" value="9"/>
+  <PARAM id="s2_main" value="0.545"/>
+  <PARAM id="s2_p1" value="0.3"/>
+  <PARAM id="s2_p2" value="0.35"/>
+  <PARAM id="s2_p3" value="0.22"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s2_ms" value="1"/>
+  <PARAM id="s2_ma" value="0.6"/>
+  <PARAM id="s3_type" value="12"/>
+  <PARAM id="s3_main" value="0.445"/>
+  <PARAM id="s3_p1" value="0.53"/>
+  <PARAM id="s3_p2" value="0.2"/>
+  <PARAM id="s4_main" value="0.425"/>
+  <PARAM id="s4_p1" value="0.38"/>
+  <PARAM id="s4_p2" value="0.4"/>
+  <PARAM id="s4_p3" value="0.64"/>
+  <PARAM id="s4_p4" value="0.7"/>
+  <PARAM id="e1_a" value="0.02"/>
+  <PARAM id="e1_d" value="0.7"/>
+  <PARAM id="e1_s" value="0.82"/>
+  <PARAM id="e1_r" value="1.7"/>
+</PARAMS>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Saw Solo. Pairs spacing. Second Tone at a minor third, then Hype and a Lowpass. Aftertouch pushes the main knob. Lead with glide. -->
+<PARAMS presetName="Saw Solo" category="Leads">
+  <PARAM id="sp_algo" value="17"/>
+  <PARAM id="sp_depth" value="0.52"/>
+  <PARAM id="sp_tilt" value="1.07"/>
+  <PARAM id="sp_partials" value="168"/>
+  <PARAM id="nz_mix" value="0.07"/>
+  <PARAM id="glide" value="0.09"/>
+  <PARAM id="poly" value="1"/>
+  <PARAM id="s2_type" value="19"/>
+  <PARAM id="s2_main" value="0.188"/>
+  <PARAM id="s2_p1" value="0.57"/>
+  <PARAM id="s2_p2" value="0.23"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s2_ms" value="3"/>
+  <PARAM id="s2_ma" value="0.55"/>
+  <PARAM id="s3_type" value="13"/>
+  <PARAM id="s3_main" value="0.335"/>
+  <PARAM id="s3_p1" value="0.42"/>
+  <PARAM id="s3_p2" value="0.43"/>
+  <PARAM id="s3_p3" value="0.6"/>
+  <PARAM id="s3_p4" value="0.72"/>
+  <PARAM id="s4_type" value="7"/>
+  <PARAM id="s4_main" value="0.595"/>
+  <PARAM id="s4_p1" value="0.4"/>
+  <PARAM id="s4_p2" value="0.16"/>
+  <PARAM id="s4_p3" value="0.15"/>
+  <PARAM id="e1_a" value="0.008"/>
+  <PARAM id="e1_d" value="0.28"/>
+  <PARAM id="e1_s" value="0.86"/>
+  <PARAM id="e1_r" value="0.24"/>
+  <PARAM id="e1_vel" value="0.4"/>
+  <PARAM id="md_mix" value="0.22"/>
+  <PARAM id="rv_mix" value="0.2"/>
+</PARAMS>

@@ -366,7 +366,7 @@ On Edit, Wave **Freeze** holds the Start frame. Double Wave **Balance** is this 
 
 ## Factory presets
 
-194 presets in 16 categories, at least 10 in each. Between them they use every module, every spacing algorithm, all four morph modes and every modulation source. From number 16 on, each file in `presets/` starts with a one-line comment saying what the preset shows off; opening its Edit, Mod and Morph pages is a good way to learn a feature.
+394 presets in 16 categories, at least 10 in each. Between them they use every module, every spacing algorithm, all four morph modes and every modulation source. From number 16 on, each file in `presets/` starts with a one-line comment saying what the preset shows off; opening its Edit, Mod and Morph pages is a good way to learn a feature.
 
 | Category | What you get |
 |---|---|
