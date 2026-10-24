@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- An octave down, a slow cello tone with a little sub. -->
+<PARAMS presetName="Cello Drone" category="Stressful Violin">
+  <PARAM id="octave" value="-1"/>
+  <PARAM id="sp_algo" value="0"/>
+  <PARAM id="sp_depth" value="0.15"/>
+  <PARAM id="sp_tilt" value="1.5"/>
+  <PARAM id="nz_mix" value="0.06"/>
+  <PARAM id="nz_low" value="0.25"/>
+  <PARAM id="nz_high" value="0.6"/>
+  <PARAM id="sub1" value="0.15"/>
+  <PARAM id="poly" value="1"/>
+  <PARAM id="glide" value="0.3"/>
+  <PARAM id="s2_type" value="7"/>
+  <PARAM id="s2_main" value="0.42"/>
+  <PARAM id="s2_p1" value="0.4"/>
+  <PARAM id="s2_p3" value="0.8"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s3_type" value="15"/>
+  <PARAM id="s3_main" value="0.1"/>
+  <PARAM id="s3_p1" value="0.2"/>
+  <PARAM id="s3_p2" value="0.3"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="e1_a" value="2.5"/>
+  <PARAM id="e1_s" value="1"/>
+  <PARAM id="e1_r" value="7"/>
+  <PARAM id="md_mix" value="0.16"/>
+  <PARAM id="rv_size" value="0.86"/>
+  <PARAM id="rv_mix" value="0.42"/>
+</PARAMS>

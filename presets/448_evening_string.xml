@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fewer partials, a long release, the room doing most of the work. -->
+<PARAMS presetName="Evening String" category="Thoughtful Violins">
+  <PARAM id="sp_algo" value="0"/>
+  <PARAM id="sp_depth" value="0.04"/>
+  <PARAM id="sp_tilt" value="1.7"/>
+  <PARAM id="sp_partials" value="192"/>
+  <PARAM id="nz_mix" value="0.04"/>
+  <PARAM id="nz_low" value="0.28"/>
+  <PARAM id="nz_high" value="0.58"/>
+  <PARAM id="poly" value="1"/>
+  <PARAM id="s2_type" value="7"/>
+  <PARAM id="s2_main" value="0.52"/>
+  <PARAM id="s2_p1" value="0.4"/>
+  <PARAM id="s2_p3" value="0.8"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s3_type" value="0"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="e1_a" value="1.6"/>
+  <PARAM id="e1_s" value="1"/>
+  <PARAM id="e1_r" value="6.5"/>
+  <PARAM id="md_mix" value="0.16"/>
+  <PARAM id="rv_size" value="0.86"/>
+  <PARAM id="rv_damp" value="0.55"/>
+  <PARAM id="rv_mix" value="0.44"/>
+</PARAMS>

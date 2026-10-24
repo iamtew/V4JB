@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A mild partial wander and a short glide, like a line remembered. -->
+<PARAMS presetName="Letter Home" category="Thoughtful Violins">
+  <PARAM id="poly" value="1"/>
+  <PARAM id="glide" value="0.2"/>
+  <PARAM id="sp_algo" value="0"/>
+  <PARAM id="sp_depth" value="0.04"/>
+  <PARAM id="sp_tilt" value="1.4"/>
+  <PARAM id="sp_moddepth" value="0.12"/>
+  <PARAM id="sp_modrate" value="0.1"/>
+  <PARAM id="nz_mix" value="0.04"/>
+  <PARAM id="nz_low" value="0.3"/>
+  <PARAM id="nz_high" value="0.62"/>
+  <PARAM id="s2_type" value="7"/>
+  <PARAM id="s2_main" value="0.57"/>
+  <PARAM id="s2_p1" value="0.35"/>
+  <PARAM id="s2_p3" value="0.85"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s3_type" value="0"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="e1_a" value="0.9"/>
+  <PARAM id="e1_s" value="1"/>
+  <PARAM id="e1_r" value="5"/>
+  <PARAM id="md_mix" value="0.14"/>
+  <PARAM id="rv_mix" value="0.38"/>
+  <PARAM id="rv_damp" value="0.5"/>
+</PARAMS>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Octave down, no sub, a long line that does not glide. -->
+<PARAMS presetName="Viol Poem" category="Thoughtful Violins">
+  <PARAM id="octave" value="-1"/>
+  <PARAM id="sp_algo" value="0"/>
+  <PARAM id="sp_depth" value="0.04"/>
+  <PARAM id="sp_tilt" value="1.8"/>
+  <PARAM id="nz_mix" value="0.03"/>
+  <PARAM id="nz_low" value="0.26"/>
+  <PARAM id="nz_high" value="0.55"/>
+  <PARAM id="poly" value="1"/>
+  <PARAM id="s2_type" value="7"/>
+  <PARAM id="s2_main" value="0.5"/>
+  <PARAM id="s2_p1" value="0.42"/>
+  <PARAM id="s2_p3" value="0.7"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s3_type" value="13"/>
+  <PARAM id="s3_main" value="0.24"/>
+  <PARAM id="s3_p2" value="0.64"/>
+  <PARAM id="s3_p4" value="0.36"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="e1_a" value="2"/>
+  <PARAM id="e1_s" value="1"/>
+  <PARAM id="e1_r" value="8"/>
+  <PARAM id="md_mix" value="0.12"/>
+  <PARAM id="rv_size" value="0.84"/>
+  <PARAM id="rv_damp" value="0.55"/>
+  <PARAM id="rv_mix" value="0.42"/>
+</PARAMS>

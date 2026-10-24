@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A fifth below violin, blurred, hazier than the section. -->
+<PARAMS presetName="Viola Haze" category="Stressful Violin">
+  <PARAM id="pitch" value="-7"/>
+  <PARAM id="sp_algo" value="0"/>
+  <PARAM id="sp_depth" value="0.1"/>
+  <PARAM id="sp_tilt" value="1.4"/>
+  <PARAM id="sp_partials" value="128"/>
+  <PARAM id="nz_mix" value="0.1"/>
+  <PARAM id="nz_low" value="0.3"/>
+  <PARAM id="nz_high" value="0.65"/>
+  <PARAM id="poly" value="4"/>
+  <PARAM id="economy" value="1"/>
+  <PARAM id="s2_type" value="16"/>
+  <PARAM id="s2_main" value="0.35"/>
+  <PARAM id="s2_p1" value="0.25"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s3_type" value="9"/>
+  <PARAM id="s3_main" value="0.48"/>
+  <PARAM id="s3_p1" value="0.5"/>
+  <PARAM id="s3_p3" value="0.7"/>
+  <PARAM id="s4_type" value="15"/>
+  <PARAM id="s4_main" value="0.16"/>
+  <PARAM id="s4_p1" value="0.45"/>
+  <PARAM id="s4_p2" value="0.3"/>
+  <PARAM id="e1_a" value="1.8"/>
+  <PARAM id="e1_s" value="1"/>
+  <PARAM id="e1_r" value="6"/>
+  <PARAM id="spread" value="0.6"/>
+  <PARAM id="width" value="1.35"/>
+  <PARAM id="md_mix" value="0.28"/>
+  <PARAM id="rv_size" value="0.84"/>
+  <PARAM id="rv_mix" value="0.48"/>
+</PARAMS>

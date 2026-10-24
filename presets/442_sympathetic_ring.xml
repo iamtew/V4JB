@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A fifth left ringing in the tail after the bow lifts. -->
+<PARAMS presetName="Sympathetic Ring" category="Stressful Violin">
+  <PARAM id="sp_algo" value="0"/>
+  <PARAM id="sp_depth" value="0.1"/>
+  <PARAM id="sp_tilt" value="1.1"/>
+  <PARAM id="nz_mix" value="0.05"/>
+  <PARAM id="nz_low" value="0.32"/>
+  <PARAM id="nz_high" value="0.74"/>
+  <PARAM id="poly" value="1"/>
+  <PARAM id="s2_type" value="19"/>
+  <PARAM id="s2_main" value="0.56"/>
+  <PARAM id="s2_p1" value="0.35"/>
+  <PARAM id="s2_p2" value="0.48"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s3_type" value="22"/>
+  <PARAM id="s3_main" value="0.7"/>
+  <PARAM id="s3_p1" value="0.7"/>
+  <PARAM id="s3_p2" value="0.35"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="e1_a" value="1.2"/>
+  <PARAM id="e1_s" value="0.85"/>
+  <PARAM id="e1_r" value="8"/>
+  <PARAM id="md_mix" value="0.1"/>
+  <PARAM id="rv_mix" value="0.42"/>
+</PARAMS>

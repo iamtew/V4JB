@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The fifth held as a drone, in tune, with a long room. -->
+<PARAMS presetName="Pure Fifth" category="Thoughtful Violins">
+  <PARAM id="sp_algo" value="0"/>
+  <PARAM id="sp_depth" value="0.04"/>
+  <PARAM id="sp_tilt" value="1.55"/>
+  <PARAM id="nz_mix" value="0.03"/>
+  <PARAM id="nz_low" value="0.28"/>
+  <PARAM id="nz_high" value="0.58"/>
+  <PARAM id="poly" value="1"/>
+  <PARAM id="s2_type" value="19"/>
+  <PARAM id="s2_main" value="0.56"/>
+  <PARAM id="s2_p1" value="0.48"/>
+  <PARAM id="s2_p2" value="0.5"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s3_type" value="7"/>
+  <PARAM id="s3_main" value="0.52"/>
+  <PARAM id="s3_p1" value="0.4"/>
+  <PARAM id="s3_p3" value="0.75"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="e1_a" value="2"/>
+  <PARAM id="e1_s" value="1"/>
+  <PARAM id="e1_r" value="7"/>
+  <PARAM id="md_mix" value="0.14"/>
+  <PARAM id="rv_size" value="0.88"/>
+  <PARAM id="rv_damp" value="0.55"/>
+  <PARAM id="rv_mix" value="0.46"/>
+</PARAMS>

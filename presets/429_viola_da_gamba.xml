@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Dark gut, a hollow odd-harmonic lean, softer than the cello. -->
+<PARAMS presetName="Viola da Gamba" category="Stressful Violin">
+  <PARAM id="octave" value="-1"/>
+  <PARAM id="sp_algo" value="0"/>
+  <PARAM id="sp_depth" value="0.08"/>
+  <PARAM id="sp_tilt" value="1.7"/>
+  <PARAM id="nz_mix" value="0.06"/>
+  <PARAM id="nz_low" value="0.26"/>
+  <PARAM id="nz_high" value="0.6"/>
+  <PARAM id="poly" value="1"/>
+  <PARAM id="s2_type" value="2"/>
+  <PARAM id="s2_main" value="0.35"/>
+  <PARAM id="s2_p1" value="0.8"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s3_type" value="9"/>
+  <PARAM id="s3_main" value="0.46"/>
+  <PARAM id="s3_p1" value="0.35"/>
+  <PARAM id="s3_p2" value="0.2"/>
+  <PARAM id="s3_p3" value="0.5"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="e1_a" value="0.6"/>
+  <PARAM id="e1_s" value="1"/>
+  <PARAM id="e1_r" value="5"/>
+  <PARAM id="md_mix" value="0.12"/>
+  <PARAM id="rv_mix" value="0.4"/>
+</PARAMS>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Two octaves down, one soft sub, a slow bow. No second octave underneath. -->
+<PARAMS presetName="Bass Evening" category="Thoughtful Violins">
+  <PARAM id="octave" value="-2"/>
+  <PARAM id="sp_algo" value="0"/>
+  <PARAM id="sp_depth" value="0.04"/>
+  <PARAM id="sp_tilt" value="2"/>
+  <PARAM id="sp_partials" value="128"/>
+  <PARAM id="nz_mix" value="0.03"/>
+  <PARAM id="nz_low" value="0.2"/>
+  <PARAM id="nz_high" value="0.48"/>
+  <PARAM id="sub1" value="0.08"/>
+  <PARAM id="poly" value="1"/>
+  <PARAM id="s2_type" value="7"/>
+  <PARAM id="s2_main" value="0.42"/>
+  <PARAM id="s2_p1" value="0.45"/>
+  <PARAM id="s2_p3" value="0.75"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s3_type" value="13"/>
+  <PARAM id="s3_main" value="0.22"/>
+  <PARAM id="s3_p2" value="0.66"/>
+  <PARAM id="s3_p4" value="0.34"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="e1_a" value="2.2"/>
+  <PARAM id="e1_s" value="1"/>
+  <PARAM id="e1_r" value="7"/>
+  <PARAM id="md_mix" value="0.1"/>
+  <PARAM id="rv_size" value="0.82"/>
+  <PARAM id="rv_damp" value="0.58"/>
+  <PARAM id="rv_mix" value="0.4"/>
+</PARAMS>

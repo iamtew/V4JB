@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Eight voices, a minor third, and detune: a chord that will not resolve. -->
+<PARAMS presetName="Cluster Bed" category="Stressful Violin">
+  <PARAM id="sp_algo" value="12"/>
+  <PARAM id="sp_depth" value="0.2"/>
+  <PARAM id="sp_tilt" value="1.1"/>
+  <PARAM id="sp_partials" value="128"/>
+  <PARAM id="nz_mix" value="0.09"/>
+  <PARAM id="nz_low" value="0.32"/>
+  <PARAM id="nz_high" value="0.72"/>
+  <PARAM id="poly" value="8"/>
+  <PARAM id="economy" value="1"/>
+  <PARAM id="s2_type" value="19"/>
+  <PARAM id="s2_main" value="0.18"/>
+  <PARAM id="s2_p1" value="0.5"/>
+  <PARAM id="s2_p2" value="0.7"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s3_type" value="15"/>
+  <PARAM id="s3_main" value="0.4"/>
+  <PARAM id="s3_p1" value="0.5"/>
+  <PARAM id="s3_p2" value="0.45"/>
+  <PARAM id="s4_type" value="9"/>
+  <PARAM id="s4_main" value="0.5"/>
+  <PARAM id="s4_p1" value="0.55"/>
+  <PARAM id="s4_p3" value="0.7"/>
+  <PARAM id="e1_a" value="2"/>
+  <PARAM id="e1_s" value="1"/>
+  <PARAM id="e1_r" value="6"/>
+  <PARAM id="spread" value="0.9"/>
+  <PARAM id="width" value="1.6"/>
+  <PARAM id="md_mix" value="0.35"/>
+  <PARAM id="rv_size" value="0.86"/>
+  <PARAM id="rv_mix" value="0.48"/>
+</PARAMS>

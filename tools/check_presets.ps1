@@ -5,7 +5,7 @@
 $ErrorActionPreference = 'Stop'
 
 $categories = 'Init', 'Atmospheres', 'Pads', 'Moving Pads', 'Organs', 'Bells', 'Basses', 'SFX', 'Leads',
-              'Swells', 'Polys', 'Percussive', 'Waves', 'Drones', 'Keys', 'Plucks', 'Textures'
+              'Swells', 'Polys', 'Percussive', 'Waves', 'Drones', 'Keys', 'Plucks', 'Textures', 'Stressful Violin', 'Thoughtful Violins'
 
 # id regex, min, max, integer-only. First match wins.
 $rules = @(

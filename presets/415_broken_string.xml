@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Stiff-string stretch pushed until the top partials go sour. -->
+<PARAMS presetName="Broken String" category="Stressful Violin">
+  <PARAM id="sp_algo" value="0"/>
+  <PARAM id="sp_depth" value="0.72"/>
+  <PARAM id="sp_tilt" value="0.85"/>
+  <PARAM id="sp_partials" value="320"/>
+  <PARAM id="nz_mix" value="0.12"/>
+  <PARAM id="nz_low" value="0.34"/>
+  <PARAM id="nz_high" value="0.78"/>
+  <PARAM id="poly" value="1"/>
+  <PARAM id="s2_type" value="9"/>
+  <PARAM id="s2_main" value="0.55"/>
+  <PARAM id="s2_p1" value="0.4"/>
+  <PARAM id="s2_p2" value="0.2"/>
+  <PARAM id="s2_p3" value="0.7"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s3_type" value="0"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="e1_a" value="0.9"/>
+  <PARAM id="e1_s" value="1"/>
+  <PARAM id="e1_r" value="4"/>
+  <PARAM id="md_mix" value="0.08"/>
+  <PARAM id="rv_mix" value="0.34"/>
+  <PARAM id="level" value="0.64"/>
+</PARAMS>

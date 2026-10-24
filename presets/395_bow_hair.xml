@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Bow noise up front, the pitch sitting behind the hair. -->
+<PARAMS presetName="Bow Hair" category="Stressful Violin">
+  <PARAM id="sp_algo" value="0"/>
+  <PARAM id="sp_depth" value="0.08"/>
+  <PARAM id="sp_tilt" value="1.05"/>
+  <PARAM id="nz_mix" value="0.3"/>
+  <PARAM id="nz_low" value="0.3"/>
+  <PARAM id="nz_high" value="0.78"/>
+  <PARAM id="nz_width" value="0.4"/>
+  <PARAM id="poly" value="1"/>
+  <PARAM id="s2_type" value="9"/>
+  <PARAM id="s2_main" value="0.5"/>
+  <PARAM id="s2_p1" value="0.5"/>
+  <PARAM id="s2_p2" value="0.2"/>
+  <PARAM id="s2_p3" value="0.8"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s3_type" value="17"/>
+  <PARAM id="s3_main" value="0.28"/>
+  <PARAM id="s3_p1" value="0.45"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="e1_a" value="0.8"/>
+  <PARAM id="e1_s" value="1"/>
+  <PARAM id="e1_r" value="4"/>
+  <PARAM id="md_mix" value="0.08"/>
+  <PARAM id="rv_mix" value="0.32"/>
+  <PARAM id="level" value="0.68"/>
+</PARAMS>

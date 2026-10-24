@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Octave down, a slight lean to even harmonics, warmer than hollow. -->
+<PARAMS presetName="Gamba Air" category="Thoughtful Violins">
+  <PARAM id="octave" value="-1"/>
+  <PARAM id="sp_algo" value="0"/>
+  <PARAM id="sp_depth" value="0.04"/>
+  <PARAM id="sp_tilt" value="1.65"/>
+  <PARAM id="nz_mix" value="0.035"/>
+  <PARAM id="nz_low" value="0.26"/>
+  <PARAM id="nz_high" value="0.56"/>
+  <PARAM id="poly" value="1"/>
+  <PARAM id="s2_type" value="2"/>
+  <PARAM id="s2_main" value="0.58"/>
+  <PARAM id="s2_p1" value="1"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s3_type" value="7"/>
+  <PARAM id="s3_main" value="0.5"/>
+  <PARAM id="s3_p1" value="0.4"/>
+  <PARAM id="s3_p3" value="0.6"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="e1_a" value="1.2"/>
+  <PARAM id="e1_s" value="1"/>
+  <PARAM id="e1_r" value="5.5"/>
+  <PARAM id="md_mix" value="0.12"/>
+  <PARAM id="rv_mix" value="0.4"/>
+  <PARAM id="rv_damp" value="0.52"/>
+</PARAMS>

@@ -366,7 +366,7 @@ On Edit, Wave **Freeze** holds the Start frame. Double Wave **Balance** is this 
 
 ## Factory presets
 
-394 presets in 16 categories, at least 10 in each. Between them they use every module, every spacing algorithm, all four morph modes and every modulation source. From number 16 on, each file in `presets/` starts with a one-line comment saying what the preset shows off; opening its Edit, Mod and Morph pages is a good way to learn a feature.
+494 presets in 18 categories, at least 10 in each. Between them they use every module, every spacing algorithm, all four morph modes and every modulation source. From number 16 on, each file in `presets/` starts with a one-line comment saying what the preset shows off; opening its Edit, Mod and Morph pages is a good way to learn a feature.
 
 | Category | What you get |
 |---|---|
@@ -386,5 +386,7 @@ On Edit, Wave **Freeze** holds the Start frame. Double Wave **Balance** is this 
 | Polys | Chord sounds: brass, stabs, stacks; several in Economy for big chords |
 | SFX | Sweeps, alarms, static, glitches |
 | Waves | Built on the built-in waves: forwards, backwards, sliced, frozen, crossfaded |
+| Stressful Violin | Long bowed tones, mostly violin: beating unisons, double stops, sul ponticello and tasto, plus cello, viola, and a few other strings |
+| Thoughtful Violins | Warm, in-tune bows: slow attacks, pure fifths and octaves, small choirs. Little bow noise, no sour partials |
 
 Good places to start: Fog Bank, Morph Garden (the morph pad), Vowel Choir and Rain Choir (the Wave page), Odd Machine (X-Axis Env with Snap), Fold Bass and Dream Rhodes.

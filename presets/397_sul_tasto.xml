@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Dark and soft, bowed over the fingerboard. -->
+<PARAMS presetName="Sul Tasto" category="Stressful Violin">
+  <PARAM id="sp_algo" value="0"/>
+  <PARAM id="sp_depth" value="0.06"/>
+  <PARAM id="sp_tilt" value="1.95"/>
+  <PARAM id="sp_partials" value="160"/>
+  <PARAM id="nz_mix" value="0.05"/>
+  <PARAM id="nz_low" value="0.28"/>
+  <PARAM id="nz_high" value="0.6"/>
+  <PARAM id="poly" value="1"/>
+  <PARAM id="s2_type" value="7"/>
+  <PARAM id="s2_main" value="0.48"/>
+  <PARAM id="s2_p1" value="0.45"/>
+  <PARAM id="s2_p2" value="0.1"/>
+  <PARAM id="s2_p3" value="0.9"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s3_type" value="0"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="e1_a" value="1.4"/>
+  <PARAM id="e1_s" value="1"/>
+  <PARAM id="e1_r" value="5"/>
+  <PARAM id="md_mix" value="0.18"/>
+  <PARAM id="rv_size" value="0.75"/>
+  <PARAM id="rv_mix" value="0.42"/>
+  <PARAM id="rv_damp" value="0.55"/>
+</PARAMS>

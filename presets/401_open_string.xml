@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A plain long harmonic string, the reference tone of this bank. -->
+<PARAMS presetName="Open String" category="Stressful Violin">
+  <PARAM id="sp_algo" value="0"/>
+  <PARAM id="sp_depth" value="0.08"/>
+  <PARAM id="sp_tilt" value="1.2"/>
+  <PARAM id="nz_mix" value="0.07"/>
+  <PARAM id="nz_low" value="0.32"/>
+  <PARAM id="nz_high" value="0.7"/>
+  <PARAM id="poly" value="1"/>
+  <PARAM id="s2_type" value="9"/>
+  <PARAM id="s2_main" value="0.52"/>
+  <PARAM id="s2_p1" value="0.5"/>
+  <PARAM id="s2_p2" value="0.15"/>
+  <PARAM id="s2_p3" value="0.85"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s3_type" value="15"/>
+  <PARAM id="s3_main" value="0.08"/>
+  <PARAM id="s3_p1" value="0.1"/>
+  <PARAM id="s3_p2" value="0.25"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="e1_a" value="1"/>
+  <PARAM id="e1_s" value="1"/>
+  <PARAM id="e1_r" value="4.5"/>
+  <PARAM id="md_mix" value="0.12"/>
+  <PARAM id="rv_mix" value="0.34"/>
+</PARAMS>

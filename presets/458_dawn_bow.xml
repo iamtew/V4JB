@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Env 3 opens a lowpass that is already warm, so the swell never starts choked. -->
+<PARAMS presetName="Dawn Bow" category="Thoughtful Violins">
+  <PARAM id="sp_algo" value="0"/>
+  <PARAM id="sp_depth" value="0.04"/>
+  <PARAM id="sp_tilt" value="1.4"/>
+  <PARAM id="nz_mix" value="0.04"/>
+  <PARAM id="nz_low" value="0.3"/>
+  <PARAM id="nz_high" value="0.62"/>
+  <PARAM id="poly" value="1"/>
+  <PARAM id="s2_type" value="7"/>
+  <PARAM id="s2_main" value="0.48"/>
+  <PARAM id="s2_p1" value="0.35"/>
+  <PARAM id="s2_p3" value="0.85"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s2_es" value="3"/>
+  <PARAM id="s2_ea" value="0.22"/>
+  <PARAM id="s3_type" value="13"/>
+  <PARAM id="s3_main" value="0.24"/>
+  <PARAM id="s3_p2" value="0.6"/>
+  <PARAM id="s3_p4" value="0.4"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="e1_a" value="2.8"/>
+  <PARAM id="e1_s" value="1"/>
+  <PARAM id="e1_r" value="5"/>
+  <PARAM id="e3_a" value="3"/>
+  <PARAM id="e3_d" value="2"/>
+  <PARAM id="e3_s" value="0.8"/>
+  <PARAM id="e3_r" value="3"/>
+  <PARAM id="md_mix" value="0.16"/>
+  <PARAM id="rv_mix" value="0.4"/>
+  <PARAM id="rv_damp" value="0.48"/>
+</PARAMS>

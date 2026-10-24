@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Warmer and lower, a slower gut-string bow. -->
+<PARAMS presetName="Gut G String" category="Stressful Violin">
+  <PARAM id="pitch" value="-2"/>
+  <PARAM id="sp_algo" value="0"/>
+  <PARAM id="sp_depth" value="0.1"/>
+  <PARAM id="sp_tilt" value="1.75"/>
+  <PARAM id="sp_partials" value="192"/>
+  <PARAM id="nz_mix" value="0.1"/>
+  <PARAM id="nz_low" value="0.28"/>
+  <PARAM id="nz_high" value="0.62"/>
+  <PARAM id="poly" value="1"/>
+  <PARAM id="s2_type" value="7"/>
+  <PARAM id="s2_main" value="0.5"/>
+  <PARAM id="s2_p1" value="0.4"/>
+  <PARAM id="s2_p3" value="0.7"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s3_type" value="15"/>
+  <PARAM id="s3_main" value="0.1"/>
+  <PARAM id="s3_p1" value="0.4"/>
+  <PARAM id="s3_p2" value="0.35"/>
+  <PARAM id="s4_type" value="0"/>
+  <PARAM id="e1_a" value="1.5"/>
+  <PARAM id="e1_s" value="1"/>
+  <PARAM id="e1_r" value="5.5"/>
+  <PARAM id="md_mix" value="0.14"/>
+  <PARAM id="rv_mix" value="0.4"/>
+</PARAMS>
