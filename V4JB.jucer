@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT name="V4JB" companyName="Stupid Systems LLC" version="0.0.2" userNotes="Atmosphere and texture instrument."
+<JUCERPROJECT name="V4JB" companyName="Stupid Systems LLC" version="0.0.3" userNotes="Atmosphere and texture instrument."
               projectType="audioplug" pluginAUIsSandboxSafe="1" pluginManufacturer="Stupid Systems LLC"
               pluginManufacturerCode="Ssys" pluginCode="V4jb" cppLanguageStandard="17"
               pluginFormats="buildVST3,buildStandalone" pluginCharacteristicsValue="pluginIsSynth,pluginWantsMidiIn"
