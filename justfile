@@ -16,9 +16,15 @@ projucer:
     {{PROJUCER}} {{PROJECT}}
 
 resave:
-    {{PROJUCER}} --resave {{PROJECT}}
+    $p = Start-Process -FilePath '{{PROJUCER}}' -ArgumentList '--resave','{{PROJECT}}' -Wait -PassThru; if ($null -eq $p.ExitCode) { throw 'Projucer --resave returned no exit code' }; if ($p.ExitCode -ne 0) { exit $p.ExitCode }
     # OneDrive can lag the sln behind "Finished saving".
     $n=0; while (-not (Test-Path '{{SOLUTION}}') -and $n -lt 20) { Start-Sleep -Milliseconds 250; $n++ }
+    just stamp-version
+
+# Projucer can exit without rewriting the version. tools/stamp_version.ps1
+# writes it into resources.rc and the vcxproj macros, and throws if it missed.
+stamp-version:
+    powershell -NoProfile -ExecutionPolicy Bypass -File tools\stamp_version.ps1
 
 # PNG → Builds/.../icon.ico, then wipe compiled .res so the next build relinks it.
 # `just resave` does not refresh icon.ico when the PNG changes.
@@ -29,12 +35,12 @@ icon:
 # `just icon` after resave: Projucer rewrites icon.ico; magick must win, then drop .res.
 build-debug: resave
     just icon
-    & '{{MSBUILD}}' {{SOLUTION}} /p:Configuration=Debug /p:Platform=x64 /m
+    & '{{MSBUILD}}' {{SOLUTION}} /p:Configuration=Debug /p:Platform=x64 /m; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
     ie4uinit.exe -show
 
 build-release: resave
     just icon
-    & '{{MSBUILD}}' {{SOLUTION}} /p:Configuration=Release /p:Platform=x64 /m
+    & '{{MSBUILD}}' {{SOLUTION}} /p:Configuration=Release /p:Platform=x64 /m; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
     ie4uinit.exe -show
 
 build-dist: build-release
