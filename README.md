@@ -16,4 +16,26 @@ A modular additive synth: up to 512 sine partials per voice, 8 voices. A fixed s
 
 ## Release
 
-`just build-dist` writes `dist/V4JB-<version>-win-x64-vst3.zip`, `dist/V4JB-<version>-win-x64-standalone.zip`, and `dist/V4JB-<version>-win-x64.msi`. The MSI lets you install the VST3, the standalone app, or both. Defaults are `Common Files\VST3` and `Program Files\Stupid Systems LLC\V4JB`; each folder can be changed. Building the MSI needs the .NET 8 SDK.
+Windows, Linux, and macOS files come from GitHub Actions (`.github/workflows/dist.yml`). Run it from the Actions tab, or push a numeric tag such as `0.0.3`. The workflow does not publish a release. `<version>` is the `version` in `V4JB.jucer`.
+
+The `dist` artifact holds:
+
+- `V4JB-<version>-win-x64-vst3.zip`
+- `V4JB-<version>-win-x64-standalone.zip`
+- `V4JB-<version>-win-x64.msi`
+- `V4JB-<version>-linux-x64-vst3.zip`
+- `V4JB-<version>-linux-x64-standalone.zip`
+- `V4JB-<version>-mac-universal-vst3.zip`
+- `V4JB-<version>-mac-universal-standalone.zip`
+
+Download that artifact into `dist/` and upload the files on a GitHub release:
+
+```
+gh run download <run-id> -n dist -D dist
+```
+
+The MSI installs the VST3, the standalone app, or both. Defaults are `Common Files\VST3` and `Program Files\Stupid Systems LLC\V4JB`; each folder can be changed. The standalone install adds a Start menu shortcut.
+
+The Mac zips are ad-hoc signed, not notarized. Gatekeeper blocks them until you right-click Open, or run `xattr -dr com.apple.quarantine` on the `.vst3` and the `.app`. The Linux build uses the system ALSA, FreeType, fontconfig, and X11 libraries.
+
+`just build-dist` on Windows still writes the three Windows files only. Building the MSI needs the .NET 8 SDK.
