@@ -16,7 +16,7 @@ A modular additive synth: up to 512 sine partials per voice, 8 voices. A fixed s
 
 ## Release
 
-Windows, Linux, and macOS files come from GitHub Actions (`.github/workflows/dist.yml`). Run it from the Actions tab, or push a numeric tag such as `0.0.3`. The workflow does not publish a release. `<version>` is the `version` in `V4JB.jucer`.
+Windows, Linux, and macOS files come from GitHub Actions (`.github/workflows/dist.yml`). Run it from the Actions tab, or push a numeric tag such as `0.0.4`. The workflow does not publish a release. `<version>` is the `version` in `V4JB.jucer`.
 
 The `dist` artifact holds:
 
