@@ -16,7 +16,7 @@ Atmosphere and texture. Pads, drones, air, fog. This is the walkthrough of the w
 
 ## Install
 
-Run `V4JB-<version>-win-x64.msi`. Pick VST3, Standalone, or both. Defaults are `Common Files\VST3` and `Program Files\Stupid Systems LLC\V4JB`; each folder can be changed.
+Run `V4JB-<version>-win-x64-installer.msi`. Pick VST3, Standalone, or both. Defaults are `Common Files\VST3` and `Program Files\Stupid Systems LLC\V4JB`; each folder can be changed.
 
 Or unzip `V4JB-<version>-win-x64-vst3.zip` into your VST3 folder, and/or unzip the standalone zip wherever you like.
 

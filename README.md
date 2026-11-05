@@ -22,7 +22,7 @@ The `dist` artifact holds:
 
 - `V4JB-<version>-win-x64-vst3.zip`
 - `V4JB-<version>-win-x64-standalone.zip`
-- `V4JB-<version>-win-x64.msi`
+- `V4JB-<version>-win-x64-installer.msi`
 - `V4JB-<version>-linux-x64-vst3.zip`
 - `V4JB-<version>-linux-x64-standalone.zip`
 - `V4JB-<version>-mac-universal-vst3.zip`
