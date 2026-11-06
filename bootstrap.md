@@ -22,7 +22,7 @@ V4JB has the update checker like TEW03 and K1X.
   - 6fc3b8 Teal (main accent)
   - e0a458 Amber (update notice, clip)
   - FFFFFF White
-- Logo source is `./assets/logo.af`. Export `./assets/logo.png`. That PNG is the plugin logo and the Standalone EXE icon (`just icon`). The docs site uses a 512px copy at `./docs/logo.png`.
+- Logo source is `./assets/logo.af`. Export `./assets/logo.png` once; never overwrite it. `just icon` derives the Standalone ICO and a 320px `./docs/logo.png` (linear Lanczos). Title-bar blit uses high-quality resample.
 - Git repo will be shared on GitHub (iamtew/V4JB), LICENSE is MIT, README.md stays small.
 
 

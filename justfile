@@ -27,10 +27,14 @@ resave:
 stamp-version:
     powershell -NoProfile -ExecutionPolicy Bypass -File tools\stamp_version.ps1
 
-# PNG → Builds/.../icon.ico, then wipe compiled .res so the next build relinks it.
+# assets/logo.png is the Affinity export. Source of truth. Never write that file.
+# Derived: docs/logo.png (320, linear Lanczos EWA), Builds/.../icon.ico, then wipe .res so the next build relinks it.
 # `just resave` does not refresh icon.ico when the PNG changes.
-icon:
-    magick assets/logo.png -define icon:auto-resize=256,128,64,48,32,16 Builds\VisualStudio2022\icon.ico
+docs-logo:
+    magick assets/logo.png -background none -colorspace RGB -filter Lanczos +distort Resize 320x320 -colorspace sRGB PNG32:docs/logo.png
+
+icon: docs-logo
+    magick assets/logo.png -background none -colorspace RGB -filter Lanczos -define icon:auto-resize=256,128,64,48,32,16 Builds\VisualStudio2022\icon.ico
     Get-ChildItem Builds\VisualStudio2022 -Recurse -Filter resources.res | Remove-Item -Force
 
 # `just icon` after resave: Projucer rewrites icon.ico; magick must win, then drop .res.
