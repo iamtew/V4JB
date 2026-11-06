@@ -4,7 +4,7 @@
 
 **V4JB** is an atmosphere and texture instrument. Pads, drones, air, fog. Very vibe, very mood.
 
-VST3 and standalone. Stupid Systems LLC. [MIT](LICENSE). Site: [docs/](docs/index.html). Manual: [docs/MANUAL.md](docs/MANUAL.md).
+VST3 and standalone. Stupid Audio. [MIT](LICENSE). Site: [docs/](docs/index.html). Manual: [docs/MANUAL.md](docs/MANUAL.md).
 
 A modular additive synth: up to 512 sine partials per voice, 8 voices. A fixed spectral stage (18 spacing algorithms, shimmer, spectral noise, sub octaves) feeds 10 slots of swappable spectral modules (filters, Hype, Modulator, Random Drops, Phrase, Wave and more), then drive, chorus/phaser, delay and reverb. A morph pad blends four macro snapshots by hand, along drawn paths, or as an envelope. Design in [docs/DSP_NOTES.md](docs/DSP_NOTES.md).
 
@@ -28,7 +28,7 @@ The `dist` artifact holds:
 - `V4JB-<version>-mac-universal-vst3.zip`
 - `V4JB-<version>-mac-universal-standalone.zip`
 
-The MSI installs the VST3, the standalone app, or both. Defaults are `Common Files\VST3` and `Program Files\Stupid Systems LLC\V4JB`; each folder can be changed. The standalone install adds a Start menu shortcut.
+The MSI installs the VST3, the standalone app, or both. Defaults are `Common Files\VST3` and `Program Files\Stupid Audio\V4JB`; each folder can be changed. The standalone install adds a Start menu shortcut.
 
 The Mac zips are ad-hoc signed, not notarized. Gatekeeper blocks them until you right-click Open, or run `xattr -dr com.apple.quarantine` on the `.vst3` and the `.app`. The Linux build uses the system ALSA, FreeType, fontconfig, and X11 libraries.
 

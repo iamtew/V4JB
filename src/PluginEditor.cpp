@@ -66,7 +66,7 @@ void V4JBAudioProcessorEditor::AboutBox::paint (juce::Graphics& g)
     g.drawText ("v" JucePlugin_VersionString, r.removeFromTop (18), juce::Justification::centred, false);
     g.setFont (boldFont (11.f));
     g.setColour (kFog.withAlpha (0.8f));
-    g.drawText ("Stupid Systems LLC", r.removeFromTop (16), juce::Justification::centred, false);
+    g.drawText ("Stupid Audio", r.removeFromTop (16), juce::Justification::centred, false);
     g.drawText ("MIT", r.removeFromTop (16), juce::Justification::centred, false);
 }
 
