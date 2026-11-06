@@ -549,6 +549,8 @@ void V4JBAudioProcessor::applyStateXml (const juce::XmlElement& xml, bool fromPr
     {
         apvts.replaceState (tree);
         uiScale = juce::jlimit (0.4f, 1.5f, (float) xml.getDoubleAttribute ("uiScale", uiScale));  // sessions only, presets keep your size
+        if (std::abs (uiScale - 0.85f) < 0.001f)
+            uiScale = 1.f;
     }
 
     applyMorphTree (tree.getChildWithName ("MORPH"), true);
