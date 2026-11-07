@@ -41,12 +41,12 @@
     // Allowlist: only these files can be fetched via ?doc=.
     const allow = {
       "MANUAL.md": "Manual",
-      "PRD.md": "Brief",
+      "SPEC.md": "Spec",
       "ARCHITECTURE.md": "Architecture",
       "DSP_NOTES.md": "DSP notes"
     };
     const file = new URLSearchParams(location.search).get("doc");
-    const doc = allow[file] ? file : "PRD.md";
+    const doc = allow[file] ? file : "SPEC.md";
     document.title = allow[doc] + " | V4JB";
     fetch(doc)
       .then((r) => r.ok ? r.text() : Promise.reject())

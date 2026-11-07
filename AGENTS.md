@@ -1,5 +1,7 @@
 # V4JB – Cursor Rules
 
+Spec: [docs/SPEC.md](docs/SPEC.md).
+
 Atmosphere and texture instrument, VST3 + Standalone. Pads, drones, air, fog. Sister plugin to TEW03 and K1X.
 
 ## Stack
