@@ -11,6 +11,7 @@ Atmosphere and texture instrument. Pads, drones, air, fog. Sister plugin to TEW0
 ## Product
 
 - VST3 + Standalone
+- Instrument (MIDI in); does not process input audio
 - About + GitHub tag check (title-bar name + version)
 - Window scale 40–150%, saved with the session
 - Factory presets in the plugin; user presets in `Documents\V4JB\Presets` as `Name.xml`
@@ -47,7 +48,7 @@ Drive, chorus/phaser, ping-pong delay, reverb, width, limiter — Slot 12 only.
 
 ## Stack
 
-- JUCE, Projucer workflow only
+- JUCE from `%USERPROFILE%\JUCE`, Projucer workflow only
 - C++17, APVTS for all parameters
 - Just + justfile
 - Header-only JUCE-free engine in `dsp/` (tested by `just check`)
@@ -62,6 +63,8 @@ Fog at night. Do not invent another palette.
 - `#6fc3b8` teal
 - `#e0a458` amber
 - `#ffffff` white
+
+`assets/logo.af` is the Affinity source. `assets/logo.png` is the export. Never overwrite the PNG. `just icon` derives the Standalone ICO and `docs/logo.png`.
 
 ## Layout
 
