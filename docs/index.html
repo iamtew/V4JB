@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>V4JB | atmosphere and texture</title>
-  <meta name="description" content="atmosphere and texture">
+  <title>V4JB</title>
+  <meta name="description" content="A free atmosphere instrument for pads, drones, air and fog. Additive partials, a morph pad, and a 12-slot chain. VST3 and standalone.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="V4JB | atmosphere and texture">
-  <meta property="og:description" content="atmosphere and texture">
+  <meta property="og:title" content="V4JB">
+  <meta property="og:description" content="A free atmosphere instrument for pads, drones, air and fog. Additive partials, a morph pad, and a 12-slot chain. VST3 and standalone.">
   <meta property="og:url" content="https://iamtew.github.io/V4JB/">
   <meta property="og:image" content="https://iamtew.github.io/V4JB/ogimage-V4JB.png">
   <meta property="og:image:width" content="1200">
@@ -21,58 +21,158 @@
   <canvas id="fx" aria-hidden="true"></canvas>
   <header>
     <a class="brand" href="#top"><img src="logo.png" alt="" width="36" height="36">V4JB</a>
-    <nav>
-      <a href="#sound">Sound</a>
-      <a href="notes.html?doc=MANUAL.md">Manual</a>
-      <a href="#notes">Notes</a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+      <svg class="icon" aria-hidden="true"><use href="icons.svg#menu"></use></svg>
+    </button>
+    <nav id="site-nav">
+      <a href="#edit">Edit</a>
+      <a href="#mod">Mod</a>
+      <a href="#morph">Morph</a>
+      <a href="#wave">Wave</a>
+      <a href="docs.html">Manual</a>
       <a href="https://audio.stupid.systems/">Stupid Audio</a>
     </nav>
   </header>
 
-  <main id="top">
-    <div class="lead">
-      <img class="hero" src="logo.png" alt="V4JB" width="160" height="160">
-      <div>
-        <h1>V4JB</h1>
-        <p class="tag">Atmosphere and texture. Very vibe, very mood.</p>
+  <main id="top" class="landing">
+    <div class="hero-panel">
+      <div class="lead">
+        <img class="hero" src="logo.png" alt="V4JB" width="160" height="160">
+        <div>
+          <h1>V4JB</h1>
+          <p class="tag">Atmosphere and texture. Very vibe, very mood.</p>
+        </div>
       </div>
+      <p>V4JB is for the long notes: pads, drones, air, fog. You get a bank of sine partials (up to 512 of them), a 12-slot chain that shapes the spectrum, and a morph pad that blends four snapshots of the macros. Sister plugin to TEW03 and K1X, if you already live in that neighbourhood.</p>
+      <p>It is part of <a href="https://audio.stupid.systems/">Stupid Audio</a> — five free instruments in one pack. The other four live over there.</p>
+      <div class="demos">
+        <p class="demo">
+          <a href="V4JB-DEMO.ogg">V4JB-DEMO.ogg</a>
+          <audio controls preload="metadata" src="V4JB-DEMO.ogg">
+            Your browser cannot play this demo.
+          </audio>
+        </p>
+      </div>
+      <p class="actions">
+        <button type="button" class="download" data-dl-open>
+          <svg class="icon" aria-hidden="true"><use href="icons.svg#download"></use></svg>
+          Download
+        </button>
+        <a class="repo" href="https://github.com/iamtew/V4JB">
+          <svg class="icon" aria-hidden="true"><use href="icons.svg#github"></use></svg>
+          GitHub
+        </a>
+      </p>
+      <p class="meta">VST3 and standalone. Additive, a little modular, and not in a hurry.</p>
     </div>
-    <p>An instrument for pads, drones, air and fog. Sister plugin to TEW03 and K1X.</p>
-    <p>Part of <a href="https://audio.stupid.systems/">Stupid Audio</a> — five free instruments in one pack. The other four live over there.</p>
-    <p class="demo">
-      <a href="V4JB-DEMO.ogg">V4JB-DEMO.ogg</a>
-      <audio controls preload="metadata" src="V4JB-DEMO.ogg">
-        Your browser cannot play this demo.
-      </audio>
-    </p>
-    <p class="actions">
-      <a class="download" href="https://github.com/iamtew/V4JB/releases/latest">Download</a>
-      <a href="https://github.com/iamtew/V4JB">GitHub</a>
-    </p>
-    <p class="meta">VST3 and standalone. Additive: up to 512 partials, a 12-slot chain, a morph pad.</p>
 
-    <section id="sound" class="card">
-      <h2>Sound</h2>
-      <p>Slot 1 builds the spectrum. Slots 2–11 run modules. Slot 12 is drive, chorus or phaser, delay, reverb. The <a href="notes.html?doc=MANUAL.md">manual</a> walks every page.</p>
-      <figure>
-        <img class="shot" src="edit.png" alt="V4JB Edit page">
-        <figcaption>Edit: Morph Garden, after a note. Spectral stage, modules, effects, keys.</figcaption>
-      </figure>
-      <div class="shots">
-        <img class="shot" src="mod.png" alt="Mod page">
-        <img class="shot" src="morph.png" alt="Morph page">
-        <img class="shot" src="wave.png" alt="Wave page">
+    <section id="edit" class="feature">
+      <div>
+        <h2>Edit</h2>
+        <p>Slot 1 builds the spectrum: spacing algorithms, shimmer, spectral noise, a couple of sub octaves. Slots 2–11 are modules you swap in — filters, Hype, Phrase, Wave, rain-on-tin Random Drops, whatever the patch needs. Slot 12 is drive, chorus or phaser, delay, reverb.</p>
+        <p>The teal bars on each card are a snapshot of the first 64 partials after that slot, once you have played a note. Empty bars just mean the plugin is waiting for you to say hello.</p>
       </div>
+      <button type="button" class="shot-open" data-shot="edit.png" data-shot-alt="V4JB Edit page: spectral stage, modules, effects, keys">
+        <img class="shot" src="edit.png" alt="V4JB Edit page: spectral stage, modules, effects, keys">
+      </button>
     </section>
 
-    <section id="notes">
-      <h2>Notes</h2>
-      <a href="notes.html?doc=MANUAL.md">Manual</a>
-      <a href="notes.html?doc=SPEC.md">Spec</a>
-      <a href="notes.html?doc=ARCHITECTURE.md">Architecture</a>
-      <a href="notes.html?doc=DSP_NOTES.md">DSP notes</a>
+    <section id="mod" class="feature">
+      <div>
+        <h2>Mod</h2>
+        <p>Four envelopes and three LFOs. Env 1 is always the loudness of the note; the others exist to be routed. Each module slot can grab one envelope, one LFO, and one MIDI source for its main knob. That is the whole routing story, and it is enough.</p>
+      </div>
+      <button type="button" class="shot-open" data-shot="mod.png" data-shot-alt="V4JB Mod page: four envelopes and three LFOs">
+        <img class="shot" src="mod.png" alt="V4JB Mod page: four envelopes and three LFOs">
+      </button>
+    </section>
+
+    <section id="morph" class="feature">
+      <div>
+        <h2>Morph</h2>
+        <p>Eleven macros, an XY pad, four corners. Store what you like into A, B, C, D, then wander between them. Drag the puck by hand, send it around a drawn path, or let each new note sweep the X axis like a slow envelope that also happens to be pretty.</p>
+      </div>
+      <button type="button" class="shot-open" data-shot="morph.png" data-shot-alt="V4JB Morph page: macros, pad, and path">
+        <img class="shot" src="morph.png" alt="V4JB Morph page: macros, pad, and path">
+      </button>
+    </section>
+
+    <section id="wave" class="feature">
+      <div>
+        <h2>Wave</h2>
+        <p>Two files, A and B. Nothing here makes a sound on its own — drop a Wave or Double Wave module on Edit and the partials follow the file. Built-ins (bells, chords, rain, vowels) or your own wav / aiff / flac / ogg / mp3.</p>
+        <p>Click <strong>V4JB</strong> in the corner for About, if you need a version number or a polite check for updates.</p>
+      </div>
+      <div>
+        <button type="button" class="shot-open" data-shot="wave.png" data-shot-alt="V4JB Wave page: two spectrograms">
+          <img class="shot" src="wave.png" alt="V4JB Wave page: two spectrograms">
+        </button>
+        <button type="button" class="shot-open" data-shot="about.png" data-shot-alt="V4JB about dialog">
+          <img class="shot" src="about.png" alt="V4JB about dialog">
+        </button>
+      </div>
     </section>
   </main>
+
+  <dialog id="dl" class="dl-dialog" aria-labelledby="dl-title">
+    <button type="button" class="dl-close" data-dl-close aria-label="Close">
+      <svg class="icon" aria-hidden="true"><use href="icons.svg#close"></use></svg>
+    </button>
+    <h2 id="dl-title">Download V4JB</h2>
+    <div class="dl-kind">
+      <p>The Windows installer is the easy path. It can put the VST3, the standalone app, or both on the machine, and it adds a Start menu shortcut for the app.</p>
+      <div class="dl-row" data-kind="installer" hidden>
+        <a class="download os" data-os="win" hidden>
+          <svg class="icon" aria-hidden="true"><use href="icons.svg#windows"></use></svg>
+          Windows installer
+        </a>
+      </div>
+    </div>
+    <div class="dl-kind">
+      <p>The VST3 zip is just the plugin. Drop it where your DAW looks for VST3s. Mac builds are ad-hoc signed, so Gatekeeper will sulk until you right-click Open the first time.</p>
+      <div class="dl-row" data-kind="vst3" hidden>
+        <a class="download os" data-os="win" hidden>
+          <svg class="icon" aria-hidden="true"><use href="icons.svg#windows"></use></svg>
+          Windows
+        </a>
+        <a class="download os" data-os="linux" hidden>
+          <svg class="icon" aria-hidden="true"><use href="icons.svg#linux"></use></svg>
+          Linux
+        </a>
+        <a class="download os" data-os="mac" hidden>
+          <svg class="icon" aria-hidden="true"><use href="icons.svg#apple"></use></svg>
+          macOS
+        </a>
+      </div>
+    </div>
+    <div class="dl-kind">
+      <p>The standalone zip is the app, no DAW required. Same Gatekeeper story on Mac. Linux wants the usual system ALSA, FreeType, fontconfig, and X11 libraries.</p>
+      <div class="dl-row" data-kind="standalone" hidden>
+        <a class="download os" data-os="win" hidden>
+          <svg class="icon" aria-hidden="true"><use href="icons.svg#windows"></use></svg>
+          Windows
+        </a>
+        <a class="download os" data-os="linux" hidden>
+          <svg class="icon" aria-hidden="true"><use href="icons.svg#linux"></use></svg>
+          Linux
+        </a>
+        <a class="download os" data-os="mac" hidden>
+          <svg class="icon" aria-hidden="true"><use href="icons.svg#apple"></use></svg>
+          macOS
+        </a>
+      </div>
+    </div>
+    <img class="dl-logo" src="logo.png" alt="" width="192" height="192">
+  </dialog>
+
+  <dialog id="shot" class="shot-dialog">
+    <button type="button" class="dl-close" data-shot-close aria-label="Close">
+      <svg class="icon" aria-hidden="true"><use href="icons.svg#close"></use></svg>
+    </button>
+    <img id="shot-full" alt="">
+  </dialog>
+
+  <script src="icons.js"></script>
   <script type="module" src="fx.js"></script>
   <script src="site.js"></script>
 </body>
