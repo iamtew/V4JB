@@ -8,9 +8,9 @@ VST3 and standalone. Windows, Linux, and Mac.
 
 ## Install
 
-The Windows installer is the easy path: `V4JB-<version>-win-x64-installer.msi` (older 0.0.5 builds shipped as `V4JB-<version>-win-x64.msi`). Pick VST3, Standalone, or both. Defaults are `Common Files\VST3` and `Program Files\Stupid Audio\V4JB`; each folder can be changed.
+The Windows installer is the easy path: `V4JB-{version}-win-x64-installer.msi` (older 0.0.5 builds shipped as `V4JB-{version}-win-x64.msi`). Pick VST3, Standalone, or both. Defaults are `Common Files\VST3` and `Program Files\Stupid Audio\V4JB`; each folder can be changed.
 
-Or unzip `V4JB-<version>-win-x64-vst3.zip` into your VST3 folder, and/or unzip the standalone zip wherever you like. Same idea on Linux and Mac, minus the installer.
+Or unzip `V4JB-{version}-win-x64-vst3.zip` into your VST3 folder, and/or unzip the standalone zip wherever you like. Same idea on Linux and Mac, minus the installer.
 
 In a DAW, scan for VST3 and load **V4JB**. In Standalone, pick your audio device and MIDI keyboard under **Options > Audio/MIDI Settings**.
 
