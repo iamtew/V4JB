@@ -4,7 +4,7 @@
 
 **V4JB** is an atmosphere and texture instrument. Pads, drones, air, fog. Very vibe, very mood.
 
-VST3 and standalone. Stupid Audio. [MIT](LICENSE). Site: [docs/](docs/index.html). Manual: [docs.html](https://iamtew.github.io/V4JB/docs.html).
+VST3 and standalone. Stupid Audio. [MIT](LICENSE). Site: [docs/](docs/index.html). Manual: [docs.html](https://iamtew.github.io/V4JB/docs.html). Add `?fx` to any page to preview the backdrop full screen with the page chrome hidden; `?fx=false` keeps the normal page.
 
 A modular additive synth: up to 512 sine partials per voice, 8 voices. A fixed spectral stage (18 spacing algorithms, shimmer, spectral noise, sub octaves) feeds 10 slots of swappable spectral modules (filters, Hype, Modulator, Random Drops, Phrase, Wave and more), then drive, chorus/phaser, delay and reverb. A morph pad blends four macro snapshots by hand, along drawn paths, or as an envelope. Design in [docs/DSP_NOTES.md](docs/DSP_NOTES.md).
 
