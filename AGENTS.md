@@ -31,7 +31,7 @@ V4JB.jucer
 
 ## Version
 - Jucer `version=` is what the binary and About dialog show.
-- Git tags must match that string (`0.0.5`).
+- Git tags must match that string (`0.0.6`).
 - `just build-dist` names the zips and MSI from the jucer version.
 
 ## Do NOT
