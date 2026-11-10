@@ -1,12 +1,12 @@
 {
-  "tag": "0.0.5",
+  "tag": "0.0.6",
   "files": [
-    "V4JB-0.0.5-linux-x64-standalone.zip",
-    "V4JB-0.0.5-linux-x64-vst3.zip",
-    "V4JB-0.0.5-mac-universal-standalone.zip",
-    "V4JB-0.0.5-mac-universal-vst3.zip",
-    "V4JB-0.0.5-win-x64-standalone.zip",
-    "V4JB-0.0.5-win-x64-vst3.zip",
-    "V4JB-0.0.5-win-x64.msi"
+    "V4JB-0.0.6-linux-x64-standalone.zip",
+    "V4JB-0.0.6-linux-x64-vst3.zip",
+    "V4JB-0.0.6-mac-universal-standalone.zip",
+    "V4JB-0.0.6-mac-universal-vst3.zip",
+    "V4JB-0.0.6-win-x64-installer.msi",
+    "V4JB-0.0.6-win-x64-standalone.zip",
+    "V4JB-0.0.6-win-x64-vst3.zip"
   ]
 }
