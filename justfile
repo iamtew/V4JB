@@ -30,10 +30,8 @@ stamp-version:
 # assets/logo.png is the Affinity export. Source of truth. Never write that file.
 # Derived: docs/logo.png (320, linear Lanczos EWA), Builds/.../icon.ico, then wipe .res so the next build relinks it.
 # `just resave` does not refresh icon.ico when the PNG changes.
-docs-logo:
+icon: 
     magick assets/logo.png -background none -colorspace RGB -filter Lanczos +distort Resize 320x320 -colorspace sRGB PNG32:docs/logo.png
-
-icon: docs-logo
     magick assets/logo.png -background none -colorspace RGB -filter Lanczos -define icon:auto-resize=256,128,64,48,32,16 Builds\VisualStudio2022\icon.ico
     Get-ChildItem Builds\VisualStudio2022 -Recurse -Filter resources.res | Remove-Item -Force
 
