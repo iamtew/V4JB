@@ -41,6 +41,10 @@ build-debug: resave
     & '{{MSBUILD}}' {{SOLUTION}} /p:Configuration=Debug /p:Platform=x64 /m; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
     ie4uinit.exe -show
 
+# Overwrites the installed VST3 (same path as the MSI). Close the DAW first. UAC for Common Files.
+install-debug: build-debug
+    Write-Host 'Overwrites Common Files\VST3\V4JB.vst3 (the installed plugin). Close the DAW first.'; $src = (Resolve-Path -LiteralPath 'Builds\VisualStudio2022\x64\Debug\VST3\V4JB.vst3').Path; $dest = Join-Path $env:ProgramFiles 'Common Files\VST3\V4JB.vst3'; $copy = "`$ErrorActionPreference='Stop'; if (Test-Path -LiteralPath '$dest') { Remove-Item -LiteralPath '$dest' -Recurse -Force }; Copy-Item -LiteralPath '$src' -Destination '$dest' -Recurse"; $admin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator); if ($admin) { Invoke-Expression $copy } else { $enc = [Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes($copy)); $p = Start-Process -FilePath powershell.exe -Verb RunAs -Wait -PassThru -ArgumentList @('-NoProfile','-EncodedCommand',$enc); if ($null -eq $p -or $p.ExitCode -ne 0) { throw 'install-debug: elevated copy failed' } }; Write-Host "installed $dest"
+
 build-release: resave
     just icon
     & '{{MSBUILD}}' {{SOLUTION}} /p:Configuration=Release /p:Platform=x64 /m; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
