@@ -51,6 +51,8 @@ if (-not (Test-Path $exe)) { throw "no debug standalone: $exe — run just build
 
 Get-Process -Name V4JB -ErrorAction SilentlyContinue | Stop-Process -Force
 Start-Sleep -Milliseconds 300
+$env:V4JB_DOCS_PRESET = 'Rain Choir'
+$env:V4JB_DOCS_NOTE = '60'
 $proc = Start-Process $exe -PassThru
 $hwnd = [IntPtr]::Zero
 for ($i = 0; $i -lt 50; $i++) {
@@ -94,7 +96,7 @@ function Save-Shot([string]$name) {
     $bmp.Dispose()
 }
 
-Start-Sleep -Seconds 1
+Start-Sleep -Seconds 3
 $pages = @('edit', 'mod', 'morph', 'wave')
 for ($i = 0; $i -lt $pages.Count; $i++) {
     Save-Shot $pages[$i]
