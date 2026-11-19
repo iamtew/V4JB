@@ -328,7 +328,8 @@ void V4JBAudioProcessorEditor::showPresetMenu()
                 sub.addItem (i + 1, presetList[i].name, true,
                              presetList[i].name == proc.currentPresetName
                                  && presetList[i].category == proc.currentPresetCategory);
-        menu.addSubMenu (cat, sub);
+        menu.addSubMenu (cat, sub, true, juce::Image{},
+                         cat == proc.currentPresetCategory);
     }
     menu.addSeparator();
     menu.addItem (kMenuSave, "Save preset...");
