@@ -25,4 +25,4 @@
 
 Good places to start: Fog Bank, Morph Garden (the morph pad), Vowel Choir and Rain Choir (the Wave page), Odd Machine (X-Axis Env with Snap), Fold Bass and Dream Rhodes.
 
-The preset button on the top bar filters this list by name. Category groups stay when the filter is empty. A loaded user preset can be renamed or deleted from that popup. Factory presets cannot. Delete asks first and leaves the sound loaded.
+The preset button on the top bar opens a menu of category submenus. A loaded user preset can be renamed or deleted from that menu. Factory presets cannot. Delete asks first and leaves the sound loaded.

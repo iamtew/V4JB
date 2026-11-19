@@ -16,6 +16,12 @@ constexpr int kKeyboardH = 72;
 constexpr int kKeyLow = 36;   // C2
 constexpr int kKeyHigh = 84;  // C6
 constexpr int kTitleHitW = 140;
+constexpr int kMenuSave   = 10000;
+constexpr int kMenuFolder = 10001;
+constexpr int kMenuRename = 10002;
+constexpr int kMenuDelete = 10003;
+
+juce::LookAndFeel_V4 presetMenuLnF;  // stock greys, not PanelLnF
 
 int whiteKeysInRange (int low, int high)
 {
@@ -303,189 +309,67 @@ void V4JBAudioProcessorEditor::refreshPresetList()
     presetList.addArray (Presets::user());
 }
 
-// Name filter over the factory + user list. A PopupMenu cannot rebuild while you type.
-struct PresetPopup : public juce::Component,
-                     private juce::ListBoxModel,
-                     private juce::TextEditor::Listener
-{
-    struct Row { bool header = false; int index = -1; juce::String text; };
-
-    PresetPopup (juce::Array<PresetEntry>& list, juce::String currentName, bool userFile,
-                 std::function<void (int)> pick, std::function<void()> save, std::function<void()> folder,
-                 std::function<void()> rename, std::function<void()> remove)
-        : presets (list), current (std::move (currentName)), onPick (std::move (pick)),
-          onSave (std::move (save)), onFolder (std::move (folder)),
-          onRename (std::move (rename)), onDelete (std::move (remove))
-    {
-        filter.setTextToShowWhenEmpty ("Filter name", kFog.withAlpha (0.45f));
-        filter.setColour (juce::TextEditor::backgroundColourId, kNight);
-        filter.setColour (juce::TextEditor::textColourId, kWhite);
-        filter.setColour (juce::TextEditor::outlineColourId, kFog.withAlpha (0.3f));
-        filter.setColour (juce::TextEditor::focusedOutlineColourId, kTeal);
-        filter.setFont (boldFont (12.f));
-        filter.addListener (this);
-        addAndMakeVisible (filter);
-
-        listBox.setModel (this);
-        listBox.setRowHeight (22);
-        listBox.setColour (juce::ListBox::backgroundColourId, kNight);
-        listBox.setColour (juce::ListBox::outlineColourId, juce::Colours::transparentBlack);
-        addAndMakeVisible (listBox);
-
-        saveBtn.onClick = [this] { dismiss(); if (onSave) onSave(); };
-        folderBtn.onClick = [this] { dismiss(); if (onFolder) onFolder(); };
-        folderBtn.setTooltip ("Open user preset folder");
-        renameBtn.onClick = [this] { dismiss(); if (onRename) onRename(); };
-        deleteBtn.onClick = [this] { dismiss(); if (onDelete) onDelete(); };
-        renameBtn.setEnabled (userFile);
-        deleteBtn.setEnabled (userFile);
-        addAndMakeVisible (saveBtn);
-        addAndMakeVisible (folderBtn);
-        addAndMakeVisible (renameBtn);
-        addAndMakeVisible (deleteBtn);
-
-        rebuild();
-        setSize (300, 412);
-    }
-
-    void parentHierarchyChanged() override
-    {
-        if (! focused && isShowing())
-        {
-            focused = true;
-            filter.grabKeyboardFocus();
-        }
-    }
-
-    void dismiss()
-    {
-        if (auto* box = findParentComponentOfClass<juce::CallOutBox>())
-            box->dismiss();
-    }
-
-    void textEditorTextChanged (juce::TextEditor&) override { rebuild(); }
-
-    void rebuild()
-    {
-        rows.clear();
-        const auto q = filter.getText().trim();
-        if (q.isEmpty())
-        {
-            juce::StringArray cats;
-            for (auto& e : presets)
-                cats.addIfNotAlreadyThere (e.category);
-            for (auto& cat : cats)
-            {
-                rows.push_back ({ true, -1, cat });
-                for (int i = 0; i < presets.size(); ++i)
-                    if (presets[i].category == cat)
-                        rows.push_back ({ false, i, presets[i].name });
-            }
-        }
-        else
-        {
-            for (int i = 0; i < presets.size(); ++i)
-                if (presets[i].name.containsIgnoreCase (q))
-                    rows.push_back ({ false, i, presets[i].category + "  ·  " + presets[i].name });
-        }
-        listBox.updateContent();
-        for (int r = 0; r < (int) rows.size(); ++r)
-            if (! rows[(size_t) r].header && presets[rows[(size_t) r].index].name == current)
-            {
-                listBox.selectRow (r);
-                listBox.scrollToEnsureRowIsOnscreen (r);
-                break;
-            }
-    }
-
-    int getNumRows() override { return (int) rows.size(); }
-
-    void paintListBoxItem (int row, juce::Graphics& g, int w, int h, bool selected) override
-    {
-        const auto& r = rows[(size_t) row];
-        if (r.header)
-        {
-            g.setColour (kAmber);
-            g.setFont (boldFont (11.f));
-            g.drawText (r.text, 8, 0, w - 12, h, juce::Justification::centredLeft, true);
-            return;
-        }
-        if (selected)
-        {
-            g.setColour (kDusk.brighter (0.2f));
-            g.fillRect (0, 0, w, h);
-        }
-        g.setColour (presets[r.index].name == current ? kTeal : kFog);
-        g.setFont (boldFont (12.f));
-        g.drawText (r.text, 14, 0, w - 20, h, juce::Justification::centredLeft, true);
-    }
-
-    void listBoxItemClicked (int row, const juce::MouseEvent&) override
-    {
-        const auto& r = rows[(size_t) row];
-        if (r.header || onPick == nullptr)
-            return;
-        const int index = r.index;
-        dismiss();
-        onPick (index);
-    }
-
-    void paint (juce::Graphics& g) override { g.fillAll (kNight); }
-
-    void resized() override
-    {
-        auto r = getLocalBounds().reduced (6);
-        filter.setBounds (r.removeFromTop (26));
-        r.removeFromTop (4);
-        auto buttons = r.removeFromBottom (52);
-        auto line2 = buttons.removeFromBottom (26);
-        renameBtn.setBounds (line2.removeFromLeft (line2.getWidth() / 2).reduced (0, 1));
-        deleteBtn.setBounds (line2.reduced (2, 1));
-        saveBtn.setBounds (buttons.removeFromLeft (140).reduced (0, 1));
-        buttons.removeFromLeft (6);
-        folderBtn.setBounds (buttons.reduced (0, 1));
-        r.removeFromBottom (4);
-        listBox.setBounds (r);
-    }
-
-    juce::Array<PresetEntry>& presets;
-    juce::String current;
-    std::function<void (int)> onPick;
-    std::function<void()> onSave, onFolder, onRename, onDelete;
-    juce::TextEditor filter;
-    juce::ListBox listBox;
-    juce::TextButton saveBtn { "Save preset..." }, folderBtn { "Open folder" };
-    juce::TextButton renameBtn { "Rename..." }, deleteBtn { "Delete" };
-    std::vector<Row> rows;
-    bool focused = false;
-};
-
 void V4JBAudioProcessorEditor::showPresetMenu()
 {
     refreshPresetList();
     const bool userFile = currentUserPresetFile().existsAsFile();
+
+    juce::PopupMenu menu;
+    menu.setLookAndFeel (&presetMenuLnF);
+
+    juce::StringArray categories;
+    for (auto& e : presetList)
+        categories.addIfNotAlreadyThere (e.category);
+    for (auto& cat : categories)
+    {
+        juce::PopupMenu sub;
+        for (int i = 0; i < presetList.size(); ++i)
+            if (presetList[i].category == cat)
+                sub.addItem (i + 1, presetList[i].name, true,
+                             presetList[i].name == proc.currentPresetName
+                                 && presetList[i].category == proc.currentPresetCategory);
+        menu.addSubMenu (cat, sub);
+    }
+    menu.addSeparator();
+    menu.addItem (kMenuSave, "Save preset...");
+    menu.addItem (kMenuFolder, "Open user preset folder");
+    menu.addItem (kMenuRename, "Rename...", userFile);
+    menu.addItem (kMenuDelete, "Delete", userFile);
+
     juce::Component::SafePointer<V4JBAudioProcessorEditor> safe (this);
-    auto popup = std::make_unique<PresetPopup> (
-        presetList, proc.currentPresetName, userFile,
-        [safe] (int index)
-        {
-            if (safe != nullptr && juce::isPositiveAndBelow (index, safe->presetList.size()))
-            {
-                safe->presetIndex = index;
-                safe->proc.loadPreset (safe->presetList[index]);
-            }
-        },
-        [safe] { if (safe != nullptr) safe->savePresetDialog(); },
-        [safe]
-        {
-            if (safe == nullptr)
-                return;
-            Presets::userDir().createDirectory();
-            Presets::userDir().startAsProcess();
-        },
-        [safe] { if (safe != nullptr) safe->savePresetDialog (true); },
-        [safe] { if (safe != nullptr) safe->confirmDeletePreset(); });
-    juce::CallOutBox::launchAsynchronously (std::move (popup), presetBtn.getScreenBounds(), this);
+    menu.showMenuAsync (juce::PopupMenu::Options().withTargetComponent (&presetBtn),
+                        [safe] (int id)
+                        {
+                            if (safe == nullptr || id <= 0)
+                                return;
+                            if (id == kMenuSave)
+                            {
+                                safe->savePresetDialog();
+                                return;
+                            }
+                            if (id == kMenuFolder)
+                            {
+                                Presets::userDir().createDirectory();
+                                Presets::userDir().startAsProcess();
+                                return;
+                            }
+                            if (id == kMenuRename)
+                            {
+                                safe->savePresetDialog (true);
+                                return;
+                            }
+                            if (id == kMenuDelete)
+                            {
+                                safe->confirmDeletePreset();
+                                return;
+                            }
+                            const int index = id - 1;
+                            if (juce::isPositiveAndBelow (index, safe->presetList.size()))
+                            {
+                                safe->presetIndex = index;
+                                safe->proc.loadPreset (safe->presetList[index]);
+                            }
+                        });
 }
 
 void V4JBAudioProcessorEditor::stepPreset (int delta)
