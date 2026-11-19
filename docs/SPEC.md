@@ -64,7 +64,7 @@ Fog at night. Do not invent another palette.
 - `#e0a458` amber
 - `#ffffff` white
 
-`assets/logo.af` is the Affinity source. `assets/logo.png` is the export. Never overwrite the PNG. `just icon` derives the Standalone ICO and `docs/logo.png`.
+`assets/logo.af` is the Affinity source. `assets/logo.png` is the export. Never overwrite the PNG. `just docs-logo` writes Pages `docs/logo.png`. `just icon` writes the Standalone ICO (build-debug / build-release run this after resave).
 
 ## Layout
 
