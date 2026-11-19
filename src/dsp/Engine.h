@@ -62,7 +62,7 @@ inline bool isTone (int t)
 {
     using M = ModuleType;
     switch ((M) t) { case M::Lowpass: case M::Highpass: case M::Bandpass: case M::Notch:
-                     case M::Hype: case M::MovingFilter: case M::Sync: return true;
+                     case M::Hype: case M::MovingFilter: case M::Sync: case M::Formant: return true;
                      default: return false; }
 }
 inline bool isTime (int t)

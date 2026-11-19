@@ -171,6 +171,23 @@ int main()
         e.setWaves (nullptr, nullptr);
     }
 
+    // Formant A (800 Hz F1) on note 48: partial 6 (~785 Hz) louder than partial 1 (~261 Hz).
+    {
+        EngineParams f = quickParams();
+        f.spec.modDepth = 0.f;
+        f.spec.noiseMix = 0.f;
+        f.spec.tilt = 0.f;
+        f.slot[0].mod.type = (int) ModuleType::Formant;
+        f.slot[0].mod.main = 0.f;    // A
+        f.slot[0].mod.p[0] = 0.5f;   // no shift
+        f.slot[0].mod.p[1] = 0.8f;   // narrow
+        f.slot[0].mod.p[2] = 1.f;    // mix
+        f.slot[0].mod.p[3] = 0.5f;
+        e.setParams (f, kNeutral);
+        render (e, sr, 0.05);
+        CHECK (std::fabs (e.voiceAmp (0, 5)) > 3.f * std::fabs (e.voiceAmp (0, 1)));
+    }
+
     // Release: everything fades to near silence.
     e.setParams (quickParams(), kNeutral);
     e.allNotesOff();

@@ -20,7 +20,7 @@ enum class ModuleType : int
     Lowpass, Highpass, Bandpass, Notch, MovingFilter, Decay, Hype,
     Modulator, Detuned, Blur, Noise, Octaver, SecondTone,
     Phrase, RandomDrops, Tail, Wave, DoubleWave,
-    Clip, HarmonicAdd, RangeEnhance,
+    Clip, HarmonicAdd, RangeEnhance, Formant,
     Count
 };
 inline constexpr int kNumModuleTypes = (int) ModuleType::Count;
@@ -60,6 +60,7 @@ inline constexpr ModuleInfo kModuleInfo[kNumModuleTypes] = {
     { "Clip",           { "Threshold", "Makeup", "", "", "" } },
     { "Harmonic Add",   { "Base", "Level 1", "Level 2", "Level 3", "Level 4" } },
     { "Range Enhance",  { "Center", "Width", "Amount", "", "" } },
+    { "Formant",        { "Vowel", "Shift", "Resonance", "Mix", "Bright" } },
 };
 
 // Second Tone intervals in semitones (first one is a detuned unison).
@@ -512,6 +513,42 @@ inline void processModule (const ModuleParams& m, ModuleState& st, const ModuleC
             const float wOct = 0.2f + p[0] * 4.f, db = (p[1] - 0.5f) * 48.f;
             for (int k = 0; k < n; ++k)
                 amp[k] *= std::exp2 (db * std::exp (-sq (std::log2 ((float) (k + 1) / centre) / wOct)) / 6.0206f);
+            break;
+        }
+
+        case ModuleType::Formant:
+        {
+            // Three Gaussian peaks at F1/F2/F3. Vowel morphs A-E-I-O-U.
+            static constexpr float kVowel[5][3] = {
+                { 800.f, 1150.f, 2800.f },  // A
+                { 400.f, 2000.f, 2550.f },  // E
+                { 270.f, 2290.f, 3010.f },  // I
+                { 570.f,  840.f, 2410.f },  // O
+                { 300.f,  870.f, 2240.f },  // U
+            };
+            const float t = main * 4.f;
+            const int i0 = std::clamp ((int) t, 0, 4);
+            const int i1 = std::min (i0 + 1, 4);
+            const float frac = t - (float) i0;
+            const float shift = std::exp2 ((p[0] - 0.5f) * 2.f);  // ±1 octave
+            const float q = 0.06f + (1.f - p[1]) * 0.45f;         // Resonance: narrower peaks
+            const float mix = p[2];
+            const float f3g = 0.35f + p[3] * 0.9f;
+            float f[3];
+            for (int j = 0; j < 3; ++j)
+                f[j] = lerp (kVowel[i0][j], kVowel[i1][j], frac) * shift;
+            const float gain = 1.f + p[1] * 4.f;
+            for (int k = 0; k < n; ++k)
+            {
+                const float hz = std::max (freq[k], 20.f);
+                float env = 0.f;
+                for (int j = 0; j < 3; ++j)
+                {
+                    const float g = (j == 2) ? f3g : 1.f;
+                    env += g * std::exp (-sq (std::log2 (hz / f[j]) / q));
+                }
+                amp[k] *= (1.f - mix) + mix * (0.08f + gain * env);
+            }
             break;
         }
 
