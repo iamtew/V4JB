@@ -1,6 +1,7 @@
 #include "PluginEditor.h"
 #include "ui/VersionCompare.h"
 
+#include <cstdlib>
 #include <thread>
 #include <vector>
 
@@ -21,8 +22,6 @@ constexpr int kMenuFolder = 10001;
 constexpr int kMenuRename = 10002;
 constexpr int kMenuDelete = 10003;
 
-juce::LookAndFeel_V4 presetMenuLnF;  // stock greys, not PanelLnF
-
 int whiteKeysInRange (int low, int high)
 {
     int n = 0;
@@ -37,6 +36,7 @@ int whiteKeysInRange (int low, int high)
 
 V4JBAudioProcessorEditor::AboutBox::AboutBox()
 {
+    setWantsKeyboardFocus (true);
     status.setJustificationType (juce::Justification::centred);
     status.setColour (juce::Label::textColourId, kFog);
     status.setColour (juce::Label::backgroundColourId, juce::Colours::transparentBlack);
@@ -92,6 +92,22 @@ void V4JBAudioProcessorEditor::AboutBox::mouseUp (const juce::MouseEvent& e)
 {
     if (e.mouseWasClicked() && ! cardBounds().contains (e.getPosition()))
         setVisible (false);
+}
+
+bool V4JBAudioProcessorEditor::AboutBox::keyPressed (const juce::KeyPress& key)
+{
+    if (key == juce::KeyPress::escapeKey)
+    {
+        setVisible (false);
+        return true;
+    }
+    return false;
+}
+
+void V4JBAudioProcessorEditor::AboutBox::visibilityChanged()
+{
+    if (isVisible())
+        grabKeyboardFocus();
 }
 
 juce::Rectangle<int> V4JBAudioProcessorEditor::AboutBox::cardBounds() const
@@ -165,11 +181,24 @@ V4JBAudioProcessorEditor::V4JBAudioProcessorEditor (V4JBAudioProcessor& p)
     setOpaque (true);
     logo = juce::ImageCache::getFromMemory (BinaryData::logo_png, BinaryData::logo_pngSize);
 
+    aboutBtn.setAlpha (0.f);
+    aboutBtn.setTooltip ("About");
+    aboutBtn.setMouseCursor (juce::MouseCursor::PointingHandCursor);
+    aboutBtn.onClick = [this]
+    {
+        aboutBox.setVisible (true);
+        aboutBox.toFront (true);
+    };
+    content.addAndMakeVisible (aboutBtn);
+
     presetBtn.onClick = [this] { showPresetMenu(); };
     presetBtn.setTooltip ("Presets");
     prevBtn.onClick = [this] { stepPreset (-1); };
+    prevBtn.setTooltip ("Previous preset");
     nextBtn.onClick = [this] { stepPreset (1); };
+    nextBtn.setTooltip ("Next preset");
     saveBtn.onClick = [this] { savePresetDialog(); };
+    saveBtn.setTooltip ("Save user preset");
     randBtn.onClick = [this] { showRandomMenu(); };
     randBtn.setTooltip ("Smart randomizer: new values, or a whole new module chain");
     economy.setTooltip ("Economy: at most 128 partials per voice, much lighter on CPU");
@@ -211,6 +240,17 @@ V4JBAudioProcessorEditor::V4JBAudioProcessorEditor (V4JBAudioProcessor& p)
         keyboardState.addListener (this);
         content.addAndMakeVisible (*keyboard);
     }
+
+    if (const char* name = std::getenv ("V4JB_DOCS_PRESET"))
+        for (const auto& e : proc.getFactoryPresets())
+            if (e.name == juce::String (name))
+            {
+                proc.loadPreset (e);
+                break;
+            }
+    if (keyboard != nullptr)
+        if (const char* note = std::getenv ("V4JB_DOCS_NOTE"))
+            keyboardState.noteOn (1, juce::jlimit (0, 127, std::atoi (note)), 0.8f);
 
     baseW = kEditorW;
     baseH = kEditorH + (keyboard != nullptr ? kKeyboardH : 0);
@@ -315,7 +355,6 @@ void V4JBAudioProcessorEditor::showPresetMenu()
     const bool userFile = currentUserPresetFile().existsAsFile();
 
     juce::PopupMenu menu;
-    menu.setLookAndFeel (&presetMenuLnF);
 
     juce::StringArray categories;
     for (auto& e : presetList)
@@ -412,7 +451,9 @@ void V4JBAudioProcessorEditor::savePresetDialog (bool rename)
 {
     const auto oldFile = rename ? currentUserPresetFile() : juce::File();
     auto* w = new juce::AlertWindow (rename ? "Rename preset" : "Save preset",
-                                     "Saved to Documents/V4JB/Presets", juce::MessageBoxIconType::NoIcon);
+                                     rename ? "Rename this user preset." : "Saved to Documents/V4JB/Presets",
+                                     juce::MessageBoxIconType::NoIcon);
+    w->setLookAndFeel (&panelLnF);
     w->addTextEditor ("name", proc.currentPresetName, "Name");
     w->addTextEditor ("category", rename ? proc.currentPresetCategory : "User", "Category");
     w->addButton (rename ? "Rename" : "Save", 1, juce::KeyPress (juce::KeyPress::returnKey));
@@ -425,7 +466,11 @@ void V4JBAudioProcessorEditor::savePresetDialog (bool rename)
             return;
         const auto name = w->getTextEditorContents ("name");
         if (! safe->proc.saveUserPreset (name, w->getTextEditorContents ("category")))
+        {
+            juce::AlertWindow::showMessageBoxAsync (juce::MessageBoxIconType::NoIcon, "Save preset",
+                                                    "Need a name that can be a file.");
             return;
+        }
         const auto written = Presets::userDir().getChildFile (juce::File::createLegalFileName (name.trim()) + ".xml");
         if (oldFile.existsAsFile() && oldFile != written)
             safe->proc.deleteUserPreset (oldFile);
@@ -437,16 +482,18 @@ void V4JBAudioProcessorEditor::confirmDeletePreset()
     const auto file = currentUserPresetFile();
     if (! file.existsAsFile())
         return;
+    auto* w = new juce::AlertWindow ("Delete preset",
+                                     "Delete \"" + proc.currentPresetName + "\"? The sound stays loaded.",
+                                     juce::MessageBoxIconType::NoIcon);
+    w->setLookAndFeel (&panelLnF);
+    w->addButton ("Delete", 1);
+    w->addButton ("Cancel", 0, juce::KeyPress (juce::KeyPress::escapeKey));
     juce::Component::SafePointer<V4JBAudioProcessorEditor> safe (this);
-    juce::AlertWindow::showOkCancelBox (
-        juce::MessageBoxIconType::WarningIcon, "Delete preset",
-        "Delete \"" + proc.currentPresetName + "\"? The sound stays loaded.",
-        "Delete", "Cancel", nullptr,
-        juce::ModalCallbackFunction::create ([safe, file] (int result)
-        {
-            if (safe != nullptr && result == 1)
-                safe->proc.deleteUserPreset (file);
-        }));
+    w->enterModalState (true, juce::ModalCallbackFunction::create ([safe, file] (int result)
+    {
+        if (safe != nullptr && result == 1)
+            safe->proc.deleteUserPreset (file);
+    }), true);
 }
 
 void V4JBAudioProcessorEditor::showRandomMenu()
@@ -501,6 +548,7 @@ void V4JBAudioProcessorEditor::paintContent (juce::Graphics& g)
 
 void V4JBAudioProcessorEditor::layoutContent()
 {
+    aboutBtn.setBounds (titleHitBounds());
     auto r = content.getLocalBounds().reduced (kPad);
     auto top = r.removeFromTop (kTopH - kPad);
     top.removeFromLeft (44 + 6 + 90 + 10);

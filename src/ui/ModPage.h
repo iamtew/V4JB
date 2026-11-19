@@ -67,7 +67,9 @@ struct LfoCard : public juce::Component
         if (routed())
         {
             g.setColour (kTeal);
-            g.fillEllipse (56.f, 9.f, 8.f, 8.f);
+            const auto title = "LFO " + juce::String (index + 1);
+            const float tw = juce::GlyphArrangement::getStringWidth (boldFont (11.f), title);
+            g.fillEllipse (12.f + tw + 6.f, 9.f, 8.f, 8.f);
         }
     }
     void resized() override

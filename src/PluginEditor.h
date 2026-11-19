@@ -65,6 +65,8 @@ private:
         void paint (juce::Graphics& g) override;
         void resized() override;
         void mouseUp (const juce::MouseEvent& e) override;
+        bool keyPressed (const juce::KeyPress& key) override;
+        void visibilityChanged() override;
         void checkForUpdate();
         void applyResult (const juce::String& text, bool hasUpdate);
         juce::Rectangle<int> cardBounds() const;
@@ -80,6 +82,7 @@ private:
     };
 
     // Top bar.
+    juce::TextButton aboutBtn;
     juce::TextButton presetBtn, prevBtn { "<" }, nextBtn { ">" }, saveBtn { "Save" }, randBtn { "Randomize" };
     ui::Toggle economy { proc.apvts, ParamID::economy, "Economy" };
     ui::Knob poly   { proc.apvts, ParamID::poly,   "Voices" };

@@ -34,7 +34,11 @@ inline juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout
     auto withUnit = [] (const char* unit, int decimals)
     {
         return AudioParameterFloatAttributes().withLabel (unit).withStringFromValueFunction (
-            [decimals] (float v, int) { return String (v, decimals); });
+            [decimals, unit] (float v, int)
+            {
+                auto s = String (v, decimals);
+                return unit[0] != 0 ? s + " " + unit : s;
+            });
     };
 
     const auto unit = NormalisableRange<float> (0.f, 1.f);

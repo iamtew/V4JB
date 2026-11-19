@@ -69,6 +69,18 @@ struct FxCard : public juce::Component
         cols[2].knobs[0]->setAlpha (sync ? 0.4f : 1.f);
         cols[2].combo->setEnabled (sync);
         cols[2].combo->setAlpha (sync ? 1.f : 0.4f);
+        for (auto& c : cols)
+        {
+            if (c.on == nullptr)
+                continue;
+            const float a = c.on->getToggleState() ? 1.f : 0.4f;
+            for (auto* k : c.knobs)
+                k->setAlpha (a);
+            if (c.combo != nullptr && c.combo != cols[2].combo)
+                c.combo->setAlpha (a);
+            if (c.extra != nullptr)
+                c.extra->setAlpha (a);
+        }
     }
     void paint (juce::Graphics& g) override
     {
@@ -76,7 +88,7 @@ struct FxCard : public juce::Component
         g.setFont (boldFont (10.f));
         g.setColour (kFog.withAlpha (0.7f));
         for (auto& c : cols)
-            g.drawText (c.title, c.titleArea, juce::Justification::centredLeft, false);
+            g.drawText (c.title, c.titleArea, juce::Justification::centredLeft, true);
     }
     void resized() override
     {
@@ -87,9 +99,9 @@ struct FxCard : public juce::Component
         {
             auto col = r.removeFromLeft (w).reduced (3, 0);
             auto head = col.removeFromTop (20);
-            c.titleArea = head.removeFromLeft (46);
             if (c.on != nullptr)
-                c.on->setBounds (head.removeFromLeft (34));
+                c.on->setBounds (head.removeFromRight (36));
+            c.titleArea = head;
             auto line2 = col.removeFromTop (c.combo != nullptr || c.extra != nullptr ? 24 : 0);
             if (c.extra != nullptr)
                 c.extra->setBounds (line2.removeFromLeft (44).reduced (0, 2));
@@ -175,6 +187,8 @@ struct SlotCard : public juce::Component
     {
         bars.refresh();
         const int t = typeIndex();
+        const float a = t == 0 ? 0.45f : 1.f;
+        setAlpha (a);
         if (t == lastType)
             return;
         lastType = t;
@@ -196,28 +210,16 @@ struct SlotCard : public juce::Component
         return juce::jlimit (0, v4jb::kNumModuleTypes - 1, (int) std::lround (typeParam->load()));
     }
 
-    juce::String slotTitle() const
-    {
-        return juce::String (index + 2) + "  " + v4jb::kModuleInfo[typeIndex()].name;
-    }
-
     void paint (juce::Graphics& g) override
     {
-        const auto bounds = getLocalBounds();
-        paintCard (g, bounds, slotTitle());
-        if (typeIndex() == 0)
-        {
-            g.setColour (kNight.withAlpha (0.5f));
-            g.fillRoundedRectangle (bounds.toFloat(), 4.f);
-        }
+        paintCard (g, getLocalBounds(), juce::String (index + 2));
     }
 
     void resized() override
     {
         auto r = getLocalBounds().reduced (5, 3);
         auto head = r.removeFromTop (20);
-        const int titleW = juce::roundToInt (juce::GlyphArrangement::getStringWidth (boldFont (11.f), slotTitle())) + 8;
-        head.removeFromLeft (juce::jmax (18, titleW));
+        head.removeFromLeft (22);
         modBtn.setBounds (head.removeFromRight (40));
         type.setBounds (head.reduced (2, 0));
         r.removeFromTop (2);

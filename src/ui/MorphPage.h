@@ -93,8 +93,8 @@ struct MorphPad : public juce::Component
         {
             g.setColour (kFog.withAlpha (0.6f));
             g.setFont (boldFont (10.f));
-            g.drawText ("click: add node   drag: move   right-click: delete", r.reduced (6).removeFromBottom (14),
-                        juce::Justification::centred, false);
+            g.drawText ("click: add node   drag: move   right-click: delete   max 16", r.reduced (6).removeFromBottom (14),
+                        juce::Justification::centred, true);
         }
     }
 
@@ -231,7 +231,7 @@ struct MacroColumn : public juce::Component
         g.drawText (v4jb::kMacroGroups[index], r.removeFromTop (12), juce::Justification::centred, false);
         g.setFont (boldFont (10.f));
         g.setColour (kFog);
-        g.drawText (v4jb::kMacroNames[index], r.removeFromTop (14), juce::Justification::centred, false);
+        g.drawText (v4jb::kMacroNames[index], r.removeFromTop (14), juce::Justification::centred, true);
         g.setColour (kNight);
         g.fillRoundedRectangle (meter.toFloat(), 2.f);
         const float v = proc.morph.outMacro[index].load();
@@ -329,19 +329,30 @@ struct MorphPage : public juce::Component
             auto f = fc.getResult();
             if (safe == nullptr || f == juce::File())
                 return;
+            bool ok = true;
             if (save)
-                safe->proc.saveMorphFile (f.withFileExtension (".v4jbmorph"), points);
+                ok = safe->proc.saveMorphFile (f.withFileExtension (".v4jbmorph"), points);
             else
-                safe->proc.loadMorphFile (f);
+                ok = safe->proc.loadMorphFile (f);
+            if (! ok)
+                juce::AlertWindow::showMessageBoxAsync (juce::MessageBoxIconType::NoIcon, "Morph",
+                                                        save ? "Could not save that file." : "Could not load that file.");
             safe->pad.repaint();
         });
     }
 
     void syncSnap()
     {
-        const bool xAxis = std::lround (modeParam->load()) == v4jb::kXAxis;
+        const int modeId = (int) std::lround (modeParam->load());
+        const bool xAxis = modeId == v4jb::kXAxis;
+        const bool timed = modeId == v4jb::kPathFree || xAxis;
         snap.setEnabled (xAxis);
-        snap.setAlpha (xAxis ? 1.f : 0.4f);  // combo drawing barely greys a disabled box
+        snap.setAlpha (xAxis ? 1.f : 0.4f);
+        time.setEnabled (timed);
+        time.setAlpha (timed ? 1.f : 0.4f);
+        const bool segOn = pad.selected >= 0;
+        segLen.setEnabled (segOn);
+        segLen.setAlpha (segOn ? 1.f : 0.4f);
     }
 
     void refresh()

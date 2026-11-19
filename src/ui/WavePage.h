@@ -115,7 +115,7 @@ struct WavePanel : public juce::Component
         else
         {
             g.setColour (err.isNotEmpty() ? kAmber : kFog.withAlpha (0.5f));
-            g.drawText (err.isNotEmpty() ? err : "No file loaded", view, juce::Justification::centred, false);
+            g.drawText (err.isNotEmpty() ? err : "Load a built-in or a file", view, juce::Justification::centred, true);
         }
     }
 

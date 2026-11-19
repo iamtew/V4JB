@@ -41,10 +41,14 @@ struct PanelLnF : public juce::LookAndFeel_V4
         setColour (juce::TabbedButtonBar::frontTextColourId, kWhite);
         setColour (juce::TextButton::buttonColourId, kDusk);
         setColour (juce::TextButton::textColourOffId, kFog);
+        setColour (juce::TextButton::textColourOnId, kNight);
         setColour (juce::AlertWindow::backgroundColourId, kNight);
         setColour (juce::AlertWindow::textColourId, kFog);
+        setColour (juce::AlertWindow::outlineColourId, kFog.withAlpha (0.35f));
         setColour (juce::TextEditor::backgroundColourId, kDusk);
         setColour (juce::TextEditor::textColourId, kFog);
+        setColour (juce::TextEditor::outlineColourId, kFog.withAlpha (0.3f));
+        setColour (juce::TextEditor::focusedOutlineColourId, kTeal);
     }
 
     void drawRotarySlider (juce::Graphics& g, int x, int y, int w, int h, float pos,
@@ -111,11 +115,11 @@ struct PanelLnF : public juce::LookAndFeel_V4
             LookAndFeel_V4::drawLinearSlider (g, x, y, w, h, pos, minPos, maxPos, style, s);
             if (style == juce::Slider::LinearVertical)
             {
-                g.setFont (boldFont (10.f));
+                g.setFont (boldFont (9.f));
                 g.setColour (kFog);
                 g.drawText (s.getTextFromValue (s.getValue()),
                             juce::Rectangle<int> (x, y, w, h),
-                            juce::Justification::centredBottom, false);
+                            juce::Justification::centredBottom, true);
             }
             return;
         }
@@ -135,17 +139,44 @@ struct PanelLnF : public juce::LookAndFeel_V4
                     juce::Justification::centred, false);
     }
 
+    void drawComboBox (juce::Graphics& g, int w, int h, bool, int, int, int, int, juce::ComboBox& box) override
+    {
+        LookAndFeel_V4::drawComboBox (g, w, h, false, 0, 0, 0, 0, box);
+        if (! box.isEnabled())
+        {
+            g.setColour (kNight.withAlpha (0.45f));
+            g.fillRoundedRectangle (juce::Rectangle<float> (0.f, 0.f, (float) w, (float) h).reduced (0.5f), 3.f);
+        }
+    }
+
+    void paintPill (juce::Graphics& g, juce::Button& b, bool over, bool on)
+    {
+        auto bounds = b.getLocalBounds().toFloat().reduced (2.f);
+        g.setColour (on ? kTeal.withAlpha (0.85f) : (over ? kDusk.brighter (0.25f) : kDusk.brighter (0.1f)));
+        g.fillRoundedRectangle (bounds, 3.f);
+        if (b.hasKeyboardFocus (true))
+        {
+            g.setColour (kTeal);
+            g.drawRoundedRectangle (bounds, 3.f, 1.f);
+        }
+        g.setFont (boldFont (11.f));
+        g.setColour (on ? kNight : kFog);
+        g.drawText (b.getButtonText(), bounds.toNearestInt(), juce::Justification::centred, true);
+    }
+
     // Toggles look like buttons; "on" lights up teal.
     void drawToggleButton (juce::Graphics& g, juce::ToggleButton& b, bool over, bool) override
     {
-        auto bounds = b.getLocalBounds().toFloat().reduced (2.f);
-        const bool on = b.getToggleState();
-        g.setColour (on ? kTeal.withAlpha (0.85f) : (over ? kDusk.brighter (0.25f) : kDusk.brighter (0.1f)));
-        g.fillRoundedRectangle (bounds, 3.f);
-        g.setFont (boldFont (11.f));
-        g.setColour (on ? kNight : kFog);
-        g.drawText (b.getButtonText(), bounds.toNearestInt(), juce::Justification::centred, false);
+        paintPill (g, b, over, b.getToggleState());
     }
+
+    void drawButtonBackground (juce::Graphics& g, juce::Button& b, const juce::Colour&,
+                               bool over, bool) override
+    {
+        paintPill (g, b, over, b.getToggleState());
+    }
+
+    void drawButtonText (juce::Graphics&, juce::TextButton&, bool, bool) override {}
 
     juce::Font getLabelFont (juce::Label&) override { return boldFont (11.f); }
     juce::Font getComboBoxFont (juce::ComboBox&) override { return boldFont (11.f); }
@@ -176,7 +207,7 @@ struct Knob : public juce::Component
     void resized() override
     {
         auto r = getLocalBounds();
-        constexpr int labelH = 11;
+        constexpr int labelH = 14;
         constexpr int boxH = 13;
         label.setBounds (r.removeFromTop (labelH));
         const int d = juce::jmin (r.getWidth(), juce::jmax (0, r.getHeight() - boxH));
