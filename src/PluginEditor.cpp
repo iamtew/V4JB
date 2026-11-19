@@ -190,9 +190,11 @@ V4JBAudioProcessorEditor::V4JBAudioProcessorEditor (V4JBAudioProcessor& p)
             keyboardState, juce::MidiKeyboardComponent::horizontalKeyboard);
         keyboard->setAvailableRange (kKeyLow, kKeyHigh);
         keyboard->setScrollButtonsVisible (false);
-        // Mouse only. The component's QWERTY map stays off while it never takes focus.
+        // Unfocused on purpose: the strip's focusLost cuts a computer chord when a knob is clicked.
+        // The map is JUCE's (A = C). The top-level window feeds it; see parentHierarchyChanged.
         keyboard->setWantsKeyboardFocus (false);
         keyboard->setMouseClickGrabsKeyboardFocus (false);
+        keyboard->setKeyPressBaseOctave (5); // C4–E5, inside the C2–C6 strip
         keyboard->setColour (juce::MidiKeyboardComponent::whiteNoteColourId, kFog);
         keyboard->setColour (juce::MidiKeyboardComponent::blackNoteColourId, kNight);
         keyboard->setColour (juce::MidiKeyboardComponent::keySeparatorLineColourId, kDusk);
@@ -222,12 +224,38 @@ V4JBAudioProcessorEditor::V4JBAudioProcessorEditor (V4JBAudioProcessor& p)
 V4JBAudioProcessorEditor::~V4JBAudioProcessorEditor()
 {
     stopTimer();
+    if (keyHost != nullptr)
+        keyHost->removeKeyListener (this);
     if (keyboard != nullptr)
     {
         keyboardState.allNotesOff (1);  // note-offs reach the engine before the keys are destroyed
         keyboardState.removeListener (this);
     }
     setLookAndFeel (nullptr);
+}
+
+void V4JBAudioProcessorEditor::parentHierarchyChanged()
+{
+    if (keyHost != nullptr)
+        keyHost->removeKeyListener (this);
+    keyHost = nullptr;
+    if (keyboard == nullptr)
+        return;
+    if (auto* top = getTopLevelComponent(); top != nullptr && top != this)
+    {
+        top->addKeyListener (this);
+        keyHost = top;
+    }
+}
+
+bool V4JBAudioProcessorEditor::keyPressed (const juce::KeyPress& key, juce::Component*)
+{
+    return keyboard != nullptr && keyboard->keyPressed (key);
+}
+
+bool V4JBAudioProcessorEditor::keyStateChanged (bool isKeyDown, juce::Component*)
+{
+    return keyboard != nullptr && keyboard->keyStateChanged (isKeyDown);
 }
 
 void V4JBAudioProcessorEditor::handleNoteOn (juce::MidiKeyboardState*, int, int note, float)
@@ -243,6 +271,15 @@ void V4JBAudioProcessorEditor::handleNoteOff (juce::MidiKeyboardState*, int, int
 // 30 Hz: only the visible page pulls spectra and meters.
 void V4JBAudioProcessorEditor::timerCallback()
 {
+    // Alt-tab drops key-ups. The strip never holds focus, so its focusLost cannot release them.
+    if (keyboard != nullptr)
+    {
+        const bool focused = isShowing() && getPeer() != nullptr && getPeer()->isFocused();
+        if (windowFocused && ! focused)
+            keyboardState.allNotesOff (1);
+        windowFocused = focused;
+    }
+
     if (proc.currentPresetCategory.isNotEmpty())
         presetBtn.setButtonText (proc.currentPresetCategory + "  ·  " + proc.currentPresetName);
     else

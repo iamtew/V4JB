@@ -8,4 +8,4 @@ Nothing fancy, just the usual polite MIDI manners.
 - **Pitch bend** — ±2 semitones.
 - **Mod wheel / aftertouch / velocity / Key / Key+Vel** — only if a slot’s MOD MIDI source is set. Aftertouch is one global value (channel and poly). Until then they sit there looking decorative.
 - **Economy** — 128-partial cap. Use it on big chords if the CPU is tight.
-- Standalone keys: C2–C6, mouse only (no QWERTY map). Host MIDI still works, so you do not have to click a tiny piano like it is 1998.
+- Standalone keys: C2–C6 on screen. Computer keys play C4–E5 while the window is focused (JUCE map: A is C, W is C#, home row and the row above). Clicking a knob does not steal them. Host MIDI still works.

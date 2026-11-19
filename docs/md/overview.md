@@ -26,7 +26,7 @@ Instead of 512 knobs, the sound runs through a chain of 12 slots that shape thos
 
 The teal bars on each Edit card show the first 64 partials **after that slot**, for the last note you played. Empty bars mean no note has sounded yet. The plugin is not broken. It is shy.
 
-Play from MIDI. Velocity, mod wheel, aftertouch, and pitch bend ±2 semitones all work. The Standalone window also has piano keys along the bottom (C2 to C6). Up to 8 voices; when they run out, the oldest released is stolen, else the oldest held. **Economy** caps each voice at 128 partials, which is much lighter on the CPU and usually hard to hear.
+Play from MIDI. Velocity, mod wheel, aftertouch, and pitch bend ±2 semitones all work. The Standalone window also has piano keys along the bottom (C2 to C6), and the computer keyboard plays C4–E5 (A is C). Up to 8 voices; when they run out, the oldest released is stolen, else the oldest held. **Economy** caps each voice at 128 partials, which is much lighter on the CPU and usually hard to hear.
 
 ## The window
 

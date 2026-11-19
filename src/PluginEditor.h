@@ -12,6 +12,7 @@
 // Edit (the 12-slot chain), Mod (envelopes, LFOs), Morph, Wave.
 class V4JBAudioProcessorEditor : public juce::AudioProcessorEditor,
                                  private juce::MidiKeyboardState::Listener,
+                                 private juce::KeyListener,
                                  private juce::Timer
 {
 public:
@@ -38,6 +39,9 @@ private:
 
     void handleNoteOn (juce::MidiKeyboardState*, int midiChannel, int midiNoteNumber, float velocity) override;
     void handleNoteOff (juce::MidiKeyboardState*, int midiChannel, int midiNoteNumber, float velocity) override;
+    void parentHierarchyChanged() override;
+    bool keyPressed (const juce::KeyPress&, juce::Component*) override;
+    bool keyStateChanged (bool isKeyDown, juce::Component*) override;
     void timerCallback() override;
     juce::Rectangle<int> titleHitBounds() const;
 
@@ -98,8 +102,11 @@ private:
     int presetIndex = 0;
 
     // Standalone only. Declared after the state so the component dies first.
+    // The strip stays unfocused; QWERTY is forwarded from keyHost (the top-level window).
     juce::MidiKeyboardState keyboardState;
     std::unique_ptr<juce::MidiKeyboardComponent> keyboard;
+    juce::Component::SafePointer<juce::Component> keyHost;
+    bool windowFocused = false;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (V4JBAudioProcessorEditor)
 };
