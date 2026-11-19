@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Loud chiff then pure tube. Edit: Noise, Lowpass, Formant, Decay / Morph: Manual / Mod: Env 4 on Noise -->
+<PARAMS presetName="Noise Attack" category="Winds">
+  <PARAM id="sp_algo" value="0"/>
+  <PARAM id="sp_depth" value="0.05"/>
+  <PARAM id="sp_tilt" value="1.45"/>
+  <PARAM id="nz_mix" value="0.28"/>
+  <PARAM id="poly" value="1"/>
+  <PARAM id="e1_a" value="0.015"/>
+  <PARAM id="e1_r" value="0.28"/>
+  <PARAM id="e1_s" value="0.85"/>
+  <PARAM id="mmode" value="0"/>
+  <PARAM id="mtime" value="7.6"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <PARAM id="nz_decay" value="0.72"/>
+  <PARAM id="glide" value="0.08"/>
+  <PARAM id="s2_type" value="17"/>
+  <PARAM id="s2_main" value="0.55"/>
+  <PARAM id="s2_p1" value="0.5"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s2_es" value="4"/>
+  <PARAM id="s2_ea" value="-0.55"/>
+  <PARAM id="s3_type" value="7"/>
+  <PARAM id="s3_main" value="0.48"/>
+  <PARAM id="s3_p1" value="0.45"/>
+  <PARAM id="s3_p2" value="0.2"/>
+  <PARAM id="s3_p3" value="0.4"/>
+  <PARAM id="s4_type" value="28"/>
+  <PARAM id="s4_main" value="0.2"/>
+  <PARAM id="s4_p1" value="0.5"/>
+  <PARAM id="s4_p2" value="0.45"/>
+  <PARAM id="s4_p3" value="0.5"/>
+  <PARAM id="s4_p4" value="0.4"/>
+  <PARAM id="s5_type" value="12"/>
+  <PARAM id="s5_main" value="0.5"/>
+  <PARAM id="s5_p1" value="0.35"/>
+  <PARAM id="s5_p2" value="0.15"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="dl_on" value="0"/>
+  <PARAM id="dr_on" value="0"/>
+  <PARAM id="rv_mix" value="0.32"/>
+  <PARAM id="md_mix" value="0.26"/>
+  <MORPH c0="0.14 0.80 0.67 0.89 0.75 0.15 0.27 0.24 0.46 0.32 0.54" c1="0.32 0.78 0.19 0.87 0.27 0.13 0.39 0.22 0.44 0.66 0.52" c2="0.50 0.30 0.17 0.39 0.25 0.47 0.51 0.56 0.42 0.64 0.86" c3="0.68 0.28 0.51 0.37 0.59 0.45 0.63 0.54 0.76 0.62 0.84"
+         nodes="0.11 0.26 2;0.80 0.24 4;0.70 0.83 3;0.16 0.80 5"/>
+</PARAMS>

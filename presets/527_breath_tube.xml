@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Bandpass tube, air mix. Edit: Bandpass, Formant, Lowpass, Blur / Morph: Path / Mod: LFO 3 on Bandpass -->
+<PARAMS presetName="Breath Tube" category="Winds">
+  <PARAM id="sp_algo" value="4"/>
+  <PARAM id="sp_depth" value="0.2"/>
+  <PARAM id="sp_tilt" value="1.4"/>
+  <PARAM id="nz_mix" value="0.15"/>
+  <PARAM id="poly" value="1"/>
+  <PARAM id="e1_a" value="0.04"/>
+  <PARAM id="e1_r" value="0.4"/>
+  <PARAM id="e1_s" value="0.85"/>
+  <PARAM id="mmode" value="1"/>
+  <PARAM id="mtime" value="8"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <PARAM id="nz_decay" value="0.5"/>
+  <PARAM id="glide" value="0.1"/>
+  <PARAM id="s2_type" value="9"/>
+  <PARAM id="s2_main" value="0.55"/>
+  <PARAM id="s2_p1" value="0.2"/>
+  <PARAM id="s2_p2" value="0.55"/>
+  <PARAM id="s2_p3" value="0.7"/>
+  <PARAM id="s2_ls" value="3"/>
+  <PARAM id="s2_la" value="0.16"/>
+  <PARAM id="s3_type" value="28"/>
+  <PARAM id="s3_main" value="0.25"/>
+  <PARAM id="s3_p1" value="0.5"/>
+  <PARAM id="s3_p2" value="0.5"/>
+  <PARAM id="s3_p3" value="0.55"/>
+  <PARAM id="s3_p4" value="0.4"/>
+  <PARAM id="s4_type" value="7"/>
+  <PARAM id="s4_main" value="0.6"/>
+  <PARAM id="s4_p1" value="0.4"/>
+  <PARAM id="s4_p2" value="0.18"/>
+  <PARAM id="s4_p3" value="0.4"/>
+  <PARAM id="s5_type" value="16"/>
+  <PARAM id="s5_main" value="0.28"/>
+  <PARAM id="s5_p1" value="0.45"/>
+  <PARAM id="l3_rate" value="0.08"/>
+  <PARAM id="l3_shape" value="1"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="dl_on" value="0"/>
+  <PARAM id="dr_on" value="0"/>
+  <PARAM id="rv_mix" value="0.34"/>
+  <PARAM id="md_mix" value="0.28"/>
+  <MORPH c0="0.16 0.33 0.59 0.50 0.76 0.66 0.32 0.82 0.73 0.17 0.89" c1="0.34 0.67 0.57 0.84 0.74 0.64 0.44 0.80 0.25 0.15 0.41" c2="0.52 0.65 0.09 0.82 0.72 0.16 0.56 0.32 0.23 0.49 0.39" c3="0.70 0.17 0.89 0.80 0.24 0.14 0.68 0.30 0.57 0.47 0.73"
+         nodes="0.14 0.32 3;0.76 0.24 5;0.70 0.76 4;0.16 0.80 1"/>
+</PARAMS>
