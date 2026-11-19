@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Octaves spacing, 5-Sines registration; Env 3 acts like a swell pedal on the Lowpass. -->
+<!-- Octaves spacing, 5-Sines registration; Env 3 acts like a swell pedal on the Lowpass. Edit: 5-Sines, Lowpass, Second Tone, Every Nth / Morph: X-Axis Env / Mod + Slot 12 set -->
 <PARAMS presetName="Swell Organ" category="Swells">
   <PARAM id="sp_algo" value="7"/>
   <PARAM id="s2_type" value="1"/>
@@ -12,6 +12,18 @@
   <PARAM id="s3_main" value="0.3"/>
   <PARAM id="s3_es" value="3"/>
   <PARAM id="s3_ea" value="0.6"/>
+  <PARAM id="s4_type" value="19"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s4_main" value="0.62"/>
+  <PARAM id="s4_p1" value="0.45"/>
+  <PARAM id="s4_p2" value="0.52"/>
+  <PARAM id="s4_ls" value="0"/>
+  <PARAM id="s4_la" value="0"/>
+  <PARAM id="s5_type" value="6"/>
+  <PARAM id="s5_main" value="0.72"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
   <PARAM id="e1_a" value="3"/>
   <PARAM id="e1_d" value="1"/>
   <PARAM id="e1_s" value="1"/>
@@ -21,8 +33,21 @@
   <PARAM id="e3_s" value="1"/>
   <PARAM id="e3_r" value="3"/>
   <PARAM id="md_mix" value="0.3"/>
-  <PARAM id="rv_mix" value="0.35"/>
-  <PARAM id="s4_type" value="0"/>
-  <PARAM id="s2_ls" value="0"/>
-  <PARAM id="s2_la" value="0"/>
+  <PARAM id="rv_mix" value="0.18"/>
+  <PARAM id="md_on" value="0"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="rv_size" value="0.35"/>
+  <PARAM id="rv_damp" value="0.55"/>
+  <PARAM id="dl_on" value="0"/>
+  <PARAM id="dr_on" value="0"/>
+  <PARAM id="mmode" value="3"/>
+  <PARAM id="mtime" value="3"/>
+  <PARAM id="msnap" value="0"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <MORPH c0="0.22 0.3 0.28 0.45 0.72 0.22 0.44 0.28 0.32 0.38 0.5"
+         c1="0.68 0.52 0.62 0.5 0.48 0.55 0.52 0.59 0.58 0.62 0.5"
+         c2="0.35 0.78 0.7 0.48 0.8 0.7 0.68 0.62 0.46 0.75 0.55"
+         c3="0.82 0.58 0.4 0.52 0.55 0.38 0.6 0.42 0.7 0.62 0.6"
+         nodes="0.12 0.18 3;0.82 0.22 3;0.78 0.82 3;0.18 0.78 3"/>
 </PARAMS>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Rasp Choir. Stiff String spacing. Modulator into a Lowpass and Detuned. LFO 3 drifts the main knob very slowly. Grain stays in the sustain. -->
+<!-- Rasp Choir. Edit: Modulator, Lowpass, Detuned, Noise / Morph: Path / Mod + Slot 12 set -->
 <PARAMS presetName="Rasp Choir" category="Textures">
   <PARAM id="sp_depth" value="0.55"/>
   <PARAM id="sp_tilt" value="1.05"/>
@@ -33,5 +33,20 @@
   <PARAM id="e1_r" value="2.6"/>
   <PARAM id="l3_rate" value="0.02"/>
   <PARAM id="md_on" value="0"/>
-  <PARAM id="rv_mix" value="0.38"/>
+  <PARAM id="rv_mix" value="0.18"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="rv_size" value="0.35"/>
+  <PARAM id="rv_damp" value="0.55"/>
+  <PARAM id="dl_on" value="0"/>
+  <PARAM id="dr_on" value="0"/>
+  <PARAM id="mmode" value="1"/>
+  <PARAM id="mtime" value="3"/>
+  <PARAM id="msnap" value="0"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <MORPH c0="0.22 0.3 0.28 0.45 0.72 0.22 0.38 0.31 0.32 0.38 0.5"
+         c1="0.68 0.52 0.62 0.5 0.48 0.55 0.52 0.5 0.64 0.62 0.5"
+         c2="0.35 0.78 0.7 0.48 0.8 0.7 0.68 0.62 0.55 0.84 0.55"
+         c3="0.82 0.58 0.4 0.52 0.55 0.38 0.6 0.42 0.7 0.68 0.51"
+         nodes="0.12 0.18 3;0.82 0.22 3;0.78 0.82 3;0.18 0.78 3"/>
 </PARAMS>

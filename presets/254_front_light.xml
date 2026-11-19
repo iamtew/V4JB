@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Front Light. Primes spacing. Highpass into Tail and Noise. X-Axis Env morph sweeps the macros on each note. The note swells in. -->
+<!-- Front Light. Edit: Highpass, Tail, Noise, Bandpass / Morph: X-Axis Env / Mod + Slot 12 set -->
 <PARAMS presetName="Front Light" category="Swells">
   <PARAM id="sp_algo" value="5"/>
   <PARAM id="sp_depth" value="0.64"/>
@@ -22,6 +22,13 @@
   <PARAM id="s4_type" value="17"/>
   <PARAM id="s4_main" value="0.28"/>
   <PARAM id="s4_p1" value="0.42"/>
+  <PARAM id="s5_type" value="9"/>
+  <PARAM id="s5_main" value="0.58"/>
+  <PARAM id="s5_p1" value="0.34"/>
+  <PARAM id="s5_p2" value="0.23"/>
+  <PARAM id="s5_p3" value="0.7"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
   <PARAM id="e1_a" value="4.8"/>
   <PARAM id="e1_d" value="2"/>
   <PARAM id="e1_s" value="0.9"/>
@@ -31,7 +38,14 @@
   <PARAM id="e3_s" value="1"/>
   <PARAM id="e3_r" value="3.5"/>
   <PARAM id="rv_size" value="0.85"/>
-  <PARAM id="rv_mix" value="0.48"/>
+  <PARAM id="rv_mix" value="0.2"/>
+  <PARAM id="md_on" value="0"/>
+  <PARAM id="dl_on" value="1"/>
+  <PARAM id="dl_sync" value="1"/>
+  <PARAM id="dl_div" value="4"/>
+  <PARAM id="dl_fb" value="0.6"/>
+  <PARAM id="dl_mix" value="0.28"/>
+  <PARAM id="rv_on" value="1"/>
   <PARAM id="mmode" value="3"/>
   <PARAM id="mtime" value="2.8"/>
   <PARAM id="msnap" value="4"/>

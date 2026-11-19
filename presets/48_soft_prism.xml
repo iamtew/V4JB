@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Fifths spacing with the Octaver adding a shimmer an octave up. -->
+<!-- Fifths spacing with the Octaver adding a shimmer an octave up. Edit: Octaver, Lowpass, Blur, Second Tone / Morph: Path / Mod + Slot 12 set -->
 <PARAMS presetName="Soft Prism" category="Pads">
+  <PARAM id="width" value="1.3"/>
   <PARAM id="sp_algo" value="8"/>
   <PARAM id="sp_depth" value="0.3"/>
   <PARAM id="s2_type" value="18"/>
@@ -11,13 +12,41 @@
   <PARAM id="s3_main" value="0.6"/>
   <PARAM id="s4_type" value="16"/>
   <PARAM id="s4_main" value="0.2"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s5_type" value="19"/>
+  <PARAM id="s5_main" value="0.75"/>
+  <PARAM id="s5_p1" value="0.45"/>
+  <PARAM id="s5_p2" value="0.52"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
+  <PARAM id="s3_es" value="2"/>
+  <PARAM id="s3_ea" value="0.49"/>
   <PARAM id="e1_a" value="1"/>
   <PARAM id="e1_d" value="2"/>
   <PARAM id="e1_s" value="0.8"/>
   <PARAM id="e1_r" value="3"/>
-  <PARAM id="width" value="1.3"/>
+  <PARAM id="e2_a" value="0.005"/>
+  <PARAM id="e2_d" value="0.25"/>
+  <PARAM id="e2_s" value="0.15"/>
+  <PARAM id="e2_r" value="0.5"/>
+  <PARAM id="e2_vel" value="0.7"/>
   <PARAM id="md_mix" value="0.35"/>
-  <PARAM id="rv_mix" value="0.35"/>
-  <PARAM id="s2_ls" value="0"/>
-  <PARAM id="s2_la" value="0"/>
+  <PARAM id="rv_mix" value="0.18"/>
+  <PARAM id="md_on" value="0"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="rv_size" value="0.35"/>
+  <PARAM id="rv_damp" value="0.55"/>
+  <PARAM id="dl_on" value="0"/>
+  <PARAM id="dr_on" value="0"/>
+  <PARAM id="mmode" value="1"/>
+  <PARAM id="mtime" value="5.1"/>
+  <PARAM id="msnap" value="0"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <MORPH c0="0.22 0.3 0.28 0.45 0.66 0.22 0.38 0.28 0.32 0.38 0.5"
+         c1="0.68 0.52 0.62 0.5 0.48 0.52 0.52 0.5 0.58 0.62 0.5"
+         c2="0.35 0.78 0.7 0.48 0.8 0.7 0.68 0.62 0.55 0.75 0.55"
+         c3="0.82 0.58 0.4 0.52 0.55 0.38 0.6 0.45 0.7 0.68 0.6"
+         nodes="0.12 0.18 3;0.82 0.22 3;0.78 0.82 3;0.18 0.78 3"/>
 </PARAMS>

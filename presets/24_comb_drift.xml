@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Every Nth thins the spectrum; LFO 3 (sample and hold) picks a new N. Tail smooths the jumps, light Drive warms it. -->
+<!-- Every Nth thins the spectrum; LFO 3 (sample and hold) picks a new N. Edit: Every Nth, Tail, Lowpass, Highpass / Morph: Path Sync / Mod + Slot 12 set -->
 <PARAMS presetName="Comb Drift" category="Moving Pads">
   <PARAM id="sp_algo" value="10"/>
   <PARAM id="sp_depth" value="0.4"/>
@@ -14,10 +14,32 @@
   <PARAM id="s3_main" value="0.5"/>
   <PARAM id="s4_type" value="7"/>
   <PARAM id="s4_main" value="0.75"/>
+  <PARAM id="s5_type" value="8"/>
+  <PARAM id="s5_main" value="0.58"/>
+  <PARAM id="s5_p1" value="0.58"/>
+  <PARAM id="s5_p2" value="0.13"/>
+  <PARAM id="s5_p3" value="0.7"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
   <PARAM id="l3_shape" value="4"/>
   <PARAM id="l3_rate" value="0.6"/>
-  <PARAM id="dr_on" value="1"/>
+  <PARAM id="dr_on" value="0"/>
   <PARAM id="dr_amt" value="0.25"/>
   <PARAM id="dr_mix" value="0.3"/>
-  <PARAM id="rv_mix" value="0.4"/>
+  <PARAM id="rv_mix" value="0.18"/>
+  <PARAM id="md_on" value="0"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="rv_size" value="0.35"/>
+  <PARAM id="rv_damp" value="0.55"/>
+  <PARAM id="dl_on" value="0"/>
+  <PARAM id="mmode" value="2"/>
+  <PARAM id="mtime" value="7.2"/>
+  <PARAM id="msnap" value="0"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <MORPH c0="0.22 0.3 0.31 0.45 0.72 0.22 0.38 0.28 0.32 0.38 0.5"
+         c1="0.68 0.52 0.62 0.56 0.48 0.55 0.52 0.5 0.58 0.62 0.5"
+         c2="0.35 0.78 0.7 0.48 0.89 0.7 0.68 0.62 0.55 0.75 0.55"
+         c3="0.82 0.58 0.4 0.52 0.55 0.29 0.6 0.42 0.7 0.68 0.6"
+         nodes="0.12 0.18 3;0.82 0.22 3;0.78 0.82 3;0.18 0.78 3"/>
 </PARAMS>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Gather Fifths. Fifths spacing. Second Tone at a fifth, then Hype and a Lowpass. X-Axis Env morph sweeps the macros on each note. The note swells in. -->
+<!-- Gather Fifths. Edit: Second Tone, Hype, Lowpass, Tail / Morph: X-Axis Env / Mod + Slot 12 set -->
 <PARAMS presetName="Gather Fifths" category="Swells">
   <PARAM id="sp_algo" value="8"/>
   <PARAM id="sp_depth" value="0.4"/>
@@ -25,6 +25,12 @@
   <PARAM id="s4_p1" value="0.4"/>
   <PARAM id="s4_p2" value="0.16"/>
   <PARAM id="s4_p3" value="0.15"/>
+  <PARAM id="s5_type" value="22"/>
+  <PARAM id="s5_main" value="0.57"/>
+  <PARAM id="s5_p1" value="0.48"/>
+  <PARAM id="s5_p2" value="0.35"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
   <PARAM id="e1_a" value="6.4"/>
   <PARAM id="e1_d" value="2"/>
   <PARAM id="e1_s" value="0.9"/>
@@ -35,6 +41,10 @@
   <PARAM id="e3_r" value="3.5"/>
   <PARAM id="rv_size" value="0.85"/>
   <PARAM id="rv_mix" value="0.48"/>
+  <PARAM id="md_on" value="0"/>
+  <PARAM id="rv_on" value="0"/>
+  <PARAM id="dl_on" value="0"/>
+  <PARAM id="dr_on" value="0"/>
   <PARAM id="mmode" value="3"/>
   <PARAM id="mtime" value="4.4"/>
   <PARAM id="msnap" value="1"/>

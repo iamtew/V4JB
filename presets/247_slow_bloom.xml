@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Slow Bloom. Golden spacing. Lowpass into Blur. Env 3 opens the main knob. The note swells in. X-Axis Env morph. -->
+<!-- Slow Bloom. Edit: Lowpass, Blur, Clip, Range Enhance / Morph: X-Axis Env / Mod + Slot 12 set -->
 <PARAMS presetName="Slow Bloom" category="Swells">
   <PARAM id="sp_algo" value="6"/>
   <PARAM id="sp_depth" value="0.4"/>
@@ -16,7 +16,15 @@
   <PARAM id="s3_type" value="16"/>
   <PARAM id="s3_main" value="0.33"/>
   <PARAM id="s3_p1" value="0.28"/>
-  <PARAM id="s4_type" value="0"/>
+  <PARAM id="s4_type" value="25"/>
+  <PARAM id="s2_type" value="7"/>
+  <PARAM id="s4_main" value="0.55"/>
+  <PARAM id="s4_ls" value="0"/>
+  <PARAM id="s4_la" value="0"/>
+  <PARAM id="s5_type" value="27"/>
+  <PARAM id="s5_main" value="0.28"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
   <PARAM id="e1_a" value="3.2"/>
   <PARAM id="e1_d" value="2"/>
   <PARAM id="e1_s" value="0.9"/>
@@ -26,7 +34,13 @@
   <PARAM id="e3_s" value="1"/>
   <PARAM id="e3_r" value="3.5"/>
   <PARAM id="rv_size" value="0.85"/>
-  <PARAM id="rv_mix" value="0.42"/>
+  <PARAM id="rv_mix" value="0.32"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="md_type" value="1"/>
+  <PARAM id="md_rate" value="0.22"/>
+  <PARAM id="md_depth" value="0.44"/>
+  <PARAM id="md_mix" value="0.4"/>
+  <PARAM id="rv_on" value="1"/>
   <PARAM id="mmode" value="3"/>
   <PARAM id="mtime" value="1.2"/>
   <PARAM id="msnap" value="1"/>

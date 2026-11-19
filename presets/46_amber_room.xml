@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Octaves spacing with an Adder hump in the low mids; chorus and a short Tail. -->
+<!-- Octaves spacing with an Adder hump in the low mids; chorus and a short Tail. Edit: Adder, Lowpass, Tail, Second Tone / Morph: Path / Mod + Slot 12 set -->
 <PARAMS presetName="Amber Room" category="Pads">
   <PARAM id="sp_algo" value="7"/>
   <PARAM id="sp_depth" value="0.3"/>
@@ -11,12 +11,35 @@
   <PARAM id="s3_main" value="0.65"/>
   <PARAM id="s4_type" value="22"/>
   <PARAM id="s4_main" value="0.25"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s5_type" value="19"/>
+  <PARAM id="s5_main" value="0.5"/>
+  <PARAM id="s5_p1" value="0.45"/>
+  <PARAM id="s5_p2" value="0.52"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
+  <PARAM id="s3_ms" value="3"/>
+  <PARAM id="s3_ma" value="0.18"/>
   <PARAM id="e1_a" value="0.6"/>
   <PARAM id="e1_d" value="1.5"/>
   <PARAM id="e1_s" value="0.8"/>
   <PARAM id="e1_r" value="3"/>
-  <PARAM id="md_mix" value="0.4"/>
-  <PARAM id="rv_mix" value="0.35"/>
-  <PARAM id="s2_ls" value="0"/>
-  <PARAM id="s2_la" value="0"/>
+  <PARAM id="md_mix" value="0.23"/>
+  <PARAM id="rv_mix" value="0.5"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="md_type" value="0"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="rv_size" value="0.82"/>
+  <PARAM id="rv_damp" value="0.32"/>
+  <PARAM id="mmode" value="1"/>
+  <PARAM id="mtime" value="3.7"/>
+  <PARAM id="msnap" value="0"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <MORPH c0="0.33 0.33 0.51 0.5 0.55 0.28 0.42 0.33 0.38 0.55 0.5"
+         c1="0.72 0.58 0.38 0.42 0.62 0.58 0.58 0.52 0.52 0.42 0.5"
+         c2="0.22 0.75 0.72 0.42 0.75 0.72 0.62 0.42 0.48 0.78 0.6"
+         c3="0.8 0.42 0.48 0.58 0.48 0.32 0.7 0.68 0.72 0.62 0.4"
+         nodes="0.22 0.30 5;0.78 0.35 5;0.65 0.78 2;0.30 0.70 2"/>
 </PARAMS>

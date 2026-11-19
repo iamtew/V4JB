@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Ghost Root. Bell spacing. Discrete Adder into Tail and Hype. A free morph path drifts the macros. Held, with subs. -->
+<!-- Ghost Root. Edit: Discrete Adder, Tail, Hype, Octaver / Morph: Path / Mod + Slot 12 set -->
 <PARAMS presetName="Ghost Root" category="Drones">
   <PARAM id="sp_algo" value="15"/>
   <PARAM id="sp_depth" value="0.64"/>
@@ -25,14 +25,25 @@
   <PARAM id="s4_p2" value="0.64"/>
   <PARAM id="s4_p3" value="0.48"/>
   <PARAM id="s4_p4" value="0.58"/>
+  <PARAM id="s4_type" value="13"/>
+  <PARAM id="s5_type" value="18"/>
+  <PARAM id="s5_main" value="0.48"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
   <PARAM id="e1_a" value="1.2"/>
   <PARAM id="e1_s" value="1"/>
   <PARAM id="e1_r" value="7"/>
   <PARAM id="l3_rate" value="0.015"/>
-  <PARAM id="md_mix" value="0.12"/>
-  <PARAM id="rv_mix" value="0.36"/>
+  <PARAM id="md_mix" value="0.4"/>
+  <PARAM id="rv_mix" value="0.27"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="md_type" value="1"/>
+  <PARAM id="md_rate" value="0.37"/>
+  <PARAM id="md_depth" value="0.36"/>
+  <PARAM id="rv_on" value="1"/>
   <PARAM id="mmode" value="1"/>
   <PARAM id="mtime" value="16"/>
+  <PARAM id="msnap" value="0"/>
   <MORPH c0="0.48 0.57 0.66 0.75 0.84 0.23 0.33 0.42 0.51 0.60 0.69"
          c1="0.84 0.23 0.32 0.41 0.50 0.59 0.68 0.77 0.16 0.26 0.35"
          c2="0.49 0.58 0.68 0.77 0.16 0.25 0.34 0.43 0.52 0.61 0.70"

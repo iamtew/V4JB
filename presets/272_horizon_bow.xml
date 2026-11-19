@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Horizon Bow. Compress spacing. Modulator into a Lowpass and Detuned. LFO 3 drifts the main knob very slowly. Held, with subs. Free morph path. -->
+<!-- Horizon Bow. Edit: Modulator, Lowpass, Detuned, Noise / Morph: Path / Mod + Slot 12 set -->
 <PARAMS presetName="Horizon Bow" category="Drones">
   <PARAM id="sp_algo" value="2"/>
   <PARAM id="sp_depth" value="0.72"/>
@@ -26,14 +26,25 @@
   <PARAM id="s4_main" value="0.245"/>
   <PARAM id="s4_p1" value="0.07"/>
   <PARAM id="s4_p2" value="0.38"/>
+  <PARAM id="s5_type" value="17"/>
+  <PARAM id="s5_main" value="0.32"/>
+  <PARAM id="s5_p1" value="0.51"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
   <PARAM id="e1_a" value="1.6"/>
   <PARAM id="e1_s" value="1"/>
   <PARAM id="e1_r" value="8"/>
   <PARAM id="l3_rate" value="0.023"/>
-  <PARAM id="md_mix" value="0.12"/>
-  <PARAM id="rv_mix" value="0.41"/>
+  <PARAM id="md_mix" value="0.22"/>
+  <PARAM id="rv_mix" value="0.32"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="md_type" value="1"/>
+  <PARAM id="md_rate" value="0.42"/>
+  <PARAM id="md_depth" value="0.44"/>
+  <PARAM id="rv_on" value="1"/>
   <PARAM id="mmode" value="1"/>
   <PARAM id="mtime" value="18"/>
+  <PARAM id="msnap" value="0"/>
   <MORPH c0="0.84 0.23 0.32 0.41 0.50 0.59 0.68 0.77 0.16 0.26 0.35"
          c1="0.49 0.58 0.68 0.77 0.16 0.25 0.34 0.43 0.52 0.61 0.70"
          c2="0.15 0.24 0.33 0.42 0.51 0.61 0.70 0.79 0.18 0.27 0.36"

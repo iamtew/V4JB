@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Golden spacing with an Adder hump, Blur and a very slow free morph path across all four corners. -->
+<!-- Golden spacing with an Adder hump, Blur and a very slow free morph path across all four…. Edit: Adder, Blur, Lowpass, Octaver / Morph: Path / Mod + Slot 12 set -->
 <PARAMS presetName="Long Horizon" category="Drones">
   <PARAM id="sp_algo" value="6"/>
   <PARAM id="sp_depth" value="0.3"/>
@@ -13,16 +13,31 @@
   <PARAM id="s3_p1" value="0.05"/>
   <PARAM id="s4_type" value="7"/>
   <PARAM id="s4_main" value="0.55"/>
-  <PARAM id="mmode" value="1"/>
-  <PARAM id="mtime" value="15"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s5_type" value="18"/>
+  <PARAM id="s5_main" value="0.22"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
+  <PARAM id="s4_ls" value="2"/>
+  <PARAM id="s4_la" value="0.18"/>
   <PARAM id="e1_a" value="6"/>
   <PARAM id="e1_d" value="2"/>
   <PARAM id="e1_s" value="1"/>
   <PARAM id="e1_r" value="10"/>
+  <PARAM id="l2_rate" value="0.2"/>
+  <PARAM id="l2_shape" value="3"/>
   <PARAM id="rv_size" value="0.95"/>
-  <PARAM id="rv_mix" value="0.5"/>
-  <PARAM id="s2_ls" value="0"/>
-  <PARAM id="s2_la" value="0"/>
+  <PARAM id="rv_mix" value="0.37"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="md_type" value="1"/>
+  <PARAM id="md_rate" value="0.22"/>
+  <PARAM id="md_depth" value="0.52"/>
+  <PARAM id="md_mix" value="0.4"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="mmode" value="1"/>
+  <PARAM id="mtime" value="15"/>
+  <PARAM id="msnap" value="0"/>
   <MORPH c0="0.1 0.5 0.4 0.5 0.5 0.5 0.4 0.4 0.5 0.5 0.5"
          c1="0.9 0.5 0.6 0.5 0.5 0.5 0.6 0.5 0.5 0.6 0.5"
          c2="0.3 0.7 0.7 0.5 0.6 0.5 0.5 0.6 0.6 0.5 0.5"

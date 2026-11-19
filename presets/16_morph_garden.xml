@@ -1,10 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Shows off the morph pad: four different corners and a tempo-synced path. -->
+<!-- Shows off the morph pad: four different corners and a tempo-synced path. Edit: Lowpass, Random Drops, Hype, Phrase / Morph: Path Sync / Mod: LFO 2 on cutoff -->
 <PARAMS presetName="Morph Garden" category="Moving Pads">
   <PARAM id="nz_mix" value="0.2"/>
+  <PARAM id="s2_type" value="7"/>
+  <PARAM id="s2_main" value="0.72"/>
+  <PARAM id="s2_ls" value="2"/>
+  <PARAM id="s2_la" value="0.18"/>
   <PARAM id="s3_type" value="21"/>
   <PARAM id="s3_main" value="0.4"/>
+  <PARAM id="s4_type" value="13"/>
+  <PARAM id="s4_main" value="0.5"/>
+  <PARAM id="s4_p4" value="0.65"/>
+  <PARAM id="s5_type" value="20"/>
+  <PARAM id="s5_main" value="0.38"/>
+  <PARAM id="s5_p1" value="0.25"/>
+  <PARAM id="s5_p2" value="0.4"/>
+  <PARAM id="s5_p3" value="0.5"/>
+  <PARAM id="l2_rate" value="0.15"/>
+  <PARAM id="l2_shape" value="0"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="md_type" value="0"/>
+  <PARAM id="md_mix" value="0.28"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="rv_mix" value="0.32"/>
   <PARAM id="mmode" value="2"/>
+  <PARAM id="mtime" value="4"/>
   <MORPH c0="0.2 0.3 0.3 0.5 0.6 0.2 0.4 0.3 0.4 0.4 0.5"
          c1="0.7 0.5 0.6 0.5 0.5 0.6 0.5 0.5 0.5 0.6 0.5"
          c2="0.4 0.8 0.7 0.5 0.7 0.8 0.7 0.7 0.6 0.8 0.5"

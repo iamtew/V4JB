@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Linen Storm. Bar spacing. Lowpass into Blur. A free morph path drifts the macros. Slow attack, long release, big reverb. -->
+<!-- Linen Storm. Edit: Lowpass, Blur, Bandpass, Noise / Morph: Path / Mod + Slot 12 set -->
 <PARAMS presetName="Linen Storm" category="Atmospheres">
+  <PARAM id="spread" value="0.61"/>
+  <PARAM id="width" value="1.35"/>
   <PARAM id="sp_algo" value="3"/>
   <PARAM id="sp_depth" value="0.74"/>
   <PARAM id="sp_tilt" value="2.24"/>
@@ -9,28 +11,46 @@
   <PARAM id="sp_modrate" value="0.12"/>
   <PARAM id="nz_mix" value="0.35"/>
   <PARAM id="nz_width" value="0.55"/>
-  <PARAM id="spread" value="0.61"/>
-  <PARAM id="width" value="1.35"/>
   <PARAM id="s2_main" value="0.485"/>
   <PARAM id="s2_p1" value="0.44"/>
   <PARAM id="s2_p2" value="0.2"/>
   <PARAM id="s2_p3" value="0.1"/>
-  <PARAM id="s2_ls" value="0"/>
-  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s2_ls" value="2"/>
+  <PARAM id="s2_la" value="0.26"/>
   <PARAM id="s3_type" value="16"/>
   <PARAM id="s3_main" value="0.405"/>
   <PARAM id="s3_p1" value="0.3"/>
-  <PARAM id="s4_type" value="0"/>
+  <PARAM id="s4_type" value="9"/>
+  <PARAM id="s2_type" value="7"/>
+  <PARAM id="s4_main" value="0.55"/>
+  <PARAM id="s4_p1" value="0.34"/>
+  <PARAM id="s4_p2" value="0.23"/>
+  <PARAM id="s4_p3" value="0.7"/>
+  <PARAM id="s4_ls" value="0"/>
+  <PARAM id="s4_la" value="0"/>
+  <PARAM id="s5_type" value="17"/>
+  <PARAM id="s5_main" value="0.28"/>
+  <PARAM id="s5_p1" value="0.51"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
   <PARAM id="e1_a" value="6.75"/>
   <PARAM id="e1_d" value="2.2"/>
   <PARAM id="e1_s" value="1"/>
   <PARAM id="e1_r" value="7"/>
+  <PARAM id="l2_rate" value="0.12"/>
+  <PARAM id="l2_shape" value="2"/>
   <PARAM id="md_mix" value="0.2"/>
   <PARAM id="rv_size" value="0.84"/>
   <PARAM id="rv_damp" value="0.58"/>
-  <PARAM id="rv_mix" value="0.55"/>
+  <PARAM id="rv_mix" value="0.18"/>
+  <PARAM id="dr_on" value="1"/>
+  <PARAM id="dr_amt" value="0.46"/>
+  <PARAM id="dr_mix" value="0.49"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="rv_on" value="1"/>
   <PARAM id="mmode" value="1"/>
   <PARAM id="mtime" value="18"/>
+  <PARAM id="msnap" value="0"/>
   <MORPH c0="0.49 0.58 0.67 0.76 0.15 0.24 0.33 0.42 0.51 0.61 0.70"
          c1="0.84 0.23 0.33 0.42 0.51 0.60 0.69 0.78 0.17 0.26 0.35"
          c2="0.50 0.59 0.68 0.77 0.16 0.26 0.35 0.44 0.53 0.62 0.71"

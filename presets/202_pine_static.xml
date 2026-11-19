@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Pine Static. Scatter spacing. Second Tone at a detuned unison, then Hype and a Lowpass. LFO 3 drifts the main knob very slowly. Slow attack, long release, big reverb. -->
+<!-- Pine Static. Edit: Second Tone, Hype, Lowpass, Detuned / Morph: Path / Mod + Slot 12 set -->
 <PARAMS presetName="Pine Static" category="Atmospheres">
+  <PARAM id="spread" value="0.67"/>
+  <PARAM id="width" value="1.5"/>
   <PARAM id="sp_algo" value="14"/>
   <PARAM id="sp_depth" value="0.74"/>
   <PARAM id="sp_tilt" value="2.24"/>
@@ -9,8 +11,6 @@
   <PARAM id="sp_modrate" value="0.08"/>
   <PARAM id="nz_mix" value="0.28"/>
   <PARAM id="nz_width" value="0.7"/>
-  <PARAM id="spread" value="0.67"/>
-  <PARAM id="width" value="1.5"/>
   <PARAM id="s2_type" value="19"/>
   <PARAM id="s2_main" value="0.062"/>
   <PARAM id="s2_p1" value="0.53"/>
@@ -28,13 +28,32 @@
   <PARAM id="s4_p1" value="0.36"/>
   <PARAM id="s4_p2" value="0.18"/>
   <PARAM id="s4_p3" value="0.17"/>
+  <PARAM id="s5_type" value="15"/>
+  <PARAM id="s5_main" value="0.2"/>
+  <PARAM id="s5_p1" value="0"/>
+  <PARAM id="s5_p2" value="0.36"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
   <PARAM id="e1_a" value="5"/>
   <PARAM id="e1_d" value="2.2"/>
   <PARAM id="e1_s" value="1"/>
   <PARAM id="e1_r" value="8"/>
   <PARAM id="l3_rate" value="0.02"/>
-  <PARAM id="md_mix" value="0.12"/>
-  <PARAM id="rv_size" value="0.9"/>
-  <PARAM id="rv_damp" value="0.66"/>
-  <PARAM id="rv_mix" value="0.62"/>
+  <PARAM id="md_mix" value="0.28"/>
+  <PARAM id="rv_size" value="0.82"/>
+  <PARAM id="rv_damp" value="0.32"/>
+  <PARAM id="rv_mix" value="0.5"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="md_type" value="0"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="mmode" value="1"/>
+  <PARAM id="mtime" value="5.8"/>
+  <PARAM id="msnap" value="0"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <MORPH c0="0.3 0.25 0.35 0.62 0.29 0.2 0.3 0.45 0.4 0.5 0.5"
+         c1="0.6 0.6 0.7 0.4 0.55 0.47 0.55 0.4 0.45 0.65 0.5"
+         c2="0.25 0.8 0.45 0.5 0.85 0.65 0.6 0.55 0.5 0.4 0.55"
+         c3="0.75 0.45 0.55 0.7 0.45 0.35 0.75 0.68 0.8 0.7 0.65"
+         nodes="0.10 0.10 4;0.90 0.50 2;0.20 0.90 4;0.50 0.50 2"/>
 </PARAMS>

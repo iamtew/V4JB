@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Phrase Wool. Odd Shift spacing. Modulator into a Lowpass and Detuned. Path Sync morph walks the macros in time. Tempo-synced motion. -->
+<!-- Phrase Wool. Edit: Modulator, Lowpass, Detuned, Phrase / Morph: Path Sync / Mod + Slot 12 set -->
 <PARAMS presetName="Phrase Wool" category="Moving Pads">
   <PARAM id="sp_algo" value="13"/>
   <PARAM id="sp_depth" value="0.43"/>
@@ -24,14 +24,30 @@
   <PARAM id="s4_main" value="0.195"/>
   <PARAM id="s4_p1" value="0.07"/>
   <PARAM id="s4_p2" value="0.38"/>
+  <PARAM id="s5_type" value="20"/>
+  <PARAM id="s5_main" value="0.1187"/>
+  <PARAM id="s5_p1" value="0.25"/>
+  <PARAM id="s5_p2" value="0.35"/>
+  <PARAM id="s5_p3" value="0.45"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
   <PARAM id="e1_a" value="0.35"/>
   <PARAM id="e1_s" value="0.82"/>
   <PARAM id="e1_r" value="2.2"/>
   <PARAM id="l2_sync" value="1"/>
   <PARAM id="l2_div" value="2"/>
   <PARAM id="l2_shape" value="1"/>
-  <PARAM id="rv_mix" value="0.32"/>
+  <PARAM id="rv_mix" value="0.2"/>
+  <PARAM id="md_on" value="0"/>
+  <PARAM id="dl_on" value="1"/>
+  <PARAM id="dl_sync" value="1"/>
+  <PARAM id="dl_div" value="1"/>
+  <PARAM id="dl_fb" value="0.36"/>
+  <PARAM id="dl_mix" value="0.18"/>
+  <PARAM id="rv_on" value="1"/>
   <PARAM id="mmode" value="2"/>
+  <PARAM id="mtime" value="4"/>
+  <PARAM id="msnap" value="0"/>
   <MORPH c0="0.17 0.26 0.35 0.44 0.54 0.63 0.72 0.81 0.20 0.29 0.38"
          c1="0.53 0.62 0.71 0.80 0.19 0.28 0.37 0.47 0.56 0.65 0.74"
          c2="0.19 0.28 0.37 0.46 0.55 0.64 0.73 0.82 0.21 0.30 0.40"

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Dawn Organ. Fold spacing. Bandpass into Decay and Hype. X-Axis Env morph sweeps the macros on each note. The note swells in. -->
+<!-- Dawn Organ. Edit: Bandpass, Decay, Hype, Every Nth / Morph: X-Axis Env / Mod + Slot 12 set -->
 <PARAMS presetName="Dawn Organ" category="Swells">
   <PARAM id="sp_algo" value="11"/>
   <PARAM id="sp_depth" value="0.48"/>
@@ -24,6 +24,11 @@
   <PARAM id="s4_p2" value="0.38"/>
   <PARAM id="s4_p3" value="0.62"/>
   <PARAM id="s4_p4" value="0.74"/>
+  <PARAM id="s4_type" value="13"/>
+  <PARAM id="s5_type" value="6"/>
+  <PARAM id="s5_main" value="0.68"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
   <PARAM id="e1_a" value="4"/>
   <PARAM id="e1_d" value="2"/>
   <PARAM id="e1_s" value="0.9"/>
@@ -33,7 +38,14 @@
   <PARAM id="e3_s" value="1"/>
   <PARAM id="e3_r" value="3.5"/>
   <PARAM id="rv_size" value="0.85"/>
-  <PARAM id="rv_mix" value="0.48"/>
+  <PARAM id="rv_mix" value="0.2"/>
+  <PARAM id="md_on" value="0"/>
+  <PARAM id="dl_on" value="1"/>
+  <PARAM id="dl_sync" value="1"/>
+  <PARAM id="dl_div" value="3"/>
+  <PARAM id="dl_fb" value="0.52"/>
+  <PARAM id="dl_mix" value="0.18"/>
+  <PARAM id="rv_on" value="1"/>
   <PARAM id="mmode" value="3"/>
   <PARAM id="mtime" value="2"/>
   <PARAM id="msnap" value="2"/>

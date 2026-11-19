@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Organ Dawn. Stiff String spacing. Discrete Adder into Tail and Hype. Env 4 blips the main knob. The note swells in. X-Axis Env morph. -->
+<!-- Organ Dawn. Edit: Discrete Adder, Tail, Hype, Detuned / Morph: X-Axis Env / Mod + Slot 12 set -->
 <PARAMS presetName="Organ Dawn" category="Swells">
   <PARAM id="sp_depth" value="0.56"/>
   <PARAM id="sp_tilt" value="1.74"/>
@@ -24,6 +24,13 @@
   <PARAM id="s4_p2" value="0.64"/>
   <PARAM id="s4_p3" value="0.48"/>
   <PARAM id="s4_p4" value="0.58"/>
+  <PARAM id="s4_type" value="13"/>
+  <PARAM id="s5_type" value="15"/>
+  <PARAM id="s5_main" value="0.26"/>
+  <PARAM id="s5_p1" value="0"/>
+  <PARAM id="s5_p2" value="0.44"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
   <PARAM id="e1_a" value="4"/>
   <PARAM id="e1_d" value="2"/>
   <PARAM id="e1_s" value="0.9"/>
@@ -35,7 +42,13 @@
   <PARAM id="e4_d" value="0.08"/>
   <PARAM id="e4_r" value="0.08"/>
   <PARAM id="rv_size" value="0.85"/>
-  <PARAM id="rv_mix" value="0.42"/>
+  <PARAM id="rv_mix" value="0.37"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="md_type" value="1"/>
+  <PARAM id="md_rate" value="0.17"/>
+  <PARAM id="md_depth" value="0.52"/>
+  <PARAM id="md_mix" value="0.28"/>
+  <PARAM id="rv_on" value="1"/>
   <PARAM id="mmode" value="3"/>
   <PARAM id="mtime" value="2"/>
   <PARAM id="msnap" value="3"/>

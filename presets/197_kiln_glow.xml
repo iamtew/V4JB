@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Kiln Glow. Octaves spacing. Moving Filter into Blur. Env 3 opens the main knob. Slow attack, long release, big reverb. -->
+<!-- Kiln Glow. Edit: Moving Filter, Blur, Second Tone, Modulator / Morph: Path / Mod + Slot 12 set -->
 <PARAMS presetName="Kiln Glow" category="Atmospheres">
+  <PARAM id="spread" value="0.55"/>
+  <PARAM id="width" value="1.2"/>
   <PARAM id="sp_algo" value="7"/>
   <PARAM id="sp_depth" value="0.74"/>
   <PARAM id="sp_tilt" value="2.24"/>
@@ -9,8 +11,6 @@
   <PARAM id="sp_modrate" value="0.2"/>
   <PARAM id="nz_mix" value="0.49"/>
   <PARAM id="nz_width" value="0.4"/>
-  <PARAM id="spread" value="0.55"/>
-  <PARAM id="width" value="1.2"/>
   <PARAM id="s2_type" value="11"/>
   <PARAM id="s2_main" value="0.425"/>
   <PARAM id="s2_p1" value="0.45"/>
@@ -23,7 +23,16 @@
   <PARAM id="s3_type" value="16"/>
   <PARAM id="s3_main" value="0.325"/>
   <PARAM id="s3_p1" value="0.22"/>
-  <PARAM id="s4_type" value="0"/>
+  <PARAM id="s4_type" value="19"/>
+  <PARAM id="s4_main" value="0.5"/>
+  <PARAM id="s4_p1" value="0.45"/>
+  <PARAM id="s4_p2" value="0.52"/>
+  <PARAM id="s4_ls" value="0"/>
+  <PARAM id="s4_la" value="0"/>
+  <PARAM id="s5_type" value="14"/>
+  <PARAM id="s5_main" value="0.28"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
   <PARAM id="e1_a" value="3.25"/>
   <PARAM id="e1_d" value="2.2"/>
   <PARAM id="e1_s" value="1"/>
@@ -37,4 +46,18 @@
   <PARAM id="rv_size" value="0.78"/>
   <PARAM id="rv_damp" value="0.5"/>
   <PARAM id="rv_mix" value="0.48"/>
+  <PARAM id="md_on" value="0"/>
+  <PARAM id="rv_on" value="0"/>
+  <PARAM id="dl_on" value="0"/>
+  <PARAM id="dr_on" value="0"/>
+  <PARAM id="mmode" value="1"/>
+  <PARAM id="mtime" value="8.6"/>
+  <PARAM id="msnap" value="0"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <MORPH c0="0.28 0.55 0.48 0.7 0.4 0.35 0.5 0.6 0.35 0.42 0.54"
+         c1="0.62 0.4 0.32 0.45 0.5 0.7 0.45 0.35 0.55 0.58 0.55"
+         c2="0.45 0.75 0.78 0.55 0.68 0.5 0.8 0.48 0.6 0.72 0.5"
+         c3="0.85 0.5 0.61 0.65 0.45 0.6 0.4 0.72 0.78 0.48 0.7"
+         nodes="0.50 0.10 3;0.90 0.50 3;0.50 0.90 3;0.10 0.50 3"/>
 </PARAMS>

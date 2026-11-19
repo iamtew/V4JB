@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Env 3 opens the Lowpass over six seconds while the amp swells in. -->
+<!-- Env 3 opens the Lowpass over six seconds while the amp swells in. Edit: Lowpass, Tail, Noise, Decay / Morph: X-Axis Env / Mod + Slot 12 set -->
 <PARAMS presetName="Slow Tide" category="Swells">
-  <PARAM id="sp_algo" value="0"/>
+  <PARAM id="sp_algo" value="15"/>
+  <PARAM id="sp_depth" value="0.18"/>
   <PARAM id="s2_type" value="7"/>
   <PARAM id="s2_main" value="0.3"/>
   <PARAM id="s2_p1" value="0.4"/>
@@ -9,6 +10,18 @@
   <PARAM id="s2_ea" value="0.5"/>
   <PARAM id="s3_type" value="22"/>
   <PARAM id="s3_main" value="0.3"/>
+  <PARAM id="s4_type" value="17"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s4_main" value="0.28"/>
+  <PARAM id="s4_p1" value="0.59"/>
+  <PARAM id="s4_ls" value="0"/>
+  <PARAM id="s4_la" value="0"/>
+  <PARAM id="s5_type" value="12"/>
+  <PARAM id="s5_main" value="0.59"/>
+  <PARAM id="s5_p1" value="0.8"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
   <PARAM id="e1_a" value="4"/>
   <PARAM id="e1_d" value="3"/>
   <PARAM id="e1_s" value="0.9"/>
@@ -17,8 +30,21 @@
   <PARAM id="e3_d" value="3"/>
   <PARAM id="e3_s" value="0.8"/>
   <PARAM id="e3_r" value="5"/>
-  <PARAM id="rv_mix" value="0.45"/>
-  <PARAM id="s4_type" value="0"/>
-  <PARAM id="s2_ls" value="0"/>
-  <PARAM id="s2_la" value="0"/>
+  <PARAM id="rv_mix" value="0.38"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="md_type" value="0"/>
+  <PARAM id="md_mix" value="0.38"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="rv_size" value="0.82"/>
+  <PARAM id="rv_damp" value="0.32"/>
+  <PARAM id="mmode" value="3"/>
+  <PARAM id="mtime" value="3.7"/>
+  <PARAM id="msnap" value="1"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <MORPH c0="0.22 0.3 0.28 0.45 0.72 0.22 0.38 0.28 0.32 0.44 0.5"
+         c1="0.68 0.52 0.62 0.5 0.48 0.55 0.52 0.5 0.58 0.62 0.59"
+         c2="0.35 0.78 0.7 0.48 0.8 0.7 0.68 0.62 0.55 0.75 0.55"
+         c3="0.82 0.61 0.4 0.52 0.55 0.38 0.6 0.42 0.7 0.68 0.6"
+         nodes="0.12 0.18 3;0.82 0.22 3;0.78 0.82 3;0.18 0.78 3"/>
 </PARAMS>

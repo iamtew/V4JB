@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Air Rise. Bar spacing. 5-Sines into Octaver. Env 2 plucks the main knob. The note swells in. X-Axis Env morph. -->
+<!-- Air Rise. Edit: 5-Sines, Octaver, Second Tone, Noise / Morph: X-Axis Env / Mod + Slot 12 set -->
 <PARAMS presetName="Air Rise" category="Swells">
   <PARAM id="sp_algo" value="3"/>
   <PARAM id="sp_depth" value="0.64"/>
@@ -21,7 +21,17 @@
   <PARAM id="s3_p2" value="0.72"/>
   <PARAM id="s3_es" value="3"/>
   <PARAM id="s3_ea" value="0.4"/>
-  <PARAM id="s4_type" value="0"/>
+  <PARAM id="s4_type" value="19"/>
+  <PARAM id="s4_main" value="0.38"/>
+  <PARAM id="s4_p1" value="0.45"/>
+  <PARAM id="s4_p2" value="0.52"/>
+  <PARAM id="s4_ls" value="0"/>
+  <PARAM id="s4_la" value="0"/>
+  <PARAM id="s5_type" value="17"/>
+  <PARAM id="s5_main" value="0.4"/>
+  <PARAM id="s5_p1" value="0.35"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
   <PARAM id="e1_a" value="5.6"/>
   <PARAM id="e1_d" value="2"/>
   <PARAM id="e1_s" value="0.9"/>
@@ -32,8 +42,13 @@
   <PARAM id="e3_d" value="4"/>
   <PARAM id="e3_s" value="1"/>
   <PARAM id="e3_r" value="3.5"/>
-  <PARAM id="rv_size" value="0.85"/>
-  <PARAM id="rv_mix" value="0.42"/>
+  <PARAM id="rv_size" value="0.82"/>
+  <PARAM id="rv_mix" value="0.5"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="md_type" value="0"/>
+  <PARAM id="md_mix" value="0.18"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="rv_damp" value="0.32"/>
   <PARAM id="mmode" value="3"/>
   <PARAM id="mtime" value="3.6"/>
   <PARAM id="msnap" value="4"/>

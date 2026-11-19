@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Primes spacing blurred and left to ring in a Tail; airy noise, big room. -->
+<!-- Primes spacing blurred and left to ring in a Tail; airy noise, big room. Edit: Blur, Lowpass, Tail, Noise / Morph: Path / Mod + Slot 12 set -->
 <PARAMS presetName="Salt Marsh" category="Atmospheres">
   <PARAM id="sp_algo" value="5"/>
   <PARAM id="sp_depth" value="0.3"/>
@@ -12,12 +12,34 @@
   <PARAM id="s3_main" value="0.6"/>
   <PARAM id="s4_type" value="22"/>
   <PARAM id="s4_main" value="0.4"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s5_type" value="17"/>
+  <PARAM id="s5_main" value="0.4"/>
+  <PARAM id="s5_p1" value="0.67"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
+  <PARAM id="s3_ms" value="3"/>
+  <PARAM id="s3_ma" value="0.18"/>
   <PARAM id="e1_a" value="2.5"/>
   <PARAM id="e1_d" value="2"/>
   <PARAM id="e1_s" value="0.8"/>
   <PARAM id="e1_r" value="5"/>
-  <PARAM id="rv_size" value="0.9"/>
+  <PARAM id="rv_size" value="0.82"/>
   <PARAM id="rv_mix" value="0.5"/>
-  <PARAM id="s2_ls" value="0"/>
-  <PARAM id="s2_la" value="0"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="md_type" value="0"/>
+  <PARAM id="md_mix" value="0.38"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="rv_damp" value="0.32"/>
+  <PARAM id="mmode" value="1"/>
+  <PARAM id="mtime" value="7.9"/>
+  <PARAM id="msnap" value="0"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <MORPH c0="0.3 0.31 0.35 0.62 0.35 0.2 0.3 0.45 0.4 0.5 0.5"
+         c1="0.6 0.6 0.79 0.4 0.55 0.5 0.55 0.4 0.45 0.65 0.5"
+         c2="0.25 0.8 0.45 0.41 0.85 0.65 0.6 0.55 0.5 0.4 0.55"
+         c3="0.75 0.45 0.55 0.7 0.39 0.35 0.75 0.65 0.8 0.7 0.65"
+         nodes="0.10 0.10 4;0.90 0.50 2;0.20 0.90 4;0.50 0.50 2"/>
 </PARAMS>

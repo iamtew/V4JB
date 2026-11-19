@@ -1,16 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Edit: Lowpass, Blur, Tail, Noise / Morph: Path / Mod + Slot 12 set -->
 <PARAMS presetName="Fog Bank" category="Atmospheres">
   <PARAM id="sp_tilt" value="1.5"/>
   <PARAM id="sp_moddepth" value="0.4"/>
   <PARAM id="nz_mix" value="0.45"/>
   <PARAM id="nz_width" value="0.8"/>
+  <PARAM id="sp_algo" value="14"/>
+  <PARAM id="sp_depth" value="0.24"/>
   <PARAM id="s2_main" value="0.6"/>
   <PARAM id="s3_type" value="16"/>
   <PARAM id="s3_main" value="0.4"/>
   <PARAM id="s4_type" value="22"/>
   <PARAM id="s4_main" value="0.5"/>
+  <PARAM id="s2_type" value="7"/>
+  <PARAM id="s5_type" value="17"/>
+  <PARAM id="s5_main" value="0.36"/>
+  <PARAM id="s5_p1" value="0.43"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s2_es" value="3"/>
+  <PARAM id="s2_ea" value="0.43"/>
   <PARAM id="e1_a" value="2"/>
   <PARAM id="e1_r" value="5"/>
+  <PARAM id="e3_a" value="1.6"/>
+  <PARAM id="e3_d" value="2.5"/>
+  <PARAM id="e3_s" value="0.7"/>
+  <PARAM id="e3_r" value="3"/>
   <PARAM id="rv_size" value="0.9"/>
-  <PARAM id="rv_mix" value="0.45"/>
+  <PARAM id="rv_mix" value="0.27"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="md_type" value="1"/>
+  <PARAM id="md_rate" value="0.17"/>
+  <PARAM id="md_depth" value="0.36"/>
+  <PARAM id="md_mix" value="0.28"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="mmode" value="1"/>
+  <PARAM id="mtime" value="3.7"/>
+  <PARAM id="msnap" value="0"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <MORPH c0="0.18 0.45 0.55 0.4 0.6 0.3 0.45 0.35 0.28 0.45 0.4"
+         c1="0.55 0.35 0.31 0.55 0.4 0.6 0.4 0.55 0.5 0.3 0.5"
+         c2="0.4 0.65 0.8 0.54 0.75 0.45 0.72 0.3 0.62 0.8 0.45"
+         c3="0.88 0.7 0.5 0.6 0.41 0.72 0.55 0.7 0.75 0.55 0.7"
+         nodes="0.20 0.50 2;0.80 0.50 2;0.50 0.85 3;0.50 0.15 3"/>
 </PARAMS>

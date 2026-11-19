@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Odd Shift spacing, Noise grain, a jittery filter, Clip and Drive, warbly chorus: worn tape. -->
+<!-- Odd Shift spacing, Noise grain, a jittery filter, Clip and Drive, warbly chorus: worn tape. Edit: Noise, Lowpass, Clip, Random Drops / Morph: Path / Mod + Slot 12 set -->
 <PARAMS presetName="Rust Tape" category="Textures">
   <PARAM id="sp_algo" value="13"/>
   <PARAM id="sp_depth" value="0.5"/>
@@ -12,10 +12,16 @@
   <PARAM id="s3_p1" value="0.4"/>
   <PARAM id="s3_ls" value="3"/>
   <PARAM id="s3_la" value="0.15"/>
-  <PARAM id="l3_shape" value="4"/>
-  <PARAM id="l3_rate" value="8"/>
   <PARAM id="s4_type" value="25"/>
   <PARAM id="s4_main" value="0.3"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s5_type" value="21"/>
+  <PARAM id="s5_main" value="0.22"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
+  <PARAM id="l3_shape" value="4"/>
+  <PARAM id="l3_rate" value="8"/>
   <PARAM id="e1_a" value="0.5"/>
   <PARAM id="e1_d" value="1"/>
   <PARAM id="e1_s" value="1"/>
@@ -23,11 +29,21 @@
   <PARAM id="dr_on" value="1"/>
   <PARAM id="dr_amt" value="0.3"/>
   <PARAM id="dr_mix" value="0.4"/>
-  <PARAM id="md_type" value="0"/>
-  <PARAM id="md_rate" value="0.2"/>
-  <PARAM id="md_depth" value="0.7"/>
-  <PARAM id="md_mix" value="0.4"/>
-  <PARAM id="rv_mix" value="0.3"/>
-  <PARAM id="s2_ls" value="0"/>
-  <PARAM id="s2_la" value="0"/>
+  <PARAM id="md_type" value="1"/>
+  <PARAM id="md_rate" value="0.32"/>
+  <PARAM id="md_depth" value="0.52"/>
+  <PARAM id="md_mix" value="0.28"/>
+  <PARAM id="rv_mix" value="0.37"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="mmode" value="1"/>
+  <PARAM id="mtime" value="5.8"/>
+  <PARAM id="msnap" value="0"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <MORPH c0="0.18 0.42 0.55 0.4 0.6 0.3 0.48 0.35 0.28 0.45 0.4"
+         c1="0.55 0.35 0.25 0.55 0.4 0.6 0.4 0.61 0.5 0.3 0.5"
+         c2="0.4 0.65 0.8 0.45 0.75 0.45 0.72 0.3 0.71 0.8 0.45"
+         c3="0.88 0.7 0.5 0.6 0.5 0.72 0.55 0.7 0.75 0.46 0.7"
+         nodes="0.20 0.50 2;0.80 0.50 2;0.50 0.85 3;0.50 0.15 3"/>
 </PARAMS>

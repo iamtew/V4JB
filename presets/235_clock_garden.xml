@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Clock Garden. Fifths spacing. Phrase (up) into Tail and a Lowpass. LFO 2 triangle is synced to a quarter note. Tempo-synced motion. Path Sync morph. -->
+<!-- Clock Garden. Edit: Phrase, Tail, Lowpass, Second Tone / Morph: Path Sync / Mod + Slot 12 set -->
 <PARAMS presetName="Clock Garden" category="Moving Pads">
   <PARAM id="sp_algo" value="8"/>
   <PARAM id="sp_depth" value="0.35"/>
@@ -25,6 +25,12 @@
   <PARAM id="s4_p1" value="0.35"/>
   <PARAM id="s4_p2" value="0.17"/>
   <PARAM id="s4_p3" value="0.08"/>
+  <PARAM id="s5_type" value="19"/>
+  <PARAM id="s5_main" value="0"/>
+  <PARAM id="s5_p1" value="0.45"/>
+  <PARAM id="s5_p2" value="0.52"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
   <PARAM id="e1_a" value="0.2"/>
   <PARAM id="e1_s" value="0.82"/>
   <PARAM id="e1_r" value="2.2"/>
@@ -35,9 +41,16 @@
   <PARAM id="dl_div" value="0"/>
   <PARAM id="dl_fb" value="0.35"/>
   <PARAM id="dl_mix" value="0.18"/>
-  <PARAM id="rv_mix" value="0.32"/>
+  <PARAM id="rv_mix" value="0.22"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="md_type" value="1"/>
+  <PARAM id="md_rate" value="0.32"/>
+  <PARAM id="md_depth" value="0.28"/>
+  <PARAM id="md_mix" value="0.4"/>
+  <PARAM id="rv_on" value="1"/>
   <PARAM id="mmode" value="2"/>
   <PARAM id="mtime" value="2"/>
+  <PARAM id="msnap" value="0"/>
   <MORPH c0="0.51 0.61 0.70 0.79 0.18 0.27 0.36 0.45 0.54 0.63 0.72"
          c1="0.17 0.26 0.35 0.44 0.54 0.63 0.72 0.81 0.20 0.29 0.38"
          c2="0.53 0.62 0.71 0.80 0.19 0.28 0.37 0.47 0.56 0.65 0.74"
