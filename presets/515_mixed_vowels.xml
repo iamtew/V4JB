@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Double Wave vowels/rain under Formant. Edit: Double Wave, Formant, Lowpass, Cloud / Morph: Path / Wave: vowels + rain -->
+<PARAMS presetName="Mixed Vowels" category="Choirs" waveA="factory:vowels.wav" waveB="factory:rain.wav">
+  <PARAM id="sp_algo" value="9"/>
+  <PARAM id="sp_depth" value="0.35"/>
+  <PARAM id="sp_tilt" value="1.15"/>
+  <PARAM id="nz_mix" value="0.06"/>
+  <PARAM id="poly" value="6"/>
+  <PARAM id="e1_a" value="0.9"/>
+  <PARAM id="e1_r" value="3.2"/>
+  <PARAM id="e1_s" value="0.85"/>
+  <PARAM id="mmode" value="1"/>
+  <PARAM id="mtime" value="7.6"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <PARAM id="s2_type" value="24"/>
+  <PARAM id="s2_main" value="0.62"/>
+  <PARAM id="s2_p1" value="0.45"/>
+  <PARAM id="s2_p2" value="0.4"/>
+  <PARAM id="s2_p3" value="0.58"/>
+  <PARAM id="s2_p4" value="0.2"/>
+  <PARAM id="s2_ls" value="1"/>
+  <PARAM id="s2_la" value="0.14"/>
+  <PARAM id="s3_type" value="28"/>
+  <PARAM id="s3_main" value="0.4"/>
+  <PARAM id="s3_p1" value="0.5"/>
+  <PARAM id="s3_p2" value="0.62"/>
+  <PARAM id="s3_p3" value="0.78"/>
+  <PARAM id="s3_p4" value="0.5"/>
+  <PARAM id="s4_type" value="7"/>
+  <PARAM id="s4_main" value="0.7"/>
+  <PARAM id="s4_p1" value="0.42"/>
+  <PARAM id="s4_p2" value="0.18"/>
+  <PARAM id="s4_p3" value="0.4"/>
+  <PARAM id="s5_type" value="29"/>
+  <PARAM id="s5_main" value="0.36"/>
+  <PARAM id="s5_p1" value="0.28"/>
+  <PARAM id="s5_p2" value="0.5"/>
+  <PARAM id="s5_p3" value="0.4"/>
+  <PARAM id="s5_p4" value="0.5"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="dl_on" value="0"/>
+  <PARAM id="dr_on" value="0"/>
+  <PARAM id="rv_mix" value="0.3"/>
+  <PARAM id="md_mix" value="0.28"/>
+  <MORPH c0="0.20 0.66 0.44 0.58 0.72 0.87 0.22 0.79 0.11 0.25 0.40" c1="0.38 0.64 0.78 0.10 0.70 0.84 0.34 0.31 0.09 0.23 0.38" c2="0.56 0.62 0.76 0.90 0.22 0.36 0.46 0.29 0.43 0.57 0.35" c3="0.74 0.14 0.28 0.88 0.20 0.34 0.58 0.63 0.41 0.55 0.70"
+         nodes="0.08 0.32 1;0.76 0.24 3;0.70 0.76 2;0.16 0.80 4"/>
+</PARAMS>
