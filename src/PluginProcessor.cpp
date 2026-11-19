@@ -677,7 +677,8 @@ void V4JBAudioProcessor::randomize (bool newModules)
         std::vector<M> pool { M::FiveSines, M::OddEven, M::Sync, M::Adder, M::DiscreteAdder, M::EveryNth,
                               M::Lowpass, M::Highpass, M::Bandpass, M::Notch, M::MovingFilter, M::Decay, M::Hype,
                               M::Modulator, M::Detuned, M::Blur, M::Noise, M::Octaver, M::SecondTone,
-                              M::Phrase, M::RandomDrops, M::Tail, M::Clip, M::HarmonicAdd, M::RangeEnhance, M::Formant };
+                              M::Phrase, M::RandomDrops, M::Tail, M::Clip, M::HarmonicAdd, M::RangeEnhance, M::Formant,
+                              M::Cloud };
         if (waveOwned[0] != nullptr)
             pool.push_back (M::Wave);
         if (waveOwned[0] != nullptr || waveOwned[1] != nullptr)

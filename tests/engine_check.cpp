@@ -212,6 +212,26 @@ int main()
         CHECK (std::fabs (e.voiceAmp (0, 5)) > 3.f * std::fabs (e.voiceAmp (0, 1)));
     }
 
+    // Cloud Amount 1, 3 voices: slots 1 and 2 sit a few cents off f0, not at 2f0 / 3f0.
+    {
+        EngineParams c = quickParams();
+        c.spec.modDepth = 0.f;
+        c.spec.noiseMix = 0.f;
+        c.slot[0].mod.type = (int) ModuleType::Cloud;
+        c.slot[0].mod.main = 1.f;
+        c.slot[0].mod.p[0] = 0.5f;  // 20 cents
+        c.slot[0].mod.p[1] = 1.f;   // 3 voices
+        c.slot[0].mod.p[2] = 0.f;   // static
+        c.slot[0].mod.p[3] = 1.f;   // whole bank
+        e.setParams (c, kNeutral);
+        render (e, sr, 0.05);
+        const float f0 = e.voiceFreq (0, 0);
+        const float r = std::exp2 (20.f / 1200.f);
+        CHECK (std::fabs (e.voiceFreq (0, 1) - f0 / r) < 0.5f);
+        CHECK (std::fabs (e.voiceFreq (0, 2) - f0 * r) < 0.5f);
+        CHECK (std::fabs (e.voiceFreq (0, 1) - 2.f * f0) > 10.f);
+    }
+
     // Release: everything fades to near silence.
     e.setParams (quickParams(), kNeutral);
     e.allNotesOff();

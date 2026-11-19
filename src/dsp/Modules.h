@@ -20,7 +20,7 @@ enum class ModuleType : int
     Lowpass, Highpass, Bandpass, Notch, MovingFilter, Decay, Hype,
     Modulator, Detuned, Blur, Noise, Octaver, SecondTone,
     Phrase, RandomDrops, Tail, Wave, DoubleWave,
-    Clip, HarmonicAdd, RangeEnhance, Formant,
+    Clip, HarmonicAdd, RangeEnhance, Formant, Cloud,
     Count
 };
 inline constexpr int kNumModuleTypes = (int) ModuleType::Count;
@@ -61,6 +61,7 @@ inline constexpr ModuleInfo kModuleInfo[kNumModuleTypes] = {
     { "Harmonic Add",   { "Base", "Level 1", "Level 2", "Level 3", "Level 4" } },
     { "Range Enhance",  { "Center", "Width", "Amount", "", "" } },
     { "Formant",        { "Vowel", "Shift", "Resonance", "Mix", "Bright" } },
+    { "Cloud",          { "Amount", "Spread", "Voices", "Motion", "Bias" } },
 };
 
 // Second Tone intervals in semitones (first one is a detuned unison).
@@ -548,6 +549,50 @@ inline void processModule (const ModuleParams& m, ModuleState& st, const ModuleC
                     env += g * std::exp (-sq (std::log2 (hz / f[j]) / q));
                 }
                 amp[k] *= (1.f - mix) + mix * (0.08f + gain * env);
+            }
+            break;
+        }
+
+        case ModuleType::Cloud:
+        {
+            // Unison clusters: groups of 2 or 3 slots share one parent harmonic, ±cents.
+            // Upper slots are spent on thickness, so there are fewer distinct harmonics.
+            if (main <= 0.f)
+                break;
+            const float cents = p[0] * 40.f;
+            const int voices = p[1] < 0.5f ? 2 : 3;
+            const float motion = p[2];
+            const int nUse = std::max (voices, (int) ((float) n * (0.2f + 0.8f * p[3])));
+            const float scale = 1.f / std::sqrt ((float) voices);
+            std::copy (freq, freq + n, st.b);
+            std::copy (amp, amp + n, st.c);
+            const int nGroups = nUse / voices;
+            const float wander = motion * 6.f * std::sin (kTwoPi * 0.25f * c.t);
+            for (int g = 0; g < nGroups; ++g)
+            {
+                const int base = g * voices;
+                const float pf = st.b[g], pa = st.c[g] * scale;
+                for (int v = 0; v < voices; ++v)
+                {
+                    const float sign = voices == 2 ? (v == 0 ? 0.f : 1.f)
+                                                   : (v == 0 ? 0.f : v == 1 ? -1.f : 1.f);
+                    const float det = sign * (cents + wander);
+                    const float ratio = std::exp2 (det / 1200.f);
+                    const int slot = base + v;
+                    freq[slot] = pf * ratio;
+                    float a = pa;
+                    if (motion > 0.f && v != 0)
+                    {
+                        const float beatHz = std::min (std::fabs (pf * (ratio - 1.f)) * 2.f, 20.f);
+                        a *= 1.f - motion * 0.4f * (1.f - std::cos (kTwoPi * beatHz * c.t + (float) v * 2.1f));
+                    }
+                    amp[slot] = a;
+                }
+            }
+            for (int k = 0; k < n; ++k)
+            {
+                freq[k] = lerp (st.b[k], freq[k], main);
+                amp[k] = lerp (st.c[k], amp[k], main);
             }
             break;
         }
