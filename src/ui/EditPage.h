@@ -59,6 +59,16 @@ struct FxCard : public juce::Component
         cols[3] = { "REVERB", tog (I::rvOn, "On"), nullptr, nullptr,
                     { knob (I::rvSize, "Size"), knob (I::rvDamp, "Damping"), knob (I::rvMix, "Mix") } };
         cols[4] = { "MASTER", nullptr, nullptr, nullptr, { knob (I::width, "Width"), knob (I::spread, "Spread") } };
+        refresh();
+    }
+    // Sync uses Division; free time uses the Time knob. The other control stays put, just grey.
+    void refresh()
+    {
+        const bool sync = cols[2].extra->getToggleState();
+        cols[2].knobs[0]->setEnabled (! sync);
+        cols[2].knobs[0]->setAlpha (sync ? 0.4f : 1.f);
+        cols[2].combo->setEnabled (sync);
+        cols[2].combo->setAlpha (sync ? 1.f : 0.4f);
     }
     void paint (juce::Graphics& g) override
     {
@@ -262,6 +272,7 @@ struct EditPage : public juce::Component
     void refresh()
     {
         spectral.bars.refresh();
+        fx.refresh();
         for (auto* s : slots)
             s->refresh();
     }
