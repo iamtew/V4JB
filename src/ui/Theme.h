@@ -187,13 +187,14 @@ struct Knob : public juce::Component
     std::unique_ptr<APVTS::SliderAttachment> att;
 };
 
-// Horizontal slider with a name on the left. Used for module params and route amounts.
+// Horizontal slider with a name above. Used for module extra params.
 struct HSlider : public juce::Component
 {
     HSlider (APVTS& st, const juce::String& id, const juce::String& name)
     {
         label.setText (name, juce::dontSendNotification);
         label.setFont (boldFont (10.f));
+        label.setJustificationType (juce::Justification::centred);
         label.setInterceptsMouseClicks (false, false);
         addAndMakeVisible (label);
         slider.setSliderStyle (juce::Slider::LinearBar);
@@ -207,10 +208,10 @@ struct HSlider : public juce::Component
     void resized() override
     {
         auto r = getLocalBounds();
-        label.setBounds (r.removeFromLeft (labelW));
-        slider.setBounds (r.reduced (0, 3));
+        label.setBounds (r.removeFromTop (12));
+        const int sh = juce::jmin (20, r.getHeight());
+        slider.setBounds (r.removeFromTop (sh));
     }
-    int labelW = 62;
     juce::Label label;
     juce::Slider slider;
     std::unique_ptr<APVTS::SliderAttachment> att;

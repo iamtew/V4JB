@@ -143,10 +143,16 @@ struct SlotCard : public juce::Component
             rt.amount.setColour (juce::Slider::trackColourId, kAmber.withAlpha (0.6f));
             rt.amount.setPopupDisplayEnabled (true, false, nullptr);
             rt.att = std::make_unique<APVTS::SliderAttachment> (p.apvts, ParamID::slot (slotIndex, amtKeys[i]), rt.amount);
+            rt.name.setText (kRouteNames[i], juce::dontSendNotification);
+            rt.name.setFont (boldFont (11.f));
+            rt.name.setJustificationType (juce::Justification::centred);
+            rt.name.setInterceptsMouseClicks (false, false);
+            addChildComponent (rt.name);
             addChildComponent (rt.source);
             addChildComponent (rt.amount);
         }
         modBtn.setClickingTogglesState (true);
+        modBtn.setTooltip ("Routes push the main knob");
         modBtn.onClick = [this] { showRoutes (modBtn.getToggleState()); };
         addAndMakeVisible (modBtn);
         refresh();
@@ -156,6 +162,7 @@ struct SlotCard : public juce::Component
     {
         for (auto& rt : routes)
         {
+            rt.name.setVisible (on);
             rt.source.setVisible (on);
             rt.amount.setVisible (on);
         }
@@ -203,14 +210,6 @@ struct SlotCard : public juce::Component
             g.setColour (kNight.withAlpha (0.5f));
             g.fillRoundedRectangle (bounds.toFloat(), 4.f);
         }
-        if (modBtn.getToggleState())
-        {
-            g.setFont (boldFont (9.f));
-            g.setColour (kFog.withAlpha (0.6f));
-            g.drawText ("routes push the main knob",
-                        juce::Rectangle<int> (routeArea).removeFromBottom (12),
-                        juce::Justification::centredLeft, false);
-        }
     }
 
     void resized() override
@@ -224,28 +223,46 @@ struct SlotCard : public juce::Component
         r.removeFromTop (2);
         bars.setBounds (r.removeFromTop (22));
         r.removeFromTop (2);
-        main.setBounds (r.removeFromLeft (70));
-        routeArea = r;
-        auto pr = r;
-        const int ph = juce::jmin (22, pr.getHeight() / 4);
-        for (auto* s : params)
-            s->setBounds (pr.removeFromTop (ph));
-        auto rr = r;
-        for (auto& rt : routes)
+        const int mainW = juce::jmax (86, r.getWidth() * 40 / 100);
+        main.setBounds (r.removeFromLeft (mainW));
+        if (modBtn.getToggleState())
         {
-            auto line = rr.removeFromTop (juce::jmin (28, rr.getHeight() / 3));
-            rt.source.setBounds (line.removeFromLeft (line.getWidth() / 2 + 6).reduced (0, 3));
-            rt.amount.setBounds (line.reduced (3, 4));
+            const int rh = r.getHeight() / 3;
+            for (auto& rt : routes)
+            {
+                auto cell = r.removeFromTop (rh);
+                rt.name.setBounds (cell.removeFromTop (12));
+                const int ch = juce::jmin (22, cell.getHeight());
+                auto controls = cell.removeFromTop (ch);
+                rt.source.setBounds (controls.removeFromLeft (controls.getWidth() / 2).reduced (0, 1));
+                rt.amount.setBounds (controls.reduced (2, 1));
+            }
+        }
+        else
+        {
+            int n = 0;
+            for (auto* s : params)
+                if (s->isVisible())
+                    ++n;
+            if (n > 0)
+            {
+                const int ph = r.getHeight() / n;
+                for (auto* s : params)
+                    if (s->isVisible())
+                        s->setBounds (r.removeFromTop (ph));
+            }
         }
     }
 
     struct Route
     {
         Route (APVTS& st, const juce::String& id) : source (st, id) {}
+        juce::Label name;
         Combo source;
         juce::Slider amount;
         std::unique_ptr<APVTS::SliderAttachment> att;
     };
+    static constexpr const char* kRouteNames[3] = { "Env", "LFO", "MIDI" };
 
     V4JBAudioProcessor& proc;
     int index;
@@ -255,7 +272,6 @@ struct SlotCard : public juce::Component
     juce::OwnedArray<HSlider> params;
     Route routes[3];
     juce::ToggleButton modBtn { "MOD" };
-    juce::Rectangle<int> routeArea;
     std::atomic<float>* typeParam = nullptr;
     int lastType = -1;
 };
