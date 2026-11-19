@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Short chords: Env 2 blips the Lowpass, a quarter-note dotted echo trails off. -->
+<!-- Short chords: Env 2 blips the Lowpass, a quarter-note dotted echo trails off. Edit: Lowpass, Detuned, Bandpass, Noise / Morph: Manual / Mod + Slot 12 set -->
 <PARAMS presetName="Soft Stabs" category="Polys">
   <PARAM id="sp_algo" value="16"/>
   <PARAM id="sp_depth" value="0.2"/>
@@ -10,6 +10,26 @@
   <PARAM id="s2_p2" value="0.3"/>
   <PARAM id="s2_es" value="2"/>
   <PARAM id="s2_ea" value="0.3"/>
+  <PARAM id="s3_type" value="15"/>
+  <PARAM id="s4_type" value="9"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s3_main" value="0.2"/>
+  <PARAM id="s3_p1" value="0.3"/>
+  <PARAM id="s3_p2" value="0.2"/>
+  <PARAM id="s3_ls" value="0"/>
+  <PARAM id="s3_la" value="0"/>
+  <PARAM id="s4_main" value="0.55"/>
+  <PARAM id="s4_p1" value="0.58"/>
+  <PARAM id="s4_p2" value="0.23"/>
+  <PARAM id="s4_p3" value="0.7"/>
+  <PARAM id="s4_ls" value="0"/>
+  <PARAM id="s4_la" value="0"/>
+  <PARAM id="s5_type" value="17"/>
+  <PARAM id="s5_main" value="0.28"/>
+  <PARAM id="s5_p1" value="0.51"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
   <PARAM id="e2_a" value="0.001"/>
   <PARAM id="e2_d" value="0.25"/>
   <PARAM id="e2_s" value="0"/>
@@ -22,9 +42,21 @@
   <PARAM id="dl_div" value="4"/>
   <PARAM id="dl_fb" value="0.3"/>
   <PARAM id="dl_mix" value="0.2"/>
-  <PARAM id="rv_mix" value="0.3"/>
-  <PARAM id="s3_type" value="0"/>
-  <PARAM id="s4_type" value="0"/>
-  <PARAM id="s2_ls" value="0"/>
-  <PARAM id="s2_la" value="0"/>
+  <PARAM id="rv_mix" value="0.32"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="md_type" value="1"/>
+  <PARAM id="md_rate" value="0.17"/>
+  <PARAM id="md_depth" value="0.44"/>
+  <PARAM id="md_mix" value="0.4"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="mmode" value="0"/>
+  <PARAM id="mtime" value="3.7"/>
+  <PARAM id="msnap" value="0"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <MORPH c0="0.45 0.28 0.42 0.38 0.68 0.42 0.29 0.25 0.5 0.48 0.5"
+         c1="0.58 0.62 0.68 0.52 0.42 0.48 0.55 0.58 0.42 0.62 0.5"
+         c2="0.3 0.48 0.25 0.6 0.75 0.82 0.48 0.4 0.68 0.35 0.55"
+         c3="0.92 0.7 0.58 0.48 0.52 0.38 0.72 0.55 0.58 0.86 0.65"
+         nodes="0.10 0.10 4;0.90 0.50 2;0.20 0.90 4;0.50 0.50 2"/>
 </PARAMS>

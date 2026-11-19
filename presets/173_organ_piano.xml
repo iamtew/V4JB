@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 5-Sines registration with a piano-like Decay; velocity on the Lowpass. -->
+<!-- 5-Sines registration with a piano-like Decay; velocity on the Lowpass. Edit: 5-Sines, Decay, Lowpass, Detuned / Morph: Manual / Mod + Slot 12 set -->
 <PARAMS presetName="Organ Piano" category="Keys">
-  <PARAM id="sp_algo" value="0"/>
+  <PARAM id="sp_algo" value="17"/>
   <PARAM id="nz_mix" value="0"/>
+  <PARAM id="sp_depth" value="0.48"/>
   <PARAM id="s2_type" value="1"/>
   <PARAM id="s2_main" value="0.5"/>
   <PARAM id="s2_p1" value="0.5"/>
@@ -16,12 +17,32 @@
   <PARAM id="s4_main" value="0.65"/>
   <PARAM id="s4_ms" value="1"/>
   <PARAM id="s4_ma" value="0.25"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s5_type" value="15"/>
+  <PARAM id="s5_main" value="0.17"/>
+  <PARAM id="s5_p1" value="0.3"/>
+  <PARAM id="s5_p2" value="0.44"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
   <PARAM id="e1_a" value="0.002"/>
   <PARAM id="e1_d" value="1.5"/>
   <PARAM id="e1_s" value="0.4"/>
   <PARAM id="e1_r" value="0.6"/>
   <PARAM id="md_mix" value="0.25"/>
   <PARAM id="rv_mix" value="0.25"/>
-  <PARAM id="s2_ls" value="0"/>
-  <PARAM id="s2_la" value="0"/>
+  <PARAM id="md_on" value="0"/>
+  <PARAM id="rv_on" value="0"/>
+  <PARAM id="dl_on" value="0"/>
+  <PARAM id="dr_on" value="0"/>
+  <PARAM id="mmode" value="0"/>
+  <PARAM id="mtime" value="4.4"/>
+  <PARAM id="msnap" value="0"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <MORPH c0="0.28 0.55 0.48 0.7 0.4 0.35 0.5 0.6 0.32 0.42 0.45"
+         c1="0.62 0.4 0.32 0.45 0.5 0.7 0.45 0.35 0.55 0.58 0.55"
+         c2="0.45 0.72 0.78 0.55 0.68 0.5 0.8 0.48 0.6 0.72 0.53"
+         c3="0.79 0.5 0.55 0.65 0.45 0.6 0.4 0.72 0.78 0.48 0.7"
+         nodes="0.12 0.18 3;0.82 0.22 3;0.78 0.82 3;0.18 0.78 3"/>
 </PARAMS>

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Mostly odd harmonics with the fundamental kept; Economy on, wide. -->
+<!-- Mostly odd harmonics with the fundamental kept; Economy on, wide. Edit: Odd/Even, Lowpass, Detuned, Decay / Morph: Manual / Mod + Slot 12 set -->
 <PARAMS presetName="Hollow Poly" category="Polys">
   <PARAM id="economy" value="1"/>
+  <PARAM id="width" value="1.5"/>
   <PARAM id="sp_algo" value="13"/>
   <PARAM id="sp_depth" value="0.15"/>
   <PARAM id="nz_mix" value="0.03"/>
@@ -12,13 +13,41 @@
   <PARAM id="s3_main" value="0.6"/>
   <PARAM id="s4_type" value="15"/>
   <PARAM id="s4_main" value="0.3"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s5_type" value="12"/>
+  <PARAM id="s5_main" value="0.43"/>
+  <PARAM id="s5_p1" value="0.7"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
+  <PARAM id="s3_es" value="2"/>
+  <PARAM id="s3_ea" value="0.49"/>
   <PARAM id="e1_a" value="0.02"/>
   <PARAM id="e1_d" value="0.8"/>
   <PARAM id="e1_s" value="0.6"/>
   <PARAM id="e1_r" value="0.6"/>
-  <PARAM id="width" value="1.5"/>
+  <PARAM id="e2_a" value="0.005"/>
+  <PARAM id="e2_d" value="0.49"/>
+  <PARAM id="e2_s" value="0.15"/>
+  <PARAM id="e2_r" value="0.5"/>
+  <PARAM id="e2_vel" value="0.7"/>
   <PARAM id="md_mix" value="0.3"/>
-  <PARAM id="rv_mix" value="0.3"/>
-  <PARAM id="s2_ls" value="0"/>
-  <PARAM id="s2_la" value="0"/>
+  <PARAM id="rv_mix" value="0.2"/>
+  <PARAM id="md_on" value="0"/>
+  <PARAM id="dl_on" value="1"/>
+  <PARAM id="dl_sync" value="1"/>
+  <PARAM id="dl_div" value="3"/>
+  <PARAM id="dl_fb" value="0.52"/>
+  <PARAM id="dl_mix" value="0.18"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="mmode" value="0"/>
+  <PARAM id="mtime" value="4.4"/>
+  <PARAM id="msnap" value="0"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <MORPH c0="0.22 0.3 0.28 0.45 0.72 0.22 0.38 0.37 0.32 0.38 0.5"
+         c1="0.68 0.52 0.62 0.5 0.48 0.55 0.52 0.5 0.49 0.62 0.5"
+         c2="0.35 0.78 0.7 0.48 0.8 0.7 0.68 0.62 0.55 0.69 0.55"
+         c3="0.82 0.58 0.4 0.52 0.55 0.38 0.6 0.42 0.7 0.68 0.57"
+         nodes="0.15 0.80 3;0.85 0.75 3;0.70 0.20 3;0.25 0.25 3"/>
 </PARAMS>

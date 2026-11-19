@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Odd harmonics and a Bandpass formant that aftertouch pushes up. -->
+<!-- Odd harmonics and a Bandpass formant that aftertouch pushes up. Edit: Odd/Even, Bandpass, Notch, Tail / Morph: Manual / Mod + Slot 12 set -->
 <PARAMS presetName="Reed Lead" category="Leads">
-  <PARAM id="sp_algo" value="0"/>
-  <PARAM id="nz_mix" value="0.05"/>
   <PARAM id="poly" value="1"/>
+  <PARAM id="sp_algo" value="2"/>
+  <PARAM id="nz_mix" value="0.05"/>
+  <PARAM id="sp_depth" value="0.36"/>
   <PARAM id="s2_type" value="2"/>
   <PARAM id="s2_main" value="0.2"/>
   <PARAM id="s2_p1" value="1"/>
@@ -13,12 +14,37 @@
   <PARAM id="s3_p2" value="0.4"/>
   <PARAM id="s3_ms" value="3"/>
   <PARAM id="s3_ma" value="0.3"/>
+  <PARAM id="s4_type" value="10"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s4_main" value="0.55"/>
+  <PARAM id="s4_ls" value="0"/>
+  <PARAM id="s4_la" value="0"/>
+  <PARAM id="s5_type" value="22"/>
+  <PARAM id="s5_main" value="0.57"/>
+  <PARAM id="s5_p1" value="0.56"/>
+  <PARAM id="s5_p2" value="0.35"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
   <PARAM id="e1_a" value="0.03"/>
   <PARAM id="e1_d" value="0.3"/>
   <PARAM id="e1_s" value="0.85"/>
   <PARAM id="e1_r" value="0.3"/>
   <PARAM id="rv_mix" value="0.25"/>
-  <PARAM id="s4_type" value="0"/>
-  <PARAM id="s2_ls" value="0"/>
-  <PARAM id="s2_la" value="0"/>
+  <PARAM id="md_on" value="0"/>
+  <PARAM id="rv_on" value="0"/>
+  <PARAM id="dl_on" value="0"/>
+  <PARAM id="dr_on" value="1"/>
+  <PARAM id="dr_amt" value="0.28"/>
+  <PARAM id="dr_mix" value="0.35"/>
+  <PARAM id="mmode" value="0"/>
+  <PARAM id="mtime" value="8.6"/>
+  <PARAM id="msnap" value="0"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <MORPH c0="0.4 0.5 0.4 0.5 0.5 0.4 0.35 0.3 0.36 0.35 0.5"
+         c1="0.7 0.3 0.6 0.55 0.65 0.55 0.5 0.45 0.6 0.49 0.5"
+         c2="0.2 0.7 0.75 0.45 0.7 0.8 0.65 0.5 0.4 0.85 0.37"
+         c3="0.99 0.55 0.3 0.5 0.4 0.25 0.45 0.8 0.7 0.5 0.8"
+         nodes="0.22 0.30 5;0.78 0.35 5;0.65 0.78 2;0.30 0.70 2"/>
 </PARAMS>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Odd Shift spacing and odd harmonics only (keeping the fundamental): a reedy register. -->
+<!-- Odd Shift spacing and odd harmonics only (keeping the fundamental): a reedy register. Edit: Odd/Even, Lowpass, Hype, 5-Sines / Morph: Manual / Mod + Slot 12 set -->
 <PARAMS presetName="Reed Chest" category="Organs">
   <PARAM id="sp_algo" value="13"/>
   <PARAM id="sp_depth" value="0.2"/>
@@ -14,11 +14,38 @@
   <PARAM id="s4_main" value="0.3"/>
   <PARAM id="s4_p3" value="0.6"/>
   <PARAM id="s4_p4" value="0.7"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s5_type" value="1"/>
+  <PARAM id="s5_main" value="0.55"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
+  <PARAM id="s3_es" value="2"/>
+  <PARAM id="s3_ea" value="0.33"/>
   <PARAM id="e1_a" value="0.01"/>
   <PARAM id="e1_d" value="0.1"/>
   <PARAM id="e1_s" value="1"/>
   <PARAM id="e1_r" value="0.2"/>
-  <PARAM id="rv_mix" value="0.25"/>
-  <PARAM id="s2_ls" value="0"/>
-  <PARAM id="s2_la" value="0"/>
+  <PARAM id="e2_a" value="0.005"/>
+  <PARAM id="e2_d" value="0.73"/>
+  <PARAM id="e2_s" value="0.15"/>
+  <PARAM id="e2_r" value="0.3"/>
+  <PARAM id="e2_vel" value="0.7"/>
+  <PARAM id="rv_mix" value="0.38"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="md_type" value="0"/>
+  <PARAM id="md_mix" value="0.23"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="rv_size" value="0.82"/>
+  <PARAM id="rv_damp" value="0.32"/>
+  <PARAM id="mmode" value="0"/>
+  <PARAM id="mtime" value="5.8"/>
+  <PARAM id="msnap" value="0"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <MORPH c0="0.15 0.2 0.22 0.35 0.8 0.15 0.25 0.2 0.2 0.3 0.41"
+         c1="0.53 0.45 0.5 0.5 0.55 0.4 0.5 0.4 0.45 0.5 0.5"
+         c2="0.35 0.91 0.65 0.4 0.9 0.75 0.7 0.35 0.55 0.7 0.55"
+         c3="0.78 0.6 0.54 0.55 0.6 0.5 0.55 0.6 0.65 0.6 0.6"
+         nodes="0.05 0.20 2;0.50 0.50 4;0.95 0.80 2;0.40 0.90 3"/>
 </PARAMS>

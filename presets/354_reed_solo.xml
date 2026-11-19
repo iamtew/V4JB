@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Reed Solo. Bar spacing. Moving Filter into Blur. Mod wheel pushes the main knob. Lead with glide. Two voices. -->
+<!-- Reed Solo. Edit: Moving Filter, Blur, Modulator, Phrase / Morph: Manual / Mod + Slot 12 set -->
 <PARAMS presetName="Reed Solo" category="Leads">
+  <PARAM id="glide" value="0.21"/>
+  <PARAM id="poly" value="2"/>
   <PARAM id="sp_algo" value="3"/>
   <PARAM id="sp_depth" value="0.52"/>
   <PARAM id="sp_tilt" value="1.07"/>
   <PARAM id="sp_partials" value="232"/>
   <PARAM id="nz_mix" value="0.04"/>
-  <PARAM id="glide" value="0.21"/>
-  <PARAM id="poly" value="2"/>
   <PARAM id="s2_type" value="11"/>
   <PARAM id="s2_main" value="0.45"/>
   <PARAM id="s2_p1" value="0.45"/>
@@ -20,12 +20,37 @@
   <PARAM id="s3_type" value="16"/>
   <PARAM id="s3_main" value="0.35"/>
   <PARAM id="s3_p1" value="0.22"/>
-  <PARAM id="s4_type" value="0"/>
+  <PARAM id="s4_type" value="14"/>
+  <PARAM id="s4_main" value="0.22"/>
+  <PARAM id="s4_ls" value="0"/>
+  <PARAM id="s4_la" value="0"/>
+  <PARAM id="s5_type" value="20"/>
+  <PARAM id="s5_main" value="0.8312"/>
+  <PARAM id="s5_p1" value="0.75"/>
+  <PARAM id="s5_p2" value="0.35"/>
+  <PARAM id="s5_p3" value="0.45"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
   <PARAM id="e1_a" value="0.008"/>
   <PARAM id="e1_d" value="0.28"/>
   <PARAM id="e1_s" value="0.86"/>
   <PARAM id="e1_r" value="0.24"/>
   <PARAM id="e1_vel" value="0.4"/>
   <PARAM id="md_mix" value="0.22"/>
-  <PARAM id="rv_mix" value="0.2"/>
+  <PARAM id="rv_mix" value="0.18"/>
+  <PARAM id="dr_on" value="1"/>
+  <PARAM id="dr_amt" value="0.22"/>
+  <PARAM id="dr_mix" value="0.41"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="mmode" value="0"/>
+  <PARAM id="mtime" value="5.1"/>
+  <PARAM id="msnap" value="0"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <MORPH c0="0.3 0.25 0.26 0.62 0.35 0.2 0.3 0.45 0.4 0.5 0.5"
+         c1="0.6 0.6 0.7 0.34 0.55 0.5 0.55 0.4 0.45 0.65 0.5"
+         c2="0.25 0.8 0.45 0.5 0.82 0.65 0.6 0.55 0.5 0.4 0.55"
+         c3="0.75 0.45 0.55 0.7 0.45 0.35 0.75 0.65 0.8 0.7 0.65"
+         nodes="0.50 0.10 3;0.90 0.50 3;0.50 0.90 3;0.10 0.50 3"/>
 </PARAMS>

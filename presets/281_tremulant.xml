@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Tremulant. Fifths spacing. Discrete Adder into Tail and Hype. LFO 1 sine moves the main knob. Instant full sustain, noise off. -->
+<!-- Tremulant. Edit: Discrete Adder, Tail, Hype, Second Tone / Morph: Manual / Mod + Slot 12 set -->
 <PARAMS presetName="Tremulant" category="Organs">
   <PARAM id="sp_algo" value="8"/>
   <PARAM id="sp_depth" value="0.16"/>
@@ -21,6 +21,13 @@
   <PARAM id="s4_p2" value="0.62"/>
   <PARAM id="s4_p3" value="0.52"/>
   <PARAM id="s4_p4" value="0.56"/>
+  <PARAM id="s4_type" value="13"/>
+  <PARAM id="s5_type" value="19"/>
+  <PARAM id="s5_main" value="0.62"/>
+  <PARAM id="s5_p1" value="0.45"/>
+  <PARAM id="s5_p2" value="0.52"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
   <PARAM id="e1_a" value="0.001"/>
   <PARAM id="e1_d" value="0.2"/>
   <PARAM id="e1_s" value="1"/>
@@ -29,4 +36,18 @@
   <PARAM id="md_rate" value="0.45"/>
   <PARAM id="md_depth" value="0.55"/>
   <PARAM id="rv_mix" value="0.26"/>
+  <PARAM id="md_on" value="0"/>
+  <PARAM id="rv_on" value="0"/>
+  <PARAM id="dl_on" value="0"/>
+  <PARAM id="dr_on" value="0"/>
+  <PARAM id="mmode" value="0"/>
+  <PARAM id="mtime" value="4.4"/>
+  <PARAM id="msnap" value="0"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <MORPH c0="0.18 0.42 0.55 0.4 0.6 0.3 0.42 0.35 0.28 0.45 0.4"
+         c1="0.55 0.35 0.25 0.55 0.4 0.6 0.4 0.55 0.5 0.3 0.5"
+         c2="0.4 0.65 0.8 0.45 0.75 0.45 0.72 0.3 0.65 0.8 0.45"
+         c3="0.88 0.7 0.5 0.6 0.5 0.72 0.55 0.7 0.75 0.61 0.7"
+         nodes="0.08 0.45 1;0.35 0.12 2;0.70 0.40 2;0.90 0.85 4"/>
 </PARAMS>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Formant Solo. Scatter spacing. Bandpass into Decay and Hype. LFO 2 triangle is synced to a quarter note. Lead with glide. Two voices. -->
+<!-- Formant Solo. Edit: Bandpass, Decay, Hype, Notch / Morph: Manual / Mod + Slot 12 set -->
 <PARAMS presetName="Formant Solo" category="Leads">
+  <PARAM id="glide" value="0.21"/>
+  <PARAM id="poly" value="2"/>
   <PARAM id="sp_algo" value="14"/>
   <PARAM id="sp_depth" value="0.42"/>
   <PARAM id="sp_tilt" value="0.95"/>
   <PARAM id="sp_partials" value="192"/>
   <PARAM id="nz_mix" value="0.07"/>
-  <PARAM id="glide" value="0.21"/>
-  <PARAM id="poly" value="2"/>
   <PARAM id="s2_type" value="9"/>
   <PARAM id="s2_main" value="0.57"/>
   <PARAM id="s2_p1" value="0.34"/>
@@ -24,6 +24,11 @@
   <PARAM id="s4_p2" value="0.38"/>
   <PARAM id="s4_p3" value="0.62"/>
   <PARAM id="s4_p4" value="0.74"/>
+  <PARAM id="s4_type" value="13"/>
+  <PARAM id="s5_type" value="10"/>
+  <PARAM id="s5_main" value="0.35"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
   <PARAM id="e1_a" value="0.008"/>
   <PARAM id="e1_d" value="0.28"/>
   <PARAM id="e1_s" value="0.86"/>
@@ -32,10 +37,25 @@
   <PARAM id="l2_sync" value="1"/>
   <PARAM id="l2_div" value="2"/>
   <PARAM id="l2_shape" value="1"/>
-  <PARAM id="md_mix" value="0.22"/>
+  <PARAM id="md_mix" value="0.28"/>
   <PARAM id="dl_on" value="1"/>
   <PARAM id="dl_div" value="4"/>
   <PARAM id="dl_fb" value="0.32"/>
   <PARAM id="dl_mix" value="0.16"/>
-  <PARAM id="rv_mix" value="0.2"/>
+  <PARAM id="rv_mix" value="0.42"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="md_type" value="1"/>
+  <PARAM id="md_rate" value="0.42"/>
+  <PARAM id="md_depth" value="0.6"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="mmode" value="0"/>
+  <PARAM id="mtime" value="7.9"/>
+  <PARAM id="msnap" value="0"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <MORPH c0="0.28 0.55 0.48 0.7 0.4 0.35 0.5 0.6 0.41 0.42 0.45"
+         c1="0.62 0.4 0.32 0.45 0.5 0.7 0.45 0.35 0.55 0.67 0.55"
+         c2="0.45 0.72 0.78 0.55 0.68 0.5 0.8 0.48 0.6 0.72 0.41"
+         c3="0.88 0.5 0.55 0.65 0.45 0.6 0.4 0.72 0.78 0.48 0.7"
+         nodes="0.12 0.18 3;0.82 0.22 3;0.78 0.82 3;0.18 0.78 3"/>
 </PARAMS>

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Finger Bass. Fold spacing. Bandpass into Decay and Hype. LFO 1 sine moves the main knob. Mono, an octave down, subs, chorus and reverb off. -->
+<!-- Finger Bass. Edit: Bandpass, Decay, Hype, Second Tone / Morph: Manual / Mod + Slot 12 set -->
 <PARAMS presetName="Finger Bass" category="Basses">
+  <PARAM id="octave" value="-1"/>
+  <PARAM id="poly" value="1"/>
   <PARAM id="sp_algo" value="11"/>
   <PARAM id="sp_depth" value="0.5"/>
   <PARAM id="sp_tilt" value="1.85"/>
@@ -9,8 +11,6 @@
   <PARAM id="nz_mix" value="0.03"/>
   <PARAM id="sub1" value="0.58"/>
   <PARAM id="sub2" value="0.26"/>
-  <PARAM id="octave" value="-1"/>
-  <PARAM id="poly" value="1"/>
   <PARAM id="s2_type" value="9"/>
   <PARAM id="s2_main" value="0.495"/>
   <PARAM id="s2_p1" value="0.34"/>
@@ -26,11 +26,33 @@
   <PARAM id="s4_p2" value="0.38"/>
   <PARAM id="s4_p3" value="0.62"/>
   <PARAM id="s4_p4" value="0.74"/>
+  <PARAM id="s4_type" value="13"/>
+  <PARAM id="s5_type" value="19"/>
+  <PARAM id="s5_main" value="0.5"/>
+  <PARAM id="s5_p1" value="0.45"/>
+  <PARAM id="s5_p2" value="0.52"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
   <PARAM id="e1_a" value="0.004"/>
   <PARAM id="e1_d" value="0.28"/>
   <PARAM id="e1_s" value="0.9"/>
   <PARAM id="e1_r" value="0.22"/>
   <PARAM id="l1_rate" value="0.12"/>
-  <PARAM id="md_on" value="0"/>
-  <PARAM id="rv_on" value="0"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="md_type" value="0"/>
+  <PARAM id="md_mix" value="0.38"/>
+  <PARAM id="rv_size" value="0.82"/>
+  <PARAM id="rv_damp" value="0.32"/>
+  <PARAM id="rv_mix" value="0.5"/>
+  <PARAM id="mmode" value="0"/>
+  <PARAM id="mtime" value="3.7"/>
+  <PARAM id="msnap" value="0"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <MORPH c0="0.33 0.33 0.6 0.5 0.61 0.28 0.42 0.33 0.38 0.55 0.5"
+         c1="0.72 0.58 0.38 0.48 0.62 0.67 0.58 0.52 0.52 0.42 0.5"
+         c2="0.22 0.75 0.72 0.42 0.78 0.72 0.53 0.42 0.48 0.78 0.6"
+         c3="0.8 0.42 0.48 0.58 0.48 0.32 0.7 0.62 0.72 0.62 0.4"
+         nodes="0.20 0.50 2;0.80 0.50 2;0.50 0.85 3;0.50 0.15 3"/>
 </PARAMS>
