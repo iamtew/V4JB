@@ -5,7 +5,7 @@
 #include <JuceHeader.h>
 
 // Shared look and small widgets for every page. "Fog at night" palette, same hex
-// as bootstrap.md and docs/style.css. Header-only: only PluginEditor.cpp includes the UI.
+// as docs/style.css. Header-only: only PluginEditor.cpp includes the UI.
 namespace ui
 {
 inline const juce::Colour kNight { 0xff14121f };
@@ -106,7 +106,7 @@ struct PanelLnF : public juce::LookAndFeel_V4
                            float minPos, float maxPos, const juce::Slider::SliderStyle style,
                            juce::Slider& s) override
     {
-        if (style != juce::Slider::LinearBar && style != juce::Slider::LinearBarVertical)
+        if (style != juce::Slider::LinearBar)
         {
             LookAndFeel_V4::drawLinearSlider (g, x, y, w, h, pos, minPos, maxPos, style, s);
             if (style == juce::Slider::LinearVertical)
@@ -277,7 +277,7 @@ struct SpectrumBars : public juce::Component
     float shown[v4jb::kBars] {};
 };
 
-// Rounded card with a title in the top-left; children lay out below kTitleH.
+// Rounded card with a title in the top-left.
 inline void paintCard (juce::Graphics& g, juce::Rectangle<int> r, const juce::String& title)
 {
     g.setColour (kDusk);

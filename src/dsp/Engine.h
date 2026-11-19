@@ -275,7 +275,6 @@ public:
 
     // Test and UI helpers.
     int voiceNote (int i) const { return voices[i].active ? voices[i].note : -1; }
-    bool voiceHeld (int i) const { return voices[i].active && voices[i].held; }
     int voicePartials (int i) const { return voices[i].bank.hi; }
     float voiceFreq (int i, int k) const { return voices[i].freq[k]; }
     float voiceAmp (int i, int k) const { return voices[i].amp[k]; }

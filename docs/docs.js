@@ -58,17 +58,6 @@
       var href = link.getAttribute("href") || "";
       var hashMd = href.match(/^(?:\.\/)?([a-z0-9-]+)\.md(#[a-z0-9-]*)?$/);
       if (hashMd && known(hashMd[1])) link.setAttribute("href", "#" + hashMd[1]);
-      var note = href.match(/notes\.html\?doc=([A-Z0-9_.]+)/i);
-      if (note) {
-        var map = {
-          "SPEC.md": "spec",
-          "ARCHITECTURE.md": "architecture",
-          "DSP_NOTES.md": "dsp",
-          "MANUAL.md": "overview"
-        };
-        var dest = map[note[1]];
-        if (dest) link.setAttribute("href", "#" + dest);
-      }
     });
   }
 

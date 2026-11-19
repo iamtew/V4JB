@@ -377,7 +377,6 @@ struct MorphPage : public juce::Component
         savePoints.setBounds (line3.removeFromLeft (110).reduced (2));
         savePath.setBounds (line3.removeFromLeft (110).reduced (2));
         loadBtn.setBounds (line3.removeFromLeft (110).reduced (2));
-        hintArea = c;
     }
 
     V4JBAudioProcessor& proc;
@@ -391,6 +390,6 @@ struct MorphPage : public juce::Component
     juce::ComboBox segLen;
     juce::TextButton savePoints { "Save Points..." }, savePath { "Save Path..." }, loadBtn { "Load..." };
     std::unique_ptr<juce::FileChooser> chooser;
-    juce::Rectangle<int> macroArea, ctlArea, hintArea;
+    juce::Rectangle<int> macroArea, ctlArea;
 };
 } // namespace ui
