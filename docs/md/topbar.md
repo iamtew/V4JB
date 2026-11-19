@@ -3,7 +3,7 @@
 Left to right, because that is how the window is built and also how most of us read.
 
 - **Logo + V4JB / version** — click for [About](about.md).
-- **Presets** — the current name (`category · name`). Click it for the list, grouped by category, plus **Save preset…** and **Open user preset folder**. `<` and `>` step through the list in that same order.
+- **Presets** — the current name (`category · name`). Click it for a popup with a name filter on top. Nothing typed: grouped by category, factory first. Typing keeps names that contain the text, shown as `category · name`. **Save preset…** and **Open user preset folder** sit at the bottom. `<` and `>` still step the current category, filter or not.
 - **Save** — writes a user preset to `Documents\V4JB\Presets` as `Name.xml`. You get a name and a category (default **User**). Factory presets stay in the plugin; user presets show up in the menu next time.
 - **Randomize** — two choices:
   - **New sound (new module chain)** — picks a short chain from a curated pool (Wave / Double Wave only if a file is loaded; at most one Double Wave) and new values.

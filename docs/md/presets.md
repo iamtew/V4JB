@@ -24,3 +24,5 @@
 | Thoughtful Violins | Warm, in-tune bows: slow attacks, pure fifths and octaves, small choirs. Little bow noise, no sour partials |
 
 Good places to start: Fog Bank, Morph Garden (the morph pad), Vowel Choir and Rain Choir (the Wave page), Odd Machine (X-Axis Env with Snap), Fold Bass and Dream Rhodes.
+
+The preset button on the top bar filters this list by name. Category groups stay when the filter is empty.
