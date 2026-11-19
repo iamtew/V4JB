@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Subs plus Octaver pedal. Edit: Octaver, Lowpass, Formant, Tail / Morph: Path / Mod: LFO 2 on Octaver -->
+<PARAMS presetName="Octave Pedal" category="Overtone">
+  <PARAM id="sp_algo" value="7"/>
+  <PARAM id="sp_depth" value="0.6"/>
+  <PARAM id="sp_tilt" value="1.4"/>
+  <PARAM id="nz_mix" value="0.03"/>
+  <PARAM id="poly" value="3"/>
+  <PARAM id="e1_a" value="2.4"/>
+  <PARAM id="e1_r" value="6"/>
+  <PARAM id="e1_s" value="0.85"/>
+  <PARAM id="mmode" value="1"/>
+  <PARAM id="mtime" value="4.8"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <PARAM id="sub1" value="0.45"/>
+  <PARAM id="sub2" value="0.25"/>
+  <PARAM id="s2_type" value="18"/>
+  <PARAM id="s2_main" value="0.5"/>
+  <PARAM id="s2_p1" value="0.65"/>
+  <PARAM id="s2_p2" value="0.35"/>
+  <PARAM id="s2_p3" value="0.6"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s3_type" value="7"/>
+  <PARAM id="s3_main" value="0.65"/>
+  <PARAM id="s3_p1" value="0.5"/>
+  <PARAM id="s3_p2" value="0.15"/>
+  <PARAM id="s3_p3" value="0.3"/>
+  <PARAM id="s3_ls" value="2"/>
+  <PARAM id="s3_la" value="0.12"/>
+  <PARAM id="s4_type" value="28"/>
+  <PARAM id="s4_main" value="0.3"/>
+  <PARAM id="s4_p1" value="0.48"/>
+  <PARAM id="s4_p2" value="0.6"/>
+  <PARAM id="s4_p3" value="0.7"/>
+  <PARAM id="s4_p4" value="0.35"/>
+  <PARAM id="s5_type" value="22"/>
+  <PARAM id="s5_main" value="0.4"/>
+  <PARAM id="s5_p1" value="0.7"/>
+  <PARAM id="s5_p2" value="0.5"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="dl_on" value="0"/>
+  <PARAM id="dr_on" value="0"/>
+  <PARAM id="rv_mix" value="0.38"/>
+  <PARAM id="md_mix" value="0.26"/>
+  <MORPH c0="0.12 0.51 0.86 0.84 0.82 0.80 0.42 0.31 0.29 0.27 0.25" c1="0.30 0.85 0.83 0.82 0.80 0.32 0.54 0.29 0.27 0.61 0.59" c2="0.48 0.83 0.82 0.34 0.32 0.30 0.66 0.63 0.61 0.59 0.57" c3="0.66 0.35 0.33 0.32 0.30 0.64 0.78 0.60 0.59 0.57 0.09"
+         nodes="0.20 0.26 5;0.80 0.24 2;0.70 0.83 1;0.16 0.80 3"/>
+</PARAMS>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Moving Filter climbs overtones. Edit: Moving Filter, Lowpass, Formant, Tail / Morph: Path / Mod: LFO 3 on Moving Filter -->
+<PARAMS presetName="Slow Ladder" category="Overtone">
+  <PARAM id="sp_algo" value="10"/>
+  <PARAM id="sp_depth" value="0.35"/>
+  <PARAM id="sp_tilt" value="1.2"/>
+  <PARAM id="nz_mix" value="0.03"/>
+  <PARAM id="poly" value="3"/>
+  <PARAM id="e1_a" value="2.3"/>
+  <PARAM id="e1_r" value="5.5"/>
+  <PARAM id="e1_s" value="0.85"/>
+  <PARAM id="mmode" value="1"/>
+  <PARAM id="mtime" value="8"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <PARAM id="s2_type" value="11"/>
+  <PARAM id="s2_main" value="0.4"/>
+  <PARAM id="s2_p1" value="0.45"/>
+  <PARAM id="s2_p2" value="0.25"/>
+  <PARAM id="s2_p3" value="0.55"/>
+  <PARAM id="s2_ls" value="3"/>
+  <PARAM id="s2_la" value="0.22"/>
+  <PARAM id="s3_type" value="7"/>
+  <PARAM id="s3_main" value="0.72"/>
+  <PARAM id="s3_p1" value="0.4"/>
+  <PARAM id="s3_p2" value="0.18"/>
+  <PARAM id="s3_p3" value="0.35"/>
+  <PARAM id="s4_type" value="28"/>
+  <PARAM id="s4_main" value="0.28"/>
+  <PARAM id="s4_p1" value="0.5"/>
+  <PARAM id="s4_p2" value="0.6"/>
+  <PARAM id="s4_p3" value="0.65"/>
+  <PARAM id="s4_p4" value="0.4"/>
+  <PARAM id="s5_type" value="22"/>
+  <PARAM id="s5_main" value="0.36"/>
+  <PARAM id="s5_p1" value="0.65"/>
+  <PARAM id="s5_p2" value="0.45"/>
+  <PARAM id="l3_rate" value="0.035"/>
+  <PARAM id="l3_shape" value="1"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="dl_on" value="0"/>
+  <PARAM id="dr_on" value="0"/>
+  <PARAM id="rv_mix" value="0.34"/>
+  <PARAM id="md_mix" value="0.26"/>
+  <MORPH c0="0.14 0.56 0.50 0.44 0.75 0.69 0.32 0.11 0.87 0.82 0.30" c1="0.32 0.54 0.84 0.78 0.73 0.21 0.44 0.09 0.39 0.34 0.28" c2="0.50 0.88 0.82 0.76 0.25 0.19 0.56 0.43 0.37 0.32 0.62" c3="0.68 0.86 0.80 0.28 0.23 0.17 0.68 0.41 0.35 0.66 0.60"
+         nodes="0.14 0.26 3;0.80 0.24 5;0.70 0.90 4;0.16 0.80 1"/>
+</PARAMS>
