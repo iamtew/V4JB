@@ -32,6 +32,10 @@ stamp-version:
 docs-logo:
     magick assets/logo.png -background none -colorspace RGB -filter Lanczos +distort Resize 320x320 -colorspace sRGB PNG32:docs/logo.png
 
+# Debug standalone must already exist. Interactive desktop only.
+docs-screenshots:
+    & './scripts/docs-screenshots.ps1'
+
 # Derived ICO after resave: Projucer rewrites icon.ico; magick must win, then wipe .res.
 # `just resave` does not refresh icon.ico when the PNG changes. No docs-logo dep.
 icon:

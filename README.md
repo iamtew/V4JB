@@ -14,6 +14,8 @@ A modular additive synth: up to 512 sine partials per voice, 8 voices. A fixed s
 
 494 factory presets in 18 categories live in `presets/*.xml` (compiled in as BinaryData; list only what differs from the defaults). `just check` validates them with `tools/check_presets.ps1`. The built-in Wave page sources in `presets/waves/` are synthesised by `tools/make_waves.cpp`; regenerate them with `just waves`.
 
+`just docs-screenshots` overwrites `docs/edit.png`, `mod.png`, `morph.png`, `wave.png`, and `about.png`. Needs a debug standalone (`just build-debug`) and an interactive desktop.
+
 ## Release
 
 Windows, Linux, and macOS files come from GitHub Actions (`.github/workflows/dist.yml`). Run it from the Actions tab for artifacts only, or push a numeric tag such as `0.0.4` (no `v` prefix) to build and publish a GitHub Release with the files attached. `<version>` is the `version` in `V4JB.jucer`.
