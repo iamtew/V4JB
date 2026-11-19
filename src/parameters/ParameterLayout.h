@@ -170,6 +170,7 @@ inline juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout
     knob (ParamID::rvSize, "Reverb Size", 0.7f);
     knob (ParamID::rvDamp, "Reverb Damping", 0.4f);
     knob (ParamID::rvMix, "Reverb Mix", 0.3f);
+    knob (ParamID::rvShim, "Reverb Shimmer", 0.f);
 
     // Morph
     for (int m = 0; m < v4jb::kNumMacros; ++m)

@@ -287,6 +287,27 @@ int main()
                 late = std::fmax (late, pk);
         }
         CHECK (finite && early > 1.e-4f && late < early);
+
+        rv.reset();
+        L[0] = R[0] = 1.f;
+        for (int i = 1; i < 512; ++i)
+            L[i] = R[i] = 0.f;
+        rv.process (L.data(), R.data(), 512, 0.7f, 0.4f, 1.f, 1.f);
+        early = 0.f;
+        late = 0.f;
+        finite = true;
+        for (int b = 0; b < 90; ++b)
+        {
+            std::fill (L.begin(), L.end(), 0.f);
+            std::fill (R.begin(), R.end(), 0.f);
+            rv.process (L.data(), R.data(), 512, 0.7f, 0.4f, 1.f, 1.f);
+            const float pk = blockPeak();
+            if (b < 8)
+                early = std::fmax (early, pk);
+            if (b >= 80)
+                late = std::fmax (late, pk);
+        }
+        CHECK (finite && early > 1.e-4f && late < early);
     }
 
     // Limiter: a 2.0 spike comes down under the ceiling; delay ping-pong stays finite.

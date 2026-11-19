@@ -150,7 +150,7 @@ private:
         std::atomic<float>* lfo[v4jb::kNumLfos][4];
         std::atomic<float>* wave[2][3], *waveBal;
         std::atomic<float>* drOn, *drAmt, *drMix, *mdOn, *mdType, *mdRate, *mdDepth, *mdMix;
-        std::atomic<float>* dlOn, *dlSync, *dlTime, *dlDiv, *dlFb, *dlMix, *rvOn, *rvSize, *rvDamp, *rvMix;
+        std::atomic<float>* dlOn, *dlSync, *dlTime, *dlDiv, *dlFb, *dlMix, *rvOn, *rvSize, *rvDamp, *rvMix, *rvShim;
         std::atomic<float>* macro[v4jb::kNumMacros], *lock[v4jb::kNumMacros];
         std::atomic<float>* mx, *my, *mmode, *mtime, *msnap, *muser;
     } ptr {};

@@ -57,7 +57,7 @@ struct FxCard : public juce::Component
         cols[2] = { "DELAY",  tog (I::dlOn, "On"), combo (I::dlDiv), tog (I::dlSync, "Sync"),
                     { knob (I::dlTime, "Time"), knob (I::dlFb, "Feedback"), knob (I::dlMix, "Mix") } };
         cols[3] = { "REVERB", tog (I::rvOn, "On"), nullptr, nullptr,
-                    { knob (I::rvSize, "Size"), knob (I::rvDamp, "Damping"), knob (I::rvMix, "Mix") } };
+                    { knob (I::rvSize, "Size"), knob (I::rvDamp, "Damping"), knob (I::rvMix, "Mix"), knob (I::rvShim, "Shimmer") } };
         cols[4] = { "MASTER", nullptr, nullptr, nullptr, { knob (I::width, "Width"), knob (I::spread, "Spread") } };
         refresh();
     }

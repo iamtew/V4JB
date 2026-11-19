@@ -9,7 +9,7 @@ $categories = 'Init', 'Atmospheres', 'Pads', 'Moving Pads', 'Organs', 'Bells', '
 
 # id regex, min, max, integer-only. First match wins.
 $rules = @(
-    @('^(level|spread|sp_depth|sp_moddepth|sp_modrate|nz_(mix|width|low|high|decay)|sub[12]|w_bal|w[ab]_(start|end|speed)|dr_(amt|mix)|md_(depth|mix)|dl_mix|rv_(size|damp|mix)|mx|my)$', 0, 1, $false),
+    @('^(level|spread|sp_depth|sp_moddepth|sp_modrate|nz_(mix|width|low|high|decay)|sub[12]|w_bal|w[ab]_(start|end|speed)|dr_(amt|mix)|md_(depth|mix)|dl_mix|rv_(size|damp|mix|shim)|mx|my)$', 0, 1, $false),
     @('^pitch$', -12, 12, $false),
     @('^octave$', -3, 3, $true),
     @('^glide$', 0, 2, $false),

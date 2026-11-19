@@ -8,9 +8,10 @@ namespace v4jb
 {
 
 // 8-line Householder FDN for slot 12. Size stretches the lines and the decay;
-// Damp is a one-pole lowpass in the feedback. Mix 0 is dry (same dry/wet split
-// the old JUCE Freeverb used, so factory presets do not jump). Allocates in
-// prepare only.
+// Damp is a one-pole lowpass in the feedback. Shimmer is an octave-up delay
+// fed back into the FDN (capped so it blooms then dies). Mix 0 is dry (same
+// dry/wet split the old JUCE Freeverb used, so factory presets do not jump).
+// Allocates in prepare only.
 struct Reverb
 {
     void prepare (double sampleRate)
@@ -24,6 +25,14 @@ struct Reverb
             w[i] = 0;
             lp[i] = 0.f;
         }
+        shCap = (int) (sr * 0.09) + 8;
+        for (int c = 0; c < 2; ++c)
+        {
+            shBuf[c].assign ((size_t) shCap, 0.f);
+            shW[c] = 0;
+            shOff[c] = (float) (shCap / 2);
+            zSh[c] = 0.f;
+        }
     }
 
     void reset()
@@ -34,15 +43,23 @@ struct Reverb
             w[i] = 0;
             lp[i] = 0.f;
         }
+        for (int c = 0; c < 2; ++c)
+        {
+            std::fill (shBuf[c].begin(), shBuf[c].end(), 0.f);
+            shW[c] = 0;
+            shOff[c] = (float) (shCap / 2);
+            zSh[c] = 0.f;
+        }
     }
 
-    void process (float* L, float* R, int n, float size, float damp, float mix) noexcept
+    void process (float* L, float* R, int n, float size, float damp, float mix, float shimmer = 0.f) noexcept
     {
         if (n <= 0 || capN <= 2)
             return;
         size = clamp01 (size);
         damp = clamp01 (damp);
         mix = clamp01 (mix);
+        const float shAmt = clamp01 (shimmer) * 0.45f;  // cap loop gain so the bloom decays
         const float scale = 0.38f + 0.62f * size;
         const float rt60 = 0.4f + 7.6f * size;
         const float lpCoef = 0.08f + 0.84f * (1.f - damp);
@@ -65,7 +82,8 @@ struct Reverb
             {
                 const float delaySec = kMs[i] * 0.001f * scale;
                 const float g = std::pow (0.001f, delaySec / rt60);
-                const float inj = ((i & 1) != 0 ? inR : inL) * 0.25f;
+                const float inj = ((i & 1) != 0 ? inR : inL) * 0.25f
+                                + ((i & 1) != 0 ? zSh[1] : zSh[0]) * shAmt;
                 lp[i] += lpCoef * ((y[i] - house) * g - lp[i]);
                 write (i, inj + lp[i]);
                 if ((i & 1) != 0)
@@ -73,8 +91,16 @@ struct Reverb
                 else
                     outL += y[i];
             }
-            L[s] = dry * inL + mix * outL * 0.25f;
-            R[s] = dry * inR + mix * outR * 0.25f;
+            const float wetL = outL * 0.25f, wetR = outR * 0.25f;
+            L[s] = dry * inL + mix * wetL;
+            R[s] = dry * inR + mix * wetR;
+            if (shAmt > 0.f && shCap > 4)
+            {
+                // Read head runs at 2x write speed: octave up. Grain is the character.
+                const float shLp = 0.15f + 0.7f * (1.f - damp);
+                zSh[0] = shLp * zSh[0] + (1.f - shLp) * octaveUp (0, wetL);
+                zSh[1] = shLp * zSh[1] + (1.f - shLp) * octaveUp (1, wetR);
+            }
         }
     }
 
@@ -100,10 +126,32 @@ private:
             w[i] = 0;
     }
 
+    float octaveUp (int c, float x) noexcept
+    {
+        shBuf[c][(size_t) shW[c]] = x;
+        if (++shW[c] >= shCap)
+            shW[c] = 0;
+        shOff[c] -= 1.f;
+        if (shOff[c] < 1.f)
+            shOff[c] += (float) shCap;
+        float rp = (float) shW[c] - shOff[c];
+        while (rp < 0.f)
+            rp += (float) shCap;
+        const int i0 = (int) rp;
+        const int i1 = i0 + 1 < shCap ? i0 + 1 : 0;
+        const float t = rp - (float) i0;
+        return shBuf[c][(size_t) i0] * (1.f - t) + shBuf[c][(size_t) i1] * t;
+    }
+
     std::vector<float> buf[kN];
     int w[kN] {};
     float lp[kN] {};
     int capN = 0;
+    std::vector<float> shBuf[2];
+    int shW[2] {};
+    float shOff[2] {};
+    float zSh[2] {};
+    int shCap = 0;
     double sr = 48000.0;
 };
 

@@ -38,7 +38,7 @@ inline juce::String wave (int w, const juce::String& what) { return juce::String
 constexpr const char* drOn = "dr_on", *drAmt = "dr_amt", *drMix = "dr_mix";
 constexpr const char* mdOn = "md_on", *mdType = "md_type", *mdRate = "md_rate", *mdDepth = "md_depth", *mdMix = "md_mix";
 constexpr const char* dlOn = "dl_on", *dlSync = "dl_sync", *dlTime = "dl_time", *dlDiv = "dl_div", *dlFb = "dl_fb", *dlMix = "dl_mix";
-constexpr const char* rvOn = "rv_on", *rvSize = "rv_size", *rvDamp = "rv_damp", *rvMix = "rv_mix";
+constexpr const char* rvOn = "rv_on", *rvSize = "rv_size", *rvDamp = "rv_damp", *rvMix = "rv_mix", *rvShim = "rv_shim";
 
 // Morph
 constexpr const char* morphX    = "mx";

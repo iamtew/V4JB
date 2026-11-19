@@ -65,6 +65,7 @@ V4JBAudioProcessor::V4JBAudioProcessor()
     ptr.dlOn = P (I::dlOn); ptr.dlSync = P (I::dlSync); ptr.dlTime = P (I::dlTime); ptr.dlDiv = P (I::dlDiv);
     ptr.dlFb = P (I::dlFb); ptr.dlMix = P (I::dlMix);
     ptr.rvOn = P (I::rvOn); ptr.rvSize = P (I::rvSize); ptr.rvDamp = P (I::rvDamp); ptr.rvMix = P (I::rvMix);
+    ptr.rvShim = P (I::rvShim);
     for (int m = 0; m < kNumMacros; ++m)
     {
         ptr.macro[m] = P (I::macro (m));
@@ -361,7 +362,7 @@ void V4JBAudioProcessor::processEffects (float* L, float* R, int n, const float*
         if (rvOn)
         {
             const float mix = reverbMix.skip (len);
-            reverb.process (ch[0], ch[1], len, ld (ptr.rvSize), ld (ptr.rvDamp), mix);
+            reverb.process (ch[0], ch[1], len, ld (ptr.rvSize), ld (ptr.rvDamp), mix, ld (ptr.rvShim));
         }
 
         // Mid/side width: 0 = mono, 1 = as is, 2 = extra wide.
