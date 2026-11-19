@@ -2,7 +2,7 @@
 
 ![Morph page](morph.png)
 
-Eleven macros, each a “move a set of things at once.” The XY pad blends four snapshots of those macros. The teal puck is where you actually are. Drag it. Store corners. Get lost in a nice way.
+Eleven macros, each a “move a set of things at once.” The XY pad blends four snapshots of those macros. The teal puck is where you actually are. In Manual, drag it. In the other modes it follows the path or the sweep. Store corners. Get lost in a nice way.
 
 ## Macros
 
@@ -40,7 +40,7 @@ Click a corner letter to recall it (moves Morph X / Morph Y, which the host can 
 
 ## Modes
 
-- **Manual** — drag the puck.
+- **Manual** — drag the puck. Path, Path Sync, and X-Axis ignore that drag. **Edit Path** still moves nodes, and the corner letters still recall.
 - **Path** — the puck travels a closed loop through the nodes. **Time** is seconds per bar of path.
 - **Path Sync** — same loop, but bar lengths follow the host tempo.
 - **X-Axis Env** — each new note from silence sweeps the puck left to right over **Time** seconds. Height is read off the path as a curve (nodes sorted by X). **Snap** (`Off`, `4`, `8`, `16`, `32`) steps that sweep for rhythmic morphs. Snap is grey in every other mode; the engine only reads it here.

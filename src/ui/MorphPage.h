@@ -12,6 +12,7 @@ struct MorphPad : public juce::Component
     {
         xParam = p.apvts.getParameter (ParamID::morphX);
         yParam = p.apvts.getParameter (ParamID::morphY);
+        modeParam = p.apvts.getRawParameterValue (ParamID::morphMode);
     }
 
     bool editPath = false;
@@ -138,6 +139,8 @@ struct MorphPad : public juce::Component
             repaint();
             return;
         }
+        if (std::lround (modeParam->load()) != v4jb::kManual)
+            return;  // path and X-Axis own the puck; dragging would fight them
         xParam->beginChangeGesture();
         yParam->beginChangeGesture();
         dragging = true;
@@ -201,6 +204,7 @@ struct MorphPad : public juce::Component
     V4JBAudioProcessor& proc;
     juce::RangedAudioParameter* xParam = nullptr;
     juce::RangedAudioParameter* yParam = nullptr;
+    std::atomic<float>* modeParam = nullptr;
     bool dragging = false;
     int dragNode = -1;
 };
