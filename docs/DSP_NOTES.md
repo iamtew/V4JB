@@ -10,7 +10,7 @@ MIDI -> voice allocator (8 voices; steal oldest released, else oldest held)
           slot 1   spectral stage   -> partial frequencies + amplitudes
           slots 2..11 module chain  -> edits those arrays in series
           amp envelope (Env 1)      -> target levels for the sine bank
-     -> sine bank sums partials every sample, levels ramp across the block
+     -> sine bank sums partials every sample; levels and frequencies ramp across the block
      -> tanh safety
 slot 12 (processor): 2× oversampled tanh drive, chorus/phaser, ping-pong delay (8 s), FDN reverb + shimmer, M/S width, limiter, volume
 ```
@@ -19,7 +19,7 @@ All engine code is header-only and JUCE-free in `src/dsp/`; `tests/engine_check.
 
 ## Sine bank (`Partials.h`)
 
-Up to 512 partials plus two sub sines. Each partial is a complex rotator `(re, im) *= (cos w, sin w)`: four multiplies per sample, no `sin()`. One Newton step per block keeps the rotators on the unit circle. Start phases are fixed and scattered so big harmonic stacks do not spike. Partials at or above 0.48 x sample rate are muted, and silent partials are skipped. **Spread** pans odd harmonics left and even right; the fundamental and subs stay centred. **Economy** caps the count at 128.
+Up to 512 partials plus two sub sines. Each partial is a complex rotator `(re, im) *= (cos w, sin w)`: four multiplies per sample, no `sin()`. Amplitude and phase increment both ramp linearly across the control block; from silence the increment snaps so note-on does not chirp. One Newton step per block keeps the rotators on the unit circle. Start phases are fixed and scattered so big harmonic stacks do not spike. Partials at or above 0.48 x sample rate are muted, and silent partials are skipped. **Spread** pans odd harmonics left and even right; the fundamental and subs stay centred. **Economy** caps the count at 128.
 
 ## Slot 1: spectral stage (`Spectral.h`)
 
@@ -37,7 +37,7 @@ One `processModule()` switch, per-voice state per slot. Knobs are all 0..1. A sl
 |------|---------|
 | Basic | 5-Sines, Odd/Even, Sync (hump at the slave pitch), Adder, Discrete Adder (every Nth boosted, Discrete thins), Every Nth, Harmonic Add, Range Enhance, Clip |
 | Filter | Lowpass / Highpass (6..48 dB/oct + resonant bump, key track), Bandpass, Notch, Moving Filter (notches on a sqrt-frequency scale, so they spread apart as they rise), Decay (high partials die faster), Hype (two shelves, ±18 dB at Amount 0.5), Formant (A–E–I–O–U peaks in Hz) |
-| Effect | Modulator (a travelling loudness wave up the partials), Detuned (alternating / random / growing detune plus beating), Blur (random level wander), Noise (fresh random level each block), Octaver (copies to 2n and 4n), Second Tone (half the partials become a second tone at an interval) |
+| Effect | Modulator (a travelling loudness wave up the partials), Detuned (alternating / random / growing detune plus beating), Cloud (unison clusters of 2 or 3 slots around parent harmonics), Blur (random level wander), Noise (fresh random level each block), Octaver (copies to 2n and 4n), Second Tone (half the partials become a second tone at an interval) |
 | Rhythm | Phrase (8-step spectral arpeggio over the low partials, on the beat clock), Random Drops (random partials flare and fade), Tail (per-partial peak hold that rings down) |
 | Wave | Wave (follow file A or B), Double Wave (A and B mixed by Balance) |
 

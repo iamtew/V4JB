@@ -115,6 +115,8 @@ All extra knobs are 0–100% unless noted. “Use when” is a hint, not a rule.
 
 **Detuned** — unison emulation. **Detune** up to 30 cents. **Style**: alternating sharp/flat, random per partial, or growing with partial number. **Beat** adds the slow amplitude beating you would hear between two detuned voices.
 
+**Cloud** — real unison clusters. Groups of **Voices** (2 or 3) slots share one parent harmonic, spread by **Spread** (up to 40 cents). That spends upper slots on thickness, so there are fewer distinct harmonics. **Motion** makes the sidebands beat. **Bias** 0 clusters only the lows; 1 spends the whole bank.
+
 **Blur** — every partial’s level wanders. Fuzzy, out-of-focus. **Amount**, **Speed**.
 
 **Noise** — a fresh random level per partial every control block. Grainy, hissy. **Amount**, **Color** (tilts the grain toward low or high partials).
