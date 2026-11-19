@@ -86,7 +86,7 @@ struct ModPage : public juce::Component
             envs[i]->setBounds (juce::Rectangle<int> (top.getX() + (i % 2) * ew, top.getY() + (i / 2) * eh, ew, eh).reduced (3));
         const int lw = r.getWidth() / lfos.size();
         for (auto* l : lfos)
-            l->setBounds (r.removeFromLeft (lw).withSizeKeepingCentre (lw, juce::jmin (r.getHeight(), 130)).reduced (3));
+            l->setBounds (r.removeFromLeft (lw).reduced (3));
     }
     juce::OwnedArray<EnvCard> envs;
     juce::OwnedArray<LfoCard> lfos;
