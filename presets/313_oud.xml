@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Oud. Compress spacing. Lowpass into Blur. Env 2 plucks the main knob. Short pluck, chorus off. -->
+<!-- Oud. Edit: Lowpass, Blur, Every Nth, Decay / Morph: Manual / Mod + Slot 12 set -->
 <PARAMS presetName="Oud" category="Plucks">
   <PARAM id="sp_algo" value="2"/>
   <PARAM id="sp_depth" value="0.75"/>
@@ -17,11 +17,15 @@
   <PARAM id="s3_type" value="16"/>
   <PARAM id="s3_main" value="0.43"/>
   <PARAM id="s3_p1" value="0.3"/>
-  <PARAM id="s4_type" value="0"/>
+  <PARAM id="s4_type" value="6"/>
   <PARAM id="s5_type" value="12"/>
   <PARAM id="s5_main" value="0.7"/>
   <PARAM id="s5_p1" value="0.7"/>
   <PARAM id="s5_p2" value="0.05"/>
+  <PARAM id="s2_type" value="7"/>
+  <PARAM id="s4_main" value="0.72"/>
+  <PARAM id="s4_ls" value="0"/>
+  <PARAM id="s4_la" value="0"/>
   <PARAM id="e1_a" value="0.001"/>
   <PARAM id="e1_d" value="0.4"/>
   <PARAM id="e1_s" value="0"/>
@@ -29,6 +33,21 @@
   <PARAM id="e1_vel" value="0.65"/>
   <PARAM id="e2_d" value="0.35"/>
   <PARAM id="e2_s" value="0.15"/>
-  <PARAM id="md_on" value="0"/>
-  <PARAM id="rv_mix" value="0.2"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="rv_mix" value="0.37"/>
+  <PARAM id="md_type" value="1"/>
+  <PARAM id="md_rate" value="0.37"/>
+  <PARAM id="md_depth" value="0.52"/>
+  <PARAM id="md_mix" value="0.28"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="mmode" value="0"/>
+  <PARAM id="mtime" value="7.9"/>
+  <PARAM id="msnap" value="0"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <MORPH c0="0.18 0.42 0.55 0.4 0.6 0.39 0.45 0.35 0.28 0.45 0.4"
+         c1="0.55 0.35 0.25 0.55 0.4 0.6 0.31 0.55 0.5 0.3 0.5"
+         c2="0.4 0.65 0.8 0.45 0.75 0.45 0.72 0.24 0.62 0.8 0.45"
+         c3="0.88 0.7 0.5 0.6 0.5 0.72 0.55 0.7 0.72 0.55 0.7"
+         nodes="0.08 0.45 1;0.35 0.12 2;0.70 0.40 2;0.90 0.85 4"/>
 </PARAMS>

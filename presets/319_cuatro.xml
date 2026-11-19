@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Cuatro. Scatter spacing. Moving Filter into Blur. Env 4 blips the main knob. Short pluck, chorus off. -->
+<!-- Cuatro. Edit: Moving Filter, Blur, Modulator, Decay / Morph: Manual / Mod + Slot 12 set -->
 <PARAMS presetName="Cuatro" category="Plucks">
   <PARAM id="sp_algo" value="14"/>
   <PARAM id="sp_depth" value="0.35"/>
@@ -18,11 +18,14 @@
   <PARAM id="s3_type" value="16"/>
   <PARAM id="s3_main" value="0.25"/>
   <PARAM id="s3_p1" value="0.24"/>
-  <PARAM id="s4_type" value="0"/>
+  <PARAM id="s4_type" value="14"/>
   <PARAM id="s5_type" value="12"/>
   <PARAM id="s5_main" value="0.7"/>
   <PARAM id="s5_p1" value="0.7"/>
   <PARAM id="s5_p2" value="0.05"/>
+  <PARAM id="s4_main" value="0.68"/>
+  <PARAM id="s4_ls" value="0"/>
+  <PARAM id="s4_la" value="0"/>
   <PARAM id="e1_a" value="0.001"/>
   <PARAM id="e1_d" value="0.4"/>
   <PARAM id="e1_s" value="0"/>
@@ -30,6 +33,21 @@
   <PARAM id="e1_vel" value="0.65"/>
   <PARAM id="e4_d" value="0.08"/>
   <PARAM id="e4_r" value="0.08"/>
-  <PARAM id="md_on" value="0"/>
-  <PARAM id="rv_mix" value="0.2"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="rv_mix" value="0.42"/>
+  <PARAM id="md_type" value="1"/>
+  <PARAM id="md_rate" value="0.32"/>
+  <PARAM id="md_depth" value="0.6"/>
+  <PARAM id="md_mix" value="0.4"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="mmode" value="0"/>
+  <PARAM id="mtime" value="5.8"/>
+  <PARAM id="msnap" value="0"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <MORPH c0="0.51 0.28 0.42 0.38 0.68 0.42 0.32 0.25 0.5 0.48 0.5"
+         c1="0.58 0.71 0.68 0.52 0.42 0.48 0.55 0.58 0.42 0.62 0.5"
+         c2="0.3 0.48 0.16 0.6 0.75 0.82 0.48 0.4 0.65 0.35 0.55"
+         c3="0.92 0.7 0.58 0.42 0.52 0.38 0.72 0.55 0.58 0.8 0.65"
+         nodes="0.10 0.10 4;0.90 0.50 2;0.20 0.90 4;0.50 0.50 2"/>
 </PARAMS>

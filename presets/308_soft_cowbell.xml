@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Soft Cowbell. Bell spacing. Odd/Even into Detuned and a Lowpass. LFO 2 triangle is synced to a quarter note. Struck, no sustain. -->
+<!-- Soft Cowbell. Edit: Odd/Even, Detuned, Lowpass, Decay / Morph: Manual / Mod + Slot 12 set -->
 <PARAMS presetName="Soft Cowbell" category="Bells">
   <PARAM id="sp_algo" value="15"/>
   <PARAM id="sp_depth" value="0.91"/>
@@ -36,5 +36,22 @@
   <PARAM id="l2_shape" value="1"/>
   <PARAM id="md_mix" value="0.12"/>
   <PARAM id="rv_size" value="0.8"/>
-  <PARAM id="rv_mix" value="0.44"/>
+  <PARAM id="rv_mix" value="0.2"/>
+  <PARAM id="md_on" value="0"/>
+  <PARAM id="dl_on" value="1"/>
+  <PARAM id="dl_sync" value="1"/>
+  <PARAM id="dl_div" value="3"/>
+  <PARAM id="dl_fb" value="0.52"/>
+  <PARAM id="dl_mix" value="0.18"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="mmode" value="0"/>
+  <PARAM id="mtime" value="4.4"/>
+  <PARAM id="msnap" value="0"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <MORPH c0="0.06 0.2 0.22 0.35 0.8 0.15 0.25 0.2 0.2 0.3 0.5"
+         c1="0.5 0.39 0.5 0.5 0.55 0.4 0.5 0.4 0.45 0.5 0.5"
+         c2="0.35 0.85 0.62 0.4 0.9 0.75 0.7 0.35 0.55 0.7 0.55"
+         c3="0.78 0.6 0.45 0.55 0.6 0.5 0.55 0.6 0.65 0.6 0.6"
+         nodes="0.05 0.20 2;0.50 0.50 4;0.95 0.80 2;0.40 0.90 3"/>
 </PARAMS>

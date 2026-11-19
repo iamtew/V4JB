@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Clave. Fold spacing. Highpass into Tail and Noise. Env 2 plucks the main knob. Very short hit, chorus off. -->
+<!-- Clave. Edit: Highpass, Tail, Noise, Decay / Morph: Manual / Mod + Slot 12 set -->
 <PARAMS presetName="Clave" category="Percussive">
+  <PARAM id="poly" value="4"/>
   <PARAM id="sp_algo" value="11"/>
   <PARAM id="sp_depth" value="0.7"/>
   <PARAM id="sp_tilt" value="1.15"/>
@@ -9,7 +10,6 @@
   <PARAM id="nz_mix" value="0.6"/>
   <PARAM id="nz_width" value="0.55"/>
   <PARAM id="nz_decay" value="0.75"/>
-  <PARAM id="poly" value="4"/>
   <PARAM id="s2_type" value="8"/>
   <PARAM id="s2_main" value="0.345"/>
   <PARAM id="s2_p1" value="0.4"/>
@@ -38,5 +38,19 @@
   <PARAM id="e2_s" value="0.15"/>
   <PARAM id="md_on" value="0"/>
   <PARAM id="rv_size" value="0.35"/>
-  <PARAM id="rv_mix" value="0.08"/>
+  <PARAM id="rv_mix" value="0.18"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="rv_damp" value="0.55"/>
+  <PARAM id="dl_on" value="0"/>
+  <PARAM id="dr_on" value="0"/>
+  <PARAM id="mmode" value="0"/>
+  <PARAM id="mtime" value="3"/>
+  <PARAM id="msnap" value="0"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <MORPH c0="0.15 0.2 0.22 0.35 0.8 0.18 0.25 0.2 0.2 0.3 0.5"
+         c1="0.5 0.45 0.5 0.5 0.55 0.4 0.56 0.4 0.45 0.5 0.5"
+         c2="0.35 0.85 0.65 0.4 0.9 0.75 0.7 0.44 0.55 0.7 0.55"
+         c3="0.78 0.6 0.45 0.55 0.6 0.5 0.55 0.6 0.56 0.6 0.6"
+         nodes="0.05 0.20 2;0.50 0.50 4;0.95 0.80 2;0.40 0.90 3"/>
 </PARAMS>

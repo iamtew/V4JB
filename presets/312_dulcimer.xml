@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Dulcimer. Bell spacing. Sync into a Lowpass. Key and velocity together push the main knob. Short pluck, chorus off. -->
+<!-- Dulcimer. Edit: Sync, Lowpass, Range Enhance, Decay / Morph: Manual / Mod + Slot 12 set -->
 <PARAMS presetName="Dulcimer" category="Plucks">
   <PARAM id="sp_algo" value="15"/>
   <PARAM id="sp_depth" value="0.65"/>
@@ -19,16 +19,34 @@
   <PARAM id="s3_p1" value="0.48"/>
   <PARAM id="s3_p2" value="0.32"/>
   <PARAM id="s3_p3" value="0.23"/>
-  <PARAM id="s4_type" value="0"/>
+  <PARAM id="s4_type" value="27"/>
   <PARAM id="s5_type" value="12"/>
   <PARAM id="s5_main" value="0.62"/>
   <PARAM id="s5_p1" value="0.7"/>
   <PARAM id="s5_p2" value="0.05"/>
+  <PARAM id="s4_main" value="0.48"/>
+  <PARAM id="s4_ls" value="0"/>
+  <PARAM id="s4_la" value="0"/>
   <PARAM id="e1_a" value="0.001"/>
   <PARAM id="e1_d" value="0.33"/>
   <PARAM id="e1_s" value="0"/>
   <PARAM id="e1_r" value="0.14"/>
   <PARAM id="e1_vel" value="0.65"/>
   <PARAM id="md_on" value="0"/>
-  <PARAM id="rv_mix" value="0.16"/>
+  <PARAM id="rv_mix" value="0.18"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="rv_size" value="0.35"/>
+  <PARAM id="rv_damp" value="0.55"/>
+  <PARAM id="dl_on" value="0"/>
+  <PARAM id="dr_on" value="0"/>
+  <PARAM id="mmode" value="0"/>
+  <PARAM id="mtime" value="7.2"/>
+  <PARAM id="msnap" value="0"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <MORPH c0="0.22 0.3 0.28 0.45 0.69 0.22 0.38 0.28 0.32 0.38 0.5"
+         c1="0.68 0.52 0.62 0.5 0.48 0.55 0.52 0.5 0.58 0.62 0.5"
+         c2="0.35 0.78 0.7 0.48 0.8 0.7 0.71 0.62 0.55 0.75 0.55"
+         c3="0.82 0.58 0.4 0.52 0.55 0.38 0.6 0.48 0.7 0.68 0.6"
+         nodes="0.15 0.80 3;0.85 0.75 3;0.70 0.20 3;0.25 0.25 3"/>
 </PARAMS>

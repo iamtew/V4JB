@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Stretch spacing; Hype polishes the top so it rings like glass. -->
+<!-- Stretch spacing; Hype polishes the top so it rings like glass. Edit: Decay, Hype, Highpass, Tail / Morph: Manual / Mod + Slot 12 set -->
 <PARAMS presetName="Glass Bell" category="Bells">
   <PARAM id="sp_algo" value="1"/>
   <PARAM id="sp_depth" value="0.7"/>
@@ -12,12 +12,48 @@
   <PARAM id="s3_main" value="0.4"/>
   <PARAM id="s3_p3" value="0.6"/>
   <PARAM id="s3_p4" value="0.8"/>
+  <PARAM id="s4_type" value="8"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s4_main" value="0.42"/>
+  <PARAM id="s4_p1" value="0.28"/>
+  <PARAM id="s4_p2" value="0.18"/>
+  <PARAM id="s4_p3" value="0.7"/>
+  <PARAM id="s4_ls" value="0"/>
+  <PARAM id="s4_la" value="0"/>
+  <PARAM id="s5_type" value="22"/>
+  <PARAM id="s5_main" value="0.33"/>
+  <PARAM id="s5_p1" value="0.48"/>
+  <PARAM id="s5_p2" value="0.65"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
+  <PARAM id="s3_es" value="2"/>
+  <PARAM id="s3_ea" value="0.33"/>
   <PARAM id="e1_a" value="0.001"/>
   <PARAM id="e1_d" value="3"/>
   <PARAM id="e1_s" value="0"/>
   <PARAM id="e1_r" value="3"/>
-  <PARAM id="rv_mix" value="0.45"/>
-  <PARAM id="s4_type" value="0"/>
-  <PARAM id="s2_ls" value="0"/>
-  <PARAM id="s2_la" value="0"/>
+  <PARAM id="e2_a" value="0.005"/>
+  <PARAM id="e2_d" value="0.49"/>
+  <PARAM id="e2_s" value="0.35"/>
+  <PARAM id="e2_r" value="0.3"/>
+  <PARAM id="e2_vel" value="0.7"/>
+  <PARAM id="rv_mix" value="0.2"/>
+  <PARAM id="md_on" value="0"/>
+  <PARAM id="dl_on" value="1"/>
+  <PARAM id="dl_sync" value="1"/>
+  <PARAM id="dl_div" value="1"/>
+  <PARAM id="dl_fb" value="0.36"/>
+  <PARAM id="dl_mix" value="0.28"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="mmode" value="0"/>
+  <PARAM id="mtime" value="6.5"/>
+  <PARAM id="msnap" value="0"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <MORPH c0="0.33 0.33 0.6 0.5 0.55 0.28 0.42 0.33 0.38 0.49 0.5"
+         c1="0.72 0.58 0.38 0.48 0.62 0.58 0.58 0.52 0.52 0.42 0.47"
+         c2="0.31 0.75 0.72 0.42 0.78 0.72 0.62 0.42 0.48 0.78 0.6"
+         c3="0.8 0.33 0.48 0.58 0.48 0.32 0.7 0.68 0.72 0.62 0.4"
+         nodes="0.20 0.50 2;0.80 0.50 2;0.50 0.85 3;0.50 0.15 3"/>
 </PARAMS>

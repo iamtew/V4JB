@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Short plucked strings; Key+Vel opens the Lowpass, a hint of ensemble Detune. -->
+<!-- Short plucked strings; Key+Vel opens the Lowpass, a hint of ensemble Detune. Edit: Decay, Lowpass, Detuned, Tail / Morph: Manual / Mod + Slot 12 set -->
 <PARAMS presetName="Pizzicato" category="Plucks">
   <PARAM id="sp_algo" value="7"/>
   <PARAM id="sp_depth" value="0.2"/>
@@ -14,12 +14,31 @@
   <PARAM id="s3_ma" value="0.25"/>
   <PARAM id="s4_type" value="15"/>
   <PARAM id="s4_main" value="0.15"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s5_type" value="22"/>
+  <PARAM id="s5_main" value="0.57"/>
+  <PARAM id="s5_p1" value="0.72"/>
+  <PARAM id="s5_p2" value="0.35"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
   <PARAM id="e1_a" value="0.002"/>
   <PARAM id="e1_d" value="0.4"/>
   <PARAM id="e1_s" value="0"/>
   <PARAM id="e1_r" value="0.3"/>
   <PARAM id="md_on" value="0"/>
   <PARAM id="rv_mix" value="0.3"/>
-  <PARAM id="s2_ls" value="0"/>
-  <PARAM id="s2_la" value="0"/>
+  <PARAM id="rv_on" value="0"/>
+  <PARAM id="dl_on" value="0"/>
+  <PARAM id="dr_on" value="0"/>
+  <PARAM id="mmode" value="0"/>
+  <PARAM id="mtime" value="8.6"/>
+  <PARAM id="msnap" value="0"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <MORPH c0="0.4 0.5 0.4 0.44 0.5 0.4 0.35 0.3 0.45 0.35 0.5"
+         c1="0.7 0.3 0.6 0.55 0.62 0.55 0.5 0.45 0.6 0.55 0.5"
+         c2="0.2 0.7 0.75 0.45 0.7 0.8 0.65 0.5 0.4 0.85 0.4"
+         c3="0.9 0.55 0.3 0.5 0.4 0.25 0.48 0.8 0.7 0.5 0.8"
+         nodes="0.22 0.30 5;0.78 0.35 5;0.65 0.78 2;0.30 0.70 2"/>
 </PARAMS>

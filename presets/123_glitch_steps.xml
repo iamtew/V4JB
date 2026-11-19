@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Fold spacing; Every Nth jumps on a 1/16 sample-and-hold, and an X-Axis Env morph with Snap 8 stutters through a zigzag. -->
+<!-- Fold spacing; Every Nth jumps on a 1/16 sample-and-hold, and an X-Axis Env morph with S…. Edit: Every Nth, Moving Filter, Clip, Random Drops / Morph: X-Axis Env / Mod + Slot 12 set -->
 <PARAMS presetName="Glitch Steps" category="SFX">
   <PARAM id="sp_algo" value="11"/>
   <PARAM id="sp_depth" value="0.7"/>
@@ -9,9 +9,6 @@
   <PARAM id="s2_p1" value="0.9"/>
   <PARAM id="s2_ls" value="3"/>
   <PARAM id="s2_la" value="0.5"/>
-  <PARAM id="l3_shape" value="4"/>
-  <PARAM id="l3_sync" value="1"/>
-  <PARAM id="l3_div" value="0"/>
   <PARAM id="s3_type" value="11"/>
   <PARAM id="s3_main" value="0.5"/>
   <PARAM id="s3_p1" value="0.8"/>
@@ -19,10 +16,23 @@
   <PARAM id="s3_p3" value="0.8"/>
   <PARAM id="s4_type" value="25"/>
   <PARAM id="s4_main" value="0.5"/>
+  <PARAM id="s5_type" value="21"/>
+  <PARAM id="s5_main" value="0.22"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
+  <PARAM id="l3_shape" value="4"/>
+  <PARAM id="l3_sync" value="1"/>
+  <PARAM id="l3_div" value="0"/>
   <PARAM id="e1_a" value="0.001"/>
   <PARAM id="e1_d" value="0.1"/>
   <PARAM id="e1_s" value="1"/>
   <PARAM id="e1_r" value="0.1"/>
+  <PARAM id="dr_on" value="1"/>
+  <PARAM id="dr_amt" value="0.46"/>
+  <PARAM id="dr_mix" value="0.49"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="rv_mix" value="0.18"/>
   <PARAM id="mmode" value="3"/>
   <PARAM id="mtime" value="2"/>
   <PARAM id="msnap" value="2"/>

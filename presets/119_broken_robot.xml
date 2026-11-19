@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Odd Shift at full depth, a fast scattered Phrase, Sync and Clip: chattering circuitry. -->
+<!-- Odd Shift at full depth, a fast scattered Phrase, Sync and Clip: chattering circuitry. Edit: Phrase, Sync, Clip, Tail / Morph: Path / Mod + Slot 12 set -->
 <PARAMS presetName="Broken Robot" category="SFX">
   <PARAM id="sp_algo" value="13"/>
   <PARAM id="sp_depth" value="1"/>
@@ -15,10 +15,34 @@
   <PARAM id="s3_p1" value="0.9"/>
   <PARAM id="s4_type" value="25"/>
   <PARAM id="s4_main" value="0.6"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s5_type" value="22"/>
+  <PARAM id="s5_main" value="0.57"/>
+  <PARAM id="s5_p1" value="0.72"/>
+  <PARAM id="s5_p2" value="0.35"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
+  <PARAM id="s3_ls" value="2"/>
+  <PARAM id="s3_la" value="0.34"/>
   <PARAM id="e1_a" value="0.001"/>
   <PARAM id="e1_d" value="0.2"/>
   <PARAM id="e1_s" value="1"/>
   <PARAM id="e1_r" value="0.1"/>
-  <PARAM id="s2_ls" value="0"/>
-  <PARAM id="s2_la" value="0"/>
+  <PARAM id="l2_rate" value="0.28"/>
+  <PARAM id="l2_shape" value="4"/>
+  <PARAM id="md_on" value="0"/>
+  <PARAM id="rv_on" value="0"/>
+  <PARAM id="dl_on" value="0"/>
+  <PARAM id="dr_on" value="0"/>
+  <PARAM id="mmode" value="1"/>
+  <PARAM id="mtime" value="4.4"/>
+  <PARAM id="msnap" value="0"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <MORPH c0="0.45 0.28 0.42 0.38 0.68 0.42 0.32 0.25 0.5 0.45 0.5"
+         c1="0.58 0.62 0.68 0.52 0.42 0.48 0.55 0.58 0.42 0.62 0.5"
+         c2="0.21 0.48 0.25 0.6 0.75 0.82 0.48 0.4 0.65 0.35 0.55"
+         c3="0.92 0.64 0.58 0.48 0.52 0.38 0.72 0.55 0.58 0.8 0.65"
+         nodes="0.05 0.20 2;0.50 0.50 4;0.95 0.80 2;0.40 0.90 3"/>
 </PARAMS>

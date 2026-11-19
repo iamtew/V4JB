@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Riser. Even Shift spacing. Second Tone at a fourth, then Hype and a Lowpass. X-Axis Env morph sweeps the macros on each note. Delay is in the gesture. -->
+<!-- Riser. Edit: Second Tone, Hype, Lowpass, Random Drops / Morph: X-Axis Env / Mod + Slot 12 set -->
 <PARAMS presetName="Riser" category="SFX">
   <PARAM id="sp_algo" value="12"/>
   <PARAM id="sp_depth" value="0.84"/>
@@ -24,16 +24,31 @@
   <PARAM id="s4_p1" value="0.36"/>
   <PARAM id="s4_p2" value="0.18"/>
   <PARAM id="s4_p3" value="0.17"/>
+  <PARAM id="s5_type" value="21"/>
+  <PARAM id="s5_main" value="0.62"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
+  <PARAM id="s3_es" value="2"/>
+  <PARAM id="s3_ea" value="0.25"/>
   <PARAM id="e1_a" value="0.001"/>
   <PARAM id="e1_d" value="0.4"/>
   <PARAM id="e1_s" value="0"/>
   <PARAM id="e1_r" value="1.15"/>
+  <PARAM id="e2_a" value="0.005"/>
+  <PARAM id="e2_d" value="0.49"/>
+  <PARAM id="e2_s" value="0.15"/>
+  <PARAM id="e2_r" value="0.2"/>
+  <PARAM id="e2_vel" value="0.7"/>
   <PARAM id="md_type" value="1"/>
   <PARAM id="md_rate" value="2.8"/>
   <PARAM id="dl_on" value="1"/>
-  <PARAM id="dl_div" value="4"/>
-  <PARAM id="dl_fb" value="0.65"/>
-  <PARAM id="dl_mix" value="0.34"/>
+  <PARAM id="dl_div" value="0"/>
+  <PARAM id="dl_fb" value="0.28"/>
+  <PARAM id="dl_mix" value="0.18"/>
+  <PARAM id="md_on" value="0"/>
+  <PARAM id="dl_sync" value="1"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="rv_mix" value="0.2"/>
   <PARAM id="mmode" value="3"/>
   <PARAM id="mtime" value="2"/>
   <PARAM id="msnap" value="4"/>

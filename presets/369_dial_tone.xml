@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Dial Tone. Fold spacing. Sync into a Lowpass. X-Axis Env morph sweeps the macros on each note. Delay is in the gesture. -->
+<!-- Dial Tone. Edit: Sync, Lowpass, Random Drops, Noise / Morph: X-Axis Env / Mod + Slot 12 set -->
 <PARAMS presetName="Dial Tone" category="SFX">
   <PARAM id="sp_algo" value="11"/>
   <PARAM id="sp_depth" value="0.6"/>
@@ -17,14 +17,28 @@
   <PARAM id="s3_p1" value="0.48"/>
   <PARAM id="s3_p2" value="0.32"/>
   <PARAM id="s3_p3" value="0.23"/>
-  <PARAM id="s4_type" value="0"/>
+  <PARAM id="s4_type" value="21"/>
+  <PARAM id="s4_main" value="0.68"/>
+  <PARAM id="s4_ls" value="0"/>
+  <PARAM id="s4_la" value="0"/>
+  <PARAM id="s5_type" value="17"/>
+  <PARAM id="s5_main" value="0.36"/>
+  <PARAM id="s5_p1" value="0.67"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
+  <PARAM id="s2_es" value="3"/>
+  <PARAM id="s2_ea" value="0.67"/>
   <PARAM id="e1_a" value="0.001"/>
   <PARAM id="e1_d" value="0.15"/>
   <PARAM id="e1_s" value="0.65"/>
   <PARAM id="e1_r" value="0.25"/>
+  <PARAM id="e3_a" value="2.4"/>
+  <PARAM id="e3_d" value="2.5"/>
+  <PARAM id="e3_s" value="0.7"/>
+  <PARAM id="e3_r" value="3"/>
   <PARAM id="dr_on" value="1"/>
-  <PARAM id="dr_amt" value="0.5"/>
-  <PARAM id="dr_mix" value="0.4"/>
+  <PARAM id="dr_amt" value="0.46"/>
+  <PARAM id="dr_mix" value="0.33"/>
   <PARAM id="md_type" value="1"/>
   <PARAM id="md_rate" value="0.4"/>
   <PARAM id="dl_on" value="1"/>
@@ -32,6 +46,8 @@
   <PARAM id="dl_fb" value="0.35"/>
   <PARAM id="dl_mix" value="0.22"/>
   <PARAM id="rv_mix" value="0.18"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="rv_on" value="1"/>
   <PARAM id="mmode" value="3"/>
   <PARAM id="mtime" value="1.2"/>
   <PARAM id="msnap" value="1"/>
