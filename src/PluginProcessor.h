@@ -72,6 +72,7 @@ public:
     const juce::Array<PresetEntry>& getFactoryPresets() const { return factoryPresets; }
     void loadPreset (const PresetEntry& e);
     bool saveUserPreset (const juce::String& name, const juce::String& category);
+    bool deleteUserPreset (const juce::File& file);  // only a file inside the user preset folder
     void randomize (bool newModules);
     juce::String currentPresetName { "Init" };
     juce::String currentPresetCategory { "Init" };

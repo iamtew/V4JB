@@ -659,6 +659,14 @@ bool V4JBAudioProcessor::saveUserPreset (const juce::String& name, const juce::S
     return dir.createDirectory() && xml->writeTo (dir.getChildFile (clean + ".xml"));
 }
 
+bool V4JBAudioProcessor::deleteUserPreset (const juce::File& file)
+{
+    const auto dir = Presets::userDir();
+    if (! file.existsAsFile() || ! file.isAChildOf (dir))
+        return false;
+    return file.deleteFile();
+}
+
 // Smart randomizer: random, but inside ranges that tend to sound like music.
 // newModules = also pick a new module chain; otherwise only the values move.
 void V4JBAudioProcessor::randomize (bool newModules)

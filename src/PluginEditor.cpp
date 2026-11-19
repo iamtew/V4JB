@@ -272,10 +272,12 @@ struct PresetPopup : public juce::Component,
 {
     struct Row { bool header = false; int index = -1; juce::String text; };
 
-    PresetPopup (juce::Array<PresetEntry>& list, juce::String currentName,
-                 std::function<void (int)> pick, std::function<void()> save, std::function<void()> folder)
+    PresetPopup (juce::Array<PresetEntry>& list, juce::String currentName, bool userFile,
+                 std::function<void (int)> pick, std::function<void()> save, std::function<void()> folder,
+                 std::function<void()> rename, std::function<void()> remove)
         : presets (list), current (std::move (currentName)), onPick (std::move (pick)),
-          onSave (std::move (save)), onFolder (std::move (folder))
+          onSave (std::move (save)), onFolder (std::move (folder)),
+          onRename (std::move (rename)), onDelete (std::move (remove))
     {
         filter.setTextToShowWhenEmpty ("Filter name", kFog.withAlpha (0.45f));
         filter.setColour (juce::TextEditor::backgroundColourId, kNight);
@@ -295,11 +297,17 @@ struct PresetPopup : public juce::Component,
         saveBtn.onClick = [this] { dismiss(); if (onSave) onSave(); };
         folderBtn.onClick = [this] { dismiss(); if (onFolder) onFolder(); };
         folderBtn.setTooltip ("Open user preset folder");
+        renameBtn.onClick = [this] { dismiss(); if (onRename) onRename(); };
+        deleteBtn.onClick = [this] { dismiss(); if (onDelete) onDelete(); };
+        renameBtn.setEnabled (userFile);
+        deleteBtn.setEnabled (userFile);
         addAndMakeVisible (saveBtn);
         addAndMakeVisible (folderBtn);
+        addAndMakeVisible (renameBtn);
+        addAndMakeVisible (deleteBtn);
 
         rebuild();
-        setSize (280, 380);
+        setSize (300, 412);
     }
 
     void parentHierarchyChanged() override
@@ -391,8 +399,11 @@ struct PresetPopup : public juce::Component,
         auto r = getLocalBounds().reduced (6);
         filter.setBounds (r.removeFromTop (26));
         r.removeFromTop (4);
-        auto buttons = r.removeFromBottom (26);
-        saveBtn.setBounds (buttons.removeFromLeft (120).reduced (0, 1));
+        auto buttons = r.removeFromBottom (52);
+        auto line2 = buttons.removeFromBottom (26);
+        renameBtn.setBounds (line2.removeFromLeft (line2.getWidth() / 2).reduced (0, 1));
+        deleteBtn.setBounds (line2.reduced (2, 1));
+        saveBtn.setBounds (buttons.removeFromLeft (140).reduced (0, 1));
         buttons.removeFromLeft (6);
         folderBtn.setBounds (buttons.reduced (0, 1));
         r.removeFromBottom (4);
@@ -402,10 +413,11 @@ struct PresetPopup : public juce::Component,
     juce::Array<PresetEntry>& presets;
     juce::String current;
     std::function<void (int)> onPick;
-    std::function<void()> onSave, onFolder;
+    std::function<void()> onSave, onFolder, onRename, onDelete;
     juce::TextEditor filter;
     juce::ListBox listBox;
     juce::TextButton saveBtn { "Save preset..." }, folderBtn { "Open folder" };
+    juce::TextButton renameBtn { "Rename..." }, deleteBtn { "Delete" };
     std::vector<Row> rows;
     bool focused = false;
 };
@@ -413,9 +425,10 @@ struct PresetPopup : public juce::Component,
 void V4JBAudioProcessorEditor::showPresetMenu()
 {
     refreshPresetList();
+    const bool userFile = currentUserPresetFile().existsAsFile();
     juce::Component::SafePointer<V4JBAudioProcessorEditor> safe (this);
     auto popup = std::make_unique<PresetPopup> (
-        presetList, proc.currentPresetName,
+        presetList, proc.currentPresetName, userFile,
         [safe] (int index)
         {
             if (safe != nullptr && juce::isPositiveAndBelow (index, safe->presetList.size()))
@@ -431,7 +444,9 @@ void V4JBAudioProcessorEditor::showPresetMenu()
                 return;
             Presets::userDir().createDirectory();
             Presets::userDir().startAsProcess();
-        });
+        },
+        [safe] { if (safe != nullptr) safe->savePresetDialog (true); },
+        [safe] { if (safe != nullptr) safe->confirmDeletePreset(); });
     juce::CallOutBox::launchAsynchronously (std::move (popup), presetBtn.getScreenBounds(), this);
 }
 
@@ -461,20 +476,54 @@ void V4JBAudioProcessorEditor::stepPreset (int delta)
     proc.loadPreset (presetList[presetIndex]);
 }
 
-void V4JBAudioProcessorEditor::savePresetDialog()
+juce::File V4JBAudioProcessorEditor::currentUserPresetFile()
 {
-    auto* w = new juce::AlertWindow ("Save preset", "Saved to Documents/V4JB/Presets", juce::MessageBoxIconType::NoIcon);
+    refreshPresetList();
+    for (auto& e : presetList)
+        if (e.file.existsAsFile() && e.name == proc.currentPresetName && e.category == proc.currentPresetCategory)
+            return e.file;
+    return {};
+}
+
+void V4JBAudioProcessorEditor::savePresetDialog (bool rename)
+{
+    const auto oldFile = rename ? currentUserPresetFile() : juce::File();
+    auto* w = new juce::AlertWindow (rename ? "Rename preset" : "Save preset",
+                                     "Saved to Documents/V4JB/Presets", juce::MessageBoxIconType::NoIcon);
     w->addTextEditor ("name", proc.currentPresetName, "Name");
-    w->addTextEditor ("category", "User", "Category");
-    w->addButton ("Save", 1, juce::KeyPress (juce::KeyPress::returnKey));
+    w->addTextEditor ("category", rename ? proc.currentPresetCategory : "User", "Category");
+    w->addButton (rename ? "Rename" : "Save", 1, juce::KeyPress (juce::KeyPress::returnKey));
     w->addButton ("Cancel", 0, juce::KeyPress (juce::KeyPress::escapeKey));
     juce::Component::SafePointer<V4JBAudioProcessorEditor> safe (this);
     // deleteWhenDismissed: the window is deleted after this callback runs.
-    w->enterModalState (true, juce::ModalCallbackFunction::create ([safe, w] (int result)
+    w->enterModalState (true, juce::ModalCallbackFunction::create ([safe, w, oldFile] (int result)
     {
-        if (safe != nullptr && result == 1)
-            safe->proc.saveUserPreset (w->getTextEditorContents ("name"), w->getTextEditorContents ("category"));
+        if (safe == nullptr || result != 1)
+            return;
+        const auto name = w->getTextEditorContents ("name");
+        if (! safe->proc.saveUserPreset (name, w->getTextEditorContents ("category")))
+            return;
+        const auto written = Presets::userDir().getChildFile (juce::File::createLegalFileName (name.trim()) + ".xml");
+        if (oldFile.existsAsFile() && oldFile != written)
+            safe->proc.deleteUserPreset (oldFile);
     }), true);
+}
+
+void V4JBAudioProcessorEditor::confirmDeletePreset()
+{
+    const auto file = currentUserPresetFile();
+    if (! file.existsAsFile())
+        return;
+    juce::Component::SafePointer<V4JBAudioProcessorEditor> safe (this);
+    juce::AlertWindow::showOkCancelBox (
+        juce::MessageBoxIconType::WarningIcon, "Delete preset",
+        "Delete \"" + proc.currentPresetName + "\"? The sound stays loaded.",
+        "Delete", "Cancel", nullptr,
+        juce::ModalCallbackFunction::create ([safe, file] (int result)
+        {
+            if (safe != nullptr && result == 1)
+                safe->proc.deleteUserPreset (file);
+        }));
 }
 
 void V4JBAudioProcessorEditor::showRandomMenu()

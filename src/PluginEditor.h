@@ -44,7 +44,9 @@ private:
     void showPresetMenu();
     void refreshPresetList();
     void stepPreset (int delta);
-    void savePresetDialog();
+    void savePresetDialog (bool rename = false);
+    juce::File currentUserPresetFile();
+    void confirmDeletePreset();
     void showRandomMenu();
 
     V4JBAudioProcessor& proc;
