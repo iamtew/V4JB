@@ -179,24 +179,26 @@ struct SlotCard : public juce::Component
         {
             g.setFont (boldFont (9.f));
             g.setColour (kFog.withAlpha (0.6f));
-            g.drawText ("routes push the main knob", routeArea.removeFromBottom (12), juce::Justification::centredLeft, false);
+            g.drawText ("routes push the main knob",
+                        juce::Rectangle<int> (routeArea).removeFromBottom (12),
+                        juce::Justification::centredLeft, false);
         }
     }
 
     void resized() override
     {
-        auto r = getLocalBounds().reduced (6, 4);
+        auto r = getLocalBounds().reduced (5, 3);
         auto head = r.removeFromTop (20);
         head.removeFromLeft (18);
         modBtn.setBounds (head.removeFromRight (40));
         type.setBounds (head.reduced (2, 0));
-        r.removeFromTop (3);
-        bars.setBounds (r.removeFromTop (34));
-        r.removeFromTop (3);
+        r.removeFromTop (2);
+        bars.setBounds (r.removeFromTop (22));
+        r.removeFromTop (2);
         main.setBounds (r.removeFromLeft (70));
         routeArea = r;
         auto pr = r;
-        const int ph = juce::jmin (24, pr.getHeight() / 4);
+        const int ph = juce::jmin (22, pr.getHeight() / 4);
         for (auto* s : params)
             s->setBounds (pr.removeFromTop (ph));
         auto rr = r;
@@ -204,7 +206,7 @@ struct SlotCard : public juce::Component
         {
             auto line = rr.removeFromTop (juce::jmin (28, rr.getHeight() / 3));
             rt.source.setBounds (line.removeFromLeft (line.getWidth() / 2 + 6).reduced (0, 3));
-            rt.amount.setBounds (line.reduced (3, 6));
+            rt.amount.setBounds (line.reduced (3, 4));
         }
     }
 

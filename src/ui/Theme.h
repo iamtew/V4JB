@@ -102,6 +102,31 @@ struct PanelLnF : public juce::LookAndFeel_V4
         g.fillEllipse (pipC.x - pip * 0.5f, pipC.y - pip * 0.5f, pip, pip);
     }
 
+    void drawLinearSlider (juce::Graphics& g, int x, int y, int w, int h, float pos,
+                           float minPos, float maxPos, const juce::Slider::SliderStyle style,
+                           juce::Slider& s) override
+    {
+        if (style != juce::Slider::LinearBar && style != juce::Slider::LinearBarVertical)
+        {
+            LookAndFeel_V4::drawLinearSlider (g, x, y, w, h, pos, minPos, maxPos, style, s);
+            return;
+        }
+
+        auto track = juce::Rectangle<float> ((float) x, (float) y, (float) w, (float) h);
+        g.setColour (s.findColour (juce::Slider::backgroundColourId));
+        g.fillRect (track);
+        g.setColour (s.findColour (juce::Slider::trackColourId));
+        if (style == juce::Slider::LinearBar)
+            g.fillRect (track.withWidth (juce::jmax (0.f, pos - (float) x)));
+        else
+            g.fillRect (track.withTop (pos).withBottom (track.getBottom()));
+
+        g.setFont (boldFont (10.f));
+        g.setColour (kFog);
+        g.drawText (s.getTextFromValue (s.getValue()), track.toNearestInt(),
+                    juce::Justification::centred, false);
+    }
+
     // Toggles look like buttons; "on" lights up teal.
     void drawToggleButton (juce::Graphics& g, juce::ToggleButton& b, bool over, bool) override
     {
@@ -132,7 +157,7 @@ struct Knob : public juce::Component
         label.setInterceptsMouseClicks (false, false);
         addAndMakeVisible (label);
         slider.setSliderStyle (juce::Slider::RotaryHorizontalVerticalDrag);
-        slider.setTextBoxStyle (juce::Slider::TextBoxBelow, false, 64, 12);
+        slider.setTextBoxStyle (juce::Slider::TextBoxBelow, false, 64, 13);
         // Set here, not only in PanelLnF: the text box is built before the editor installs the LnF.
         slider.setColour (juce::Slider::textBoxTextColourId, kFog);
         slider.setColour (juce::Slider::textBoxBackgroundColourId, juce::Colours::transparentBlack);
@@ -143,8 +168,11 @@ struct Knob : public juce::Component
     void resized() override
     {
         auto r = getLocalBounds();
-        label.setBounds (r.removeFromTop (12));
-        slider.setBounds (r);
+        constexpr int labelH = 11;
+        constexpr int boxH = 13;
+        label.setBounds (r.removeFromTop (labelH));
+        const int d = juce::jmin (r.getWidth(), juce::jmax (0, r.getHeight() - boxH));
+        slider.setBounds (r.removeFromTop (d + boxH));
     }
     juce::Label label;
     juce::Slider slider;
@@ -158,6 +186,7 @@ struct HSlider : public juce::Component
     {
         label.setText (name, juce::dontSendNotification);
         label.setFont (boldFont (10.f));
+        label.setInterceptsMouseClicks (false, false);
         addAndMakeVisible (label);
         slider.setSliderStyle (juce::Slider::LinearBar);
         slider.setTextBoxStyle (juce::Slider::NoTextBox, false, 0, 0);
