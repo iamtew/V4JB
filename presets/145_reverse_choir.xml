@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- The vowels wave played backwards (End before Start) into a Tail. -->
-<PARAMS presetName="Reverse Choir" category="Waves" waveA="factory:vowels.wav">
+<!-- The vowels wave played backwards (End before Start) into a Tail. Edit: Wave, Tail, Detuned, Double Wave / Morph: Path / Mod + Slot 12 set -->
+<PARAMS presetName="Reverse Choir" category="Waves" waveA="factory:vowels.wav" waveB="factory:rain.wav">
   <PARAM id="sp_algo" value="1"/>
   <PARAM id="sp_depth" value="0.3"/>
   <PARAM id="nz_mix" value="0.05"/>
@@ -10,15 +10,48 @@
   <PARAM id="s2_p2" value="0.6"/>
   <PARAM id="s3_type" value="22"/>
   <PARAM id="s3_main" value="0.3"/>
-  <PARAM id="wa_start" value="1"/>
-  <PARAM id="wa_end" value="0"/>
-  <PARAM id="wa_speed" value="0.4"/>
+  <PARAM id="s4_type" value="15"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s4_main" value="0.14"/>
+  <PARAM id="s4_p1" value="0.6"/>
+  <PARAM id="s4_p2" value="0.52"/>
+  <PARAM id="s4_ls" value="0"/>
+  <PARAM id="s4_la" value="0"/>
+  <PARAM id="s5_type" value="24"/>
+  <PARAM id="s5_main" value="0.45"/>
+  <PARAM id="s5_p1" value="0.5"/>
+  <PARAM id="s5_p2" value="0.55"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
+  <PARAM id="s2_es" value="3"/>
+  <PARAM id="s2_ea" value="0.35"/>
   <PARAM id="e1_a" value="1.5"/>
   <PARAM id="e1_d" value="2"/>
   <PARAM id="e1_s" value="0.8"/>
   <PARAM id="e1_r" value="4"/>
-  <PARAM id="rv_mix" value="0.45"/>
-  <PARAM id="s4_type" value="0"/>
-  <PARAM id="s2_ls" value="0"/>
-  <PARAM id="s2_la" value="0"/>
+  <PARAM id="e3_a" value="1.6"/>
+  <PARAM id="e3_d" value="2.5"/>
+  <PARAM id="e3_s" value="0.7"/>
+  <PARAM id="e3_r" value="3"/>
+  <PARAM id="wa_start" value="1"/>
+  <PARAM id="wa_end" value="0"/>
+  <PARAM id="wa_speed" value="0.4"/>
+  <PARAM id="rv_mix" value="0.22"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="md_type" value="1"/>
+  <PARAM id="md_rate" value="0.37"/>
+  <PARAM id="md_depth" value="0.28"/>
+  <PARAM id="md_mix" value="0.28"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="mmode" value="1"/>
+  <PARAM id="mtime" value="3.7"/>
+  <PARAM id="msnap" value="0"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <MORPH c0="0.18 0.42 0.55 0.4 0.6 0.3 0.45 0.35 0.28 0.45 0.4"
+         c1="0.55 0.35 0.25 0.58 0.4 0.6 0.4 0.55 0.5 0.3 0.5"
+         c2="0.4 0.65 0.8 0.45 0.81 0.45 0.72 0.3 0.62 0.8 0.45"
+         c3="0.88 0.7 0.5 0.6 0.5 0.81 0.55 0.7 0.75 0.55 0.7"
+         nodes="0.20 0.50 2;0.80 0.50 2;0.50 0.85 3;0.50 0.15 3"/>
 </PARAMS>

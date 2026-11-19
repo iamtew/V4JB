@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Bell Chord. Pairs spacing. Double Wave mixes bells with chords. Env 2 plucks the main knob. -->
+<!-- Bell Chord. Edit: Double Wave, Tail, Hype, Noise / Morph: Manual / Mod + Slot 12 set -->
 <PARAMS presetName="Bell Chord" category="Waves" waveA="factory:bells.wav" waveB="factory:chords.wav">
   <PARAM id="sp_algo" value="17"/>
   <PARAM id="sp_depth" value="0.55"/>
@@ -24,6 +24,12 @@
   <PARAM id="s4_p2" value="0.64"/>
   <PARAM id="s4_p3" value="0.48"/>
   <PARAM id="s4_p4" value="0.58"/>
+  <PARAM id="s4_type" value="13"/>
+  <PARAM id="s5_type" value="17"/>
+  <PARAM id="s5_main" value="0.12"/>
+  <PARAM id="s5_p1" value="0.51"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
   <PARAM id="e1_a" value="0.55"/>
   <PARAM id="e1_d" value="1.2"/>
   <PARAM id="e1_r" value="2.2"/>
@@ -33,4 +39,20 @@
   <PARAM id="wb_speed" value="0.56"/>
   <PARAM id="w_bal" value="0.35"/>
   <PARAM id="rv_size" value="0.75"/>
+  <PARAM id="dr_on" value="1"/>
+  <PARAM id="dr_amt" value="0.46"/>
+  <PARAM id="dr_mix" value="0.49"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="rv_mix" value="0.18"/>
+  <PARAM id="mmode" value="0"/>
+  <PARAM id="mtime" value="3"/>
+  <PARAM id="msnap" value="0"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <MORPH c0="0.4 0.5 0.34 0.5 0.5 0.4 0.35 0.3 0.45 0.35 0.5"
+         c1="0.7 0.3 0.6 0.52 0.65 0.55 0.5 0.45 0.6 0.55 0.5"
+         c2="0.2 0.7 0.75 0.45 0.7 0.8 0.65 0.5 0.4 0.85 0.4"
+         c3="0.9 0.55 0.3 0.5 0.4 0.28 0.45 0.8 0.7 0.5 0.8"
+         nodes="0.22 0.30 5;0.78 0.35 5;0.65 0.78 2;0.30 0.70 2"/>
 </PARAMS>

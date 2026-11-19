@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Hymn Slice. Fold spacing. A slice of chords through Wave. Velocity pushes the main knob. -->
-<PARAMS presetName="Hymn Slice" category="Waves" waveA="factory:chords.wav">
+<!-- Hymn Slice. Edit: Wave, Notch, Clip, Double Wave / Morph: Path / Mod + Slot 12 set -->
+<PARAMS presetName="Hymn Slice" category="Waves" waveA="factory:chords.wav" waveB="factory:rain.wav">
   <PARAM id="sp_algo" value="11"/>
   <PARAM id="sp_depth" value="0.35"/>
   <PARAM id="sp_tilt" value="1.1"/>
@@ -24,6 +24,12 @@
   <PARAM id="s4_type" value="25"/>
   <PARAM id="s4_main" value="0.55"/>
   <PARAM id="s4_p1" value="0.6"/>
+  <PARAM id="s5_type" value="24"/>
+  <PARAM id="s5_main" value="0.69"/>
+  <PARAM id="s5_p1" value="0.5"/>
+  <PARAM id="s5_p2" value="0.55"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
   <PARAM id="e1_a" value="0.15"/>
   <PARAM id="e1_d" value="1.2"/>
   <PARAM id="e1_r" value="2.2"/>
@@ -31,4 +37,20 @@
   <PARAM id="wa_end" value="0.62"/>
   <PARAM id="wa_speed" value="0.3"/>
   <PARAM id="rv_size" value="0.75"/>
+  <PARAM id="dr_on" value="1"/>
+  <PARAM id="dr_amt" value="0.46"/>
+  <PARAM id="dr_mix" value="0.33"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="rv_mix" value="0.18"/>
+  <PARAM id="mmode" value="1"/>
+  <PARAM id="mtime" value="7.2"/>
+  <PARAM id="msnap" value="0"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <MORPH c0="0.18 0.42 0.55 0.4 0.6 0.3 0.45 0.35 0.31 0.45 0.4"
+         c1="0.55 0.35 0.25 0.55 0.4 0.6 0.4 0.55 0.5 0.36 0.5"
+         c2="0.4 0.65 0.8 0.45 0.75 0.45 0.72 0.3 0.62 0.8 0.54"
+         c3="0.88 0.7 0.5 0.6 0.5 0.72 0.55 0.7 0.75 0.55 0.7"
+         nodes="0.20 0.50 2;0.80 0.50 2;0.50 0.85 3;0.50 0.15 3"/>
 </PARAMS>

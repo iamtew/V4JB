@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Slow Vowels. Stretch spacing. Vowels play slowly through Wave. LFO 1 sine moves the main knob. -->
-<PARAMS presetName="Slow Vowels" category="Waves" waveA="factory:vowels.wav">
+<!-- Slow Vowels. Edit: Wave, Hype, Lowpass, Double Wave / Morph: Path / Mod + Slot 12 set -->
+<PARAMS presetName="Slow Vowels" category="Waves" waveA="factory:vowels.wav" waveB="factory:vowels.wav">
   <PARAM id="sp_algo" value="1"/>
   <PARAM id="sp_depth" value="0.55"/>
   <PARAM id="sp_tilt" value="1.4"/>
@@ -23,11 +23,33 @@
   <PARAM id="s4_p1" value="0.4"/>
   <PARAM id="s4_p2" value="0.16"/>
   <PARAM id="s4_p3" value="0.15"/>
+  <PARAM id="s5_type" value="24"/>
+  <PARAM id="s5_main" value="0.53"/>
+  <PARAM id="s5_p1" value="0.5"/>
+  <PARAM id="s5_p2" value="0.55"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
   <PARAM id="e1_a" value="0.55"/>
   <PARAM id="e1_d" value="1.2"/>
   <PARAM id="e1_r" value="2.7"/>
   <PARAM id="l1_rate" value="0.12"/>
   <PARAM id="wa_speed" value="0.16"/>
   <PARAM id="rv_size" value="0.75"/>
-  <PARAM id="rv_mix" value="0.36"/>
+  <PARAM id="rv_mix" value="0.27"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="md_type" value="1"/>
+  <PARAM id="md_rate" value="0.42"/>
+  <PARAM id="md_depth" value="0.36"/>
+  <PARAM id="md_mix" value="0.4"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="mmode" value="1"/>
+  <PARAM id="mtime" value="5.8"/>
+  <PARAM id="msnap" value="0"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <MORPH c0="0.45 0.28 0.42 0.38 0.68 0.42 0.32 0.25 0.5 0.48 0.5"
+         c1="0.58 0.62 0.68 0.52 0.42 0.48 0.55 0.61 0.42 0.62 0.5"
+         c2="0.3 0.48 0.25 0.6 0.75 0.82 0.48 0.4 0.71 0.35 0.55"
+         c3="0.92 0.7 0.58 0.48 0.52 0.38 0.72 0.55 0.58 0.89 0.65"
+         nodes="0.05 0.20 2;0.50 0.50 4;0.95 0.80 2;0.40 0.90 3"/>
 </PARAMS>
