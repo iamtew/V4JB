@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Delay + Blur, Formant. Edit: Formant, Blur, Lowpass, Tail / Morph: Path / Mod: LFO 1 on Formant -->
+<PARAMS presetName="Wet Tape" category="Transmission">
+  <PARAM id="sp_algo" value="9"/>
+  <PARAM id="sp_depth" value="0.28"/>
+  <PARAM id="sp_tilt" value="1.2"/>
+  <PARAM id="nz_mix" value="0.07"/>
+  <PARAM id="poly" value="6"/>
+  <PARAM id="e1_a" value="0.55"/>
+  <PARAM id="e1_r" value="2.6"/>
+  <PARAM id="e1_s" value="0.85"/>
+  <PARAM id="mmode" value="1"/>
+  <PARAM id="mtime" value="6.8"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <PARAM id="s2_type" value="28"/>
+  <PARAM id="s2_main" value="0.38"/>
+  <PARAM id="s2_p1" value="0.5"/>
+  <PARAM id="s2_p2" value="0.6"/>
+  <PARAM id="s2_p3" value="0.72"/>
+  <PARAM id="s2_p4" value="0.5"/>
+  <PARAM id="s2_ls" value="1"/>
+  <PARAM id="s2_la" value="0.15"/>
+  <PARAM id="s3_type" value="16"/>
+  <PARAM id="s3_main" value="0.45"/>
+  <PARAM id="s3_p1" value="0.5"/>
+  <PARAM id="s4_type" value="7"/>
+  <PARAM id="s4_main" value="0.7"/>
+  <PARAM id="s4_p1" value="0.42"/>
+  <PARAM id="s4_p2" value="0.18"/>
+  <PARAM id="s4_p3" value="0.4"/>
+  <PARAM id="s5_type" value="22"/>
+  <PARAM id="s5_main" value="0.3"/>
+  <PARAM id="s5_p1" value="0.55"/>
+  <PARAM id="s5_p2" value="0.45"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="dl_on" value="1"/>
+  <PARAM id="dr_on" value="0"/>
+  <PARAM id="rv_mix" value="0.32"/>
+  <PARAM id="md_mix" value="0.24"/>
+  <PARAM id="dl_div" value="3"/>
+  <PARAM id="dl_fb" value="0.42"/>
+  <PARAM id="dl_mix" value="0.22"/>
+  <MORPH c0="0.24 0.39 0.74 0.72 0.70 0.68 0.27 0.19 0.17 0.15 0.13" c1="0.42 0.73 0.72 0.70 0.68 0.20 0.39 0.17 0.15 0.49 0.47" c2="0.60 0.71 0.70 0.22 0.20 0.18 0.51 0.51 0.49 0.47 0.45" c3="0.78 0.23 0.22 0.20 0.18 0.52 0.63 0.49 0.47 0.45 0.79"
+         nodes="0.11 0.20 2;0.84 0.24 4;0.70 0.83 3;0.16 0.80 5"/>
+</PARAMS>

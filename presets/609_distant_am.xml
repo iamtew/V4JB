@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Noise + Formant, far. Edit: Formant, Noise, Lowpass, Tail / Morph: Path / Mod: LFO 1 on Formant -->
+<PARAMS presetName="Distant AM" category="Transmission">
+  <PARAM id="sp_algo" value="14"/>
+  <PARAM id="sp_depth" value="0.3"/>
+  <PARAM id="sp_tilt" value="1.3"/>
+  <PARAM id="nz_mix" value="0.2"/>
+  <PARAM id="poly" value="6"/>
+  <PARAM id="e1_a" value="0.7"/>
+  <PARAM id="e1_r" value="2.8"/>
+  <PARAM id="e1_s" value="0.85"/>
+  <PARAM id="mmode" value="1"/>
+  <PARAM id="mtime" value="5.6"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <PARAM id="s2_type" value="28"/>
+  <PARAM id="s2_main" value="0.4"/>
+  <PARAM id="s2_p1" value="0.5"/>
+  <PARAM id="s2_p2" value="0.55"/>
+  <PARAM id="s2_p3" value="0.7"/>
+  <PARAM id="s2_p4" value="0.4"/>
+  <PARAM id="s2_ls" value="1"/>
+  <PARAM id="s2_la" value="0.14"/>
+  <PARAM id="s3_type" value="17"/>
+  <PARAM id="s3_main" value="0.3"/>
+  <PARAM id="s3_p1" value="0.5"/>
+  <PARAM id="s4_type" value="7"/>
+  <PARAM id="s4_main" value="0.64"/>
+  <PARAM id="s4_p1" value="0.48"/>
+  <PARAM id="s4_p2" value="0.18"/>
+  <PARAM id="s4_p3" value="0.35"/>
+  <PARAM id="s5_type" value="22"/>
+  <PARAM id="s5_main" value="0.38"/>
+  <PARAM id="s5_p1" value="0.6"/>
+  <PARAM id="s5_p2" value="0.5"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="dl_on" value="0"/>
+  <PARAM id="dr_on" value="0"/>
+  <PARAM id="rv_mix" value="0.38"/>
+  <PARAM id="md_mix" value="0.24"/>
+  <MORPH c0="0.12 0.73 0.67 0.61 0.10 0.86 0.42 0.28 0.22 0.17 0.47" c1="0.30 0.71 0.19 0.13 0.90 0.38 0.54 0.26 0.56 0.51 0.45" c2="0.48 0.23 0.17 0.11 0.42 0.36 0.66 0.60 0.54 0.49 0.79" c3="0.66 0.21 0.15 0.45 0.40 0.34 0.78 0.58 0.52 0.83 0.77"
+         nodes="0.20 0.20 5;0.84 0.24 2;0.70 0.90 1;0.16 0.80 3"/>
+</PARAMS>
