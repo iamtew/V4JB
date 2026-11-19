@@ -214,6 +214,26 @@ int main()
         for (int m = 0; m < kNumMacros; ++m)
             avg = avg && std::fabs (out[m] - 0.25f * (c[0][m] + c[1][m] + c[2][m] + c[3][m])) < 1.e-6f;
         CHECK (avg);
+
+        Morph path;
+        path.numNodes.store (2);
+        path.nodeX[0].store (0.f); path.nodeY[0].store (0.f); path.nodeLen[0].store (2);
+        path.nodeX[1].store (1.f); path.nodeY[1].store (1.f); path.nodeLen[1].store (2);
+        path.advance (kPathFree, 0.5f, 0.5f, 1.f, 0, 0.0, 0.f, false);
+        CHECK (path.outX.load() == 0.f && path.outY.load() == 0.f);
+        path.advance (kPathFree, 0.5f, 0.5f, 1.f, 0, 0.0, 0.5f, false);
+        CHECK (std::fabs (path.outX.load() - 0.5f) < 1.e-5f);
+        CHECK (std::fabs (path.outY.load() - 0.5f) < 1.e-5f);
+
+        Morph env;
+        env.numNodes.store (2);
+        env.nodeX[0].store (0.f); env.nodeY[0].store (0.2f);
+        env.nodeX[1].store (1.f); env.nodeY[1].store (0.8f);
+        env.advance (kXAxis, 0.f, 0.f, 1.f, 0, 0.0, 0.f, true);
+        CHECK (env.outX.load() == 0.f);
+        env.advance (kXAxis, 0.f, 0.f, 1.f, 0, 0.0, 0.5f, false);
+        CHECK (std::fabs (env.outX.load() - 0.5f) < 1.e-5f);
+        CHECK (std::fabs (env.outY.load() - 0.5f) < 1.e-5f);
     }
 
     std::printf ("rms chord %.3f  peak %.3f  | tail %.5f\n", chord.rms, chord.peak, tail.tailPeak);

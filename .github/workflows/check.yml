@@ -1,0 +1,23 @@
+# Header-only engine, version compare, factory presets. No JUCE.
+name: check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: version and engine
+        run: |
+          g++ -std=c++17 -I src tests/version_check.cpp -o tests/version_check
+          tests/version_check
+          g++ -std=c++17 -O2 -Wall -Wextra -I src tests/engine_check.cpp -o tests/engine_check
+          tests/engine_check
+
+      - name: presets
+        shell: pwsh
+        run: ./tools/check_presets.ps1
