@@ -5,7 +5,7 @@ How the additive engine works. Functional model taken from public descriptions o
 ## Signal flow
 
 ```
-MIDI -> voice allocator (8 voices, oldest stolen)
+MIDI -> voice allocator (8 voices; steal oldest released, else oldest held)
      -> per voice, every 64 samples (control block):
           slot 1   spectral stage   -> partial frequencies + amplitudes
           slots 2..11 module chain  -> edits those arrays in series
@@ -55,7 +55,7 @@ Four ADSRs per voice: linear attack, exponential decay and release (down 60 dB a
 |------|------|
 | Character | distortion depth, noise mix, Double Wave balance |
 | Complexity | partial count (x1/4..x4), tilt |
-| Tone | main knob of filter-type modules, tilt |
+| Tone | main knob of filter-type modules and Sync, tilt |
 | Punch | amp attack (shorter), decay, velocity |
 | Length | amp decay, release, sustain |
 | Time FX | main knob of Phrase, Random Drops, Tail, Decay, Modulator, Blur |

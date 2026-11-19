@@ -22,21 +22,21 @@ Tabs: Edit, Mod, Morph, Wave. Standalone adds a key strip (C2–C6).
 ## Engine
 
 - Additive: 8 voices, 512 partials (128 in Economy), 18 spacing algorithms, spectral modulation, spectral noise, two sub octaves
-- 1 is mono (last-note priority, legato glide); 2–8 are polyphonic
+- 1 is mono (last-note priority, legato glide); 2–8 are polyphonic. When voices run out, steal the oldest released, else the oldest held.
 - 12 slots: Slot 1 Spectral (fixed), slots 2–11 pick any module, Slot 12 Effects & Master (fixed, summed audio)
 - 4 envelopes, 3 tempo-syncable LFOs
-- MIDI: velocity, mod wheel, aftertouch, pitch bend ±2 semitones
+- MIDI: velocity, mod wheel, aftertouch (channel and poly into one global value), pitch bend ±2 semitones, plus Key and Key+Vel as slot MIDI sources
 
 ## Morph and Wave
 
 - Morph pad: 4 corners, drawn paths (free or synced), X-axis envelope mode with snap
-- 11 fixed-assignment macros + offsets + one User macro
+- Eleven fixed-assignment macros (User is the last), plus per-macro offsets
 - Wave / Double Wave: shape partials from analysed audio files
 - Smart randomizer: new module chain, or vary values and keep modules
 
 ## Effects
 
-Drive, chorus/phaser, ping-pong delay, reverb, width, limiter — Slot 12 only.
+Drive, chorus/phaser, ping-pong delay, reverb, width — Slot 12 only. Always-on safety limiter after that chain (no parameters).
 
 ## Do not
 
@@ -51,7 +51,7 @@ Drive, chorus/phaser, ping-pong delay, reverb, width, limiter — Slot 12 only.
 - JUCE from `%USERPROFILE%\JUCE`, Projucer workflow only
 - C++17, APVTS for all parameters
 - Just + justfile
-- Header-only JUCE-free engine in `dsp/` (tested by `just check`)
+- Header-only JUCE-free engine in `src/dsp/` (tested by `just check`)
 
 ## UI
 

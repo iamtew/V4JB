@@ -10,7 +10,7 @@ JUCE plugin built from `V4JB.jucer` with Projucer and MSBuild (`just build-debug
 - `src/dsp/` – the engine, header-only, no JUCE, tested by `just check`: `Common.h`, `Partials.h` (sine bank), `Spectral.h` (slot 1), `Modules.h` (module pool), `Mod.h` (envelopes, LFOs), `Morph.h`, `Wave.h`, `Engine.h` (voices, macro mapping, spectrum taps). See `docs/DSP_NOTES.md`.
 - `src/WaveAnalyzer.h` – audio to `WaveData` (FFT, worker thread). A wave source is an absolute path or `factory:<name>.wav`, which reads a bundled `presets/waves/*.wav` from BinaryData. `tools/make_waves.cpp` (`just waves`) synthesises those files.
 - `src/Presets.h` – factory presets (BinaryData from `presets/*.xml`) and user presets (`Documents/V4JB/Presets`).
-- `src/parameters/` – `ParameterIDs.h` (ids are saved in DAW projects and presets, do not rename) and `ParameterLayout.h` (about 225 parameters, generated in loops).
+- `src/parameters/` – `ParameterIDs.h` (ids are saved in DAW projects and presets, do not rename) and `ParameterLayout.h` (226 parameters, generated in loops).
 
 ## Threads and sharing
 
@@ -28,7 +28,7 @@ The APVTS tree (`<PARAMS>`) plus a `<MORPH c0..c3 nodes>` child, `waveA`/`waveB`
 
 ## Update check
 
-About → "Check for update" fetches `https://api.github.com/repos/iamtew/V4JB/tags` on a background thread, keeps tags shaped like `vN.N.N`, and compares them with the jucer `version=`.
+About → "Check for update" fetches `https://api.github.com/repos/iamtew/V4JB/tags` on a background thread, keeps tags shaped like `N.N.N` (a leading `v` is optional), and compares them with the jucer `version=`. The UI shows `v` plus that string.
 
 ## Release
 
