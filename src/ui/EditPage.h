@@ -207,7 +207,7 @@ struct SlotCard : public juce::Component
     {
         auto r = getLocalBounds().reduced (5, 3);
         auto head = r.removeFromTop (20);
-        const int titleW = juce::roundToInt (boldFont (11.f).getStringWidthFloat (slotTitle())) + 8;
+        const int titleW = juce::roundToInt (juce::GlyphArrangement::getStringWidth (boldFont (11.f), slotTitle())) + 8;
         head.removeFromLeft (juce::jmax (18, titleW));
         modBtn.setBounds (head.removeFromRight (40));
         type.setBounds (head.reduced (2, 0));
