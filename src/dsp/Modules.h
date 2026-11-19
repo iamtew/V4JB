@@ -94,6 +94,7 @@ struct ModuleState
     float b[kMaxPartials] {};
     float c[kMaxPartials] {};
     float phase = 0.f;
+    int type = -1;  // last ModuleType; reset when the slot changes on a held note
 
     void reset()
     {
@@ -101,6 +102,7 @@ struct ModuleState
         std::fill (std::begin (b), std::end (b), 0.f);
         std::fill (std::begin (c), std::end (c), 0.f);
         phase = 0.f;
+        type = -1;
     }
 };
 

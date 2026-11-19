@@ -225,14 +225,16 @@ public:
                 v.note = held[numHeld - 1];
                 v.targetSemis = (float) v.note;
                 lastSemis = v.targetSemis;
+                v.held = true;
+                v.pedaled = false;
             }
             else if (v.note == note)
-                release (v);
+                liftKey (v);
             return;
         }
         for (auto& v : voices)
             if (v.active && v.held && v.note == note)
-                release (v);
+                liftKey (v);
     }
 
     void allNotesOff()
@@ -240,6 +242,34 @@ public:
         numHeld = 0;
         for (auto& v : voices)
             release (v);
+    }
+
+    // DAW panic / All Sound Off: cut voices now. Processor also clears delay and reverb.
+    void allSoundOff()
+    {
+        numHeld = 0;
+        sustain = false;
+        noteStarted = false;
+        for (auto& v : voices)
+            v.resetAll();
+    }
+
+    void setSustain (bool down)
+    {
+        sustain = down;
+        if (down)
+            return;
+        for (auto& v : voices)
+            if (v.pedaled && ! v.held)
+                release (v);
+    }
+
+    bool anyVoiceHeld() const
+    {
+        for (const auto& v : voices)
+            if (v.active && v.held)
+                return true;
+        return false;
     }
 
     // Audio thread: true once after a note started from silence (restarts X-Axis morph).
@@ -269,8 +299,8 @@ public:
             ctlPos = (ctlPos + m) % kCtl;
             done += m;
         }
-        // Safety saturation: transparent at normal levels, keeps 8 stacked voices
-        // and boosted modules from leaving +-1. The master limiter comes later.
+        // Soft clip before Slot 12: transparent at normal levels, keeps 8 stacked
+        // voices from leaving +-1. The safety limiter still runs after the effects.
         for (int i = 0; i < n; ++i)
         {
             L[i] = std::tanh (L[i]);
@@ -290,7 +320,7 @@ private:
 
     struct Voice
     {
-        bool active = false, held = false, silentBlock = false;
+        bool active = false, held = false, pedaled = false, silentBlock = false;
         int note = 60;
         float vel = 0.8f;
         uint64_t age = 0;
@@ -307,7 +337,7 @@ private:
 
         void resetAll()
         {
-            active = held = silentBlock = false;
+            active = held = pedaled = silentBlock = false;
             for (auto& e : env) e = {};
             bank.reset();
             resetState();
@@ -328,7 +358,7 @@ private:
             v.bank.reset();  // a stolen voice keeps its bank so the levels ramp, not jump
         v.resetState();
         v.active = v.held = true;
-        v.silentBlock = false;
+        v.pedaled = v.silentBlock = false;
         v.note = note;
         v.vel = clamp01 (vel);
         v.age = ++ageCounter;
@@ -342,9 +372,20 @@ private:
 
     static void release (Voice& v)
     {
-        v.held = false;
+        v.held = v.pedaled = false;
         for (auto& e : v.env)
             e.off();
+    }
+
+    void liftKey (Voice& v)
+    {
+        if (sustain)
+        {
+            v.held = false;
+            v.pedaled = true;
+            return;
+        }
+        release (v);
     }
 
     void removeHeld (int note)
@@ -379,6 +420,11 @@ private:
     // Once per kCtl samples: advance clocks and LFOs, rebuild every voice's spectrum.
     void control()
     {
+        const int polyN = std::clamp (p.poly, 1, kMaxVoices);
+        for (int i = polyN; i < kMaxVoices; ++i)
+            if (voices[i].active)
+                release (voices[i]);
+
         beats += (double) dt * bpm / 60.0;
         float lfo[kNumLfos];
         for (int i = 0; i < kNumLfos; ++i)
@@ -445,6 +491,11 @@ private:
             for (int s = 0; s < kNumSlots; ++s)
             {
                 const SlotParams& sp = p.slot[s];
+                if (v.mods[s].type != sp.mod.type)
+                {
+                    v.mods[s].reset();
+                    v.mods[s].type = sp.mod.type;
+                }
                 if (sp.mod.type != (int) ModuleType::Off)
                 {
                     ModuleParams mp = sp.mod;
@@ -497,6 +548,7 @@ private:
     uint64_t ageCounter = 0;
     int display = 0;
     bool noteStarted = false;
+    bool sustain = false;
     int held[kMaxHeld] {};
     int numHeld = 0;
 };

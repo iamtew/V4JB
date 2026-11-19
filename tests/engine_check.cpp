@@ -410,6 +410,60 @@ int main()
         CHECK (finite && peak < 4.f && std::fabs (L[48]) > 0.2f);
     }
 
+    // All Notes Off still has a release tail; All Sound Off is silence this block.
+    {
+        EngineParams q = quickParams();
+        q.env[0].r = 2.f;
+        e.setParams (q, kNeutral);
+        e.noteOn (60, 0.8f);
+        render (e, sr, 0.2);
+        e.allNotesOff();
+        auto rel = render (e, sr, 0.15);
+        CHECK (rel.finite && rel.peak > 1.e-4f);
+        e.noteOn (60, 0.8f);
+        render (e, sr, 0.2);
+        e.allSoundOff();
+        auto cut = render (e, sr, 0.15);
+        CHECK (cut.finite && cut.peak == 0.f);
+    }
+
+    // Delay at 0.95 feedback plus a wet shimmer reverb stays finite (limiter on the output).
+    {
+        DelayBuf d;
+        d.prepare ((int) std::ceil (sr * 8.0) + 8);
+        Reverb rv;
+        rv.prepare (sr);
+        Limiter lim;
+        lim.prepare (sr);
+        std::vector<float> L (512), R (512);
+        bool finite = true;
+        float peak = 0.f;
+        for (int b = 0; b < 400; ++b)
+        {
+            std::fill (L.begin(), L.end(), 0.f);
+            std::fill (R.begin(), R.end(), 0.f);
+            if (b == 0)
+                L[0] = R[0] = 0.8f;
+            const float ds = (float) (sr * 0.375);
+            for (int i = 0; i < 512; ++i)
+            {
+                const float dl = d.pop (0, ds), dr = d.pop (1, ds);
+                d.push (0, L[i] + dr * 0.95f);
+                d.push (1, R[i] + dl * 0.95f);
+                L[i] += 0.5f * dl;
+                R[i] += 0.5f * dr;
+            }
+            rv.process (L.data(), R.data(), 512, 1.f, 0.2f, 1.f, 1.f);
+            lim.process (L.data(), R.data(), 512);
+            for (int i = 0; i < 512; ++i)
+            {
+                finite = finite && std::isfinite (L[i]) && std::isfinite (R[i]);
+                peak = std::fmax (peak, std::fmax (std::fabs (L[i]), std::fabs (R[i])));
+            }
+        }
+        CHECK (finite && peak <= Limiter::kThresh + 1.e-3f);
+    }
+
     std::printf ("rms chord %.3f  peak %.3f  | tail %.5f\n", chord.rms, chord.peak, tail.tailPeak);
     std::printf (failures == 0 ? "engine_check OK\n" : "engine_check: %d failed\n", failures);
     return failures == 0 ? 0 : 1;

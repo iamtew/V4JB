@@ -211,12 +211,21 @@ void V4JBAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::M
         offsets[m] = ld (ptr.macro[m]);
         locks[m] = ldb (ptr.lock[m]);
     }
+    engine->setWaves (waveLive[0].load(), waveLive[1].load());
+    const bool idle = ! engine->anyVoiceHeld();
+    drainKeys();
+    bool midiStart = false;
+    if (idle)
+        for (const auto meta : midi)
+            if (meta.getMessage().isNoteOn() && meta.getMessage().getFloatVelocity() > 0.f)
+            {
+                midiStart = true;
+                break;
+            }
     morph.advance (ldi (ptr.mmode), ld (ptr.mx), ld (ptr.my), ld (ptr.mtime), ldi (ptr.msnap),
-                   engine->beatClock(), (float) (n / sr), engine->takeNoteStarted());
+                   engine->beatClock(), (float) (n / sr), engine->takeNoteStarted() || midiStart);
     morph.macros (offsets, locks, macros);
     engine->setParams (readParams(), macros);
-    engine->setWaves (waveLive[0].load(), waveLive[1].load());
-    drainKeys();
 
     auto* L = buffer.getWritePointer (0);
     const bool stereo = buffer.getNumChannels() > 1;
@@ -236,8 +245,21 @@ void V4JBAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::M
             engine->noteOn (msg.getNoteNumber(), msg.getFloatVelocity());
         else if (msg.isNoteOff())
             engine->noteOff (msg.getNoteNumber());
-        else if (msg.isAllNotesOff() || msg.isAllSoundOff())
+        else if (msg.isAllSoundOff())
+        {
+            engine->allSoundOff();
+            delay.reset();
+            reverb.reset();
+            chorus.reset();
+            phaser.reset();
+            limiter.reset();
+        }
+        else if (msg.isAllNotesOff())
             engine->allNotesOff();
+        else if (msg.isSustainPedalOn())
+            engine->setSustain (true);
+        else if (msg.isSustainPedalOff())
+            engine->setSustain (false);
         else if (msg.isPitchWheel())
             engine->setPitchBend ((float) (msg.getPitchWheelValue() - 8192) / 8192.f * 2.f);  // +-2 semitones
         else if (msg.isControllerOfType (1))
@@ -248,6 +270,7 @@ void V4JBAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::M
             engine->setAftertouch ((float) msg.getAfterTouchValue() / 127.f);
     }
     engine->render (L + pos, R + pos, m - pos);
+    engine->takeNoteStarted();  // this block already restarted X-Axis; do not do it again next buffer
     midi.clear();
 
     processEffects (L, R, m, macros, bpm);
