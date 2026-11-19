@@ -76,6 +76,30 @@ int main()
     auto chord = render (e, sr, 1.5);
     CHECK (chord.finite && chord.rms > 0.01f && chord.peak <= 1.f);
 
+    // Frequency increment snaps from silence, then ramps across the control block.
+    {
+        PartialBank bank;
+        bank.reset();
+        const float invSr = 1.f / (float) sr;
+        float freq[kBankSize] {}, amp[kBankSize] {};
+        freq[0] = 440.f;
+        amp[0] = 0.2f;
+        bank.setTargets (freq, amp, 1, invSr);
+        const float w440 = kTwoPi * 440.f * invSr;
+        CHECK (std::fabs (std::atan2 (bank.ci[0], bank.cr[0]) - w440) < 1.e-5f);
+
+        float L[1] {}, R[1] {};
+        bank.render (L, R, 1, 0.f);  // one sample so the next setTargets sees a live partial
+
+        freq[0] = 880.f;
+        bank.setTargets (freq, amp, 1, invSr);
+        bank.render (L, R, 1, 0.f);
+        const float wAfter = std::atan2 (bank.ci[0], bank.cr[0]);
+        const float w880 = kTwoPi * 880.f * invSr;
+        CHECK (std::fabs (wAfter - w440) < std::fabs (wAfter - w880));
+        CHECK (std::fabs (wAfter - w880) > 0.01f);
+    }
+
     // Harmonic series: Depth 0 and no spectral modulation give exactly n * f0.
     {
         EngineParams h = quickParams();

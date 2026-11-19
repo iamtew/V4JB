@@ -5,8 +5,9 @@
 // Each partial is a complex rotator (re, im) stepped by (cos w, sin w): four
 // multiplies per sample instead of a sin() call. Struct-of-arrays so the inner
 // loop walks contiguous memory. Frequencies and target amplitudes arrive once per
-// control block (kCtl samples); amplitudes ramp linearly across the block so
-// spectral changes never click.
+// control block (kCtl samples). Amplitudes ramp linearly across the block, and the
+// phase increment ramps the same way so pitch changes do not zipper. From silence
+// the increment snaps (no chirp on note-on).
 //
 // ponytail: plain scalar loop. Measured cost is roughly 3-4 cycles per partial
 // per sample; at 8 voices x 512 partials that is under a fifth of one core.
@@ -22,6 +23,9 @@ struct PartialBank
     float im[kBankSize];
     float cr[kBankSize];
     float ci[kBankSize];
+    float dcr[kBankSize];
+    float dci[kBankSize];
+    float w[kBankSize];
     float amp[kBankSize];
     float step[kBankSize];
     float tgt[kBankSize];
@@ -39,6 +43,9 @@ struct PartialBank
             im[k] = std::sin (ph);
             cr[k] = 1.f;
             ci[k] = 0.f;
+            dcr[k] = 1.f;
+            dci[k] = 0.f;
+            w[k] = -1.f;
             amp[k] = step[k] = tgt[k] = 0.f;
         }
         hi = 0;
@@ -53,20 +60,42 @@ struct PartialBank
         {
             amp[k] = tgt[k];  // last ramp landed here; resetting kills float drift
             float t = (k < n || k >= kMaxPartials) ? target[k] : 0.f;
-            const float w = kTwoPi * freq[k] * invSr;
-            if (! (w > 0.f && w < kTwoPi * 0.48f))
+            const float wNew = kTwoPi * freq[k] * invSr;
+            if (! (wNew > 0.f && wNew < kTwoPi * 0.48f))
                 t = 0.f;
             tgt[k] = t;
             step[k] = (t - amp[k]) * (1.f / (float) kCtl);
             if (t == 0.f && amp[k] == 0.f)
-                continue;  // silent: skip the trig and the render
+            {
+                w[k] = -1.f;
+                dcr[k] = 1.f;
+                dci[k] = 0.f;
+                continue;
+            }
 
-            cr[k] = std::cos (w);
-            ci[k] = std::sin (w);
+            if (w[k] < 0.f)
+            {
+                w[k] = wNew;
+                cr[k] = std::cos (wNew);
+                ci[k] = std::sin (wNew);
+                dcr[k] = 1.f;
+                dci[k] = 0.f;
+            }
+            else
+            {
+                const float dw = (wNew - w[k]) * (1.f / (float) kCtl);
+                w[k] = wNew;
+                dcr[k] = std::cos (dw);
+                dci[k] = std::sin (dw);
+            }
+
             // Rotators drift off the unit circle slowly; one Newton step per block pulls them back.
             const float g = 1.5f - 0.5f * (re[k] * re[k] + im[k] * im[k]);
             re[k] *= g;
             im[k] *= g;
+            const float gc = 1.5f - 0.5f * (cr[k] * cr[k] + ci[k] * ci[k]);
+            cr[k] *= gc;
+            ci[k] *= gc;
             if (k < kMaxPartials)
                 top = k + 1;
         }
@@ -102,6 +131,10 @@ struct PartialBank
 private:
     float tick (int k)
     {
+        const float ncr = cr[k] * dcr[k] - ci[k] * dci[k];
+        const float nci = cr[k] * dci[k] + ci[k] * dcr[k];
+        cr[k] = ncr;
+        ci[k] = nci;
         const float nr = re[k] * cr[k] - im[k] * ci[k];
         const float ni = re[k] * ci[k] + im[k] * cr[k];
         re[k] = nr;
