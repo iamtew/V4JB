@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Noise partials take over, the pitch still underneath. Edit: Noise, Bandpass, Decay, Second Tone / Morph: Path / Mod + Slot 12 set -->
+<!-- Noise partials take over, Cloud clusters under the pitch. Edit: Noise, Bandpass, Decay, Cloud / Morph: Path / Mod + Slot 12 set -->
 <PARAMS presetName="Resin Cloud" category="Stressful Violin">
   <PARAM id="poly" value="2"/>
   <PARAM id="level" value="0.62"/>
@@ -25,10 +25,12 @@
   <PARAM id="s4_p1" value="0.5"/>
   <PARAM id="s4_ls" value="0"/>
   <PARAM id="s4_la" value="0"/>
-  <PARAM id="s5_type" value="19"/>
-  <PARAM id="s5_main" value="0.38"/>
-  <PARAM id="s5_p1" value="0.45"/>
-  <PARAM id="s5_p2" value="0.52"/>
+  <PARAM id="s5_type" value="29"/>
+  <PARAM id="s5_main" value="0.55"/>
+  <PARAM id="s5_p1" value="0.55"/>
+  <PARAM id="s5_p2" value="0.7"/>
+  <PARAM id="s5_p3" value="0.35"/>
+  <PARAM id="s5_p4" value="0.6"/>
   <PARAM id="s5_ls" value="0"/>
   <PARAM id="s5_la" value="0"/>
   <PARAM id="s3_ls" value="2"/>

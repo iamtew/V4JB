@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- The lowpass starts open enough that the breath is a bloom, not a choke. Edit: Lowpass, Detuned, Clip, Range Enhance / Morph: X-Axis Env / Mod + Slot 12 set -->
+<!-- The lowpass starts open enough that the breath is a bloom, not a choke. Edit: Lowpass, Formant, Clip, Range Enhance / Morph: X-Axis Env / Mod + Slot 12 set -->
 <PARAMS presetName="Breath Swell" category="Thoughtful Violins">
   <PARAM id="poly" value="1"/>
   <PARAM id="sp_algo" value="9"/>
@@ -16,10 +16,14 @@
   <PARAM id="s2_la" value="0"/>
   <PARAM id="s2_es" value="3"/>
   <PARAM id="s2_ea" value="0.2"/>
-  <PARAM id="s3_type" value="15"/>
-  <PARAM id="s3_main" value="0.05"/>
-  <PARAM id="s3_p1" value="0.1"/>
-  <PARAM id="s3_p2" value="0.15"/>
+  <PARAM id="s3_type" value="28"/>
+  <PARAM id="s3_main" value="0.2"/>
+  <PARAM id="s3_p1" value="0.5"/>
+  <PARAM id="s3_p2" value="0.4"/>
+  <PARAM id="s3_p3" value="0.55"/>
+  <PARAM id="s3_p4" value="0.3"/>
+  <PARAM id="s3_es" value="3"/>
+  <PARAM id="s3_ea" value="0.4"/>
   <PARAM id="s4_type" value="25"/>
   <PARAM id="s4_main" value="0.55"/>
   <PARAM id="s4_ls" value="0"/>

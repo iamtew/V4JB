@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Six bows in a large soft room. Edit: Detuned, Lowpass, Noise, Tail / Morph: Path / Mod + Slot 12 set -->
+<!-- Six bows in a large soft room with octave shimmer. Edit: Detuned, Lowpass, Noise, Tail / Morph: Path / Mod + Slot 12 set -->
 <PARAMS presetName="Chapel Strings" category="Thoughtful Violins">
   <PARAM id="poly" value="6"/>
   <PARAM id="economy" value="1"/>
@@ -44,8 +44,9 @@
   <PARAM id="rv_size" value="0.9"/>
   <PARAM id="rv_damp" value="0.55"/>
   <PARAM id="rv_mix" value="0.5"/>
+  <PARAM id="rv_shim" value="0.22"/>
   <PARAM id="md_on" value="0"/>
-  <PARAM id="rv_on" value="0"/>
+  <PARAM id="rv_on" value="1"/>
   <PARAM id="dl_on" value="0"/>
   <PARAM id="dr_on" value="0"/>
   <PARAM id="mmode" value="1"/>

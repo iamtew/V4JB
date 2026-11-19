@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Edit: Bandpass, Detuned, Highpass, Notch / Morph: Path / Mod + Slot 12 set -->
+<!-- Edit: Bandpass, Cloud, Highpass, Notch / Morph: Path / Mod + Slot 12 set -->
 <PARAMS presetName="Glass Choir" category="Pads">
   <PARAM id="sp_algo" value="0"/>
   <PARAM id="sp_depth" value="0.3"/>
@@ -7,9 +7,12 @@
   <PARAM id="s2_main" value="0.55"/>
   <PARAM id="s2_p1" value="0.6"/>
   <PARAM id="s2_p2" value="0.4"/>
-  <PARAM id="s3_type" value="15"/>
+  <PARAM id="s3_type" value="29"/>
   <PARAM id="s3_main" value="0.4"/>
-  <PARAM id="s3_p2" value="0.5"/>
+  <PARAM id="s3_p1" value="0.5"/>
+  <PARAM id="s3_p2" value="0.7"/>
+  <PARAM id="s3_p3" value="0.3"/>
+  <PARAM id="s3_p4" value="0.5"/>
   <PARAM id="s4_type" value="8"/>
   <PARAM id="s4_main" value="0.48"/>
   <PARAM id="s4_p1" value="0.28"/>

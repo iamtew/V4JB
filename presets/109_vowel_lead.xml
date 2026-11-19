@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Root spacing and a talking Bandpass on the mod wheel. Edit: Bandpass, Detuned, Blur, Tail / Morph: Manual / Mod + Slot 12 set -->
+<!-- Root spacing and Formant vowels on the mod wheel. Edit: Formant, Detuned, Blur, Tail / Morph: Manual / Mod + Slot 12 set -->
 <PARAMS presetName="Vowel Lead" category="Leads">
   <PARAM id="poly" value="1"/>
   <PARAM id="glide" value="0.06"/>
   <PARAM id="sp_algo" value="9"/>
   <PARAM id="nz_mix" value="0.03"/>
-  <PARAM id="s2_type" value="9"/>
-  <PARAM id="s2_main" value="0.45"/>
-  <PARAM id="s2_p1" value="0.3"/>
-  <PARAM id="s2_p2" value="0.7"/>
+  <PARAM id="s2_type" value="28"/>
+  <PARAM id="s2_main" value="0.4"/>
+  <PARAM id="s2_p1" value="0.5"/>
+  <PARAM id="s2_p2" value="0.5"/>
+  <PARAM id="s2_p3" value="0.75"/>
+  <PARAM id="s2_p4" value="0.4"/>
   <PARAM id="s2_ms" value="2"/>
   <PARAM id="s2_ma" value="0.4"/>
   <PARAM id="s3_type" value="15"/>
