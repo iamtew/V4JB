@@ -109,6 +109,14 @@ struct PanelLnF : public juce::LookAndFeel_V4
         if (style != juce::Slider::LinearBar && style != juce::Slider::LinearBarVertical)
         {
             LookAndFeel_V4::drawLinearSlider (g, x, y, w, h, pos, minPos, maxPos, style, s);
+            if (style == juce::Slider::LinearVertical)
+            {
+                g.setFont (boldFont (10.f));
+                g.setColour (kFog);
+                g.drawText (s.getTextFromValue (s.getValue()),
+                            juce::Rectangle<int> (x, y, w, h),
+                            juce::Justification::centredBottom, false);
+            }
             return;
         }
 
