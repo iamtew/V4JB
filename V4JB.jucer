@@ -523,6 +523,7 @@
       <GROUP id="dspGrp01" name="dsp">
         <FILE id="comH001" name="Common.h" compile="0" resource="0" file="src/dsp/Common.h"/>
         <FILE id="engH001" name="Engine.h" compile="0" resource="0" file="src/dsp/Engine.h"/>
+        <FILE id="fxH0001" name="Fx.h" compile="0" resource="0" file="src/dsp/Fx.h"/>
         <FILE id="modH001" name="Mod.h" compile="0" resource="0" file="src/dsp/Mod.h"/>
         <FILE id="mdlH001" name="Modules.h" compile="0" resource="0" file="src/dsp/Modules.h"/>
         <FILE id="mrpH001" name="Morph.h" compile="0" resource="0" file="src/dsp/Morph.h"/>

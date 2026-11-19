@@ -2,6 +2,7 @@
 
 #include "Presets.h"
 #include "dsp/Engine.h"
+#include "dsp/Fx.h"
 #include "dsp/Morph.h"
 #include "dsp/Reverb.h"
 #include "parameters/ParameterLayout.h"
@@ -108,15 +109,15 @@ private:
     float lastLevel = 0.f;  // Volume ramps from here each block, so moves do not zipper
     std::vector<float> monoScratch;  // right channel when the host gives us mono out
 
-    // Slot 12 effects.
+    // Slot 12 effects. Drive oversampling is the only remaining juce::dsp piece.
     int fxBlock = 512;
-    juce::dsp::Chorus<float> chorus;
-    juce::dsp::Phaser<float> phaser;
+    v4jb::Chorus chorus;
+    v4jb::Phaser phaser;
     v4jb::Reverb reverb;
-    juce::dsp::DelayLine<float, juce::dsp::DelayLineInterpolationTypes::Linear> delay;
+    v4jb::DelayBuf delay;
     juce::SmoothedValue<float> delaySamples, driveAmt, driveMix, delayMix, reverbMix;
     bool delayWasOn = false;
-    juce::dsp::Limiter<float> limiter;
+    v4jb::Limiter limiter;
     juce::dsp::Oversampling<float> driveOs { 2, 1,
         juce::dsp::Oversampling<float>::filterHalfBandPolyphaseIIR, false, false };
     juce::AudioBuffer<float> driveBuf;

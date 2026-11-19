@@ -2,7 +2,8 @@
 
 // The additive engine: up to 8 voices, each a sine bank fed by
 //   slot 1 (spectral stage) -> slots 2..11 (module chain) -> amp envelope.
-// Slot 12 (effects and master) lives in PluginProcessor, it needs juce::dsp.
+// Slot 12 (effects and master) lives in PluginProcessor (drive still uses
+// juce::dsp oversampling; chorus, phaser, delay, limiter, reverb are in dsp/).
 //
 // Once per control block (kCtl samples) every voice rebuilds its spectrum; in
 // between, the banks just sum sines. render() never allocates: every buffer is

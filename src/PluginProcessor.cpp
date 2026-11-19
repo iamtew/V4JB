@@ -97,15 +97,11 @@ void V4JBAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
     fxBlock = juce::jmax (samplesPerBlock, 512);
     monoScratch.assign ((size_t) juce::jmax (samplesPerBlock, 8192), 0.f);
 
-    const juce::dsp::ProcessSpec spec { sampleRate, (juce::uint32) fxBlock, 2 };
-    chorus.prepare (spec);
-    phaser.prepare (spec);
+    chorus.prepare (sampleRate);
+    phaser.prepare (sampleRate);
     reverb.prepare (sampleRate);
-    limiter.prepare (spec);
-    limiter.setThreshold (-0.5f);
-    limiter.setRelease (80.f);
-    delay.setMaximumDelayInSamples ((int) std::ceil (sampleRate * kDelayMaxSeconds) + 8);
-    delay.prepare (spec);
+    limiter.prepare (sampleRate);
+    delay.prepare ((int) std::ceil (sampleRate * kDelayMaxSeconds) + 8);
     delaySamples.reset (sampleRate, 0.08);
     delaySamples.setCurrentAndTargetValue ((float) (sampleRate * 0.375));
     driveAmt.reset (sampleRate, 0.02);
@@ -294,7 +290,7 @@ void V4JBAudioProcessor::processEffects (float* L, float* R, int n, const float*
     {
         const float secs = ldb (ptr.dlSync) ? kDelayDivBeats[juce::jlimit (0, kNumDelayDivs - 1, ldi (ptr.dlDiv))] * 60.f / (float) bpm
                                             : ld (ptr.dlTime) * 0.001f;
-        delaySamples.setTargetValue (juce::jlimit (1.f, (float) delay.getMaximumDelayInSamples() - 1.f, secs * (float) sr));
+        delaySamples.setTargetValue (juce::jlimit (1.f, (float) delay.maxDelay(), secs * (float) sr));
     }
     else
         delayMix.skip (n);
@@ -303,13 +299,11 @@ void V4JBAudioProcessor::processEffects (float* L, float* R, int n, const float*
     if (! rvOn)
         reverbMix.skip (n);
 
-    // juce::dsp effects keep per-block buffers sized at prepare, so feed them in fxBlock chunks.
+    // Drive oversampling is sized at prepare, so feed the chain in fxBlock chunks.
     for (int off = 0; off < n; off += fxBlock)
     {
         const int len = juce::jmin (fxBlock, n - off);
         float* ch[2] = { L + off, R + off };
-        juce::dsp::AudioBlock<float> block (ch, 2, (size_t) len);
-        juce::dsp::ProcessContextReplacing<float> ctx (block);
 
         if (drOn)
         {
@@ -341,23 +335,9 @@ void V4JBAudioProcessor::processEffects (float* L, float* R, int n, const float*
         {
             const float mix = clamp01 (ld (ptr.mdMix) + mixOff), depth = ld (ptr.mdDepth), rate = ld (ptr.mdRate);
             if (ldi (ptr.mdType) == 0)
-            {
-                chorus.setRate (rate);
-                chorus.setDepth (depth);
-                chorus.setCentreDelay (7.f + depth * 10.f);
-                chorus.setFeedback (0.2f);
-                chorus.setMix (mix);
-                chorus.process (ctx);
-            }
+                chorus.process (ch[0], ch[1], len, rate, depth, mix);
             else
-            {
-                phaser.setRate (rate);
-                phaser.setDepth (depth);
-                phaser.setCentreFrequency (800.f);
-                phaser.setFeedback (0.5f);
-                phaser.setMix (mix);
-                phaser.process (ctx);
-            }
+                phaser.process (ch[0], ch[1], len, rate, depth, mix);
         }
 
         if (dlOn)
@@ -370,9 +350,9 @@ void V4JBAudioProcessor::processEffects (float* L, float* R, int n, const float*
             {
                 const float t = delaySamples.getNextValue();
                 const float mix = delayMix.getNextValue();
-                const float dl = delay.popSample (0, t), dr = delay.popSample (1, t);
-                delay.pushSample (0, l[i] + dr * fb);
-                delay.pushSample (1, r[i] + dl * fb);
+                const float dl = delay.pop (0, t), dr = delay.pop (1, t);
+                delay.push (0, l[i] + dr * fb);
+                delay.push (1, r[i] + dl * fb);
                 l[i] += mix * dl;
                 r[i] += mix * dr;
             }
@@ -391,7 +371,7 @@ void V4JBAudioProcessor::processEffects (float* L, float* R, int n, const float*
             ch[0][i] = mid + side;
             ch[1][i] = mid - side;
         }
-        limiter.process (ctx);
+        limiter.process (ch[0], ch[1], len);
     }
 }
 

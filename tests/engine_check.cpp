@@ -1,6 +1,7 @@
 // `just check`: the additive engine renders, stays bounded, fades out, and its
 // building blocks (spacing, modules, morph, wave, voice stealing) do what they say. No JUCE.
 #include "dsp/Engine.h"
+#include "dsp/Fx.h"
 #include "dsp/Morph.h"
 #include "dsp/Reverb.h"
 
@@ -286,6 +287,45 @@ int main()
                 late = std::fmax (late, pk);
         }
         CHECK (finite && early > 1.e-4f && late < early);
+    }
+
+    // Limiter: a 2.0 spike comes down under the ceiling; delay ping-pong stays finite.
+    {
+        Limiter lim;
+        lim.prepare (sr);
+        std::vector<float> L (64, 0.f), R (64, 0.f);
+        L[0] = R[0] = 2.f;
+        lim.process (L.data(), R.data(), 64);
+        float peak = 0.f;
+        bool finite = true;
+        for (int i = 0; i < 64; ++i)
+        {
+            finite = finite && std::isfinite (L[i]) && std::isfinite (R[i]);
+            peak = std::fmax (peak, std::fmax (std::fabs (L[i]), std::fabs (R[i])));
+        }
+        CHECK (finite && peak <= Limiter::kThresh + 1.e-4f && L[0] < 2.f);
+
+        DelayBuf d;
+        d.prepare (48000);
+        L.assign (256, 0.f);
+        R.assign (256, 0.f);
+        L[0] = 1.f;
+        for (int i = 0; i < 256; ++i)
+        {
+            const float dl = d.pop (0, 48.f), dr = d.pop (1, 48.f);
+            d.push (0, L[i] + dr * 0.4f);
+            d.push (1, R[i] + dl * 0.4f);
+            L[i] += 0.5f * dl;
+            R[i] += 0.5f * dr;
+        }
+        finite = true;
+        peak = 0.f;
+        for (int i = 0; i < 256; ++i)
+        {
+            finite = finite && std::isfinite (L[i]) && std::isfinite (R[i]);
+            peak = std::fmax (peak, std::fmax (std::fabs (L[i]), std::fabs (R[i])));
+        }
+        CHECK (finite && peak < 4.f && std::fabs (L[48]) > 0.2f);
     }
 
     std::printf ("rms chord %.3f  peak %.3f  | tail %.5f\n", chord.rms, chord.peak, tail.tailPeak);
