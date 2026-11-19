@@ -296,6 +296,9 @@ struct MorphPage : public juce::Component
                 segLen.setSelectedId (0, juce::dontSendNotification);
         };
         pad.onSelect();
+        modeParam = p.apvts.getRawParameterValue (ParamID::morphMode);
+        snap.setTooltip ("Steps the X-Axis sweep");
+        syncSnap();
 
         auto file = [this] (juce::TextButton& b, bool save, bool points)
         {
@@ -330,8 +333,16 @@ struct MorphPage : public juce::Component
         });
     }
 
+    void syncSnap()
+    {
+        const bool xAxis = std::lround (modeParam->load()) == v4jb::kXAxis;
+        snap.setEnabled (xAxis);
+        snap.setAlpha (xAxis ? 1.f : 0.4f);  // combo drawing barely greys a disabled box
+    }
+
     void refresh()
     {
+        syncSnap();
         pad.repaint();
         for (auto* m : macros)
             m->repaint();
@@ -384,6 +395,7 @@ struct MorphPage : public juce::Component
     juce::OwnedArray<MacroColumn> macros;
     juce::OwnedArray<juce::TextButton> store;
     Combo mode, snap, userSlot;
+    std::atomic<float>* modeParam = nullptr;
     Knob time;
     juce::ToggleButton editBtn { "Edit Path" };
     juce::TextButton clearBtn { "Clear Path" };
