@@ -7,7 +7,7 @@ Two files, A and B. A Wave module follows one of them; Double Wave follows both.
 Each panel:
 
 - Spectrogram: time left to right, frequency bottom to top, brightness = level. Amber lines are **Start** and **End**. A teal line is where the newest voice is in the file. It hides when nothing is playing.
-- **Load…** — built-ins first (**bells**, **chords**, **rain**, **vowels**), then **File…** (`wav`, `aif`/`aiff`, `flac`, `ogg`, `mp3`). Analysis runs on a worker thread (mono mix, up to 120 s), so the audio thread does not have to think about your holiday recordings. If the file cannot be read, the panel says so in amber and keeps the wave that was already there.
+- **Load…** — built-ins first (**bells**, **chords**, **rain**, **vowels**), then **File…** (`wav`, `aif`/`aiff`, `flac`, `ogg`). Analysis runs on a worker thread (mono mix, up to 120 s), so the audio thread does not have to think about your holiday recordings. If the file cannot be read, the panel says so in amber and keeps the wave that was already there.
 - **Clear**.
 - **Start / End** — region in the file. **End before Start plays backwards.** Yes, on purpose.
 - **Speed** — 0.25× to 4×. 50% is original speed. The file loops in that region.

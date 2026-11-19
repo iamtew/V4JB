@@ -50,7 +50,7 @@ struct WavePanel : public juce::Component
     void browse()
     {
         chooser = std::make_unique<juce::FileChooser> ("Load audio for Wave " + juce::String (index == 0 ? "A" : "B"),
-                                                       juce::File(), "*.wav;*.aif;*.aiff;*.flac;*.ogg;*.mp3");
+                                                       juce::File(), "*.wav;*.aif;*.aiff;*.flac;*.ogg");
         juce::Component::SafePointer<WavePanel> safe (this);
         chooser->launchAsync (juce::FileBrowserComponent::openMode | juce::FileBrowserComponent::canSelectFiles,
                               [safe] (const juce::FileChooser& fc)
