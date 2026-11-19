@@ -157,7 +157,7 @@ struct SlotCard : public juce::Component
     void refresh()
     {
         bars.refresh();
-        const int t = juce::jlimit (0, v4jb::kNumModuleTypes - 1, (int) std::lround (typeParam->load()));
+        const int t = typeIndex();
         if (t == lastType)
             return;
         lastType = t;
@@ -170,11 +170,29 @@ struct SlotCard : public juce::Component
             params[k]->label.setText (info.labels[k + 1], juce::dontSendNotification);
             params[k]->setVisible (! routesOn && info.labels[k + 1][0] != 0);
         }
+        resized();
+        repaint();
+    }
+
+    int typeIndex() const
+    {
+        return juce::jlimit (0, v4jb::kNumModuleTypes - 1, (int) std::lround (typeParam->load()));
+    }
+
+    juce::String slotTitle() const
+    {
+        return juce::String (index + 2) + "  " + v4jb::kModuleInfo[typeIndex()].name;
     }
 
     void paint (juce::Graphics& g) override
     {
-        paintCard (g, getLocalBounds(), juce::String (index + 2));
+        const auto bounds = getLocalBounds();
+        paintCard (g, bounds, slotTitle());
+        if (typeIndex() == 0)
+        {
+            g.setColour (kNight.withAlpha (0.5f));
+            g.fillRoundedRectangle (bounds.toFloat(), 4.f);
+        }
         if (modBtn.getToggleState())
         {
             g.setFont (boldFont (9.f));
@@ -189,7 +207,8 @@ struct SlotCard : public juce::Component
     {
         auto r = getLocalBounds().reduced (5, 3);
         auto head = r.removeFromTop (20);
-        head.removeFromLeft (18);
+        const int titleW = juce::roundToInt (boldFont (11.f).getStringWidthFloat (slotTitle())) + 8;
+        head.removeFromLeft (juce::jmax (18, titleW));
         modBtn.setBounds (head.removeFromRight (40));
         type.setBounds (head.reduced (2, 0));
         r.removeFromTop (2);
