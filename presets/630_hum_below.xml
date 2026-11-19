@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Subs and Fold. Edit: Lowpass, Octaver, Cloud, Tail / Morph: Path / Mod: LFO 3 on Cloud -->
+<PARAMS presetName="Hum Below" category="Dread">
+  <PARAM id="sp_algo" value="11"/>
+  <PARAM id="sp_depth" value="0.5"/>
+  <PARAM id="sp_tilt" value="1.9"/>
+  <PARAM id="nz_mix" value="0.06"/>
+  <PARAM id="poly" value="4"/>
+  <PARAM id="e1_a" value="1.5"/>
+  <PARAM id="e1_r" value="4.8"/>
+  <PARAM id="e1_s" value="0.85"/>
+  <PARAM id="mmode" value="1"/>
+  <PARAM id="mtime" value="5.2"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <PARAM id="sub1" value="0.5"/>
+  <PARAM id="sub2" value="0.3"/>
+  <PARAM id="s2_type" value="7"/>
+  <PARAM id="s2_main" value="0.42"/>
+  <PARAM id="s2_p1" value="0.58"/>
+  <PARAM id="s2_p2" value="0.12"/>
+  <PARAM id="s2_p3" value="0.22"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s3_type" value="18"/>
+  <PARAM id="s3_main" value="0.25"/>
+  <PARAM id="s3_p1" value="0.35"/>
+  <PARAM id="s3_p2" value="0.1"/>
+  <PARAM id="s3_p3" value="0.8"/>
+  <PARAM id="s4_type" value="29"/>
+  <PARAM id="s4_main" value="0.4"/>
+  <PARAM id="s4_p1" value="0.3"/>
+  <PARAM id="s4_p2" value="0.5"/>
+  <PARAM id="s4_p3" value="0.25"/>
+  <PARAM id="s4_p4" value="0.4"/>
+  <PARAM id="s4_ls" value="3"/>
+  <PARAM id="s4_la" value="0.14"/>
+  <PARAM id="s5_type" value="22"/>
+  <PARAM id="s5_main" value="0.45"/>
+  <PARAM id="s5_p1" value="0.7"/>
+  <PARAM id="s5_p2" value="0.55"/>
+  <PARAM id="l3_rate" value="0.05"/>
+  <PARAM id="l3_shape" value="1"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="dl_on" value="0"/>
+  <PARAM id="dr_on" value="0"/>
+  <PARAM id="rv_mix" value="0.3"/>
+  <PARAM id="md_mix" value="0.26"/>
+  <MORPH c0="0.12 0.27 0.33 0.39 0.45 0.52 0.22 0.64 0.70 0.77 0.83" c1="0.30 0.61 0.67 0.73 0.80 0.86 0.34 0.16 0.22 0.29 0.35" c2="0.48 0.59 0.65 0.71 0.78 0.84 0.46 0.14 0.20 0.27 0.33" c3="0.66 0.11 0.17 0.23 0.29 0.36 0.58 0.48 0.54 0.60 0.67"
+         nodes="0.08 0.26 1;0.80 0.24 3;0.70 0.90 2;0.16 0.80 4"/>
+</PARAMS>

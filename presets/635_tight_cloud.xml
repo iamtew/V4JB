@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Small spread Cloud. Edit: Cloud, Lowpass, Detuned, Hype / Morph: Path / Mod: LFO 2 on Cloud -->
+<PARAMS presetName="Tight Cloud" category="Dread">
+  <PARAM id="sp_algo" value="16"/>
+  <PARAM id="sp_depth" value="0.4"/>
+  <PARAM id="sp_tilt" value="1.55"/>
+  <PARAM id="nz_mix" value="0.05"/>
+  <PARAM id="poly" value="6"/>
+  <PARAM id="e1_a" value="1"/>
+  <PARAM id="e1_r" value="3.4"/>
+  <PARAM id="e1_s" value="0.85"/>
+  <PARAM id="mmode" value="1"/>
+  <PARAM id="mtime" value="7.2"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <PARAM id="s2_type" value="29"/>
+  <PARAM id="s2_main" value="0.55"/>
+  <PARAM id="s2_p1" value="0.15"/>
+  <PARAM id="s2_p2" value="0.7"/>
+  <PARAM id="s2_p3" value="0.4"/>
+  <PARAM id="s2_p4" value="0.5"/>
+  <PARAM id="s2_ls" value="2"/>
+  <PARAM id="s2_la" value="0.14"/>
+  <PARAM id="s3_type" value="7"/>
+  <PARAM id="s3_main" value="0.6"/>
+  <PARAM id="s3_p1" value="0.45"/>
+  <PARAM id="s3_p2" value="0.18"/>
+  <PARAM id="s3_p3" value="0.32"/>
+  <PARAM id="s4_type" value="15"/>
+  <PARAM id="s4_main" value="0.28"/>
+  <PARAM id="s4_p1" value="0.45"/>
+  <PARAM id="s4_p2" value="0.4"/>
+  <PARAM id="s5_type" value="13"/>
+  <PARAM id="s5_main" value="0.3"/>
+  <PARAM id="s5_p1" value="0.4"/>
+  <PARAM id="s5_p2" value="0.4"/>
+  <PARAM id="s5_p3" value="0.5"/>
+  <PARAM id="s5_p4" value="0.4"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="dl_on" value="0"/>
+  <PARAM id="dr_on" value="0"/>
+  <PARAM id="rv_mix" value="0.3"/>
+  <PARAM id="md_mix" value="0.28"/>
+  <MORPH c0="0.22 0.43 0.70 0.60 0.86 0.76 0.22 0.11 0.83 0.27 0.17" c1="0.40 0.77 0.68 0.12 0.84 0.74 0.34 0.91 0.35 0.25 0.51" c2="0.58 0.75 0.20 0.10 0.82 0.26 0.46 0.43 0.33 0.59 0.49" c3="0.76 0.27 0.18 0.90 0.34 0.24 0.58 0.41 0.67 0.57 0.83"
+         nodes="0.08 0.32 1;0.76 0.24 3;0.70 0.76 2;0.16 0.80 4"/>
+</PARAMS>

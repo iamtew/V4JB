@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Scatter algo, dark room. Edit: Lowpass, Noise, Blur, Tail / Morph: Path / Mod: LFO 3 on Blur -->
+<PARAMS presetName="Scatter Room" category="Dread">
+  <PARAM id="sp_algo" value="14"/>
+  <PARAM id="sp_depth" value="0.8"/>
+  <PARAM id="sp_tilt" value="1.6"/>
+  <PARAM id="nz_mix" value="0.16"/>
+  <PARAM id="poly" value="5"/>
+  <PARAM id="e1_a" value="1.1"/>
+  <PARAM id="e1_r" value="3.8"/>
+  <PARAM id="e1_s" value="0.85"/>
+  <PARAM id="mmode" value="1"/>
+  <PARAM id="mtime" value="4"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <PARAM id="s2_type" value="7"/>
+  <PARAM id="s2_main" value="0.52"/>
+  <PARAM id="s2_p1" value="0.5"/>
+  <PARAM id="s2_p2" value="0.15"/>
+  <PARAM id="s2_p3" value="0.28"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s3_type" value="17"/>
+  <PARAM id="s3_main" value="0.28"/>
+  <PARAM id="s3_p1" value="0.55"/>
+  <PARAM id="s4_type" value="16"/>
+  <PARAM id="s4_main" value="0.45"/>
+  <PARAM id="s4_p1" value="0.5"/>
+  <PARAM id="s4_ls" value="3"/>
+  <PARAM id="s4_la" value="0.2"/>
+  <PARAM id="s5_type" value="22"/>
+  <PARAM id="s5_main" value="0.42"/>
+  <PARAM id="s5_p1" value="0.65"/>
+  <PARAM id="s5_p2" value="0.5"/>
+  <PARAM id="l3_rate" value="0.07"/>
+  <PARAM id="l3_shape" value="1"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="dl_on" value="0"/>
+  <PARAM id="dr_on" value="0"/>
+  <PARAM id="rv_mix" value="0.32"/>
+  <PARAM id="md_mix" value="0.22"/>
+  <MORPH c0="0.12 0.60 0.46 0.68 0.55 0.77 0.27 0.85 0.25 0.12 0.34" c1="0.30 0.58 0.80 0.66 0.89 0.75 0.39 0.83 0.23 0.46 0.32" c2="0.48 0.10 0.78 0.18 0.87 0.27 0.51 0.35 0.21 0.44 0.66" c3="0.66 0.90 0.30 0.16 0.39 0.25 0.63 0.33 0.55 0.42 0.64"
+         nodes="0.11 0.14 2;0.88 0.24 4;0.70 0.83 3;0.16 0.80 5"/>
+</PARAMS>
