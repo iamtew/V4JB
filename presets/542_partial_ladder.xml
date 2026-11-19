@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Phrase up the partials, Tail rings. Edit: Phrase, Lowpass, Tail, Hype / Morph: Path Sync / Mod: LFO 1 on Lowpass -->
+<PARAMS presetName="Partial Ladder" category="Phrases">
+  <PARAM id="sp_algo" value="0"/>
+  <PARAM id="sp_depth" value="0.2"/>
+  <PARAM id="sp_tilt" value="1.1"/>
+  <PARAM id="nz_mix" value="0.02"/>
+  <PARAM id="poly" value="6"/>
+  <PARAM id="e1_a" value="0.08"/>
+  <PARAM id="e1_r" value="1.2"/>
+  <PARAM id="e1_s" value="0.85"/>
+  <PARAM id="mmode" value="2"/>
+  <PARAM id="mtime" value="5.2"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <PARAM id="s2_type" value="20"/>
+  <PARAM id="s2_main" value="0.05"/>
+  <PARAM id="s2_p1" value="0.45"/>
+  <PARAM id="s2_p2" value="0.85"/>
+  <PARAM id="s2_p3" value="0.55"/>
+  <PARAM id="s2_p4" value="0.25"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s3_type" value="7"/>
+  <PARAM id="s3_main" value="0.72"/>
+  <PARAM id="s3_p1" value="0.4"/>
+  <PARAM id="s3_p2" value="0.2"/>
+  <PARAM id="s3_p3" value="0.4"/>
+  <PARAM id="s3_ls" value="1"/>
+  <PARAM id="s3_la" value="0.12"/>
+  <PARAM id="s4_type" value="22"/>
+  <PARAM id="s4_main" value="0.4"/>
+  <PARAM id="s4_p1" value="0.55"/>
+  <PARAM id="s4_p2" value="0.4"/>
+  <PARAM id="s5_type" value="13"/>
+  <PARAM id="s5_main" value="0.4"/>
+  <PARAM id="s5_p1" value="0.35"/>
+  <PARAM id="s5_p2" value="0.45"/>
+  <PARAM id="s5_p3" value="0.6"/>
+  <PARAM id="s5_p4" value="0.5"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="dl_on" value="0"/>
+  <PARAM id="dr_on" value="0"/>
+  <PARAM id="rv_mix" value="0.34"/>
+  <PARAM id="md_mix" value="0.26"/>
+  <MORPH c0="0.18 0.83 0.61 0.75 0.89 0.22 0.32 0.14 0.28 0.42 0.56" c1="0.36 0.81 0.13 0.27 0.87 0.20 0.44 0.48 0.26 0.40 0.54" c2="0.54 0.79 0.11 0.25 0.39 0.54 0.56 0.46 0.60 0.74 0.52" c3="0.72 0.31 0.45 0.23 0.37 0.51 0.68 0.80 0.58 0.72 0.86"
+         nodes="0.14 0.26 3;0.80 0.24 5;0.70 0.76 4;0.16 0.80 1"/>
+</PARAMS>

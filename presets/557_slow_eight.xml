@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Slow Rate, long morph. Edit: Phrase, Lowpass, Tail, Blur / Morph: Path / Mod: LFO 3 on Phrase -->
+<PARAMS presetName="Slow Eight" category="Phrases">
+  <PARAM id="sp_algo" value="0"/>
+  <PARAM id="sp_depth" value="0.2"/>
+  <PARAM id="sp_tilt" value="1.25"/>
+  <PARAM id="nz_mix" value="0.03"/>
+  <PARAM id="poly" value="5"/>
+  <PARAM id="e1_a" value="0.2"/>
+  <PARAM id="e1_r" value="2.2"/>
+  <PARAM id="e1_s" value="0.85"/>
+  <PARAM id="mmode" value="1"/>
+  <PARAM id="mtime" value="6.8"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <PARAM id="s2_type" value="20"/>
+  <PARAM id="s2_main" value="0.1"/>
+  <PARAM id="s2_p1" value="0.18"/>
+  <PARAM id="s2_p2" value="0.7"/>
+  <PARAM id="s2_p3" value="0.5"/>
+  <PARAM id="s2_p4" value="0.6"/>
+  <PARAM id="s2_ls" value="3"/>
+  <PARAM id="s2_la" value="0.2"/>
+  <PARAM id="s3_type" value="7"/>
+  <PARAM id="s3_main" value="0.68"/>
+  <PARAM id="s3_p1" value="0.45"/>
+  <PARAM id="s3_p2" value="0.18"/>
+  <PARAM id="s3_p3" value="0.35"/>
+  <PARAM id="s4_type" value="22"/>
+  <PARAM id="s4_main" value="0.55"/>
+  <PARAM id="s4_p1" value="0.7"/>
+  <PARAM id="s4_p2" value="0.5"/>
+  <PARAM id="s5_type" value="16"/>
+  <PARAM id="s5_main" value="0.4"/>
+  <PARAM id="s5_p1" value="0.5"/>
+  <PARAM id="l3_rate" value="0.08"/>
+  <PARAM id="l3_shape" value="0"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="dl_on" value="0"/>
+  <PARAM id="dr_on" value="0"/>
+  <PARAM id="rv_mix" value="0.34"/>
+  <PARAM id="md_mix" value="0.24"/>
+  <MORPH c0="0.20 0.67 0.70 0.72 0.74 0.76 0.32 0.35 0.37 0.39 0.41" c1="0.38 0.65 0.67 0.24 0.26 0.28 0.44 0.32 0.35 0.37 0.39" c2="0.56 0.17 0.20 0.22 0.24 0.26 0.56 0.31 0.69 0.71 0.73" c3="0.74 0.15 0.18 0.20 0.58 0.60 0.68 0.65 0.67 0.69 0.71"
+         nodes="0.14 0.20 3;0.84 0.24 5;0.70 0.76 4;0.16 0.80 1"/>
+</PARAMS>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Climb pattern, bell-ish. Edit: Phrase, Tail, Decay, Hype / Morph: Path Sync / Mod: LFO 1 on Decay -->
+<PARAMS presetName="Climb Ring" category="Phrases">
+  <PARAM id="sp_algo" value="15"/>
+  <PARAM id="sp_depth" value="0.55"/>
+  <PARAM id="sp_tilt" value="0.95"/>
+  <PARAM id="nz_mix" value="0.03"/>
+  <PARAM id="poly" value="4"/>
+  <PARAM id="e1_a" value="0.04"/>
+  <PARAM id="e1_r" value="1.8"/>
+  <PARAM id="e1_s" value="0.85"/>
+  <PARAM id="mmode" value="2"/>
+  <PARAM id="mtime" value="6"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <PARAM id="s2_type" value="20"/>
+  <PARAM id="s2_main" value="0.9"/>
+  <PARAM id="s2_p1" value="0.4"/>
+  <PARAM id="s2_p2" value="0.85"/>
+  <PARAM id="s2_p3" value="0.6"/>
+  <PARAM id="s2_p4" value="0.3"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s3_type" value="22"/>
+  <PARAM id="s3_main" value="0.5"/>
+  <PARAM id="s3_p1" value="0.6"/>
+  <PARAM id="s3_p2" value="0.35"/>
+  <PARAM id="s4_type" value="12"/>
+  <PARAM id="s4_main" value="0.45"/>
+  <PARAM id="s4_p1" value="0.4"/>
+  <PARAM id="s4_p2" value="0.15"/>
+  <PARAM id="s4_ls" value="1"/>
+  <PARAM id="s4_la" value="0.14"/>
+  <PARAM id="s5_type" value="13"/>
+  <PARAM id="s5_main" value="0.48"/>
+  <PARAM id="s5_p1" value="0.3"/>
+  <PARAM id="s5_p2" value="0.4"/>
+  <PARAM id="s5_p3" value="0.7"/>
+  <PARAM id="s5_p4" value="0.6"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="dl_on" value="0"/>
+  <PARAM id="dr_on" value="0"/>
+  <PARAM id="rv_mix" value="0.38"/>
+  <PARAM id="md_mix" value="0.22"/>
+  <MORPH c0="0.22 0.53 0.39 0.62 0.48 0.70 0.42 0.78 0.19 0.87 0.27" c1="0.40 0.51 0.73 0.60 0.82 0.68 0.54 0.76 0.17 0.39 0.25" c2="0.58 0.85 0.71 0.12 0.80 0.20 0.66 0.28 0.15 0.37 0.59" c3="0.76 0.83 0.23 0.10 0.32 0.18 0.78 0.26 0.49 0.35 0.57"
+         nodes="0.20 0.14 5;0.88 0.24 2;0.70 0.83 1;0.16 0.80 3"/>
+</PARAMS>

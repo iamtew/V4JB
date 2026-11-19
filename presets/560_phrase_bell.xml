@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Bell algo, Phrase strike. Edit: Phrase, Decay, Tail, Hype / Morph: Path Sync / Mod: Env 4 on Phrase -->
+<PARAMS presetName="Phrase Bell" category="Phrases">
+  <PARAM id="sp_algo" value="15"/>
+  <PARAM id="sp_depth" value="0.7"/>
+  <PARAM id="sp_tilt" value="0.85"/>
+  <PARAM id="nz_mix" value="0.03"/>
+  <PARAM id="poly" value="4"/>
+  <PARAM id="e1_a" value="0.01"/>
+  <PARAM id="e1_r" value="2.5"/>
+  <PARAM id="e1_s" value="0.85"/>
+  <PARAM id="mmode" value="2"/>
+  <PARAM id="mtime" value="8"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <PARAM id="s2_type" value="20"/>
+  <PARAM id="s2_main" value="0.18"/>
+  <PARAM id="s2_p1" value="0.42"/>
+  <PARAM id="s2_p2" value="0.85"/>
+  <PARAM id="s2_p3" value="0.55"/>
+  <PARAM id="s2_p4" value="0.2"/>
+  <PARAM id="s2_ls" value="0"/>
+  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s2_es" value="4"/>
+  <PARAM id="s2_ea" value="0.4"/>
+  <PARAM id="s3_type" value="12"/>
+  <PARAM id="s3_main" value="0.55"/>
+  <PARAM id="s3_p1" value="0.35"/>
+  <PARAM id="s3_p2" value="0.1"/>
+  <PARAM id="s4_type" value="22"/>
+  <PARAM id="s4_main" value="0.48"/>
+  <PARAM id="s4_p1" value="0.6"/>
+  <PARAM id="s4_p2" value="0.3"/>
+  <PARAM id="s5_type" value="13"/>
+  <PARAM id="s5_main" value="0.5"/>
+  <PARAM id="s5_p1" value="0.3"/>
+  <PARAM id="s5_p2" value="0.35"/>
+  <PARAM id="s5_p3" value="0.75"/>
+  <PARAM id="s5_p4" value="0.65"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="dl_on" value="0"/>
+  <PARAM id="dr_on" value="0"/>
+  <PARAM id="rv_mix" value="0.3"/>
+  <PARAM id="md_mix" value="0.22"/>
+  <MORPH c0="0.12 0.84 0.63 0.77 0.09 0.23 0.22 0.16 0.30 0.44 0.58" c1="0.30 0.82 0.15 0.29 0.89 0.21 0.34 0.50 0.28 0.42 0.56" c2="0.48 0.80 0.13 0.27 0.41 0.55 0.46 0.48 0.62 0.76 0.54" c3="0.66 0.32 0.47 0.25 0.39 0.53 0.58 0.82 0.60 0.74 0.88"
+         nodes="0.08 0.14 1;0.88 0.24 3;0.70 0.76 2;0.16 0.80 4"/>
+</PARAMS>
