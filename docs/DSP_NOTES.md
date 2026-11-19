@@ -12,10 +12,10 @@ MIDI -> voice allocator (8 voices; steal oldest released, else oldest held)
           amp envelope (Env 1)      -> target levels for the sine bank
      -> sine bank sums partials every sample, levels ramp across the block
      -> tanh safety
-slot 12 (processor): 2× oversampled tanh drive, chorus/phaser, ping-pong delay (8 s), FDN reverb, M/S width, limiter, volume
+slot 12 (processor): 2× oversampled tanh drive, chorus/phaser, ping-pong delay (8 s), FDN reverb + shimmer, M/S width, limiter, volume
 ```
 
-All engine code is header-only and JUCE-free in `src/dsp/`; `tests/engine_check.cpp` renders it. Chorus, phaser, delay, limiter, and drive oversampling use `juce::dsp`. Reverb is `src/dsp/Reverb.h` (8-line Householder FDN, same Size / Damp / Mix knobs).
+All engine code is header-only and JUCE-free in `src/dsp/`; `tests/engine_check.cpp` renders it. Drive oversampling uses `juce::dsp`. Chorus, phaser, hermite delay, and the limiter live in `src/dsp/Fx.h`. Reverb is `src/dsp/Reverb.h` (8-line Householder FDN, Size / Damp / Mix / Shimmer).
 
 ## Sine bank (`Partials.h`)
 
@@ -36,7 +36,7 @@ One `processModule()` switch, per-voice state per slot. Knobs are all 0..1. A sl
 | Group | Modules |
 |------|---------|
 | Basic | 5-Sines, Odd/Even, Sync (hump at the slave pitch), Adder, Discrete Adder (every Nth boosted, Discrete thins), Every Nth, Harmonic Add, Range Enhance, Clip |
-| Filter | Lowpass / Highpass (6..48 dB/oct + resonant bump, key track), Bandpass, Notch, Moving Filter (notches on a sqrt-frequency scale, so they spread apart as they rise), Decay (high partials die faster), Hype (two shelves, ±18 dB at Amount 0.5) |
+| Filter | Lowpass / Highpass (6..48 dB/oct + resonant bump, key track), Bandpass, Notch, Moving Filter (notches on a sqrt-frequency scale, so they spread apart as they rise), Decay (high partials die faster), Hype (two shelves, ±18 dB at Amount 0.5), Formant (A–E–I–O–U peaks in Hz) |
 | Effect | Modulator (a travelling loudness wave up the partials), Detuned (alternating / random / growing detune plus beating), Blur (random level wander), Noise (fresh random level each block), Octaver (copies to 2n and 4n), Second Tone (half the partials become a second tone at an interval) |
 | Rhythm | Phrase (8-step spectral arpeggio over the low partials, on the beat clock), Random Drops (random partials flare and fade), Tail (per-partial peak hold that rings down) |
 | Wave | Wave (follow file A or B), Double Wave (A and B mixed by Balance) |
@@ -55,7 +55,7 @@ Four ADSRs per voice: linear attack, exponential decay and release (down 60 dB a
 |------|------|
 | Character | distortion depth, noise mix, Double Wave balance |
 | Complexity | partial count (x1/4..x4), tilt |
-| Tone | main knob of filter-type modules and Sync, tilt |
+| Tone | main knob of filter-type modules, Sync, and Formant, tilt |
 | Punch | amp attack (shorter), decay, velocity |
 | Length | amp decay, release, sustain |
 | Time FX | main knob of Phrase, Random Drops, Tail, Decay, Modulator, Blur |

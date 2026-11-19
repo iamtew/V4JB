@@ -22,7 +22,7 @@ Instead of 512 knobs, the sound runs through a chain of 12 slots that shape thos
 
 1. **Slot 1, Spectral** (fixed): where the partials sit and how they start out — spacing, brightness, shimmer, noise.
 2. **Slots 2–11**: pick any module per slot. They run in order, left to right, then the second row. Order matters: a Lowpass before Random Drops is not the same as after.
-3. **Slot 12, Effects & Master** (fixed): drive, chorus or phaser, ping-pong delay, reverb, stereo width. This is the only stage that works on the summed audio instead of the partial list.
+3. **Slot 12, Effects & Master** (fixed): drive, chorus or phaser, ping-pong delay, reverb (with shimmer), stereo width. This is the only stage that works on the summed audio instead of the partial list.
 
 The teal bars on each Edit card show the first 64 partials **after that slot**, for the last note you played. Empty bars mean no note has sounded yet. The plugin is not broken. It is shy.
 

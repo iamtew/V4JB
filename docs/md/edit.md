@@ -107,6 +107,8 @@ All extra knobs are 0–100% unless noted. “Use when” is a hint, not a rule.
 
 **Hype** — two shelves, low and high. **Amount** scales both (at 50% you get ±18 dB, at 100% ±36 dB). **Low Freq / Low Gain**, **High Freq / High Gain**. Instant air or body, depending on your mood and the mix.
 
+**Formant** — three peaks in Hz (F1/F2/F3), morphing **A–E–I–O–U** on **Vowel**. **Shift** slides the mouth ±1 octave. **Resonance** narrows the peaks. **Mix**. **Bright** lifts F3. The Tone macro reaches this.
+
 ### Motion and doubling
 
 **Modulator** — a travelling wave of loudness that rolls up through the partials. **Depth**, **Rate**, **Period** (how many partials per bump), **Sharp**.
@@ -157,11 +159,11 @@ Audio after the sine bank. Each effect has its own **On**. Mix knobs are also pu
 
 **Drive** — tanh saturator, 2× oversampled so bright stacks do not fold as hard. **Drive** is gain into the curve. **Mix**.
 
-**Mod** — **Chorus** or **Phaser**. **Rate** 0.01–10 Hz, **Depth**, **Mix**.
+**Mod** — **Chorus** or **Phaser** (own delay/allpass, not the stock JUCE boxes). **Rate** 0.01–10 Hz, **Depth**, **Mix**.
 
 **Delay** — ping-pong (each side’s echo feeds the other). **Sync** uses **Division** (`1/16`, `1/8`, `1/8 dot`, `1/4`, `1/4 dot`, `1/2`, `1 bar`) against host tempo. **1 bar** fits down to 30 BPM (8 s buffer). Off uses **Time** 10–2000 ms. The one the clock is not using is grey. **Feedback** 0–0.95. **Mix**. Turning it off and on again clears stale echoes, which is the polite way to stop a delay that has been thinking too hard.
 
-**Reverb** — 8-line FDN (not the stock JUCE box). **Size** stretches the taps and the decay, **Damping** dulls the feedback, **Mix**.
+**Reverb** — 8-line FDN (not the stock JUCE box). **Size** stretches the taps and the decay, **Damping** dulls the feedback, **Mix**. **Shimmer** feeds an octave-up copy back into the tank so the tail climbs; 0 is off and that is the default.
 
 **Master** — **Width** 0 = mono, 1 = natural, 2 = extra wide (M/S). **Spread** pans odd partials one way and even the other (fundamental and subs stay centred). This Spread is applied in the sine bank, not here, but the knob lives on this card because that is where you go looking for “make it wider.”
 

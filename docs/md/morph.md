@@ -20,7 +20,7 @@ What each macro actually moves (from the centre):
 |---|---|
 | Character | Spectral Depth, Noise mix, Double Wave / Wave-page Balance |
 | Complexity | Partials count (×¼…×4), Tilt |
-| Tone | Main knob of Lowpass, Highpass, Bandpass, Notch, Hype, Moving Filter, Sync; also Tilt |
+| Tone | Main knob of Lowpass, Highpass, Bandpass, Notch, Hype, Moving Filter, Sync, Formant; also Tilt |
 | Punch | Amp attack shorter, amp decay, amp Velocity |
 | Length | Amp decay, release, sustain |
 | Time FX | Main knob of Phrase, Random Drops, Tail, Decay, Modulator, Blur |

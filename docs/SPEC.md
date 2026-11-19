@@ -36,7 +36,7 @@ Tabs: Edit, Mod, Morph, Wave. Standalone adds a key strip (C2–C6).
 
 ## Effects
 
-Drive, chorus/phaser, ping-pong delay, reverb, width — Slot 12 only. Always-on safety limiter after that chain (no parameters).
+Drive, chorus/phaser, ping-pong delay, reverb (FDN + octave shimmer), width — Slot 12 only. Always-on safety limiter after that chain (no parameters).
 
 ## Do not
 
