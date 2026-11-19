@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Scatter at full depth, mostly noise; a Bandpass jumps on a fast sample-and-hold LFO lik…. Edit: Noise, Bandpass, Random Drops, Clip / Morph: Path / Mod + Slot 12 set -->
+<!-- Scatter at full depth, mostly noise; a Bandpass jumps on a fast sample-and-hold LFO lik. Edit: Noise, Bandpass, Random Drops, Clip / Morph: Path / Mod + Slot 12 set -->
 <PARAMS presetName="Radio Static" category="SFX">
   <PARAM id="sp_algo" value="14"/>
   <PARAM id="sp_depth" value="1"/>

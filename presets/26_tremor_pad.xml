@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Stretch spacing, a Modulator wave gated by LFO 2 (square, 1/8 synced), and the Phaser i…. Edit: Modulator, Lowpass, Phrase, Harmonic Add / Morph: Path Sync / Mod + Slot 12 set -->
+<!-- Stretch spacing, a Modulator wave gated by LFO 2 (square, 1/8 synced), and the Phaser i. Edit: Modulator, Lowpass, Phrase, Harmonic Add / Morph: Path Sync / Mod + Slot 12 set -->
 <PARAMS presetName="Tremor Pad" category="Moving Pads">
   <PARAM id="sp_algo" value="1"/>
   <PARAM id="sp_depth" value="0.3"/>

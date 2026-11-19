@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Primes spacing an octave up with a fast Decay and a tiny click: slightly out of tune on…. Edit: Decay, Lowpass, Second Tone, Harmonic Add / Morph: Manual / Mod + Slot 12 set -->
+<!-- Primes spacing an octave up with a fast Decay and a tiny click: slightly out of tune on. Edit: Decay, Lowpass, Second Tone, Harmonic Add / Morph: Manual / Mod + Slot 12 set -->
 <PARAMS presetName="Toy Piano" category="Keys">
   <PARAM id="octave" value="1"/>
   <PARAM id="sp_algo" value="5"/>

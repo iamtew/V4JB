@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Golden spacing with an Adder hump, Blur and a very slow free morph path across all four…. Edit: Adder, Blur, Lowpass, Octaver / Morph: Path / Mod + Slot 12 set -->
+<!-- Golden spacing with an Adder hump, Blur and a very slow free morph path across all four. Edit: Adder, Blur, Lowpass, Octaver / Morph: Path / Mod + Slot 12 set -->
 <PARAMS presetName="Long Horizon" category="Drones">
   <PARAM id="sp_algo" value="6"/>
   <PARAM id="sp_depth" value="0.3"/>

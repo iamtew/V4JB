@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- All drawers out: 5-Sines with every harmonic up, the Octaver adding the octave ranks, f…. Edit: 5-Sines, Octaver, Lowpass, Second Tone / Morph: Manual / Mod + Slot 12 set -->
+<!-- All drawers out: 5-Sines with every harmonic up, the Octaver adding the octave ranks, f. Edit: 5-Sines, Octaver, Lowpass, Second Tone / Morph: Manual / Mod + Slot 12 set -->
 <PARAMS presetName="Full Stops" category="Organs">
   <PARAM id="sp_algo" value="7"/>
   <PARAM id="sp_depth" value="0.3"/>

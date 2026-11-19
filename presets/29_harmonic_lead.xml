@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Mono lead: Even Shift spacing, Harmonic Add on partial 3 swelling with aftertouch, velo…. Edit: Harmonic Add, Lowpass, Blur, Detuned / Morph: Manual / Mod + Slot 12 set -->
+<!-- Mono lead: Even Shift spacing, Harmonic Add on partial 3 swelling with aftertouch, velo. Edit: Harmonic Add, Lowpass, Blur, Detuned / Morph: Manual / Mod + Slot 12 set -->
 <PARAMS presetName="Harmonic Lead" category="Leads">
   <PARAM id="poly" value="1"/>
   <PARAM id="glide" value="0.06"/>

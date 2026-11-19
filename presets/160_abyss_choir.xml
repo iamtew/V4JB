@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Root spacing, a low Bandpass choir an octave down; a free morph path slowly changes the…. Edit: Bandpass, Detuned, Tail, Second Tone / Morph: Path / Mod + Slot 12 set -->
+<!-- Root spacing, a low Bandpass choir an octave down; a free morph path slowly changes the. Edit: Bandpass, Detuned, Tail, Second Tone / Morph: Path / Mod + Slot 12 set -->
 <PARAMS presetName="Abyss Choir" category="Drones">
   <PARAM id="octave" value="-1"/>
   <PARAM id="sp_algo" value="9"/>

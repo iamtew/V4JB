@@ -25,7 +25,7 @@ Tabs: Edit, Mod, Morph, Wave. Standalone adds a key strip (C2–C6).
 - 1 is mono (last-note priority, legato glide); 2–8 are polyphonic. When voices run out, steal the oldest released, else the oldest held.
 - 12 slots: Slot 1 Spectral (fixed), slots 2–11 pick any module, Slot 12 Effects & Master (fixed, summed audio)
 - 4 envelopes, 3 tempo-syncable LFOs
-- MIDI: velocity, mod wheel, aftertouch (channel and poly into one global value), pitch bend ±2 semitones, plus Key and Key+Vel as slot MIDI sources
+- MIDI: velocity, mod wheel, aftertouch (channel and poly into one global value), pitch bend ±2 semitones, sustain (CC 64), plus Key and Key+Vel as slot MIDI sources. All Notes Off releases; All Sound Off kills voices and the delay/reverb.
 
 ## Morph and Wave
 

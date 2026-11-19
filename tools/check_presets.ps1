@@ -1,4 +1,4 @@
-# Checks every factory preset in presets/*.xml (run by `just check`).
+﻿# Checks every factory preset in presets/*.xml (run by `just check`).
 # Catches what would otherwise fail silently at load time: unknown parameter ids,
 # out-of-range values, missing built-in waves, duplicate names, unknown categories,
 # and malformed <MORPH> blocks. Ranges mirror src/parameters/ParameterLayout.h.
@@ -47,9 +47,16 @@ $root = Split-Path $PSScriptRoot -Parent
 $errors = [System.Collections.Generic.List[string]]::new()
 $names = @{}
 $files = Get-ChildItem (Join-Path $root 'presets\*.xml')
+$jucer = Get-Content (Join-Path $root 'V4JB.jucer') -Raw
+foreach ($wav in Get-ChildItem (Join-Path $root 'presets\waves\*.wav')) {
+    if ($jucer -notlike "*$($wav.Name)*") { $errors.Add("$($wav.Name): not a jucer BinaryData resource") }
+}
 
 foreach ($f in $files) {
-    $x = [xml](Get-Content $f.FullName -Raw)
+    $raw = Get-Content $f.FullName -Raw
+    if ($jucer -notlike "*$($f.Name)*") { $errors.Add("$($f.Name): not a jucer BinaryData resource") }
+    if ($f.Name -ne '00_init.xml' -and $raw -match '…') { $errors.Add("$($f.Name): truncated comment") }
+    $x = [xml]$raw
     $p = $x.PARAMS
     if ($null -eq $p) { $errors.Add("$($f.Name): no <PARAMS> root"); continue }
 
@@ -71,6 +78,7 @@ foreach ($f in $files) {
         $id = $e.id; $v = [double]$e.value
         if ($seen.ContainsKey($id)) { $errors.Add("$($f.Name): $id set twice") }
         $seen[$id] = 1
+        if ([double]::IsNaN($v)) { $errors.Add("$($f.Name): $id is NaN"); continue }
         $rule = $rules | Where-Object { $id -match $_[0] } | Select-Object -First 1
         if ($null -eq $rule) { $errors.Add("$($f.Name): unknown id '$id'"); continue }
         if ($v -lt $rule[1] -or $v -gt $rule[2] -or ($rule[3] -and $v -ne [math]::Floor($v))) {

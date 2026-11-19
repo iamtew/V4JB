@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Struck bars: Bar spacing, Decay (shorter on hard high notes via Key+Vel), Env 2 on a ke…. Edit: Decay, Lowpass, Noise, Tail / Morph: Manual / Mod + Slot 12 set -->
+<!-- Struck bars: Bar spacing, Decay (shorter on hard high notes via Key+Vel), Env 2 on a ke. Edit: Decay, Lowpass, Noise, Tail / Morph: Manual / Mod + Slot 12 set -->
 <PARAMS presetName="Bar Mallets" category="Percussive">
   <PARAM id="sp_algo" value="3"/>
   <PARAM id="sp_depth" value="0.7"/>

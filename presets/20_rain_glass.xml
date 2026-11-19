@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Wave module on the rain recording, Scatter spacing, and a key-tracked Notch drifting on…. Edit: Wave, Notch, Highpass, Octaver / Morph: Path / Mod + Slot 12 set -->
+<!-- Wave module on the rain recording, Scatter spacing, and a key-tracked Notch drifting on. Edit: Wave, Notch, Highpass, Octaver / Morph: Path / Mod + Slot 12 set -->
 <PARAMS presetName="Rain Glass" category="Atmospheres" waveA="factory:rain.wav">
   <PARAM id="sp_algo" value="14"/>
   <PARAM id="sp_depth" value="0.5"/>

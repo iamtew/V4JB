@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Fold spacing; Every Nth jumps on a 1/16 sample-and-hold, and an X-Axis Env morph with S…. Edit: Every Nth, Moving Filter, Clip, Random Drops / Morph: X-Axis Env / Mod + Slot 12 set -->
+<!-- Fold spacing; Every Nth jumps on a 1/16 sample-and-hold, and an X-Axis Env morph with S. Edit: Every Nth, Moving Filter, Clip, Random Drops / Morph: X-Axis Env / Mod + Slot 12 set -->
 <PARAMS presetName="Glitch Steps" category="SFX">
   <PARAM id="sp_algo" value="11"/>
   <PARAM id="sp_depth" value="0.7"/>

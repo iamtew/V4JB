@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Log spacing two octaves down, both subs, a slow Moving Filter, and a free morph path dr…. Edit: Moving Filter, Lowpass, Second Tone, Modulator / Morph: Path / Mod + Slot 12 set -->
+<!-- Log spacing two octaves down, both subs, a slow Moving Filter, and a free morph path dr. Edit: Moving Filter, Lowpass, Second Tone, Modulator / Morph: Path / Mod + Slot 12 set -->
 <PARAMS presetName="Dark Matter" category="Drones">
   <PARAM id="octave" value="-2"/>
   <PARAM id="sp_algo" value="10"/>

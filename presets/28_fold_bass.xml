@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Mono bass: Fold spacing, Clip flattening the spectrum, Env 2 plucking the Lowpass, subs…. Edit: Clip, Lowpass, Second Tone, Decay / Morph: Manual / Mod + Slot 12 set -->
+<!-- Mono bass: Fold spacing, Clip flattening the spectrum, Env 2 plucking the Lowpass, subs. Edit: Clip, Lowpass, Second Tone, Decay / Morph: Manual / Mod + Slot 12 set -->
 <PARAMS presetName="Fold Bass" category="Basses">
   <PARAM id="poly" value="1"/>
   <PARAM id="glide" value="0.12"/>

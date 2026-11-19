@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Stretch spacing; Env 2 sweeps the Sync hump for the buzzing bridge, a slow Modulator sh…. Edit: Sync, Decay, Modulator, Moving Filter / Morph: Manual / Mod + Slot 12 set -->
+<!-- Stretch spacing; Env 2 sweeps the Sync hump for the buzzing bridge, a slow Modulator sh. Edit: Sync, Decay, Modulator, Moving Filter / Morph: Manual / Mod + Slot 12 set -->
 <PARAMS presetName="Sitar Pluck" category="Plucks">
   <PARAM id="sp_algo" value="1"/>
   <PARAM id="sp_depth" value="0.3"/>
