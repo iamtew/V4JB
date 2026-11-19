@@ -12,7 +12,7 @@ Each column:
 - Macro name.
 - **Meter** (teal) — live value after the pad and the offset. Neutral is 0.5.
 - **Offset** slider — automatable, −0.5…+0.5, added on top. The DAW sees these as “Character Offset” and so on.
-- **Free** — take this macro out of the pad. It sits at 0.5 plus the offset, so you can automate it without the puck fighting you.
+- **Free** — take this macro out of the pad (host name **Unlinked**, e.g. Character Unlinked). It sits at 0.5 plus the offset, so you can automate it without the puck fighting you.
 
 What each macro actually moves (from the centre):
 

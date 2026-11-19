@@ -159,7 +159,7 @@ Audio after the sine bank. Each effect has its own **On**. Mix knobs are also pu
 
 **Mod** — **Chorus** or **Phaser**. **Rate** 0.01–10 Hz, **Depth**, **Mix**.
 
-**Delay** — ping-pong (each side’s echo feeds the other). **Sync** uses **Division** (`1/16`, `1/8`, `1/8 dot`, `1/4`, `1/4 dot`, `1/2`, `1 bar`) against host tempo. Off uses **Time** 10–2000 ms. **Feedback** 0–0.95. **Mix**. Turning it off and on again clears stale echoes, which is the polite way to stop a delay that has been thinking too hard.
+**Delay** — ping-pong (each side’s echo feeds the other). **Sync** uses **Division** (`1/16`, `1/8`, `1/8 dot`, `1/4`, `1/4 dot`, `1/2`, `1 bar`) against host tempo. **1 bar** only fits down to about 92 BPM; slower tempos clamp to the ~2.6 s buffer. Off uses **Time** 10–2000 ms. **Feedback** 0–0.95. **Mix**. Turning it off and on again clears stale echoes, which is the polite way to stop a delay that has been thinking too hard.
 
 **Reverb** — **Size**, **Damping**, **Mix**.
 
