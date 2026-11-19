@@ -2,7 +2,9 @@
 // building blocks (spacing, modules, morph, wave, voice stealing) do what they say. No JUCE.
 #include "dsp/Engine.h"
 #include "dsp/Morph.h"
+#include "dsp/Reverb.h"
 
+#include <algorithm>
 #include <cmath>
 #include <cstdio>
 #include <memory>
@@ -234,6 +236,56 @@ int main()
         env.advance (kXAxis, 0.f, 0.f, 1.f, 0, 0.0, 0.5f, false);
         CHECK (std::fabs (env.outX.load() - 0.5f) < 1.e-5f);
         CHECK (std::fabs (env.outY.load() - 0.5f) < 1.e-5f);
+    }
+
+    // Slot 12 FDN: mix 0 is dry, an impulse rings and stays finite.
+    {
+        Reverb rv;
+        rv.prepare (sr);
+        std::vector<float> L (512, 0.f), R (512, 0.f);
+        L[0] = R[0] = 1.f;
+        rv.process (L.data(), R.data(), 512, 0.7f, 0.4f, 0.f);
+        CHECK (L[0] == 1.f && R[0] == 1.f);
+        for (int i = 1; i < 512; ++i)
+            CHECK (L[i] == 0.f && R[i] == 0.f);
+
+        rv.reset();
+        std::fill (L.begin(), L.end(), 0.f);
+        std::fill (R.begin(), R.end(), 0.f);
+        L[0] = R[0] = 1.f;
+        rv.process (L.data(), R.data(), 512, 0.7f, 0.4f, 1.f);
+        float peak = 0.f;
+        bool finite = true;
+        for (int i = 0; i < 512; ++i)
+        {
+            finite = finite && std::isfinite (L[i]) && std::isfinite (R[i]);
+            peak = std::fmax (peak, std::fmax (std::fabs (L[i]), std::fabs (R[i])));
+        }
+        CHECK (finite && peak > 0.05f && peak < 8.f);
+
+        auto blockPeak = [&] ()
+        {
+            float p = 0.f;
+            for (int i = 0; i < 512; ++i)
+            {
+                finite = finite && std::isfinite (L[i]) && std::isfinite (R[i]);
+                p = std::fmax (p, std::fmax (std::fabs (L[i]), std::fabs (R[i])));
+            }
+            return p;
+        };
+        float early = 0.f, late = 0.f;
+        for (int b = 0; b < 90; ++b)
+        {
+            std::fill (L.begin(), L.end(), 0.f);
+            std::fill (R.begin(), R.end(), 0.f);
+            rv.process (L.data(), R.data(), 512, 0.7f, 0.4f, 1.f);
+            const float pk = blockPeak();
+            if (b < 8)
+                early = std::fmax (early, pk);
+            if (b >= 80)
+                late = std::fmax (late, pk);
+        }
+        CHECK (finite && early > 1.e-4f && late < early);
     }
 
     std::printf ("rms chord %.3f  peak %.3f  | tail %.5f\n", chord.rms, chord.peak, tail.tailPeak);

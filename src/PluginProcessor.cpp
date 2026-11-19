@@ -100,16 +100,22 @@ void V4JBAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
     const juce::dsp::ProcessSpec spec { sampleRate, (juce::uint32) fxBlock, 2 };
     chorus.prepare (spec);
     phaser.prepare (spec);
-    reverb.prepare (spec);
+    reverb.prepare (sampleRate);
     limiter.prepare (spec);
     limiter.setThreshold (-0.5f);
     limiter.setRelease (80.f);
-    delay.setMaximumDelayInSamples ((int) (sampleRate * 2.6));  // 1 bar at 92 bpm, or 2000 ms
+    delay.setMaximumDelayInSamples ((int) std::ceil (sampleRate * kDelayMaxSeconds) + 8);
     delay.prepare (spec);
     delaySamples.reset (sampleRate, 0.08);
     delaySamples.setCurrentAndTargetValue ((float) (sampleRate * 0.375));
+    driveAmt.reset (sampleRate, 0.02);
+    driveMix.reset (sampleRate, 0.02);
+    delayMix.reset (sampleRate, 0.02);
+    reverbMix.reset (sampleRate, 0.02);
     delayWasOn = false;
-    reverbParams = {};
+    driveOs.initProcessing ((size_t) fxBlock);
+    driveOs.reset();
+    driveBuf.setSize (2, fxBlock);
 }
 
 void V4JBAudioProcessor::pushKey (int note, bool on) noexcept
@@ -269,16 +275,15 @@ void V4JBAudioProcessor::processEffects (float* L, float* R, int n, const float*
 {
     const float mixOff = macros[8] - 0.5f;
     const float width = juce::jlimit (0.f, 2.f, ld (ptr.width) + (macros[9] - 0.5f));
-
-    if (ldb (ptr.drOn))
+    const bool drOn = ldb (ptr.drOn);
+    driveAmt.setTargetValue (1.f + ld (ptr.drAmt) * 20.f);
+    driveMix.setTargetValue (clamp01 (ld (ptr.drMix) + mixOff));
+    delayMix.setTargetValue (clamp01 (ld (ptr.dlMix) + mixOff));
+    reverbMix.setTargetValue (clamp01 (ld (ptr.rvMix) + mixOff));
+    if (! drOn)
     {
-        const float g = 1.f + ld (ptr.drAmt) * 20.f, norm = 1.f / std::tanh (g);
-        const float mix = clamp01 (ld (ptr.drMix) + mixOff);
-        for (int i = 0; i < n; ++i)
-        {
-            L[i] += mix * (std::tanh (g * L[i]) * norm - L[i]);
-            R[i] += mix * (std::tanh (g * R[i]) * norm - R[i]);
-        }
+        driveAmt.skip (n);
+        driveMix.skip (n);
     }
 
     const bool dlOn = ldb (ptr.dlOn);
@@ -291,6 +296,12 @@ void V4JBAudioProcessor::processEffects (float* L, float* R, int n, const float*
                                             : ld (ptr.dlTime) * 0.001f;
         delaySamples.setTargetValue (juce::jlimit (1.f, (float) delay.getMaximumDelayInSamples() - 1.f, secs * (float) sr));
     }
+    else
+        delayMix.skip (n);
+
+    const bool rvOn = ldb (ptr.rvOn);
+    if (! rvOn)
+        reverbMix.skip (n);
 
     // juce::dsp effects keep per-block buffers sized at prepare, so feed them in fxBlock chunks.
     for (int off = 0; off < n; off += fxBlock)
@@ -299,6 +310,32 @@ void V4JBAudioProcessor::processEffects (float* L, float* R, int n, const float*
         float* ch[2] = { L + off, R + off };
         juce::dsp::AudioBlock<float> block (ch, 2, (size_t) len);
         juce::dsp::ProcessContextReplacing<float> ctx (block);
+
+        if (drOn)
+        {
+            const float g = driveAmt.skip (len);
+            const float norm = 1.f / std::tanh (g);
+            driveBuf.copyFrom (0, 0, ch[0], len);
+            driveBuf.copyFrom (1, 0, ch[1], len);
+            auto wetBlock = juce::dsp::AudioBlock<float> (driveBuf).getSubBlock (0, (size_t) len);
+            auto hi = driveOs.processSamplesUp (wetBlock);
+            const int hn = (int) hi.getNumSamples();
+            for (int c = 0; c < 2; ++c)
+            {
+                auto* s = hi.getChannelPointer ((size_t) c);
+                for (int i = 0; i < hn; ++i)
+                    s[i] = std::tanh (g * s[i]) * norm;
+            }
+            driveOs.processSamplesDown (wetBlock);
+            const float* wL = driveBuf.getReadPointer (0);
+            const float* wR = driveBuf.getReadPointer (1);
+            for (int i = 0; i < len; ++i)
+            {
+                const float mix = driveMix.getNextValue();
+                ch[0][i] += mix * (wL[i] - ch[0][i]);
+                ch[1][i] += mix * (wR[i] - ch[1][i]);
+            }
+        }
 
         if (ldb (ptr.mdOn))
         {
@@ -326,12 +363,13 @@ void V4JBAudioProcessor::processEffects (float* L, float* R, int n, const float*
         if (dlOn)
         {
             // Ping-pong: each side's echo feeds the other side.
-            const float fb = ld (ptr.dlFb), mix = clamp01 (ld (ptr.dlMix) + mixOff);
+            const float fb = ld (ptr.dlFb);
             float* l = ch[0];
             float* r = ch[1];
             for (int i = 0; i < len; ++i)
             {
                 const float t = delaySamples.getNextValue();
+                const float mix = delayMix.getNextValue();
                 const float dl = delay.popSample (0, t), dr = delay.popSample (1, t);
                 delay.pushSample (0, l[i] + dr * fb);
                 delay.pushSample (1, r[i] + dl * fb);
@@ -340,22 +378,10 @@ void V4JBAudioProcessor::processEffects (float* L, float* R, int n, const float*
             }
         }
 
-        if (ldb (ptr.rvOn))
+        if (rvOn)
         {
-            juce::Reverb::Parameters rp;
-            const float mix = clamp01 (ld (ptr.rvMix) + mixOff);
-            rp.roomSize = ld (ptr.rvSize);
-            rp.damping = ld (ptr.rvDamp);
-            rp.wetLevel = mix;
-            rp.dryLevel = 1.f - 0.5f * mix;
-            rp.width = 1.f;
-            if (rp.roomSize != reverbParams.roomSize || rp.damping != reverbParams.damping
-                || rp.wetLevel != reverbParams.wetLevel || rp.dryLevel != reverbParams.dryLevel)
-            {
-                reverbParams = rp;
-                reverb.setParameters (rp);
-            }
-            reverb.process (ctx);
+            const float mix = reverbMix.skip (len);
+            reverb.process (ch[0], ch[1], len, ld (ptr.rvSize), ld (ptr.rvDamp), mix);
         }
 
         // Mid/side width: 0 = mono, 1 = as is, 2 = extra wide.

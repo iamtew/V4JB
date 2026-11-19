@@ -15,7 +15,7 @@ src/
  PluginProcessor.h/.cpp   engine + effects + state, presets, waves
  PluginEditor.h/.cpp      top bar + tabs
  Presets.h WaveAnalyzer.h
- dsp/                     header-only, JUCE-free engine (tested by `just check`)
+ dsp/                     header-only, JUCE-free engine + FDN reverb (tested by `just check`)
  parameters/ParameterIDs.h ParameterLayout.h
  ui/Theme.h EditPage.h ModPage.h MorphPage.h WavePage.h VersionCompare.h
 presets/*.xml             factory presets (BinaryData)

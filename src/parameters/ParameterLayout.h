@@ -10,6 +10,7 @@
 inline constexpr int kNumDelayDivs = 7;
 inline constexpr const char* kDelayDivNames[kNumDelayDivs] = { "1/16", "1/8", "1/8 dot", "1/4", "1/4 dot", "1/2", "1 bar" };
 inline constexpr float kDelayDivBeats[kNumDelayDivs] = { 0.25f, 0.5f, 0.75f, 1.f, 1.5f, 2.f, 4.f };
+inline constexpr float kDelayMaxSeconds = 8.f;  // 1 bar at 30 bpm (Time knob still tops out at 2 s)
 
 // Default patch: a slow, airy pad. Slot 2 Lowpass breathing on LFO 1, slot 3 a
 // gentle Modulator, slot 4 Hype lifting the top. Everything else Off.

@@ -3,6 +3,7 @@
 #include "Presets.h"
 #include "dsp/Engine.h"
 #include "dsp/Morph.h"
+#include "dsp/Reverb.h"
 #include "parameters/ParameterLayout.h"
 
 #include <JuceHeader.h>
@@ -108,12 +109,14 @@ private:
     int fxBlock = 512;
     juce::dsp::Chorus<float> chorus;
     juce::dsp::Phaser<float> phaser;
-    juce::dsp::Reverb reverb;
-    juce::Reverb::Parameters reverbParams;
+    v4jb::Reverb reverb;
     juce::dsp::DelayLine<float, juce::dsp::DelayLineInterpolationTypes::Linear> delay;
-    juce::SmoothedValue<float> delaySamples;
+    juce::SmoothedValue<float> delaySamples, driveAmt, driveMix, delayMix, reverbMix;
     bool delayWasOn = false;
     juce::dsp::Limiter<float> limiter;
+    juce::dsp::Oversampling<float> driveOs { 2, 1,
+        juce::dsp::Oversampling<float>::filterHalfBandPolyphaseIIR, false, false };
+    juce::AudioBuffer<float> driveBuf;
 
     // Waves: the message thread owns them (shared_ptr), the audio thread reads a raw
     // pointer. A replaced wave is only freed after the audio thread has finished

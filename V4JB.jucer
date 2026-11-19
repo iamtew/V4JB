@@ -527,6 +527,7 @@
         <FILE id="mdlH001" name="Modules.h" compile="0" resource="0" file="src/dsp/Modules.h"/>
         <FILE id="mrpH001" name="Morph.h" compile="0" resource="0" file="src/dsp/Morph.h"/>
         <FILE id="prtH001" name="Partials.h" compile="0" resource="0" file="src/dsp/Partials.h"/>
+        <FILE id="revH001" name="Reverb.h" compile="0" resource="0" file="src/dsp/Reverb.h"/>
         <FILE id="spcH001" name="Spectral.h" compile="0" resource="0" file="src/dsp/Spectral.h"/>
         <FILE id="wavH001" name="Wave.h" compile="0" resource="0" file="src/dsp/Wave.h"/>
       </GROUP>

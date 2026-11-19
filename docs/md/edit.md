@@ -155,13 +155,13 @@ These need files on the [Wave page](wave.md). With nothing loaded they do nothin
 
 Audio after the sine bank. Each effect has its own **On**. Mix knobs are also pushed by the **FX Mix** morph macro; **Width** is pushed by the **Width** macro.
 
-**Drive** — tanh saturator. **Drive** is gain into the curve. **Mix**.
+**Drive** — tanh saturator, 2× oversampled so bright stacks do not fold as hard. **Drive** is gain into the curve. **Mix**.
 
 **Mod** — **Chorus** or **Phaser**. **Rate** 0.01–10 Hz, **Depth**, **Mix**.
 
-**Delay** — ping-pong (each side’s echo feeds the other). **Sync** uses **Division** (`1/16`, `1/8`, `1/8 dot`, `1/4`, `1/4 dot`, `1/2`, `1 bar`) against host tempo. **1 bar** only fits down to about 92 BPM; slower tempos clamp to the ~2.6 s buffer. Off uses **Time** 10–2000 ms. **Feedback** 0–0.95. **Mix**. Turning it off and on again clears stale echoes, which is the polite way to stop a delay that has been thinking too hard.
+**Delay** — ping-pong (each side’s echo feeds the other). **Sync** uses **Division** (`1/16`, `1/8`, `1/8 dot`, `1/4`, `1/4 dot`, `1/2`, `1 bar`) against host tempo. **1 bar** fits down to 30 BPM (8 s buffer). Off uses **Time** 10–2000 ms. **Feedback** 0–0.95. **Mix**. Turning it off and on again clears stale echoes, which is the polite way to stop a delay that has been thinking too hard.
 
-**Reverb** — **Size**, **Damping**, **Mix**.
+**Reverb** — 8-line FDN (not the stock JUCE box). **Size** stretches the taps and the decay, **Damping** dulls the feedback, **Mix**.
 
 **Master** — **Width** 0 = mono, 1 = natural, 2 = extra wide (M/S). **Spread** pans odd partials one way and even the other (fundamental and subs stay centred). This Spread is applied in the sine bank, not here, but the knob lives on this card because that is where you go looking for “make it wider.”
 

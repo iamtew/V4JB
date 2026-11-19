@@ -12,10 +12,10 @@ MIDI -> voice allocator (8 voices; steal oldest released, else oldest held)
           amp envelope (Env 1)      -> target levels for the sine bank
      -> sine bank sums partials every sample, levels ramp across the block
      -> tanh safety
-slot 12 (processor): drive, chorus/phaser, ping-pong delay, reverb, M/S width, limiter, volume
+slot 12 (processor): 2× oversampled tanh drive, chorus/phaser, ping-pong delay (8 s), FDN reverb, M/S width, limiter, volume
 ```
 
-All engine code is header-only and JUCE-free in `src/dsp/`; `tests/engine_check.cpp` renders it. Effects use `juce::dsp`.
+All engine code is header-only and JUCE-free in `src/dsp/`; `tests/engine_check.cpp` renders it. Chorus, phaser, delay, limiter, and drive oversampling use `juce::dsp`. Reverb is `src/dsp/Reverb.h` (8-line Householder FDN, same Size / Damp / Mix knobs).
 
 ## Sine bank (`Partials.h`)
 
