@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A narrow, slow partial wander. Vibrato as memory, not nerves. -->
+<!-- A narrow, slow partial wander. Edit: Lowpass, Hype, Tail, Blur / Morph: Path / Mod + Slot 12 set -->
 <PARAMS presetName="Remembered Theme" category="Thoughtful Violins">
-  <PARAM id="sp_algo" value="0"/>
+  <PARAM id="poly" value="1"/>
+  <PARAM id="sp_algo" value="13"/>
   <PARAM id="sp_depth" value="0.04"/>
   <PARAM id="sp_tilt" value="1.4"/>
   <PARAM id="sp_moddepth" value="0.18"/>
@@ -9,7 +10,6 @@
   <PARAM id="nz_mix" value="0.04"/>
   <PARAM id="nz_low" value="0.3"/>
   <PARAM id="nz_high" value="0.62"/>
-  <PARAM id="poly" value="1"/>
   <PARAM id="s2_type" value="7"/>
   <PARAM id="s2_main" value="0.58"/>
   <PARAM id="s2_p1" value="0.35"/>
@@ -20,11 +20,40 @@
   <PARAM id="s3_main" value="0.22"/>
   <PARAM id="s3_p2" value="0.6"/>
   <PARAM id="s3_p4" value="0.4"/>
-  <PARAM id="s4_type" value="0"/>
+  <PARAM id="s4_type" value="22"/>
+  <PARAM id="s4_main" value="0.41"/>
+  <PARAM id="s4_p1" value="0.72"/>
+  <PARAM id="s4_p2" value="0.35"/>
+  <PARAM id="s4_ls" value="0"/>
+  <PARAM id="s4_la" value="0"/>
+  <PARAM id="s5_type" value="16"/>
+  <PARAM id="s5_main" value="0.62"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
+  <PARAM id="s2_es" value="3"/>
+  <PARAM id="s2_ea" value="0.35"/>
   <PARAM id="e1_a" value="1.2"/>
   <PARAM id="e1_s" value="1"/>
   <PARAM id="e1_r" value="6"/>
-  <PARAM id="md_mix" value="0.12"/>
-  <PARAM id="rv_mix" value="0.4"/>
-  <PARAM id="rv_damp" value="0.5"/>
+  <PARAM id="e3_a" value="2.8"/>
+  <PARAM id="e3_d" value="2.5"/>
+  <PARAM id="e3_s" value="0.7"/>
+  <PARAM id="e3_r" value="3"/>
+  <PARAM id="md_mix" value="0.18"/>
+  <PARAM id="rv_mix" value="0.38"/>
+  <PARAM id="rv_damp" value="0.32"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="md_type" value="0"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="rv_size" value="0.82"/>
+  <PARAM id="mmode" value="1"/>
+  <PARAM id="mtime" value="3.7"/>
+  <PARAM id="msnap" value="0"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <MORPH c0="0.15 0.2 0.22 0.35 0.8 0.15 0.25 0.2 0.2 0.3 0.5"
+         c1="0.5 0.45 0.5 0.5 0.55 0.4 0.5 0.4 0.45 0.5 0.53"
+         c2="0.29 0.85 0.65 0.4 0.9 0.75 0.7 0.35 0.55 0.7 0.55"
+         c3="0.78 0.57 0.45 0.55 0.6 0.5 0.55 0.6 0.65 0.6 0.6"
+         nodes="0.08 0.45 1;0.35 0.12 2;0.70 0.40 2;0.90 0.85 4"/>
 </PARAMS>

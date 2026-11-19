@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Eight voices, warm shelf, the chorus wider than the detune. -->
+<!-- Eight voices, warm shelf, the chorus wider than the detune. Edit: Detuned, Lowpass, Hype, Tail / Morph: Path / Mod + Slot 12 set -->
 <PARAMS presetName="Sunday Strings" category="Thoughtful Violins">
+  <PARAM id="poly" value="8"/>
+  <PARAM id="economy" value="1"/>
+  <PARAM id="spread" value="0.6"/>
+  <PARAM id="width" value="1.35"/>
   <PARAM id="sp_algo" value="0"/>
   <PARAM id="sp_depth" value="0.04"/>
   <PARAM id="sp_tilt" value="1.55"/>
@@ -8,8 +12,6 @@
   <PARAM id="nz_mix" value="0.035"/>
   <PARAM id="nz_low" value="0.28"/>
   <PARAM id="nz_high" value="0.58"/>
-  <PARAM id="poly" value="8"/>
-  <PARAM id="economy" value="1"/>
   <PARAM id="s2_type" value="15"/>
   <PARAM id="s2_main" value="0.08"/>
   <PARAM id="s2_p1" value="0.4"/>
@@ -24,13 +26,37 @@
   <PARAM id="s4_main" value="0.24"/>
   <PARAM id="s4_p2" value="0.62"/>
   <PARAM id="s4_p4" value="0.38"/>
+  <PARAM id="s5_type" value="22"/>
+  <PARAM id="s5_main" value="0.65"/>
+  <PARAM id="s5_p1" value="0.72"/>
+  <PARAM id="s5_p2" value="0.65"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
+  <PARAM id="s3_es" value="3"/>
+  <PARAM id="s3_ea" value="0.67"/>
   <PARAM id="e1_a" value="1.8"/>
   <PARAM id="e1_s" value="1"/>
   <PARAM id="e1_r" value="6"/>
-  <PARAM id="spread" value="0.6"/>
-  <PARAM id="width" value="1.35"/>
+  <PARAM id="e3_a" value="1.2"/>
+  <PARAM id="e3_d" value="2.5"/>
+  <PARAM id="e3_s" value="0.7"/>
+  <PARAM id="e3_r" value="3"/>
   <PARAM id="md_mix" value="0.22"/>
-  <PARAM id="rv_size" value="0.84"/>
-  <PARAM id="rv_damp" value="0.5"/>
-  <PARAM id="rv_mix" value="0.42"/>
+  <PARAM id="rv_size" value="0.35"/>
+  <PARAM id="rv_damp" value="0.55"/>
+  <PARAM id="rv_mix" value="0.18"/>
+  <PARAM id="md_on" value="0"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="dl_on" value="0"/>
+  <PARAM id="dr_on" value="0"/>
+  <PARAM id="mmode" value="1"/>
+  <PARAM id="mtime" value="7.2"/>
+  <PARAM id="msnap" value="0"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <MORPH c0="0.3 0.22 0.35 0.62 0.35 0.2 0.3 0.45 0.4 0.5 0.5"
+         c1="0.6 0.6 0.7 0.4 0.55 0.5 0.55 0.4 0.45 0.65 0.5"
+         c2="0.25 0.8 0.45 0.53 0.85 0.65 0.6 0.55 0.5 0.4 0.55"
+         c3="0.75 0.45 0.55 0.7 0.51 0.35 0.75 0.65 0.8 0.7 0.65"
+         nodes="0.10 0.10 4;0.90 0.50 2;0.20 0.90 4;0.50 0.50 2"/>
 </PARAMS>

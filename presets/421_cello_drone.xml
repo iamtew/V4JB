@@ -1,31 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- An octave down, a slow cello tone with a little sub. -->
+<!-- An octave down, a slow cello tone with a little sub. Edit: Lowpass, Detuned, Second Tone, Moving Filter / Morph: Path / Mod + Slot 12 set -->
 <PARAMS presetName="Cello Drone" category="Stressful Violin">
   <PARAM id="octave" value="-1"/>
-  <PARAM id="sp_algo" value="0"/>
+  <PARAM id="poly" value="1"/>
+  <PARAM id="glide" value="0.3"/>
+  <PARAM id="sp_algo" value="16"/>
   <PARAM id="sp_depth" value="0.15"/>
   <PARAM id="sp_tilt" value="1.5"/>
   <PARAM id="nz_mix" value="0.06"/>
   <PARAM id="nz_low" value="0.25"/>
   <PARAM id="nz_high" value="0.6"/>
   <PARAM id="sub1" value="0.15"/>
-  <PARAM id="poly" value="1"/>
-  <PARAM id="glide" value="0.3"/>
   <PARAM id="s2_type" value="7"/>
   <PARAM id="s2_main" value="0.42"/>
   <PARAM id="s2_p1" value="0.4"/>
   <PARAM id="s2_p3" value="0.8"/>
-  <PARAM id="s2_ls" value="0"/>
-  <PARAM id="s2_la" value="0"/>
+  <PARAM id="s2_ls" value="2"/>
+  <PARAM id="s2_la" value="0.18"/>
   <PARAM id="s3_type" value="15"/>
   <PARAM id="s3_main" value="0.1"/>
   <PARAM id="s3_p1" value="0.2"/>
   <PARAM id="s3_p2" value="0.3"/>
-  <PARAM id="s4_type" value="0"/>
+  <PARAM id="s4_type" value="19"/>
+  <PARAM id="s4_main" value="0.75"/>
+  <PARAM id="s4_p1" value="0.45"/>
+  <PARAM id="s4_p2" value="0.52"/>
+  <PARAM id="s4_ls" value="0"/>
+  <PARAM id="s4_la" value="0"/>
+  <PARAM id="s5_type" value="11"/>
+  <PARAM id="s5_main" value="0.48"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
   <PARAM id="e1_a" value="2.5"/>
   <PARAM id="e1_s" value="1"/>
   <PARAM id="e1_r" value="7"/>
-  <PARAM id="md_mix" value="0.16"/>
+  <PARAM id="l2_rate" value="0.68"/>
+  <PARAM id="l2_shape" value="1"/>
+  <PARAM id="md_mix" value="0.28"/>
   <PARAM id="rv_size" value="0.86"/>
-  <PARAM id="rv_mix" value="0.42"/>
+  <PARAM id="rv_mix" value="0.27"/>
+  <PARAM id="md_on" value="1"/>
+  <PARAM id="md_type" value="1"/>
+  <PARAM id="md_rate" value="0.17"/>
+  <PARAM id="md_depth" value="0.36"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="mmode" value="1"/>
+  <PARAM id="mtime" value="7.9"/>
+  <PARAM id="msnap" value="0"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <MORPH c0="0.28 0.55 0.48 0.79 0.4 0.35 0.5 0.6 0.35 0.42 0.45"
+         c1="0.62 0.4 0.32 0.45 0.41 0.7 0.45 0.35 0.55 0.58 0.55"
+         c2="0.45 0.72 0.78 0.55 0.68 0.44 0.8 0.48 0.6 0.72 0.5"
+         c3="0.85 0.5 0.55 0.65 0.45 0.6 0.37 0.72 0.78 0.48 0.7"
+         nodes="0.50 0.10 3;0.90 0.50 3;0.50 0.90 3;0.10 0.50 3"/>
 </PARAMS>

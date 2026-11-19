@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Open fifths, the upper tone pulled flat so they beat. -->
+<!-- Open fifths, the upper tone pulled flat so they beat. Edit: Second Tone, Detuned, Bandpass, Harmonic Add / Morph: Path / Mod + Slot 12 set -->
 <PARAMS presetName="Beating Fifths" category="Stressful Violin">
-  <PARAM id="sp_algo" value="0"/>
+  <PARAM id="poly" value="4"/>
+  <PARAM id="economy" value="1"/>
+  <PARAM id="spread" value="0.65"/>
+  <PARAM id="width" value="1.4"/>
+  <PARAM id="sp_algo" value="12"/>
   <PARAM id="sp_depth" value="0.1"/>
   <PARAM id="sp_tilt" value="1.15"/>
   <PARAM id="sp_partials" value="128"/>
   <PARAM id="nz_mix" value="0.07"/>
   <PARAM id="nz_low" value="0.32"/>
   <PARAM id="nz_high" value="0.7"/>
-  <PARAM id="poly" value="4"/>
-  <PARAM id="economy" value="1"/>
   <PARAM id="s2_type" value="19"/>
   <PARAM id="s2_main" value="0.56"/>
   <PARAM id="s2_p1" value="0.6"/>
@@ -24,11 +26,36 @@
   <PARAM id="s4_main" value="0.5"/>
   <PARAM id="s4_p1" value="0.5"/>
   <PARAM id="s4_p3" value="0.8"/>
+  <PARAM id="s5_type" value="26"/>
+  <PARAM id="s5_main" value="0.62"/>
+  <PARAM id="s5_ls" value="0"/>
+  <PARAM id="s5_la" value="0"/>
+  <PARAM id="s4_es" value="3"/>
+  <PARAM id="s4_ea" value="0.35"/>
   <PARAM id="e1_a" value="1.4"/>
   <PARAM id="e1_s" value="1"/>
   <PARAM id="e1_r" value="5"/>
-  <PARAM id="spread" value="0.65"/>
-  <PARAM id="width" value="1.4"/>
+  <PARAM id="e3_a" value="2"/>
+  <PARAM id="e3_d" value="2.5"/>
+  <PARAM id="e3_s" value="0.7"/>
+  <PARAM id="e3_r" value="3"/>
   <PARAM id="md_mix" value="0.28"/>
-  <PARAM id="rv_mix" value="0.4"/>
+  <PARAM id="rv_mix" value="0.2"/>
+  <PARAM id="md_on" value="0"/>
+  <PARAM id="dl_on" value="1"/>
+  <PARAM id="dl_sync" value="1"/>
+  <PARAM id="dl_div" value="0"/>
+  <PARAM id="dl_fb" value="0.28"/>
+  <PARAM id="dl_mix" value="0.28"/>
+  <PARAM id="rv_on" value="1"/>
+  <PARAM id="mmode" value="1"/>
+  <PARAM id="mtime" value="6.5"/>
+  <PARAM id="msnap" value="0"/>
+  <PARAM id="mx" value="0.5"/>
+  <PARAM id="my" value="0.5"/>
+  <MORPH c0="0.3 0.25 0.35 0.56 0.35 0.2 0.3 0.45 0.4 0.5 0.5"
+         c1="0.6 0.6 0.7 0.4 0.52 0.5 0.55 0.4 0.45 0.65 0.5"
+         c2="0.25 0.8 0.45 0.5 0.85 0.65 0.6 0.55 0.5 0.4 0.55"
+         c3="0.75 0.45 0.55 0.7 0.45 0.35 0.78 0.65 0.8 0.7 0.65"
+         nodes="0.10 0.10 4;0.90 0.50 2;0.20 0.90 4;0.50 0.50 2"/>
 </PARAMS>
