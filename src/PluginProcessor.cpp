@@ -490,6 +490,7 @@ bool V4JBAudioProcessor::loadMorphFile (const juce::File& f)
 void V4JBAudioProcessor::loadWave (int w, const juce::String& source)
 {
     const int gen = ++waveGen[w];
+    waveError[w].clear();
     juce::WeakReference<V4JBAudioProcessor> weak (this);
     analysisPool.addJob ([weak, w, gen, source]
     {
@@ -497,8 +498,19 @@ void V4JBAudioProcessor::loadWave (int w, const juce::String& source)
         juce::MessageManager::callAsync ([weak, w, gen, source, data]
         {
             if (auto* self = weak.get())
-                if (self->waveGen[w] == gen && data != nullptr)  // a newer load wins
-                    self->publishWave (w, data, source);
+            {
+                if (self->waveGen[w] != gen)  // a newer load wins
+                    return;
+                if (data == nullptr)
+                {
+                    const auto leaf = source.fromLastOccurrenceOf (":", false, false)
+                                            .fromLastOccurrenceOf ("\\", false, false)
+                                            .fromLastOccurrenceOf ("/", false, false);
+                    self->waveError[w] = "Could not read " + (leaf.isEmpty() ? source : leaf);
+                    return;
+                }
+                self->publishWave (w, data, source);
+            }
         });
     });
 }
@@ -506,6 +518,7 @@ void V4JBAudioProcessor::loadWave (int w, const juce::String& source)
 void V4JBAudioProcessor::clearWave (int w)
 {
     ++waveGen[w];
+    waveError[w].clear();
     publishWave (w, nullptr, {});
 }
 

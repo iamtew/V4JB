@@ -63,6 +63,7 @@ public:
     void loadWave (int w, const juce::String& source);
     void clearWave (int w);
     std::shared_ptr<v4jb::WaveData> getWave (int w) const { return waveOwned[w]; }
+    juce::String getWaveError (int w) const { return waveError[juce::jlimit (0, 1, w)]; }
     juce::String getWaveName (int w) const { return waveSource[w].fromLastOccurrenceOf (":", false, false)
                                                                  .fromLastOccurrenceOf ("\\", false, false)
                                                                  .fromLastOccurrenceOf ("/", false, false); }
@@ -125,6 +126,7 @@ private:
     std::shared_ptr<v4jb::WaveData> waveOwned[2];
     std::atomic<v4jb::WaveData*> waveLive[2] { nullptr, nullptr };
     juce::String waveSource[2];
+    juce::String waveError[2];  // message thread; a failed load leaves the previous wave up
     int waveGen[2] { 0, 0 };
     struct Retired { std::shared_ptr<v4jb::WaveData> data; juce::int64 block; juce::uint32 time; };
     std::vector<Retired> retired;

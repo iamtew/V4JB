@@ -88,6 +88,7 @@ struct WavePanel : public juce::Component
         g.setColour (kNight);
         g.fillRoundedRectangle (view.toFloat(), 3.f);
         g.setFont (boldFont (11.f));
+        const auto err = proc.getWaveError (index);
         if (image.isValid())
         {
             g.drawImage (image, view.toFloat(), juce::RectanglePlacement::stretchToFit);
@@ -97,14 +98,15 @@ struct WavePanel : public juce::Component
             g.setColour (kAmber);
             g.drawVerticalLine ((int) x0, (float) view.getY(), (float) view.getBottom());
             g.drawVerticalLine ((int) x1, (float) view.getY(), (float) view.getBottom());
-            g.setColour (kFog);
-            g.drawText (proc.getWaveName (index) + "  (" + juce::String (data->seconds, 1) + " s)",
+            g.setColour (err.isNotEmpty() ? kAmber : kFog);
+            g.drawText (err.isNotEmpty() ? err
+                                         : proc.getWaveName (index) + "  (" + juce::String (data->seconds, 1) + " s)",
                         nameArea, juce::Justification::centredLeft, true);
         }
         else
         {
-            g.setColour (kFog.withAlpha (0.5f));
-            g.drawText ("No file loaded", view, juce::Justification::centred, false);
+            g.setColour (err.isNotEmpty() ? kAmber : kFog.withAlpha (0.5f));
+            g.drawText (err.isNotEmpty() ? err : "No file loaded", view, juce::Justification::centred, false);
         }
     }
 
