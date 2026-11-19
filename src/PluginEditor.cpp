@@ -253,6 +253,7 @@ void V4JBAudioProcessorEditor::timerCallback()
     switch (tabs.getCurrentTabIndex())
     {
         case 0: editPage.refresh(); break;
+        case 1: modPage.refresh(); break;
         case 2: morphPage.refresh(); break;
         case 3: wavePage.refresh(); break;
         default: break;

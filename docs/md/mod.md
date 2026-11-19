@@ -18,9 +18,10 @@ Per voice. **Env 1 (AMP)** is always the volume of the note. Env 2–4 exist to 
 
 Global, shared by all voices. Bipolar (−1…+1), so they can push a knob up *and* down, which is half the fun.
 
-- **Rate** — 0.01–20 Hz when Sync is off.
+- **Rate** — 0.01–20 Hz when Sync is off. Grey while Sync is on.
 - **Shape** — Sine, Triangle, Saw, Square, S&H (new random value once per cycle).
 - **Sync** — lock to the beat clock instead of Rate.
-- **Division** when synced: `1/16`, `1/8`, `1/4`, `1/2`, `1 bar`, `2 bars`, `4 bars`, `8 bars`.
+- **Division** when synced: `1/16`, `1/8`, `1/4`, `1/2`, `1 bar`, `2 bars`, `4 bars`, `8 bars`. Grey while Sync is off.
+- A teal dot means a slot on Edit routes this LFO to its main knob.
 
 While the host plays, the clock is the transport. Otherwise it free-runs at the host tempo (120 BPM if the host does not send one). Phrase on the Edit page uses the same clock, so they can stay friends.

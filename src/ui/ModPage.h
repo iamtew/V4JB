@@ -36,12 +36,40 @@ struct LfoCard : public juce::Component
         : index (i), rate (s, ParamID::lfo (i, "rate"), "Rate"), shape (s, ParamID::lfo (i, "shape")),
           div (s, ParamID::lfo (i, "div")), sync (s, ParamID::lfo (i, "sync"), "Sync")
     {
+        for (int slot = 0; slot < v4jb::kNumSlots; ++slot)
+            route[slot] = s.getRawParameterValue (ParamID::slot (slot, "ls"));
         addAndMakeVisible (rate);
         addAndMakeVisible (shape);
         addAndMakeVisible (div);
         addAndMakeVisible (sync);
+        refresh();
     }
-    void paint (juce::Graphics& g) override { paintCard (g, getLocalBounds(), "LFO " + juce::String (index + 1)); }
+    // A slot's LFO source is 0 = off, 1..3 = this card's index + 1.
+    bool routed() const
+    {
+        for (auto* p : route)
+            if (std::lround (p->load()) == index + 1)
+                return true;
+        return false;
+    }
+    void refresh()
+    {
+        const bool synced = sync.getToggleState();
+        rate.setEnabled (! synced);
+        rate.setAlpha (synced ? 0.4f : 1.f);
+        div.setEnabled (synced);
+        div.setAlpha (synced ? 1.f : 0.4f);
+        repaint();
+    }
+    void paint (juce::Graphics& g) override
+    {
+        paintCard (g, getLocalBounds(), "LFO " + juce::String (index + 1));
+        if (routed())
+        {
+            g.setColour (kTeal);
+            g.fillEllipse (56.f, 9.f, 8.f, 8.f);
+        }
+    }
     void resized() override
     {
         auto r = getLocalBounds().reduced (8, 4);
@@ -55,6 +83,7 @@ struct LfoCard : public juce::Component
         div.setBounds (line.reduced (4, 2));
     }
     int index;
+    std::atomic<float>* route[v4jb::kNumSlots] {};
     Knob rate;
     Combo shape, div;
     Toggle sync;
@@ -87,6 +116,11 @@ struct ModPage : public juce::Component
         const int lw = r.getWidth() / lfos.size();
         for (auto* l : lfos)
             l->setBounds (r.removeFromLeft (lw).reduced (3));
+    }
+    void refresh()
+    {
+        for (auto* l : lfos)
+            l->refresh();
     }
     juce::OwnedArray<EnvCard> envs;
     juce::OwnedArray<LfoCard> lfos;
