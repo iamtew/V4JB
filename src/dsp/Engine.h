@@ -120,6 +120,8 @@ public:
     // UI spectrum taps: first kBars partial levels after each stage, for the
     // most recently started voice. Audio writes, UI reads (relaxed).
     std::atomic<float> taps[kNumStages][kBars];
+    // Same voice, file position 0..1 (already lerped through Start/End). -1 = no voice.
+    std::atomic<float> wavePlay[2];
 
     Engine()
     {
@@ -128,6 +130,8 @@ public:
         for (auto& stage : taps)
             for (auto& t : stage)
                 t.store (0.f);
+        wavePlay[0].store (-1.f);
+        wavePlay[1].store (-1.f);
     }
 
     void prepare (double sampleRate)
@@ -433,6 +437,8 @@ private:
                 }
                 ctx.wavePos[w] = lerp (st, en, v.wavePos[w]);
                 ctx.waveStart[w] = st;
+                if (show)
+                    wavePlay[w].store (ctx.wavePos[w], std::memory_order_relaxed);
             }
 
             for (int s = 0; s < kNumSlots; ++s)
@@ -466,6 +472,12 @@ private:
             v.target[kSub1] = clamp01 (p.spec.sub1) * subGain;
             v.target[kSub2] = clamp01 (p.spec.sub2) * subGain;
             v.bank.setTargets (v.freq, v.target, n, invSr);
+        }
+
+        if (! voices[display].active)
+        {
+            wavePlay[0].store (-1.f, std::memory_order_relaxed);
+            wavePlay[1].store (-1.f, std::memory_order_relaxed);
         }
     }
 

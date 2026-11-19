@@ -46,6 +46,7 @@ public:
 
     // UI spectrum taps (stage 0 = spectral slot, 1..10 = slots 2..11).
     float tap (int stage, int bar) const { return engine->taps[stage][bar].load (std::memory_order_relaxed); }
+    float wavePlayhead (int w) const { return engine->wavePlay[juce::jlimit (0, 1, w)].load (std::memory_order_relaxed); }
 
     // Message thread only. processBlock drains this. A click is dropped if the
     // queue is still full (AbstractFifo keeps one slot empty, so 31 fit).

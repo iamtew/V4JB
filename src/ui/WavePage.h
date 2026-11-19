@@ -98,6 +98,15 @@ struct WavePanel : public juce::Component
             g.setColour (kAmber);
             g.drawVerticalLine ((int) x0, (float) view.getY(), (float) view.getBottom());
             g.drawVerticalLine ((int) x1, (float) view.getY(), (float) view.getBottom());
+            const float play = proc.wavePlayhead (index);
+            if (play >= 0.f)
+            {
+                const float xp = (float) view.getX() + juce::jlimit (0.f, 1.f, play) * (float) view.getWidth();
+                g.setColour (kNight);
+                g.drawVerticalLine ((int) xp - 1, (float) view.getY(), (float) view.getBottom());
+                g.setColour (kTeal);
+                g.drawVerticalLine ((int) xp, (float) view.getY(), (float) view.getBottom());
+            }
             g.setColour (err.isNotEmpty() ? kAmber : kFog);
             g.drawText (err.isNotEmpty() ? err
                                          : proc.getWaveName (index) + "  (" + juce::String (data->seconds, 1) + " s)",
